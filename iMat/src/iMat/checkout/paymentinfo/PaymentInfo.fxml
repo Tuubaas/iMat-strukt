@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="1040.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imat.checkout.CheckoutController.PaymentInfoController">
+   <children>
+      <ImageView fitHeight="180.0" fitWidth="300.0" layoutX="117.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="100.0" />
+      <ImageView fitHeight="180.0" fitWidth="300.0" layoutX="650.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="92.0" />
+      <TextField layoutX="120.0" layoutY="193.0" prefHeight="27.0" prefWidth="260.0" AnchorPane.leftAnchor="120.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="120.0" layoutY="258.0" AnchorPane.leftAnchor="120.0" />
+      <ChoiceBox layoutX="238.0" layoutY="231.0" prefHeight="27.0" prefWidth="49.0" />
+      <Label layoutX="346.5" layoutY="40.0" text="Fyll i din betalningsinformation" AnchorPane.topAnchor="10.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="110.0" layoutY="93.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Tillbaka" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="40.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="120.0" layoutY="103.0" mnemonicParsing="false" onAction="#onPaymentInfoNextButtonClicked" prefHeight="40.0" prefWidth="120.0" text="Tillbaka" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="40.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="45.0" fitWidth="60.0" layoutX="120.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="45.0" fitWidth="60.0" layoutX="245.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true" />
+      <RadioButton layoutX="188.0" layoutY="71.0" mnemonicParsing="false" />
+      <RadioButton layoutX="312.0" layoutY="71.0" mnemonicParsing="false" />
+   </children>
+</AnchorPane>

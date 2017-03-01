@@ -1,0 +1,12 @@
+.button:default {
+    -fx-base: darkgrey;
+}
+
+.button:hover {
+    -fx-skin: "com.sun.javafx.scene.control.skin.ButtonSkin";
+}
+
+.vbox {
+   -fx-alignment: center;
+    -fx-spacing: 60;
+}

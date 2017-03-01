@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="background" fx:id="mainAnchor" maxHeight="1080.0" maxWidth="1920.0" minHeight="0.0" minWidth="0.0" onMouseClicked="#onMainPaneClicked" pickOnBounds="false" prefHeight="720.0" prefWidth="1280.0" stylesheets="@login.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.login.LogInController">
+    <AnchorPane id="window" layoutX="390.0" layoutY="110.0" maxHeight="1080.0" minHeight="0.0" prefHeight="500.0" prefWidth="500.0" stylesheets="@login.css">
+        <TextField fx:id="loginUsername" layoutX="35.0" layoutY="98.0" prefHeight="25.0" prefWidth="187.0" />
+        <Line endY="-220.0" layoutX="251.0" layoutY="299.0" startY="220.0" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="249.0" AnchorPane.rightAnchor="249.0" AnchorPane.topAnchor="29.0" />
+        <TextField fx:id="loginPassword" layoutX="35.0" layoutY="157.0" prefHeight="25.0" prefWidth="187.0" />
+        <Label layoutX="82.0" layoutY="30.0" text="Logga in">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="300.0" layoutY="30.0" text="Registrera dig">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <Button fx:id="loginButton" layoutX="101.0" layoutY="384.0" mnemonicParsing="false" onAction="#onLoginButtonClicked" prefHeight="40.0" prefWidth="120.0" text="Logga in">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Label layoutX="35.0" layoutY="71.0" text="Användarnamn">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="35.0" layoutY="130.0" text="Lösenord">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="regFirstName" layoutX="281.0" layoutY="101.0" prefHeight="25.0" prefWidth="187.0" />
+        <TextField fx:id="regLastName" layoutX="281.0" layoutY="160.0" prefHeight="25.0" prefWidth="187.0" />
+        <Label layoutX="281.0" layoutY="74.0" text="Förnamn">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="281.0" layoutY="133.0" text="Efternamn">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="regEMail" layoutX="281.0" layoutY="222.0" prefHeight="25.0" prefWidth="187.0" />
+        <TextField fx:id="regUserName" layoutX="281.0" layoutY="281.0" prefHeight="25.0" prefWidth="187.0" />
+        <Label layoutX="281.0" layoutY="195.0" text="E-postadress">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="281.0" layoutY="254.0" text="Användarnamn">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="regPassword" layoutX="281.0" layoutY="343.0" prefHeight="25.0" prefWidth="187.0" />
+        <Label layoutX="281.0" layoutY="316.0" text="Lösenord">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Button fx:id="regButton" layoutX="309.0" layoutY="384.0" mnemonicParsing="false" onAction="#onRegButtonClicked" prefHeight="40.0" prefWidth="160.0" text="Registrera dig">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <ImageView fx:id="exitImage" fitHeight="25.0" fitWidth="25.0" layoutX="61.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true" styleClass="exit-image" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <image>
+                <Image url="@../../resources/exit.png" />
+            </image>
+        </ImageView>
+      <Label fx:id="loginWarning" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="459.0" prefHeight="20.0" prefWidth="230.0" textFill="RED" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="250.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="regWarning" alignment="CENTER" contentDisplay="CENTER" layoutX="272.0" layoutY="458.0" prefHeight="20.0" prefWidth="240.0" textFill="RED" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="0.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+    </AnchorPane>
+</AnchorPane>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane fx:id="mainAnchor" maxHeight="1080.0" maxWidth="1920.0" minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="1280.0" stylesheets="@shop.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.shop.ShopController">
+    <children>
+        <GridPane gridLinesVisible="false" layoutX="583.0" layoutY="102.0" prefHeight="500.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="240.0" minWidth="240.0" prefWidth="240.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1920.0" minWidth="10.0" prefWidth="400.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="240.0" minWidth="240.0" prefWidth="240.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <AnchorPane fx:id="cartAnchorPane" prefHeight="502.0" prefWidth="180.0" styleClass="anchorPaneWithBorder" GridPane.columnIndex="2">
+                    <children>
+                        <fx:include fx:id="shoppingCart" source="shoppingcart/ShoppingCart.fxml" />
+                    </children>
+                    <GridPane.margin>
+                        <Insets top="2.0" />
+                    </GridPane.margin>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </AnchorPane>
+                <AnchorPane fx:id="menuAnchorPane" prefHeight="200.0" prefWidth="200.0" styleClass="anchorPaneWithBorder">
+                    <children>
+                        <fx:include fx:id="menu" source="menu/Menu.fxml" />
+                    </children>
+                    <GridPane.margin>
+                        <Insets top="2.0" />
+                    </GridPane.margin>
+                </AnchorPane>
+                <AnchorPane fx:id="centerViewAnchorPane" maxHeight="1080.0" maxWidth="1920.0" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                    <children>
+                        <fx:include fx:id="centerView" source="centerview/CenterView.fxml" />
+                    </children>
+               <GridPane.margin>
+                  <Insets top="2.0" />
+               </GridPane.margin>
+                </AnchorPane>
+            </children>
+        </GridPane>
+    </children>
+</AnchorPane>

@@ -1,0 +1,11 @@
+#mainAnchor{
+    -fx-border-color: black;
+    -fx-border-width: 1;
+    -fx-border-style: hidden hidden solid hidden;
+    -fx-border-insets: 0 0 -1 0;
+}
+
+#logga:hover{
+    -fx-background-color: lightblue;
+    -fx-background-radius: 10;
+}

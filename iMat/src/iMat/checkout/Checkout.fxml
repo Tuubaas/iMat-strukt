@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane fx:id="loggedInAnchor" prefHeight="500.0" prefWidth="1280.0" styleClass="checkout" stylesheets="@checkout.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.checkout.CheckoutController">
+   <children>
+      <StackPane layoutX="120.0" layoutY="100.0" prefHeight="401.0" prefWidth="1042.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <AnchorPane fx:id="loggedInCartConfirmationAnchor" prefHeight="200.0" prefWidth="200.0" styleClass="informationAnchors" stylesheets="@checkout.css">
+               <children>
+                  <fx:include source="deliveryinfo/DeliveryInfo.fxml" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="loggedInDeliveryInfoAnchor" prefHeight="200.0" prefWidth="200.0" styleClass="informationAnchors" stylesheets="@checkout.css">
+               <children>
+                  <fx:include source="paymentinfo/PaymentInfo.fxml" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="loggedInPaymentInfoAnchor" prefHeight="350.0" prefWidth="1040.0" styleClass="informationAnchors" stylesheets="@checkout.css">
+               <children>
+                  <fx:include source="confirmation/Confirmation.fxml" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="loggedInConfirmationAnchor" prefHeight="350.0" prefWidth="1042.0" styleClass="informationAnchors" stylesheets="@checkout.css">
+               <children>
+                  <fx:include source="cartconfirmation/CartConfirmation.fxml" />
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+      <GridPane layoutX="100.0" layoutY="150.0" prefHeight="40.0" prefWidth="1080.0" AnchorPane.topAnchor="30.0">
+         <children>
+            <SVGPath fx:id="arrow11" content="M100,100 L131,115 100,130 270,130 300,115 275,100 z" fill="#00000080" styleClass="svg-path" GridPane.halignment="CENTER" />
+            <SVGPath fx:id="arrow31" content="M100,100 L131,115 100,130 270,130 300,115 275,100 z" fill="#00000080" styleClass="svg-path" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+            <SVGPath fx:id="arrow41" content="M100,100 L131,115 100,130 270,130 300,115 275,100 z" fill="#00000080" styleClass="svg-path" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+            <SVGPath fx:id="arrow51" content="M100,100 L131,115 100,130 270,130 300,115 275,100 z" fill="#00000080" styleClass="svg-path" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
+            <Label fx:id="arrowLabel11" text="Bekräfta varukorg" GridPane.halignment="CENTER" />
+            <Label fx:id="arrowLabel31" text="Leveransuppgifter" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+            <Label fx:id="arrowLabel41" text="Betalinformation" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+            <Label fx:id="arrowLabel51" text="Bekräfta köp" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+   </children>
+</AnchorPane>

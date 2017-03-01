@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<AnchorPane fx:id="mainAnchor" maxHeight="1080.0" maxWidth="1920.0" minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.shop.centerview.CenterViewController">
+   <children>
+      <StackPane maxHeight="1080.0" maxWidth="1920.0" minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane fx:id="productListAnchor" maxHeight="1080.0" maxWidth="1920.0" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <fx:include fx:id="productList" source="productlist/ProductList.fxml" />
+               </children></AnchorPane>
+            <AnchorPane fx:id="shopHomeAnchor" maxHeight="1080.0" maxWidth="1920.0" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <fx:include fx:id="shopHome" source="shophome/ShopHome.fxml" />
+               </children></AnchorPane>
+            <AnchorPane fx:id="purchaseHistoryAnchor" maxHeight="1080.0" maxWidth="1920.0" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <fx:include fx:id="purchaseHistory" source="purchasehistory/PurchaseHistory.fxml" />
+               </children></AnchorPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

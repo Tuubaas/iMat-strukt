@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<fx:root maxHeight="-Infinity" maxWidth="250.0" minHeight="-Infinity" minWidth="250.0" prefHeight="50.0" prefWidth="250.0" type="Pane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button fx:id="removeButton" layoutX="218.0" layoutY="13.0" mnemonicParsing="false" text="X" />
+      <Line endY="50.0" layoutX="210.0" />
+      <Label fx:id="productNameLabel" layoutX="60.0" layoutY="1.0" prefHeight="27.0" prefWidth="146.0" text="Västerbotten">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="amountField" layoutX="3.0" layoutY="5.0" prefHeight="41.0" prefWidth="51.0" text="1000">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label fx:id="priceTotalLabel" layoutX="60.0" layoutY="25.0" prefHeight="27.0" prefWidth="146.0" text="TotPris">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</fx:root>

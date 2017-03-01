@@ -1,0 +1,32 @@
+
+.titled-pane > .title {
+    -fx-pref-height: 40;
+    -fx-alignment: baseline-left;
+    -fx-font-size: 18;
+}
+
+.grid-pane > .label {
+    -fx-alignment: baseline-center;
+}
+
+.v-box > .button {
+    -fx-font-size: 14;
+    -fx-alignment: baseline-left;
+    -fx-pref-height: 25;
+    -fx-pref-width: 250;
+    -fx-padding: 0 0 0 35;
+}
+
+.v-box {
+    -fx-spacing: 2;
+}
+
+.button {
+    -fx-font-size: 18;
+    -fx-alignment: center-left;
+    -fx-padding: 0 0 0 35;
+}
+
+.titled-pane {
+    -fx-animated: true;
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="cartConfirmationAnchor" prefHeight="400.0" prefWidth="1040.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.checkout.cartconfirmation.CartConfirmationController">
+   <children>
+      <ScrollPane fx:id="cartConfirmationScrollPane" layoutX="104.0" layoutY="38.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <content>
+          <AnchorPane fx:id="cartConfirmationScrollAnchor" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+        </content>
+      </ScrollPane>
+      <Button fx:id="cartConfirmationBackButton" layoutX="52.0" layoutY="337.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Tillbaka" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="40.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="cartConfirmationNextButton" layoutX="915.0" layoutY="357.0" mnemonicParsing="false" onAction="#onConfirmCartNextButtonClicked" prefHeight="40.0" prefWidth="120.0" text="Nästa" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="40.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

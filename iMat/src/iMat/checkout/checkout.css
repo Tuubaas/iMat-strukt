@@ -1,0 +1,61 @@
+.svg-path {
+    -fx-fill: #00000080;
+}
+
+.svg-path:hover {
+    -fx-fill: aqua;
+}
+
+#notLoggedInAnchor {
+    -fx-background-color: #fff;
+}
+
+#loggedInAnchor {
+    -fx-background-color: #fff;
+}
+
+.checkout {
+    -fx-background-color: transparent;
+}
+
+.informationAnchors {
+    -fx-border-color: black;
+    -fx-border-width: 1;
+    -fx-border-insets: 0, 0, 0, 50;
+}
+
+#notLoggedInCartConfirmationAnchor {
+    -fx-background-color: #fff;
+}
+
+#notLoggedInConfirmationAnchor {
+    -fx-background-color: #fff;
+}
+
+#loggedInCartConfirmationAnchor {
+    -fx-background-color: #fff;
+}
+
+#loggedInConfirmationAnchor {
+    -fx-background-color: #fff;
+}
+
+#notLoggedInDeliveryInfoAnchor {
+    -fx-background-color: #fff;
+}
+
+#notLoggedInPaymentInfoAnchor {
+    -fx-background-color: #fff;
+}
+
+#loggedInDeliveryInfoAnchor {
+    -fx-background-color: #fff;
+}
+
+#notLoggedInLogInAnchor {
+    -fx-background-color: #fff;
+}
+
+#loggedInPaymentInfoAnchor {
+    -fx-background-color: #fff;
+}

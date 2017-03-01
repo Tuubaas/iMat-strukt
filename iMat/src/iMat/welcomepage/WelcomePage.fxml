@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainPane" prefHeight="720.0" prefWidth="1280.0" stylesheets="@welcomepage.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.welcomepage.WelcomePageController">
+   <children>
+      <VBox layoutX="214.0" layoutY="50.0" prefHeight="720.0" prefWidth="1280.0" spacing="10.0" styleClass="vbox" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="welcomeText" prefHeight="141.0" prefWidth="657.0" text="Välkommen till" textFill="#0000009c">
+               <font>
+                  <Font name="Calisto MT Bold" size="96.0" />
+               </font>
+               <padding>
+                  <Insets top="-100.0" />
+               </padding>
+            </Label>
+            <ImageView fitHeight="162.0" fitWidth="433.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/resources/iMat-logo.png" />
+               </image>
+               <VBox.margin>
+                  <Insets top="-80.0" />
+               </VBox.margin>
+            </ImageView>
+            <Button fx:id="startButton" alignment="CENTER" mnemonicParsing="false" onAction="#startButtonPressed" onKeyPressed="#startButtonPressed" prefHeight="120.0" prefWidth="400.0" text="Börja handla">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>
