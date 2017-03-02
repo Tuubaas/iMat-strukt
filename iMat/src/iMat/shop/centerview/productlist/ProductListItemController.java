@@ -2,9 +2,6 @@ package iMat.shop.centerview.productlist;
 
 import iMat.BackendWrapper;
 import iMat.MainController;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -13,7 +10,6 @@ import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ShoppingItem;
@@ -62,7 +58,7 @@ public class ProductListItemController extends AnchorPane {
         spinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 10000));
 
         if (MainController.getBackendWrapper().isFavorite(product)) {
-            star.setImage(new Image(String.valueOf(getClass().getClassLoader().getResource("resources/star.png"))));
+            star.setImage(new Image(String.valueOf(getClass().getClassLoader().getResource("resources/Star.png"))));
         }
 
         if (product.getUnitSuffix().equals("kg")) {
@@ -91,11 +87,11 @@ public class ProductListItemController extends AnchorPane {
         if (!MainController.getBackendWrapper().isFavorite(this.product)) {
             MainController.getBackendWrapper().addFavorite(this.product);
             star.setImage(new Image((String.valueOf(getClass().getClassLoader().getResource(
-                    "resources/star.png")))));
+                    "resources/Star.png")))));
         } else {
             MainController.getBackendWrapper().removeFavorite(this.product);
             star.setImage(new Image((String.valueOf(getClass().getClassLoader().getResource(
-                    "resources/greystar.png")))));
+                    "resources/Greystar.png")))));
         }
     }
 

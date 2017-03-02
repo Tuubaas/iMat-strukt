@@ -38,7 +38,7 @@
                   <Insets left="5.0" />
                </GridPane.margin>
                <image>
-                  <Image url="@../../../../resources/stickfigure.png" />
+                  <Image url="@../../../../resources/StickFigure.png" />
                </image>
             </ImageView>
             <Label fx:id="priceLabel" prefHeight="17.0" prefWidth="96.0" text="Price" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
@@ -74,7 +74,7 @@
                   <Insets top="20.0" />
                </GridPane.margin>
                <image>
-                  <Image url="@/resources/greystar.png" />
+                  <Image url="@/resources/Greystar.png" />
                </image>
             </ImageView>
          </children>

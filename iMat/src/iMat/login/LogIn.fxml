@@ -76,7 +76,7 @@
         </Button>
         <ImageView fx:id="exitImage" fitHeight="25.0" fitWidth="25.0" layoutX="61.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true" styleClass="exit-image" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <image>
-                <Image url="@../../resources/exit.png" />
+                <Image url="@../../resources/Exit.png" />
             </image>
         </ImageView>
       <Label fx:id="loginWarning" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="459.0" prefHeight="20.0" prefWidth="230.0" textFill="RED" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="250.0">
