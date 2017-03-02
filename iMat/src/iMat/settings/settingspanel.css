@@ -1,0 +1,13 @@
+#window {
+    -fx-background-color: rgba(230, 230, 230, 150);
+    -fx-border-color: black;
+    -fx-border-width: 1;
+}
+
+#background {
+    -fx-background-color: rgba(0, 0, 0, 0.7);
+}
+
+.exit-image:hover{
+    -fx-background-color: lightblue;
+}

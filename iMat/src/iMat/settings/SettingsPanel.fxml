@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="background" fx:id="mainAnchor" maxHeight="1080.0" maxWidth="1920.0" minHeight="0.0" minWidth="0.0" onMouseClicked="#onMainPaneClicked" pickOnBounds="false" prefHeight="720.0" prefWidth="1280.0" stylesheets="@settingspanel.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.settings.SettingsPanelController">
+    <AnchorPane id="window" layoutX="390.0" layoutY="110.0" maxHeight="1080.0" minHeight="0.0" prefHeight="500.0" prefWidth="500.0" stylesheets="@settingspanel.css">
+      <children>
+         <SplitPane dividerPositions="0.2963709677419355" layoutX="56.0" layoutY="126.0" prefHeight="500.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+           <items>
+               <VBox maxWidth="200.0" prefHeight="200.0" prefWidth="100.0" spacing="2.0">
+                  <children>
+                     <Button mnemonicParsing="false" prefHeight="164.0" prefWidth="500.0" text="Button" />
+                     <Button mnemonicParsing="false" prefHeight="164.0" prefWidth="500.0" text="Button" />
+                     <Button mnemonicParsing="false" prefHeight="164.0" prefWidth="500.0" text="Button" />
+                  </children>
+                  <padding>
+                     <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                  </padding>
+               </VBox>
+             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                  <children>
+                     <StackPane prefHeight="496.0" prefWidth="363.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <children>
+                           <AnchorPane fx:id="personalPane" prefHeight="200.0" prefWidth="200.0" />
+                           <AnchorPane fx:id="paymentPane" prefHeight="200.0" prefWidth="200.0" />
+                           <AnchorPane fx:id="aboutPane" prefHeight="200.0" prefWidth="200.0" />
+                        </children>
+                     </StackPane>
+                  </children>
+               </AnchorPane>
+           </items>
+         </SplitPane>
+         <ImageView fx:id="exitImage" fitHeight="20.0" fitWidth="20.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+            <image>
+               <Image url="@../../resources/Exit.png" />
+            </image>
+         </ImageView>
+      </children>
+    </AnchorPane>
+</AnchorPane>

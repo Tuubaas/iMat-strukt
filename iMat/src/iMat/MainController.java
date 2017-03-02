@@ -183,7 +183,7 @@ public class MainController implements Initializable {
     /**
      * Uppdaterar sig själv och alla subcontrollers
      */
-    public void update(){
+    public void update() {
         headerController.update();
         shopController.update();
     }

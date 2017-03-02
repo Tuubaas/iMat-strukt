@@ -44,7 +44,5 @@ public class WelcomePageController implements Initializable {
 
     public void setWidth(int width) {
         mainPane.setPrefWidth(width);
-        startButton.setLayoutX(width/2 - startButton.getPrefWidth() / 2);
-        welcomeText.setLayoutX(width/2 - welcomeText.getPrefWidth() / 2);
     }
 }
