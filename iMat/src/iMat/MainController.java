@@ -10,7 +10,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.ait.dat215.project.Product;
-import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -114,12 +113,13 @@ public class MainController implements Initializable {
         showHeader(true);
         checkoutAnchor.setVisible(true);
         checkoutAnchor.toFront();
+        headerController.setSearchBarVisible(false);
     }
 
     public void showHeader(boolean flag) {
         if (flag) {
             headerAnchor.toFront();
-            headerController.updateState();
+            headerController.update();
         } else {
             headerAnchor.toBack();
         }
@@ -172,16 +172,19 @@ public class MainController implements Initializable {
      */
     public void login() {
         this.isLoggedIn = true;
-        headerController.updateState();
+        headerController.update();
     }
 
     public void logout() {
         this.isLoggedIn = false;
-        headerController.updateState();
+        headerController.update();
     }
 
-    public void addToCart(ShoppingItem item){
-        shopController.addToCart(item);
+    /**
+     * Uppdaterar sig själv och alla subcontrollers
+     */
+    public void update(){
+        headerController.update();
+        shopController.update();
     }
-
 }

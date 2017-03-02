@@ -88,7 +88,10 @@ public class ShopController implements Initializable {
         centerViewController.goToPurchaseHistory();
     }
 
-    public void addToCart(ShoppingItem item){
-        shoppingCartController.add(item);
+    /**
+     * Uppdaterar sig själv och alla subcontrollers.
+     */
+    public void update(){
+        shoppingCartController.update();
     }
 }

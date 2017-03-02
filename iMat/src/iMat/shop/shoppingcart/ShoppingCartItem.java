@@ -1,5 +1,7 @@
 package iMat.shop.shoppingcart;
 
+import iMat.BackendWrapper;
+import iMat.MainController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -14,6 +16,7 @@ public class ShoppingCartItem extends Pane {
 
     private ShoppingItem item;
     private ShoppingCartController shoppingCartController;
+    private BackendWrapper wrapper = MainController.getBackendWrapper();
 
     @FXML
     private Button removeButton;
@@ -25,6 +28,7 @@ public class ShoppingCartItem extends Pane {
     private Label priceTotalLabel;
 
     public ShoppingCartItem(ShoppingItem item, ShoppingCartController scc) {
+        this.shoppingCartController = scc;
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(
                 "ShoppingCartItem.fxml"));
         fxmlLoader.setRoot(this);
@@ -35,10 +39,14 @@ public class ShoppingCartItem extends Pane {
             throw new RuntimeException(exception);
         }
 
-        this.shoppingCartController = scc;
         updateItem(item);
-
-        amountField.textProperty().addListener((observable, oldValue, newValue) -> amountChanged(Double.parseDouble(newValue)));
+        amountField.textProperty().addListener((observable, oldValue, newValue) -> {
+            try {
+                amountChanged(Double.parseDouble(newValue));
+            } catch (NumberFormatException e) {
+                amountChanged(Double.parseDouble(oldValue));
+            }
+        });
     }
 
     public void updateItem(ShoppingItem item) {
@@ -46,7 +54,7 @@ public class ShoppingCartItem extends Pane {
 
         this.productNameLabel.setText(item.getProduct().getName());
         this.amountField.setText(String.valueOf(item.getAmount()));
-        this.priceTotalLabel.setText(String.valueOf(item.getTotal()));
+        this.priceTotalLabel.setText(String.valueOf(item.getTotal()) + " kr");
     }
 
     @FXML
@@ -57,7 +65,8 @@ public class ShoppingCartItem extends Pane {
 
     @FXML
     public void onRemoveButtonClicked() {
-        shoppingCartController.remove(this);
+        wrapper.getShoppingCart().removeItem(this.item);
+        shoppingCartController.update();
     }
 
     public ShoppingItem getShoppingItem() {

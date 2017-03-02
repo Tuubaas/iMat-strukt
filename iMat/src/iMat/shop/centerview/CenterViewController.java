@@ -16,7 +16,7 @@ import java.util.Set;
 
 public class CenterViewController implements Initializable {
 
-    private ShopController sc;
+    private ShopController shopController;
 
     @FXML
     private AnchorPane mainAnchor;
@@ -52,7 +52,7 @@ public class CenterViewController implements Initializable {
     }
 
     public void injectShopContoller(ShopController sc) {
-        this.sc = sc;
+        this.shopController = sc;
     }
 
     public void setHeight(int height) {
@@ -108,7 +108,7 @@ public class CenterViewController implements Initializable {
         purchaseHistoryAnchor.setVisible(false);
     }
 
-    public void addToCart(ShoppingItem item){
-        sc.addToCart(item);
+    public ShopController getShopController() {
+        return shopController;
     }
 }

@@ -6,6 +6,8 @@
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -17,7 +19,7 @@
    <children>
       <AnchorPane id="mainAnchor" fx:id="headerAnchor" layoutY="15.0" prefHeight="120.0" stylesheets="@header.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane fx:id="searchPane" layoutX="480.0" layoutY="34.0" maxWidth="700.0" prefHeight="40.0" prefWidth="400.0" scaleShape="false" AnchorPane.topAnchor="35.0">
+            <AnchorPane fx:id="searchPane" layoutX="439.0" layoutY="38.0" maxWidth="700.0" prefHeight="40.0" prefWidth="400.0" scaleShape="false" AnchorPane.topAnchor="38.0">
                <children>
                   <TextField fx:id="searchField" onAction="#onSearchPerformed" prefHeight="44.0" prefWidth="335.0" promptText="Ex. mjölk, bröd..." AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="0.0">
                      <font>
@@ -85,11 +87,11 @@
                   </AnchorPane>
                </children>
             </StackPane>
-            <Label id="logga" fx:id="iMatLabel" alignment="CENTER" layoutX="12.0" layoutY="12.0" prefHeight="100.0" prefWidth="153.0" text="iMat" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="11.0" AnchorPane.topAnchor="11.0">
-               <font>
-                  <Font size="64.0" />
-               </font>
-            </Label>
+            <ImageView fx:id="logo" fitHeight="120.0" fitWidth="280.0" layoutX="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <image>
+                  <Image url="@../../resources/iMat-logo.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>

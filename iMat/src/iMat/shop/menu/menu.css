@@ -15,6 +15,7 @@
     -fx-pref-height: 25;
     -fx-pref-width: 250;
     -fx-padding: 0 0 0 35;
+    -fx-base: darkgrey;
 }
 
 .v-box {
@@ -25,8 +26,10 @@
     -fx-font-size: 18;
     -fx-alignment: center-left;
     -fx-padding: 0 0 0 35;
+    -fx-base: darkgrey;
 }
 
 .titled-pane {
     -fx-animated: true;
+    -fx-base: darkgrey;
 }

@@ -1,35 +1,44 @@
 package iMat.shop.shoppingcart;
 
+import iMat.BackendWrapper;
+import iMat.MainController;
 import iMat.shop.ShopController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.VBox;
+import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-/**
- * Created by SaraLandfors on 2/22/17.
- */
 public class ShoppingCartController implements Initializable {
 
+    /*
+    Denna klass speglar endast vad som finns i IMatDataHandler.getInstance().getShoppingCart();
+    För att se till att den är uppdaterad bör update() i MainController kallas när det är lämpligt.
+     */
+
     private ShopController sc;
+    private BackendWrapper wrapper = MainController.getBackendWrapper();
 
     @FXML
     private AnchorPane mainAnchor;
     @FXML
     private Button goToCheckoutButton;
     @FXML
-    private FlowPane flowPane;
+    private VBox itemBox;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        itemBox.alignmentProperty().setValue(Pos.TOP_CENTER);
+        update();
     }
 
     public void injectShopController(ShopController sc){
@@ -42,25 +51,13 @@ public class ShoppingCartController implements Initializable {
 
     public void onGoToCheckoutButtonClicked(){
         sc.getMainController().goToCheckout();
-        sc.getMainController().setSearchBarVisible(false);
     }
 
-    public void remove(ShoppingCartItem item){
-        flowPane.getChildren().remove(item);
-    }
+    public void update(){
+        itemBox.getChildren().clear();
 
-    public void add(ShoppingItem item){
-        flowPane.getChildren().add(new ShoppingCartItem(item, this));
-    }
-
-    public void remove(ShoppingItem item){
-        for(Node node : flowPane.getChildren()){
-            if(node instanceof ShoppingCartItem){
-                ShoppingCartItem cartItem = (ShoppingCartItem) node;
-                if(cartItem.getShoppingItem().getProduct().equals(item.getProduct())){
-                    flowPane.getChildren().remove(cartItem);
-                }
-            }
+        for(ShoppingItem p : wrapper.getShoppingCart().getItems()){
+            itemBox.getChildren().add(new ShoppingCartItem(p, this));
         }
     }
 }

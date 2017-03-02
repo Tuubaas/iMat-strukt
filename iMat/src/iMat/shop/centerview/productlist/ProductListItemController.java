@@ -1,5 +1,6 @@
 package iMat.shop.centerview.productlist;
 
+import iMat.BackendWrapper;
 import iMat.MainController;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -23,6 +24,7 @@ public class ProductListItemController extends AnchorPane {
 
     private final Product product;
     private ProductListController productListController;
+    private BackendWrapper wrapper = MainController.getBackendWrapper();
 
     @FXML
     private AnchorPane mainAnchor;
@@ -76,7 +78,8 @@ public class ProductListItemController extends AnchorPane {
 
     @FXML
     public void onAddBtnClicked() {
-        productListController.addToCart(new ShoppingItem(this.product, spinner.valueProperty().getValue()));
+        wrapper.getShoppingCart().addItem(new ShoppingItem(this.product, spinner.valueProperty().getValue()));
+        productListController.getCenterViewController().getShopController().getMainController().update();
     }
 
     /*

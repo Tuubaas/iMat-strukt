@@ -9,14 +9,17 @@ import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
 import javafx.scene.control.TitledPane;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Border;
 
+import javax.swing.border.LineBorder;
+import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MenuController implements Initializable {
 
     private ShopController sc;
-    private BackendWrapper wrapper;
+    private BackendWrapper wrapper  = MainController.getBackendWrapper();;
 
     @FXML
     private AnchorPane mainAnchor;
@@ -146,12 +149,10 @@ public class MenuController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
     }
 
     public void injectShopController(ShopController sc) {
         this.sc = sc;
-        wrapper = MainController.getBackendWrapper();
     }
 
     public void setHeight(int height) {

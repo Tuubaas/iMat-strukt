@@ -9,27 +9,27 @@
             <fx:include fx:id="header" source="header/Header.fxml" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="welcomePageAnchor" prefHeight="720.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="welcomePageAnchor" maxHeight="1080.0" maxWidth="1920.0" minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <fx:include fx:id="welcomePage" source="welcomepage/WelcomePage.fxml" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="purchaseDoneAnchor" prefHeight="720.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="purchaseDoneAnchor" maxHeight="1080.0" maxWidth="1920.0" minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <fx:include fx:id="purchaseDone" source="purchasedone/PurchaseDone.fxml" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="shopAnchor" maxHeight="1080.0" maxWidth="1920.0" prefHeight="500.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
+      <AnchorPane fx:id="shopAnchor" maxHeight="1080.0" maxWidth="1920.0" minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
          <children>
             <fx:include fx:id="shop" source="shop/Shop.fxml" />
          </children>
          </AnchorPane>
-      <AnchorPane fx:id="checkoutAnchor" prefHeight="500.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
+      <AnchorPane fx:id="checkoutAnchor" maxHeight="1080.0" maxWidth="1920.0" prefHeight="500.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
          <children>
             <fx:include fx:id="checkout" source="checkout/Checkout.fxml" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="logInAnchor" prefHeight="720.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="logInAnchor" maxHeight="1080.0" maxWidth="1920.0" prefHeight="720.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <fx:include fx:id="logIn" source="login/LogIn.fxml" />
          </children>

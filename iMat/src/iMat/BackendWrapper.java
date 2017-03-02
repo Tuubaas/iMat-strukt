@@ -1,10 +1,7 @@
 package iMat;
 
 import javafx.scene.image.Image;
-import se.chalmers.ait.dat215.project.Customer;
-import se.chalmers.ait.dat215.project.IMatDataHandler;
-import se.chalmers.ait.dat215.project.Product;
-import se.chalmers.ait.dat215.project.User;
+import se.chalmers.ait.dat215.project.*;
 
 import java.util.Arrays;
 import java.util.LinkedHashSet;
@@ -12,6 +9,8 @@ import java.util.List;
 import java.util.Set;
 
 public class BackendWrapper {
+
+    private static final IMatDataHandler datahandler = IMatDataHandler.getInstance();
 
     /*
     Singleton
@@ -33,73 +32,92 @@ public class BackendWrapper {
         initMainCategories();
     }
 
-    private static final IMatDataHandler datahandler = IMatDataHandler.getInstance();
 
+
+
+    /**
+     * Ger tillbaka en produkts bild i sin originalstorlek.
+     */
     public Image getFXImage(Product p) {
         return datahandler.getFXImage(p);
     }
 
+    /**
+     * Ger tillbaka en produkts bild i specifik storlek. preserveRatio gör att bilden håller sina proportioner.
+     */
     public Image getFXImage(Product p, double width, double height, boolean preserveRatio) {
         return datahandler.getFXImage(p, width, height, preserveRatio);
     }
 
+    /**
+     * Ger tillbaka en produkts bild i specifik storlek.
+     */
     public Image getFXImage(Product p, double width, double height) {
         return datahandler.getFXImage(p, width, height);
     }
 
-    /*
-    Söker i databasen med hjälp av en sträng och ger tillbaka sökresultaten i ett Set<Product>
+    /**
+     * Söker i databasen med hjälp av en sträng och ger tillbaka sökresultaten i ett Set<Product>
      */
     public Set<Product> search(String searchTerms) {
         List<Product> list = datahandler.findProducts(searchTerms);
         return new LinkedHashSet<>(list);
     }
 
-    /*
-    Ger tillbaka alla favoriter
+    /**
+     * Ger tillbaka alla favoriter
      */
     public Set<Product> getFavourites() {
         return new LinkedHashSet<>(datahandler.favorites());
     }
 
-    /*
-    Kollar om en specifik produkt är en favorit
+    /**
+     * Kollar om en specifik produkt är en favorit
      */
     public boolean isFavorite(Product p) {
         return datahandler.isFavorite(p);
     }
 
-    /*
-    Lägger till en specifik produkt som favorit
+    /**
+     * Lägger till en specifik produkt som favorit
      */
     public void addFavorite(Product p) {
         datahandler.addFavorite(p);
     }
 
-    /*
-    Tar bort en specifik produkt som favorit
+    /**
+     * Tar bort en specifik produkt som favorit
      */
     public void removeFavorite(Product p) {
         datahandler.removeFavorite(p);
     }
 
-    /*
-       Makes sure data is saved before shutting down application
+    /**
+     * Sparar all data. Ska kallas innan nedstängning av programmet.
      */
     public void shutDown() {
         datahandler.shutDown();
     }
 
-    /*
-
+    /**
+     * Ger tillbaka User-objektet som finns i datahandlern.
      */
-
     public User getUser() {
         return datahandler.getUser();
     }
 
+    /**
+     * Ger tillbaka Customer-objektet som finns i datahandlern.
+     */
     public Customer getCustomer() {
         return datahandler.getCustomer();
+    }
+
+    /**
+     * Ger tillbaka ShoppingCarten som finns i datahandlern.
+     */
+    public ShoppingCart getShoppingCart(){
+        return datahandler.getShoppingCart();
     }
 
 

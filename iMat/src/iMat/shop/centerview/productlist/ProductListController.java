@@ -67,7 +67,7 @@ public class ProductListController implements Initializable {
         this.centerViewController = cw;
     }
 
-    public void addToCart(ShoppingItem item){
-        centerViewController.addToCart(item);
+    public CenterViewController getCenterViewController() {
+        return centerViewController;
     }
 }

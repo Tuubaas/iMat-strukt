@@ -1,0 +1,7 @@
+.pane{
+    -fx-border-color: black;
+    -fx-border-width: 1;
+    -fx-border-radius: 4;
+
+    /* top-left, top-right, bottom-right, and bottom-left corners, in that order. */
+}

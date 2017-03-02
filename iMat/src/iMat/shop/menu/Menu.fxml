@@ -137,12 +137,12 @@
                   </TitledPane>
               </panes>
             </Accordion>
-            <Button fx:id="favoriteButton" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onFavoriteButtonClicked" prefHeight="40.0" prefWidth="249.0" text="Favoriter">
+            <Button fx:id="favoriteButton" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onFavoriteButtonClicked" prefHeight="39.0" prefWidth="250.0" text="Favoriter">
                <padding>
                   <Insets left="35.0" />
                </padding>
             </Button>
-            <Button fx:id="historyButton" mnemonicParsing="false" onAction="#onHistoryButtonClicked" prefHeight="40.0" prefWidth="240.0" text="Tidigare köp" GridPane.rowIndex="1">
+            <Button fx:id="historyButton" mnemonicParsing="false" onAction="#onHistoryButtonClicked" prefHeight="39.0" prefWidth="250.0" text="Tidigare köp" GridPane.rowIndex="1">
                <padding>
                   <Insets left="35.0" />
                </padding>

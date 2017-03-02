@@ -1,14 +1,19 @@
 package iMat.header;
 
+import com.sun.org.apache.xpath.internal.SourceTree;
 import iMat.MainController;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -36,7 +41,7 @@ public class HeaderController implements Initializable {
     @FXML
     private MenuButton accountMenuButton;
     @FXML
-    private Label iMatLabel;
+    private ImageView logo;
     @FXML
     private Label eMailLabel;
     @FXML
@@ -45,7 +50,20 @@ public class HeaderController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        iMatLabel.setOnMouseClicked(event -> mc.goToShopHome());
+        logo.setOnMouseEntered(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                logo.setImage(new Image(String.valueOf(getClass().getClassLoader().getResource("resources/iMat-logoHOVER.png"))));
+            }
+        });
+
+        logo.setOnMouseExited(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                logo.setImage(new Image(String.valueOf(getClass().getClassLoader().getResource("resources/iMat-logo.png"))));
+            }
+        });
+        logo.setOnMouseClicked(event -> mc.goToShopHome());
     }
 
     public void injectMainController(MainController mc) {
@@ -58,7 +76,7 @@ public class HeaderController implements Initializable {
         searchPane.setPrefWidth(width / 3);
     }
 
-    public void updateState() {
+    public void update() {
         updateLoginState();
     }
 
