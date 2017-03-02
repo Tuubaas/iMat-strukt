@@ -2,6 +2,8 @@ package iMat.checkout.confirmation;
 
 
 import iMat.checkout.CheckoutController;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 import java.net.URL;
@@ -18,5 +20,10 @@ public class ConfirmationController implements Initializable{
 
     public void injectCheckoutController(CheckoutController cc){
         this.cc = cc;
+    }
+
+    @FXML
+    public void onConfirmationNextButtonClicked() {
+
     }
 }

@@ -1,6 +1,7 @@
 package iMat.checkout.cartconfirmation;
 
 import iMat.checkout.CheckoutController;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -33,6 +34,9 @@ public class CartConfirmationController implements Initializable{
     public void injectCheckoutController(CheckoutController cc){
         this.cc = cc;
     }
+    
 
-
+    @FXML
+    public void onConfirmCartNextButtonClicked() {
+    }
 }
