@@ -120,6 +120,13 @@ public class BackendWrapper {
         return datahandler.getShoppingCart();
     }
 
+    /**
+     * Ger tillbaka Creditcard-objektet som finns i datahandlern.
+     */
+    public CreditCard getCreditCard(){
+        return datahandler.getCreditCard();
+    }
+
 
     /* Lists of subcategories for products (which category contains products with what
       product ID?)

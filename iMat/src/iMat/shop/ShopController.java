@@ -45,9 +45,9 @@ public class ShopController implements Initializable {
 
         mainAnchor.heightProperty().addListener((observable, oldValue, newValue) -> {
             int value = newValue.intValue();
-            shoppingCartController.setHeight((int) (value - mc.headerAnchor.getHeight()));
-            menuController.setHeight((int) (value - mc.headerAnchor.getHeight()));
-            centerViewController.setHeight((int) (value - mc.headerAnchor.getHeight()));
+            shoppingCartController.setHeight((int) (value - 120));
+            menuController.setHeight((int) (value - 120));
+            centerViewController.setHeight((int) (value - 120));
         });
 
         mainAnchor.widthProperty().addListener((observable, oldValue, newValue) -> {
