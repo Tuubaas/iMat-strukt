@@ -3,6 +3,7 @@ package iMat.shop.centerview.shophome;
 import iMat.shop.centerview.CenterViewController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
@@ -20,6 +21,7 @@ public class ShopHomeController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        image.setImage(new Image(String.valueOf(getClass().getClassLoader().getResource("resources/Store.jpg"))));
     }
 
     public void setHeight(int height) {

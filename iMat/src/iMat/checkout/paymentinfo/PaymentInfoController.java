@@ -28,14 +28,6 @@ public class PaymentInfoController implements Initializable {
     @FXML
     private ImageView paymentInfoCardTemplatePic;
     @FXML
-    private ImageView paymentInfoVisaPic;
-    @FXML
-    private ImageView paymentInfoMasterCardPic;
-    @FXML
-    private RadioButton visaRadioButton;
-    @FXML
-    private RadioButton masterCardRadioButton;
-    @FXML
     private ChoiceBox paymentInfoExpireMonth;
     @FXML
     private ChoiceBox paymentInfoExpireYear;
@@ -43,6 +35,8 @@ public class PaymentInfoController implements Initializable {
     private TextField paymentInfoCardHolder;
     @FXML
     private TextField paymentInfoCardNumber;
+    @FXML
+    private TextField paymentInfoCardCVC;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -63,5 +57,24 @@ public class PaymentInfoController implements Initializable {
         cc.onPaymentInfoBackButtonClicked();
     }
 
+    public String getCardHolder(){
+        return paymentInfoCardHolder.getText();
+    }
+
+    public String getCardNumber(){
+        return paymentInfoCardNumber.getText();
+    }
+
+    public String getCardExpireMonth(){
+        return paymentInfoExpireMonth.getValue().toString();
+    }
+
+    public String getCardExpireYear(){
+        return paymentInfoExpireYear.getValue().toString();
+    }
+
+    public String getCardCVC(){
+        return paymentInfoCardCVC.getText();
+    }
 
 }
