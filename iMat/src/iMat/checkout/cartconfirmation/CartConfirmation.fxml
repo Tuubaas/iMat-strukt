@@ -12,7 +12,7 @@
           <AnchorPane fx:id="cartConfirmationScrollAnchor" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
         </content>
       </ScrollPane>
-      <Button fx:id="cartConfirmationBackButton" layoutX="52.0" layoutY="337.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Tillbaka" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="40.0">
+      <Button fx:id="cartConfirmationBackButton" layoutX="52.0" layoutY="337.0" mnemonicParsing="false" onAction="#onCartConfirmationBackButton" prefHeight="40.0" prefWidth="120.0" text="Tillbaka" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="40.0">
          <font>
             <Font size="18.0" />
          </font>

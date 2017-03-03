@@ -11,7 +11,7 @@ import java.util.ResourceBundle;
 
 public class ConfirmationController implements Initializable{
 
-    CheckoutController cc;
+    private CheckoutController cc;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -22,8 +22,14 @@ public class ConfirmationController implements Initializable{
         this.cc = cc;
     }
 
-    @FXML
     public void onConfirmationNextButtonClicked() {
-
+        cc.onConfirmationNextButtonClicked();
     }
+
+    public void onConfirmationBackButtonClicked(){
+        cc.onConfirmationBackButtonClicked();
+    }
+
+
+
 }

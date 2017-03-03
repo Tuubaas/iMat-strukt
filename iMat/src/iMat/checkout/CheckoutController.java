@@ -78,8 +78,10 @@ public class CheckoutController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         cartConfirmationController.injectCheckoutController(this);
+        deliveryInfoController.injectCheckoutController(this);
+        paymentInfoController.injectCheckoutController(this);
+        confirmationController.injectCheckoutController(this);
     }
-
 
     public void injectMainController(MainController mc){
         this.mc = mc;
@@ -115,4 +117,25 @@ public class CheckoutController implements Initializable {
         mc.purchaseDoneAnchor.setVisible(true);
         mc.purchaseDoneAnchor.toFront();
     }
+
+    public void onCartConfirmationBackButtonClicked(){
+        mc.mainAnchor.setVisible(true);
+        mc.mainAnchor.toFront();
+    }
+
+    public void onDeliveryInfoBackButtonClicked(){
+        loggedInCartConfirmationAnchor.setVisible(true);
+        loggedInCartConfirmationAnchor.toFront();
+    }
+
+    public void onPaymentInfoBackButtonClicked(){
+        loggedInDeliveryInfoAnchor.setVisible(true);
+        loggedInDeliveryInfoAnchor.toFront();
+    }
+
+    public void onConfirmationBackButtonClicked(){
+        loggedInPaymentInfoAnchor.setVisible(true);
+        loggedInPaymentInfoAnchor.toFront();
+    }
+
 }

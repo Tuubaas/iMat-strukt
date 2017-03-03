@@ -13,7 +13,7 @@ import java.util.ResourceBundle;
 
 public class CartConfirmationController implements Initializable{
 
-    CheckoutController cc;
+    private CheckoutController cc;
 
     @FXML
     private Button cartConfirmationNextButton;
@@ -38,5 +38,10 @@ public class CartConfirmationController implements Initializable{
 
     @FXML
     public void onConfirmCartNextButtonClicked() {
+        cc.onConfirmCartNextButtonClicked();
+    }
+
+    public void onCartConfirmationBackButton(){
+        cc.onCartConfirmationBackButtonClicked();
     }
 }

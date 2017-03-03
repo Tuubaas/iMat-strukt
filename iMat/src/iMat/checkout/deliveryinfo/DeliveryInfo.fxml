@@ -6,50 +6,50 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="1040.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.checkout.CheckoutController">
+<AnchorPane fx:id="deliveryInfoAnchor" prefHeight="400.0" prefWidth="1040.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.checkout.deliveryinfo.DeliveryInfoController">
    <children>
       <Label alignment="CENTER_RIGHT" layoutX="304.0" layoutY="51.0" prefWidth="139.0" text="Förnamn:" AnchorPane.leftAnchor="300.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="454.0" layoutY="51.0" prefHeight="27.0" prefWidth="267.0" AnchorPane.leftAnchor="450.0" AnchorPane.topAnchor="51.0" />
+      <TextField fx:id="deliveryInfoFirstName" layoutX="454.0" layoutY="51.0" prefHeight="27.0" prefWidth="267.0" AnchorPane.leftAnchor="450.0" AnchorPane.topAnchor="51.0" />
       <Label alignment="CENTER_RIGHT" layoutX="304.0" layoutY="89.0" prefWidth="139.0" text="Efternamn:" AnchorPane.leftAnchor="300.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="454.0" layoutY="89.0" prefHeight="27.0" prefWidth="267.0" AnchorPane.leftAnchor="450.0" AnchorPane.topAnchor="89.0" />
+      <TextField fx:id="deliveryInfoLastName" layoutX="454.0" layoutY="89.0" prefHeight="27.0" prefWidth="267.0" AnchorPane.leftAnchor="450.0" AnchorPane.topAnchor="89.0" />
       <Label alignment="CENTER_RIGHT" layoutX="304.0" layoutY="165.0" prefWidth="139.0" text="Adress:" AnchorPane.leftAnchor="300.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="454.0" layoutY="127.0" prefHeight="27.0" prefWidth="134.0" AnchorPane.leftAnchor="450.0" AnchorPane.topAnchor="127.0" />
+      <TextField fx:id="deliveryInfoPostCode" layoutX="454.0" layoutY="127.0" prefHeight="27.0" prefWidth="134.0" AnchorPane.leftAnchor="450.0" AnchorPane.topAnchor="127.0" />
       <Label alignment="CENTER_RIGHT" layoutX="304.0" layoutY="127.0" prefWidth="139.0" text="Postkod:" AnchorPane.leftAnchor="300.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="454.0" layoutY="165.0" prefHeight="27.0" prefWidth="267.0" AnchorPane.leftAnchor="450.0" AnchorPane.topAnchor="165.0" />
+      <TextField fx:id="deliveryInfoAdress" layoutX="454.0" layoutY="165.0" prefHeight="27.0" prefWidth="267.0" AnchorPane.leftAnchor="450.0" AnchorPane.topAnchor="165.0" />
       <Label alignment="CENTER_RIGHT" layoutX="304.0" layoutY="241.0" prefWidth="139.0" text="Postort:" AnchorPane.leftAnchor="300.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="454.0" layoutY="203.0" prefHeight="27.0" prefWidth="267.0" AnchorPane.leftAnchor="450.0" AnchorPane.topAnchor="203.0" />
+      <TextField fx:id="deliveryInfoMail" layoutX="454.0" layoutY="203.0" prefHeight="27.0" prefWidth="267.0" AnchorPane.leftAnchor="450.0" AnchorPane.topAnchor="203.0" />
       <Label alignment="CENTER_RIGHT" layoutX="304.0" layoutY="203.0" prefWidth="139.0" text="e-mailadress:" AnchorPane.leftAnchor="300.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="454.0" layoutY="241.0" prefHeight="27.0" prefWidth="267.0" AnchorPane.leftAnchor="450.0" AnchorPane.topAnchor="241.0" />
+      <TextField fx:id="deliveryInfoCity" layoutX="454.0" layoutY="241.0" prefHeight="27.0" prefWidth="267.0" AnchorPane.leftAnchor="450.0" AnchorPane.topAnchor="241.0" />
       <Label alignment="CENTER_RIGHT" layoutX="304.0" layoutY="279.0" text="Telefonnummer:" AnchorPane.leftAnchor="300.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="454.0" layoutY="279.0" prefHeight="27.0" prefWidth="267.0" AnchorPane.leftAnchor="450.0" AnchorPane.topAnchor="279.0" />
+      <TextField fx:id="deliveryInfoPhone" layoutX="454.0" layoutY="279.0" prefHeight="27.0" prefWidth="267.0" AnchorPane.leftAnchor="450.0" AnchorPane.topAnchor="279.0" />
       <Label alignment="CENTER_RIGHT" layoutX="304.0" layoutY="317.0" prefWidth="139.0" text="Tid för leverans:" AnchorPane.leftAnchor="300.0">
          <font>
             <Font size="18.0" />
