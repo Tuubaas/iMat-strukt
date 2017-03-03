@@ -57,7 +57,6 @@ public class DeliveryInfoController implements Initializable{
 
     public void onDeliveryInfoBackButtonClicked(){
         cc.onDeliveryInfoBackButtonClicked();
-        //hej
     }
 
 }

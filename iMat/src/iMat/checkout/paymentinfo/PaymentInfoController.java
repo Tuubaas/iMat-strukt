@@ -57,5 +57,7 @@ public class PaymentInfoController implements Initializable {
         cc.onPaymentInfoNextButtonClicked();
     }
 
-    //public void
+    public void onPaymentInfoBackButtonClicked(){
+        cc.onPaymentInfoBackButtonClicked();
+    }
 }

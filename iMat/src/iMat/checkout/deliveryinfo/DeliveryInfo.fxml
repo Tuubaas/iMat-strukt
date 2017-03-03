@@ -68,7 +68,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="deliveryInfoBackButton" layoutX="42.0" layoutY="327.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Tillbaka" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="40.0">
+      <Button fx:id="deliveryInfoBackButton" layoutX="42.0" layoutY="327.0" mnemonicParsing="false" onAction="#onDeliveryInfoBackButtonClicked" prefHeight="40.0" prefWidth="120.0" text="Tillbaka" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="40.0">
          <font>
             <Font size="18.0" />
          </font>
