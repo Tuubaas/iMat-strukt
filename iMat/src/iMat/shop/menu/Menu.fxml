@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainAnchor" prefHeight="1080.0" prefWidth="240.0" stylesheets="@menu.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.shop.menu.MenuController">
+<AnchorPane fx:id="mainAnchor" prefHeight="1080.0" prefWidth="240.0" stylesheets="@menu.css" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.shop.menu.MenuController">
    <children>
       <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <columnConstraints>
@@ -64,6 +64,12 @@
                               </VBox>
                            </children></AnchorPane>
                   </content>
+                     <opaqueInsets>
+                        <Insets top="5.0" />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
                 </TitledPane>
                 <TitledPane fx:id="category3" animated="false" onMouseClicked="#onMeatFishBirdTiledPaneClicked" text="Kött, fisk och fågel">
                   <content>
@@ -78,6 +84,12 @@
                               </VBox>
                            </children></AnchorPane>
                   </content>
+                     <opaqueInsets>
+                        <Insets top="555551.0" />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
                 </TitledPane>
                   <TitledPane fx:id="category4" animated="false" onMouseClicked="#onBreadAndPastriesTiledPaneClicked" text="Bröd och bakverk">
                      <content>
@@ -91,6 +103,12 @@
                               </VBox>
                            </children></AnchorPane>
                      </content>
+                     <opaqueInsets>
+                        <Insets top="5.0" />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
                   </TitledPane>
                   <TitledPane fx:id="category5" animated="false" onMouseClicked="#onDryProductsTiledPaneClicked" text="Torrvaror">
                      <content>
@@ -107,6 +125,12 @@
                               </VBox>
                            </children></AnchorPane>
                      </content>
+                     <opaqueInsets>
+                        <Insets top="5.0" />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
                   </TitledPane>
                   <TitledPane fx:id="category6" animated="false" onMouseClicked="#onCandyAndSnacksTiledPaneClicked" text="Godis och snacks">
                      <content>
@@ -122,6 +146,12 @@
                               </VBox>
                            </children></AnchorPane>
                      </content>
+                     <opaqueInsets>
+                        <Insets top="5.0" />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
                   </TitledPane>
                   <TitledPane fx:id="category7" animated="false" onMouseClicked="#onDrinksTiledPaneClicked" text="Dryck">
                      <content>
@@ -134,15 +164,16 @@
                               </VBox>
                            </children></AnchorPane>
                      </content>
+                     <opaqueInsets>
+                        <Insets top="5.0" />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
                   </TitledPane>
               </panes>
             </Accordion>
             <Button fx:id="favoriteButton" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onFavoriteButtonClicked" prefHeight="39.0" prefWidth="250.0" text="Favoriter">
-               <padding>
-                  <Insets left="35.0" />
-               </padding>
-            </Button>
-            <Button fx:id="historyButton" mnemonicParsing="false" onAction="#onHistoryButtonClicked" prefHeight="39.0" prefWidth="250.0" text="Tidigare köp" GridPane.rowIndex="1">
                <padding>
                   <Insets left="35.0" />
                </padding>
