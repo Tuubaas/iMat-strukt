@@ -2,23 +2,41 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane id="background" fx:id="mainAnchor" maxHeight="1080.0" maxWidth="1920.0" minHeight="0.0" minWidth="0.0" onMouseClicked="#onMainPaneClicked" pickOnBounds="false" prefHeight="720.0" prefWidth="1280.0" stylesheets="@settingspanel.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.settings.SettingsPanelController">
     <AnchorPane id="window" layoutX="390.0" layoutY="110.0" maxHeight="1080.0" minHeight="0.0" prefHeight="500.0" prefWidth="500.0" stylesheets="@settingspanel.css">
       <children>
          <SplitPane dividerPositions="0.2963709677419355" layoutX="56.0" layoutY="126.0" prefHeight="500.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
            <items>
-               <VBox maxWidth="200.0" prefHeight="200.0" prefWidth="100.0" spacing="2.0">
+               <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="120.0" spacing="2.0">
                   <children>
-                     <Button mnemonicParsing="false" prefHeight="164.0" prefWidth="500.0" text="Button" />
-                     <Button mnemonicParsing="false" prefHeight="164.0" prefWidth="500.0" text="Button" />
-                     <Button mnemonicParsing="false" prefHeight="164.0" prefWidth="500.0" text="Button" />
+                     <Button mnemonicParsing="false" onAction="#onPersonalInfoButtonClicked" prefHeight="164.0" prefWidth="500.0" text="Personlig information" textAlignment="CENTER" wrapText="true">
+                        <font>
+                           <Font size="18.0" />
+                        </font>
+                     </Button>
+                     <Button mnemonicParsing="false" onAction="#onPaymentInfoButtonClicked" prefHeight="164.0" prefWidth="500.0" text="Betalning">
+                        <font>
+                           <Font size="18.0" />
+                        </font>
+                     </Button>
+                     <Button mnemonicParsing="false" onAction="#onAboutButtonClicked" prefHeight="164.0" prefWidth="500.0" text="Om">
+                        <font>
+                           <Font size="18.0" />
+                        </font>
+                     </Button>
                   </children>
                   <padding>
                      <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
@@ -28,9 +46,92 @@
                   <children>
                      <StackPane prefHeight="496.0" prefWidth="363.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                         <children>
-                           <AnchorPane fx:id="personalPane" prefHeight="200.0" prefWidth="200.0" />
-                           <AnchorPane fx:id="paymentPane" prefHeight="200.0" prefWidth="200.0" />
-                           <AnchorPane fx:id="aboutPane" prefHeight="200.0" prefWidth="200.0" />
+                           <AnchorPane fx:id="personalPane" prefHeight="200.0" prefWidth="200.0" styleClass="informationPanes">
+                              <children>
+                                 <Line endX="240.0" layoutX="103.0" layoutY="105.0" startX="-100.0" />
+                                 <TextField fx:id="usernameField" editable="false" layoutX="14.0" layoutY="25.0" prefWidth="200.0" />
+                                 <Label layoutX="14.0" layoutY="54.0" text="Lösenord" />
+                                 <Label layoutX="14.0" layoutY="8.0" text="Användarnamn" />
+                                 <PasswordField fx:id="passwordField" editable="false" layoutX="14.0" layoutY="71.0" prefWidth="200.0" />
+                                 <TextField fx:id="firstnameField" editable="false" layoutX="14.0" layoutY="131.0" prefWidth="200.0" />
+                                 <Label layoutX="14.0" layoutY="114.0" text="Förnamn" />
+                                 <Button fx:id="personalActionButton" layoutX="263.0" layoutY="448.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" text="Ändra" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                                 <Label layoutX="14.0" layoutY="162.0" text="Efternamn" />
+                                 <TextField fx:id="lastnameField" editable="false" layoutX="14.0" layoutY="179.0" prefWidth="200.0" />
+                                 <TextField fx:id="addressField" editable="false" layoutX="14.0" layoutY="223.0" prefWidth="200.0" />
+                                 <Label layoutX="14.0" layoutY="206.0" text="Adress" />
+                                 <TextField fx:id="emailField" editable="false" layoutX="14.0" layoutY="323.0" prefWidth="200.0" />
+                                 <Label layoutX="14.0" layoutY="306.0" text="E-post" />
+                                 <TextField fx:id="phoneField" editable="false" layoutX="14.0" layoutY="373.0" prefWidth="200.0" />
+                                 <Label layoutX="14.0" layoutY="356.0" text="Telefon" />
+                                 <TextField fx:id="mobilePhoneField" editable="false" layoutX="14.0" layoutY="422.0" prefWidth="200.0" />
+                                 <Label layoutX="14.0" layoutY="405.0" text="Mobiltelefon" />
+                                 <TextField fx:id="postcodeField" editable="false" layoutX="14.0" layoutY="273.0" prefWidth="200.0" />
+                                 <Label layoutX="14.0" layoutY="256.0" text="Postkod" />
+                                 <ImageView fitHeight="50.0" fitWidth="68.0" layoutX="209.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+                                    <image>
+                                       <Image url="@../../resources/bentArrow.png" />
+                                    </image>
+                                 </ImageView>
+                                 <Label layoutX="243.0" layoutY="329.0" prefHeight="81.0" prefWidth="102.0" text="Tips!                      Vill du ändra några uppgifter trycker du här" wrapText="true">
+                                    <font>
+                                       <Font name="System Italic" size="12.0" />
+                                    </font>
+                                 </Label>
+                              </children>
+                           </AnchorPane>
+                           <AnchorPane fx:id="aboutPane" prefHeight="200.0" prefWidth="200.0" styleClass="informationPanes">
+                              <children>
+                                 <ImageView fitHeight="241.0" fitWidth="302.0" layoutX="22.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../../resources/about.jpg" />
+                                    </image>
+                                 </ImageView>
+                                 <Label layoutX="93.0" layoutY="26.0" text="iMat™">
+                                    <font>
+                                       <Font name="System Bold Italic" size="55.0" />
+                                    </font></Label>
+                                 <Label layoutX="121.0" layoutY="385.0" prefHeight="77.0" prefWidth="104.0" text="Sara Landfors Tobias Lindgren Julia Ortheden Zack Lundqvist" textAlignment="CENTER" wrapText="true" />
+                                 <Label layoutX="274.0" layoutY="462.0" prefHeight="40.0" prefWidth="72.0" text="Honorable mention Stack Overflow" wrapText="true">
+                                    <font>
+                                       <Font size="8.0" />
+                                    </font>
+                                 </Label>
+                              </children>
+                           </AnchorPane>
+                           <AnchorPane fx:id="paymentPane" prefHeight="200.0" prefWidth="200.0" styleClass="informationPanes">
+                              <children>
+                                 <Button fx:id="paymentActionButton" layoutX="216.0" layoutY="390.0" mnemonicParsing="false" onAction="#onPaymentActionButtonClicked" prefHeight="40.0" prefWidth="80.0" text="Ändra" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                                 <ImageView fitHeight="50.0" fitWidth="68.0" layoutX="199.0" layoutY="411.0" pickOnBounds="true" preserveRatio="true" rotate="49.4">
+                                    <image>
+                                       <Image url="@../../resources/bentArrow.png" />
+                                    </image>
+                                 </ImageView>
+                                 <Label layoutX="241.0" layoutY="338.0" prefHeight="81.0" prefWidth="102.0" text="Tips!                      Vill du ändra några uppgifter trycker du här" wrapText="true">
+                                    <font>
+                                       <Font name="System Italic" size="12.0" />
+                                    </font>
+                                 </Label>
+                                 <TextField fx:id="cardNumberField" disable="true" layoutX="20.0" layoutY="44.0" />
+                                 <Label layoutX="20.0" layoutY="27.0" text="Kortnummer" />
+                                 <Label layoutX="20.0" layoutY="78.0" text="Innehavarens namn" />
+                                 <TextField fx:id="holdersNameField" disable="true" layoutX="20.0" layoutY="95.0" />
+                                 <Label layoutX="21.0" layoutY="127.0" text="Korttyp" />
+                                 <TextField fx:id="securityCode" disable="true" layoutX="22.0" layoutY="249.0" prefHeight="25.0" prefWidth="254.0" />
+                                 <Label layoutX="22.0" layoutY="232.0" text="Säkerhetskod" />
+                                 <ComboBox fx:id="cardType" disable="true" layoutX="21.0" layoutY="144.0" prefWidth="150.0" />
+                                 <Label layoutX="22.0" layoutY="195.0" text="Giltigt till:" />
+                                 <ComboBox fx:id="validMonth" disable="true" layoutX="81.0" layoutY="192.0" prefHeight="25.0" prefWidth="55.0" />
+                                 <ComboBox fx:id="validYear" disable="true" layoutX="143.0" layoutY="192.0" prefHeight="25.0" prefWidth="76.0" />
+                                 <Label layoutX="82.0" layoutY="175.0" text="Månad" />
+                                 <Label layoutX="144.0" layoutY="175.0" text="År" />
+                                 <Label fx:id="cardNumberWarningLabel" layoutX="227.0" layoutY="47.0" prefHeight="17.0" prefWidth="114.0" text="Felaktig nummer!" textFill="#ff1515" visible="false" />
+                                 <Label fx:id="cardTypeWarningLabel" layoutX="227.0" layoutY="148.0" prefHeight="17.0" prefWidth="114.0" text="Måste anges" textFill="#ff1515" visible="false" />
+                                 <Label fx:id="holdersNameWarningLabel" layoutX="227.0" layoutY="99.0" prefHeight="17.0" prefWidth="114.0" text="Måste anges" textFill="#ff1515" visible="false" />
+                                 <Label fx:id="validityLabel" layoutX="226.0" layoutY="196.0" prefHeight="17.0" prefWidth="120.0" text="Måste anges" textFill="#ff1515" visible="false" />
+                                 <Label fx:id="verificationCodeWarningLabel" layoutX="226.0" layoutY="253.0" prefHeight="17.0" prefWidth="120.0" text="Måste anges" textFill="#ff1515" visible="false" />
+                              </children>
+                           </AnchorPane>
                         </children>
                      </StackPane>
                   </children>

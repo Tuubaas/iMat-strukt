@@ -4,6 +4,7 @@ import iMat.checkout.CheckoutController;
 import iMat.header.HeaderController;
 import iMat.login.LogInController;
 import iMat.purchasedone.PurchaseDoneController;
+import iMat.settings.SettingsPanelController;
 import iMat.shop.ShopController;
 import iMat.welcomepage.WelcomePageController;
 import javafx.fxml.FXML;
@@ -36,6 +37,8 @@ public class MainController implements Initializable {
     public AnchorPane checkoutAnchor;
     @FXML
     public AnchorPane purchaseDoneAnchor;
+    @FXML
+    public AnchorPane settingsAnchor;
 
     //Controllers
     @FXML
@@ -50,6 +53,8 @@ public class MainController implements Initializable {
     private HeaderController headerController;
     @FXML
     private PurchaseDoneController purchaseDoneController;
+    @FXML
+    private SettingsPanelController settingsPanelController;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -61,6 +66,7 @@ public class MainController implements Initializable {
         headerController.injectMainController(this);
         purchaseDoneController.injectMainController(this);
         logInController.injectMainController(this);
+        settingsPanelController.injectMainController(this);
 
         mainAnchor.widthProperty().addListener((observable, oldValue, newValue) -> {
             int value = newValue.intValue();
@@ -69,6 +75,7 @@ public class MainController implements Initializable {
             logInController.setWidth(value);
             welcomePageController.setWidth(value);
             purchaseDoneController.setWidth(value);
+            settingsPanelController.setWidth(value);
         });
         mainAnchor.heightProperty().addListener((observable, oldValue, newValue) -> {
             int value = newValue.intValue();
@@ -76,7 +83,10 @@ public class MainController implements Initializable {
             logInController.setHeight(value);
             welcomePageController.setHeight(value);
             purchaseDoneController.setHeight(value);
+            settingsPanelController.setHeight(value);
         });
+
+        update();
     }
 
     private void hideAllComponents() {
@@ -86,6 +96,7 @@ public class MainController implements Initializable {
         purchaseDoneAnchor.setVisible(false);
         showHeader(false);
         showLogin(false);
+        showSettings(false);
     }
 
     public void goToShop() {
@@ -135,6 +146,15 @@ public class MainController implements Initializable {
         logInAnchor.setVisible(flag);
     }
 
+    public void showSettings(boolean flag){
+        if(flag)
+            settingsAnchor.toFront();
+        else
+            settingsAnchor.toBack();
+
+        settingsAnchor.setVisible(flag);
+    }
+
     public boolean isLoggedIn() {
         return this.isLoggedIn;
     }
@@ -177,7 +197,7 @@ public class MainController implements Initializable {
 
     public void logout() {
         this.isLoggedIn = false;
-        headerController.update();
+        update();
     }
 
     /**
@@ -186,5 +206,6 @@ public class MainController implements Initializable {
     public void update() {
         headerController.update();
         shopController.update();
+        settingsPanelController.update();
     }
 }
