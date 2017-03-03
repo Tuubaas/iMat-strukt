@@ -144,4 +144,43 @@ public class LogInController implements Initializable {
 
         loginUsername.setText(userName);
     }
+
+
+    /**
+     * Nedanför är metoder som anropas när man trycker enter i dem olika textfälten som finns vid inloggning
+     */
+    @FXML
+    public void onLoginPasswordFieldAction(){
+        onLoginButtonClicked();
+    }
+
+    @FXML
+    public void onLoginUsernameFieldAction(){
+        loginPassword.requestFocus();
+    }
+
+    @FXML
+    public void onRegFirstNameFieldAction(){
+        regLastName.requestFocus();
+    }
+
+    @FXML
+    public void onRegLastNameFieldAction (){
+        regEMail.requestFocus();
+    }
+
+    @FXML
+    public void onRegEmailFieldAction (){
+        regUserName.requestFocus();
+    }
+
+    @FXML
+    public void onRegUsernameFieldAction (){
+        regPassword.requestFocus();
+    }
+
+    @FXML
+    public void onRegPasswordFieldAction (){
+        onRegButtonClicked();
+    }
 }

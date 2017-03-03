@@ -111,11 +111,21 @@ public class SettingsPanelController implements Initializable {
     @FXML
     private ImageView exitImage;
 
+    @FXML
+    private Button personalInfoButton;
+
+    @FXML
+    private Button paymentButton;
+
+    @FXML
+    private Button aboutButton;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         initPaymentInfoFields();
         initPersonalInfoFields();
+        personalInfoButton.fire();
 
         mainAnchor.getChildren().get(0).setOnMouseClicked(Event::consume);
 

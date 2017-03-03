@@ -22,17 +22,17 @@
            <items>
                <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="120.0" spacing="2.0">
                   <children>
-                     <Button mnemonicParsing="false" onAction="#onPersonalInfoButtonClicked" prefHeight="164.0" prefWidth="500.0" text="Personlig information" textAlignment="CENTER" wrapText="true">
+                     <Button fx:id="personalInfoButton" mnemonicParsing="false" onAction="#onPersonalInfoButtonClicked" prefHeight="164.0" prefWidth="500.0" text="Personlig information" textAlignment="CENTER" wrapText="true">
                         <font>
                            <Font size="18.0" />
                         </font>
                      </Button>
-                     <Button mnemonicParsing="false" onAction="#onPaymentInfoButtonClicked" prefHeight="164.0" prefWidth="500.0" text="Betalning">
+                     <Button fx:id="paymentButton" mnemonicParsing="false" onAction="#onPaymentInfoButtonClicked" prefHeight="164.0" prefWidth="500.0" text="Betalning">
                         <font>
                            <Font size="18.0" />
                         </font>
                      </Button>
-                     <Button mnemonicParsing="false" onAction="#onAboutButtonClicked" prefHeight="164.0" prefWidth="500.0" text="Om">
+                     <Button fx:id="aboutButton" mnemonicParsing="false" onAction="#onAboutButtonClicked" prefHeight="164.0" prefWidth="500.0" text="Om">
                         <font>
                            <Font size="18.0" />
                         </font>
