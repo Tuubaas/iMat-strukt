@@ -27,7 +27,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="120.0" layoutY="103.0" mnemonicParsing="false" onAction="#onPaymentInfoNextButtonClicked" prefHeight="40.0" prefWidth="120.0" text="Tillbaka" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="40.0">
+      <Button layoutX="120.0" layoutY="103.0" mnemonicParsing="false" onAction="#onPaymentInfoNextButtonClicked" prefHeight="40.0" prefWidth="120.0" text="Nästa" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="40.0">
          <font>
             <Font size="18.0" />
          </font>

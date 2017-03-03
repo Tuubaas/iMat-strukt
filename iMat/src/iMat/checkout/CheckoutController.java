@@ -1,5 +1,6 @@
 package iMat.checkout;
 
+import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
 import iMat.MainController;
 import iMat.checkout.cartconfirmation.CartConfirmationController;
 import iMat.checkout.confirmation.ConfirmationController;
@@ -94,26 +95,31 @@ public class CheckoutController implements Initializable {
 
     public void onConfirmCartNextButtonClicked(){
         if (mc.isLoggedIn()){
-            loggedInDeliveryInfoAnchor.setVisible(true);
-            loggedInDeliveryInfoAnchor.toFront();
+            System.out.println("Inloggad");
+            loggedInCartConfirmationAnchor.setVisible(true);
+            loggedInCartConfirmationAnchor.toFront();
         }
         else {
+            System.out.println("Inte inloggad");
             mc.logInAnchor.setVisible(true);
             mc.logInAnchor.toFront();
         }
     }
 
     public void onDeliveryInfoNextButtonClicked(){
+        System.out.println("Går från Delivery info");
+        loggedInDeliveryInfoAnchor.setVisible(true);
+        loggedInDeliveryInfoAnchor.toFront();
+    }
+
+    public void onPaymentInfoNextButtonClicked(){
+        System.out.println("Går från Payment info");
         loggedInPaymentInfoAnchor.setVisible(true);
         loggedInPaymentInfoAnchor.toFront();
     }
 
-    public void onPaymentInfoNextButtonClicked(){
-        loggedInConfirmationAnchor.setVisible(true);
-        loggedInConfirmationAnchor.toFront();
-    }
-
     public void onConfirmationNextButtonClicked(){
+        System.out.println("går från Confirmation");
         mc.purchaseDoneAnchor.setVisible(true);
         mc.purchaseDoneAnchor.toFront();
     }
@@ -129,13 +135,13 @@ public class CheckoutController implements Initializable {
     }
 
     public void onPaymentInfoBackButtonClicked(){
-        loggedInDeliveryInfoAnchor.setVisible(true);
-        loggedInDeliveryInfoAnchor.toFront();
+        loggedInCartConfirmationAnchor.setVisible(true);
+        loggedInCartConfirmationAnchor.toFront();
     }
 
     public void onConfirmationBackButtonClicked(){
-        loggedInPaymentInfoAnchor.setVisible(true);
-        loggedInPaymentInfoAnchor.toFront();
+        loggedInDeliveryInfoAnchor.setVisible(true);
+        loggedInDeliveryInfoAnchor.toFront();
     }
 
 }
