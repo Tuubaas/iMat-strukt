@@ -3,33 +3,55 @@
     -fx-pref-height: 40;
     -fx-alignment: baseline-left;
     -fx-font-size: 18;
+    -fx-background-color: "BAD2E6";
+    -fx-text-fill: black;
 }
+
+.titled-pane .title:hover {
+    -fx-background-color: #AAAAAA;
+    }
+
 
 .grid-pane > .label {
     -fx-alignment: baseline-center;
+    -fx-text-fill: black;
+
 }
+
+
+.grid-pane > .accordion >  {
+    -fx-background-color: white;
+
+    }
+
 
 .v-box > .button {
     -fx-font-size: 14;
     -fx-alignment: baseline-left;
     -fx-pref-height: 25;
     -fx-pref-width: 250;
-    -fx-padding: 0 0 0 35;
-    -fx-base: darkgrey;
+    -fx-padding: 0 0 0 30;
+    -fx-background-color: white;
+
 }
 
 .v-box {
-    -fx-spacing: 2;
+    -fx-spacing: 2.5;
+
 }
 
 .button {
     -fx-font-size: 18;
     -fx-alignment: center-left;
     -fx-padding: 0 0 0 35;
-    -fx-base: darkgrey;
+    -fx-background-color: "BAD2E6";
+    -fx-text-fill: black;
+
 }
 
 .titled-pane {
     -fx-animated: true;
-    -fx-base: darkgrey;
+    -fx-text-fill: black;
 }
+
+
