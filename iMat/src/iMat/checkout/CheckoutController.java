@@ -83,6 +83,7 @@ public class CheckoutController implements Initializable {
         paymentInfoController.injectCheckoutController(this);
         confirmationController.injectCheckoutController(this);
         startCheckout();
+        System.out.println("Test commit");
     }
 
     public void injectMainController(MainController mc){
@@ -144,5 +145,7 @@ public class CheckoutController implements Initializable {
         paymentInfoAnchor.setVisible(true);
         paymentInfoAnchor.toFront();
     }
+
+
 
 }
