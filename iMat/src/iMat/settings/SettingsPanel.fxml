@@ -46,40 +46,6 @@
                   <children>
                      <StackPane prefHeight="496.0" prefWidth="363.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                         <children>
-                           <AnchorPane fx:id="personalPane" prefHeight="200.0" prefWidth="200.0" styleClass="informationPanes">
-                              <children>
-                                 <Line endX="240.0" layoutX="103.0" layoutY="105.0" startX="-100.0" />
-                                 <TextField fx:id="usernameField" editable="false" layoutX="14.0" layoutY="25.0" prefWidth="200.0" />
-                                 <Label layoutX="14.0" layoutY="54.0" text="Lösenord" />
-                                 <Label layoutX="14.0" layoutY="8.0" text="Användarnamn" />
-                                 <PasswordField fx:id="passwordField" editable="false" layoutX="14.0" layoutY="71.0" prefWidth="200.0" />
-                                 <TextField fx:id="firstnameField" editable="false" layoutX="14.0" layoutY="131.0" prefWidth="200.0" />
-                                 <Label layoutX="14.0" layoutY="114.0" text="Förnamn" />
-                                 <Button fx:id="personalActionButton" layoutX="263.0" layoutY="448.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" text="Ändra" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
-                                 <Label layoutX="14.0" layoutY="162.0" text="Efternamn" />
-                                 <TextField fx:id="lastnameField" editable="false" layoutX="14.0" layoutY="179.0" prefWidth="200.0" />
-                                 <TextField fx:id="addressField" editable="false" layoutX="14.0" layoutY="223.0" prefWidth="200.0" />
-                                 <Label layoutX="14.0" layoutY="206.0" text="Adress" />
-                                 <TextField fx:id="emailField" editable="false" layoutX="14.0" layoutY="323.0" prefWidth="200.0" />
-                                 <Label layoutX="14.0" layoutY="306.0" text="E-post" />
-                                 <TextField fx:id="phoneField" editable="false" layoutX="14.0" layoutY="373.0" prefWidth="200.0" />
-                                 <Label layoutX="14.0" layoutY="356.0" text="Telefon" />
-                                 <TextField fx:id="mobilePhoneField" editable="false" layoutX="14.0" layoutY="422.0" prefWidth="200.0" />
-                                 <Label layoutX="14.0" layoutY="405.0" text="Mobiltelefon" />
-                                 <TextField fx:id="postcodeField" editable="false" layoutX="14.0" layoutY="273.0" prefWidth="200.0" />
-                                 <Label layoutX="14.0" layoutY="256.0" text="Postkod" />
-                                 <ImageView fitHeight="50.0" fitWidth="68.0" layoutX="209.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
-                                    <image>
-                                       <Image url="@../../resources/bentArrow.png" />
-                                    </image>
-                                 </ImageView>
-                                 <Label layoutX="243.0" layoutY="329.0" prefHeight="81.0" prefWidth="102.0" text="Tips!                      Vill du ändra några uppgifter trycker du här" wrapText="true">
-                                    <font>
-                                       <Font name="System Italic" size="12.0" />
-                                    </font>
-                                 </Label>
-                              </children>
-                           </AnchorPane>
                            <AnchorPane fx:id="aboutPane" prefHeight="200.0" prefWidth="200.0" styleClass="informationPanes">
                               <children>
                                  <ImageView fitHeight="241.0" fitWidth="302.0" layoutX="22.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
@@ -97,6 +63,42 @@
                                        <Font size="8.0" />
                                     </font>
                                  </Label>
+                              </children>
+                           </AnchorPane>
+                           <AnchorPane fx:id="personalPane" prefHeight="200.0" prefWidth="200.0" styleClass="informationPanes">
+                              <children>
+                                 <Line endX="240.0" layoutX="103.0" layoutY="105.0" startX="-100.0" />
+                                 <TextField fx:id="usernameField" layoutX="14.0" layoutY="25.0" prefWidth="200.0" />
+                                 <Label layoutX="14.0" layoutY="54.0" text="Lösenord" />
+                                 <Label layoutX="14.0" layoutY="8.0" text="Användarnamn" />
+                                 <PasswordField fx:id="passwordField" layoutX="14.0" layoutY="71.0" prefWidth="200.0" />
+                                 <TextField fx:id="firstnameField" layoutX="14.0" layoutY="131.0" prefWidth="200.0" />
+                                 <Label layoutX="14.0" layoutY="114.0" text="Förnamn" />
+                                 <Button fx:id="personalActionButton" layoutX="263.0" layoutY="448.0" mnemonicParsing="false" onAction="#onPersonalInfoActionButtonClicked" prefHeight="40.0" prefWidth="80.0" text="Ändra" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                                 <Label layoutX="14.0" layoutY="162.0" text="Efternamn" />
+                                 <TextField fx:id="lastnameField" layoutX="14.0" layoutY="179.0" prefWidth="200.0" />
+                                 <TextField fx:id="addressField" layoutX="14.0" layoutY="223.0" prefWidth="200.0" />
+                                 <Label layoutX="14.0" layoutY="206.0" text="Adress" />
+                                 <TextField fx:id="emailField" layoutX="14.0" layoutY="323.0" prefWidth="200.0" />
+                                 <Label layoutX="14.0" layoutY="306.0" text="E-post" />
+                                 <TextField fx:id="phoneField" layoutX="14.0" layoutY="373.0" prefWidth="200.0" />
+                                 <Label layoutX="14.0" layoutY="356.0" text="Telefon" />
+                                 <TextField fx:id="mobilePhoneField" layoutX="14.0" layoutY="422.0" prefWidth="200.0" />
+                                 <Label layoutX="14.0" layoutY="405.0" text="Mobiltelefon" />
+                                 <TextField fx:id="postcodeField" layoutX="14.0" layoutY="273.0" prefWidth="200.0" />
+                                 <Label layoutX="14.0" layoutY="256.0" text="Postkod" />
+                                 <ImageView fitHeight="50.0" fitWidth="68.0" layoutX="209.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+                                    <image>
+                                       <Image url="@../../resources/bentArrow.png" />
+                                    </image>
+                                 </ImageView>
+                                 <Label layoutX="243.0" layoutY="329.0" prefHeight="81.0" prefWidth="102.0" text="Tips!                      Vill du ändra några uppgifter trycker du här" wrapText="true">
+                                    <font>
+                                       <Font name="System Italic" size="12.0" />
+                                    </font>
+                                 </Label>
+                                 <Label fx:id="userNameWarningLabel" layoutX="229.0" layoutY="29.0" text="Måste anges!" textFill="RED" visible="false" />
+                                 <Label fx:id="passwordWarningLabel" layoutX="229.0" layoutY="75.0" text="Måste anges!" textFill="RED" visible="false" />
                               </children>
                            </AnchorPane>
                            <AnchorPane fx:id="paymentPane" prefHeight="200.0" prefWidth="200.0" styleClass="informationPanes">

@@ -28,39 +28,6 @@ public class SettingsPanelController implements Initializable {
     private AnchorPane mainAnchor;
 
     @FXML
-    private AnchorPane personalPane;
-
-    @FXML
-    private TextField usernameField;
-
-    @FXML
-    private PasswordField passwordField;
-
-    @FXML
-    private TextField firstnameField;
-
-    @FXML
-    private Button personalActionButton;
-
-    @FXML
-    private TextField lastnameField;
-
-    @FXML
-    private TextField addressField;
-
-    @FXML
-    private TextField emailField;
-
-    @FXML
-    private TextField phoneField;
-
-    @FXML
-    private TextField mobilePhoneField;
-
-    @FXML
-    private TextField postcodeField;
-
-    @FXML
     private AnchorPane aboutPane;
 
     @FXML
@@ -101,6 +68,45 @@ public class SettingsPanelController implements Initializable {
 
     @FXML
     private Label verificationCodeWarningLabel;
+
+    @FXML
+    private AnchorPane personalPane;
+
+    @FXML
+    private TextField usernameField;
+
+    @FXML
+    private PasswordField passwordField;
+
+    @FXML
+    private TextField firstnameField;
+
+    @FXML
+    private Button personalActionButton;
+
+    @FXML
+    private TextField lastnameField;
+
+    @FXML
+    private TextField addressField;
+
+    @FXML
+    private TextField emailField;
+
+    @FXML
+    private TextField phoneField;
+
+    @FXML
+    private TextField mobilePhoneField;
+
+    @FXML
+    private TextField postcodeField;
+
+    @FXML
+    private Label userNameWarningLabel;
+
+    @FXML
+    private Label passwordWarningLabel;
 
     @FXML
     private ImageView exitImage;
@@ -158,36 +164,61 @@ public class SettingsPanelController implements Initializable {
     }
 
     @FXML
-    public void onPersonalInfoActionButtonClicked(){
+    public void onPersonalInfoActionButtonClicked() {
         if (personalActionButton.getText().equals("Ändra")) {
+            System.out.println("[DEBUG] Enable editing for personal info...");
             performPersonalInfoEditAction();
         } else if (personalActionButton.getText().equals("Spara")) {
+            System.out.println("[DEBUG] Saving personal info");
             performPersonalInfoSaveAction();
         }
     }
 
-    private void performPersonalInfoSaveAction(){
+    private void performPersonalInfoSaveAction() {
         User user = wrapper.getUser();
         Customer customer = wrapper.getCustomer();
 
-        boolean noErrors = false;
+        boolean noErrors = true;
 
-        if(usernameField.getText().isEmpty()){
-            noErrors = true;
-
+        if (usernameField.getText().isEmpty()) {
+            userNameWarningLabel.setVisible(true);
+            noErrors = false;
+        } else {
+            userNameWarningLabel.setVisible(false);
         }
 
+        if (passwordField.getText().isEmpty()) {
+            passwordWarningLabel.setVisible(true);
+            noErrors = false;
+        } else {
+            passwordWarningLabel.setVisible(false);
+        }
+
+        //Gör inget mer om angiven information inte klarade testen ovanför
+        if(!noErrors)
+            return;
+
+        user.setUserName(usernameField.getText());
+        user.setPassword(passwordField.getText());
+        customer.setFirstName(firstnameField.getText());
+        customer.setLastName(lastnameField.getText());
+        customer.setAddress(addressField.getText());
+        customer.setPostCode(postcodeField.getText());
+        customer.setEmail(emailField.getText());
+        customer.setPhoneNumber(phoneField.getText());
+        customer.setMobilePhoneNumber(mobilePhoneField.getText());
 
         makePersonalInfoEditable(false);
         personalActionButton.setText("Ändra");
+        mainController.update();
     }
 
-    private void performPersonalInfoEditAction(){
+    private void performPersonalInfoEditAction() {
         makePersonalInfoEditable(true);
         personalActionButton.setText("Spara");
     }
 
-    private void makePersonalInfoEditable(boolean flag){
+    private void makePersonalInfoEditable(boolean flag) {
         flag = !flag;
         usernameField.setDisable(flag);
         passwordField.setDisable(flag);
@@ -312,6 +343,7 @@ public class SettingsPanelController implements Initializable {
 
         makePaymentEditable(false);
         paymentActionButton.setText("Ändra");
+        mainController.update();
     }
 
     private boolean isLegitCardNumber() {
@@ -331,6 +363,21 @@ public class SettingsPanelController implements Initializable {
 
     public void update() {
         CreditCard card = wrapper.getCreditCard();
+        User user = wrapper.getUser();
+        Customer customer = wrapper.getCustomer();
+
+        //Customerinfo
+        usernameField.setText(user.getUserName());
+        passwordField.setText(user.getPassword());
+        firstnameField.setText(customer.getFirstName());
+        lastnameField.setText(customer.getLastName());
+        addressField.setText(customer.getAddress());
+        postcodeField.setText(customer.getPostCode());
+        emailField.setText(customer.getEmail());
+        phoneField.setText(customer.getPhoneNumber());
+        mobilePhoneField.setText(customer.getMobilePhoneNumber());
+
+        //Paymentinfo
         cardNumberField.setText(card.getCardNumber());
         holdersNameField.setText(card.getHoldersName());
         cardType.setValue(card.getCardType());

@@ -118,4 +118,8 @@ public class HeaderController implements Initializable {
         mc.logout();
     }
 
+    @FXML
+    public void onSettingsButtonClicked() {
+        mc.showSettings(true);
+    }
 }

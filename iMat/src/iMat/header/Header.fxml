@@ -68,7 +68,7 @@
                            <children>
                               <MenuButton fx:id="accountMenuButton" alignment="CENTER" ellipsisString="" mnemonicParsing="false" popupSide="TOP" prefHeight="40.0" prefWidth="120.0" text="Konto" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                                 <items>
-                                  <MenuItem mnemonicParsing="false" text="&lt;Platshållare&gt;" />
+                                  <MenuItem fx:id="settingsButton" mnemonicParsing="false" onAction="#onSettingsButtonClicked" text="Inställningar" />
                                   <MenuItem fx:id="logOutButton" mnemonicParsing="false" onAction="#onLogOutClicked" text="Logga ut" />
                                 </items>
                                  <GridPane.margin>
