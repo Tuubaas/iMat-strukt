@@ -10,22 +10,22 @@
    <children>
       <StackPane layoutX="120.0" layoutY="100.0" prefHeight="401.0" prefWidth="1042.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="100.0">
          <children>
-            <AnchorPane fx:id="loggedInCartConfirmationAnchor" prefHeight="200.0" prefWidth="200.0" styleClass="informationAnchors" stylesheets="@checkout.css">
+            <AnchorPane fx:id="deliveryInfoAnchor" prefHeight="200.0" prefWidth="200.0" styleClass="informationAnchors" stylesheets="@checkout.css">
                <children>
                   <fx:include fx:id="deliveryInfo" source="deliveryinfo/DeliveryInfo.fxml" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="loggedInDeliveryInfoAnchor" prefHeight="200.0" prefWidth="200.0" styleClass="informationAnchors" stylesheets="@checkout.css">
+            <AnchorPane fx:id="paymentInfoAnchor" prefHeight="200.0" prefWidth="200.0" styleClass="informationAnchors" stylesheets="@checkout.css">
                <children>
                   <fx:include fx:id="paymentInfo" source="paymentinfo/PaymentInfo.fxml" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="loggedInPaymentInfoAnchor" prefHeight="350.0" prefWidth="1040.0" styleClass="informationAnchors" stylesheets="@checkout.css">
+            <AnchorPane fx:id="confirmationAnchor" prefHeight="350.0" prefWidth="1040.0" styleClass="informationAnchors" stylesheets="@checkout.css">
                <children>
                   <fx:include fx:id="confirmation" source="confirmation/Confirmation.fxml" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="loggedInConfirmationAnchor" prefHeight="350.0" prefWidth="1042.0" styleClass="informationAnchors" stylesheets="@checkout.css">
+            <AnchorPane fx:id="cartConfirmationAnchor" prefHeight="350.0" prefWidth="1042.0" styleClass="informationAnchors" stylesheets="@checkout.css">
                <children>
                   <fx:include fx:id="cartConfirmation" source="cartconfirmation/CartConfirmation.fxml" />
                </children>

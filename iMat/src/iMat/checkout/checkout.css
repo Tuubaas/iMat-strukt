@@ -6,8 +6,6 @@
     -fx-fill: aqua;
 }
 
-#notLoggedInAnchor {
-    -fx-background-color: #fff;
 }
 
 #loggedInAnchor {
@@ -24,38 +22,18 @@
     -fx-border-insets: 0, 0, 0, 50;
 }
 
-#notLoggedInCartConfirmationAnchor {
+#cartConfirmationAnchor {
     -fx-background-color: #fff;
 }
 
-#notLoggedInConfirmationAnchor {
+#confirmationAnchor {
     -fx-background-color: #fff;
 }
 
-#loggedInCartConfirmationAnchor {
+#deliveryInfoAnchor {
     -fx-background-color: #fff;
 }
 
-#loggedInConfirmationAnchor {
-    -fx-background-color: #fff;
-}
-
-#notLoggedInDeliveryInfoAnchor {
-    -fx-background-color: #fff;
-}
-
-#notLoggedInPaymentInfoAnchor {
-    -fx-background-color: #fff;
-}
-
-#loggedInDeliveryInfoAnchor {
-    -fx-background-color: #fff;
-}
-
-#notLoggedInLogInAnchor {
-    -fx-background-color: #fff;
-}
-
-#loggedInPaymentInfoAnchor {
+#paymentInfoAnchor {
     -fx-background-color: #fff;
 }

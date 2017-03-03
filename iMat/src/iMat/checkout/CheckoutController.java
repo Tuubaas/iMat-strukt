@@ -32,13 +32,13 @@ public class CheckoutController implements Initializable {
     @FXML
     private AnchorPane loggedInAnchor;
     @FXML
-    private AnchorPane loggedInCartConfirmationAnchor;
+    private AnchorPane cartConfirmationAnchor;
     @FXML
-    private AnchorPane loggedInConfirmationAnchor;
+    private AnchorPane confirmationAnchor;
     @FXML
-    private AnchorPane loggedInDeliveryInfoAnchor;
+    private AnchorPane deliveryInfoAnchor;
     @FXML
-    private AnchorPane loggedInPaymentInfoAnchor;
+    private AnchorPane paymentInfoAnchor;
     @FXML
     private SVGPath arrow3;
     @FXML
@@ -82,6 +82,7 @@ public class CheckoutController implements Initializable {
         deliveryInfoController.injectCheckoutController(this);
         paymentInfoController.injectCheckoutController(this);
         confirmationController.injectCheckoutController(this);
+        startCheckout();
     }
 
     public void injectMainController(MainController mc){
@@ -89,15 +90,15 @@ public class CheckoutController implements Initializable {
     }
 
     public void startCheckout(){
-        loggedInCartConfirmationAnchor.setVisible(true);
-        loggedInCartConfirmationAnchor.toFront();
+        cartConfirmationAnchor.setVisible(true);
+        cartConfirmationAnchor.toFront();
     }
 
     public void onConfirmCartNextButtonClicked(){
         if (mc.isLoggedIn()){
             System.out.println("Inloggad");
-            loggedInCartConfirmationAnchor.setVisible(true);
-            loggedInCartConfirmationAnchor.toFront();
+            deliveryInfoAnchor.setVisible(true);
+            deliveryInfoAnchor.toFront();
         }
         else {
             System.out.println("Inte inloggad");
@@ -108,14 +109,14 @@ public class CheckoutController implements Initializable {
 
     public void onDeliveryInfoNextButtonClicked(){
         System.out.println("Går från Delivery info");
-        loggedInDeliveryInfoAnchor.setVisible(true);
-        loggedInDeliveryInfoAnchor.toFront();
+        paymentInfoAnchor.setVisible(true);
+        paymentInfoAnchor.toFront();
     }
 
     public void onPaymentInfoNextButtonClicked(){
         System.out.println("Går från Payment info");
-        loggedInPaymentInfoAnchor.setVisible(true);
-        loggedInPaymentInfoAnchor.toFront();
+        confirmationAnchor.setVisible(true);
+        confirmationAnchor.toFront();
     }
 
     public void onConfirmationNextButtonClicked(){
@@ -130,18 +131,18 @@ public class CheckoutController implements Initializable {
     }
 
     public void onDeliveryInfoBackButtonClicked(){
-        loggedInCartConfirmationAnchor.setVisible(true);
-        loggedInCartConfirmationAnchor.toFront();
+        cartConfirmationAnchor.setVisible(true);
+        cartConfirmationAnchor.toFront();
     }
 
     public void onPaymentInfoBackButtonClicked(){
-        loggedInCartConfirmationAnchor.setVisible(true);
-        loggedInCartConfirmationAnchor.toFront();
+        deliveryInfoAnchor.setVisible(true);
+        deliveryInfoAnchor.toFront();
     }
 
     public void onConfirmationBackButtonClicked(){
-        loggedInDeliveryInfoAnchor.setVisible(true);
-        loggedInDeliveryInfoAnchor.toFront();
+        paymentInfoAnchor.setVisible(true);
+        paymentInfoAnchor.toFront();
     }
 
 }
