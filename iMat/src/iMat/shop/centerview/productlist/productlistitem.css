@@ -1,4 +1,12 @@
-.anchor-pane{
-    -fx-border-color: black;
+
+
+.anchor-pane {
+    -fx-border-color: white;
     -fx-border-width: 1;
+    -fx-background-color: white;
+}
+
+.button {
+    -fx-background-color: "A1CCA6";
+    -fx-text-fill: ladder(background, white 49%, black 50%);
 }
