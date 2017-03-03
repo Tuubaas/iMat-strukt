@@ -12,6 +12,11 @@
     }
 
 
+.v-box > .button:hover {
+    -fx-background-color: #AAAAAA;
+
+}
+
 .grid-pane > .label {
     -fx-alignment: baseline-center;
     -fx-text-fill: black;
@@ -46,6 +51,12 @@
     -fx-padding: 0 0 0 35;
     -fx-background-color: "BAD2E6";
     -fx-text-fill: black;
+
+}
+
+
+.button:hover {
+    -fx-background-color: #AAAAAA;
 
 }
 
