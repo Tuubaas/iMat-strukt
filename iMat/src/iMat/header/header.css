@@ -3,4 +3,11 @@
     -fx-border-width: 1;
     -fx-border-style: hidden hidden solid hidden;
     -fx-border-insets: 0 0 -1 0;
+    -fx-background-color: #F3FDED;
+}
+
+
+.button {
+    -fx-background-color: "A1CCA6";
+    -fx-text-fill: ladder(background, white 49%, black 50%);
 }
