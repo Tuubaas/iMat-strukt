@@ -77,11 +77,7 @@ public class CheckoutController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        System.out.println("Test");
-        //cartConfirmationController.injectCheckoutController(this);
-        /*confirmationController.injectCheckoutController(this);
-        deliveryInfoController.injectCheckoutController(this);
-        paymentInfoController.injectCheckoutController(this);*/
+        cartConfirmationController.injectCheckoutController(this);
     }
 
 

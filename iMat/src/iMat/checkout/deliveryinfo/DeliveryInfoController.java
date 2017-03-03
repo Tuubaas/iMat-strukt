@@ -9,7 +9,7 @@ import java.util.ResourceBundle;
 
 public class DeliveryInfoController implements Initializable{
 
-    CheckoutController cc;
+    private CheckoutController cc;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -20,3 +20,4 @@ public class DeliveryInfoController implements Initializable{
         this.cc = cc;
     }
 }
+
