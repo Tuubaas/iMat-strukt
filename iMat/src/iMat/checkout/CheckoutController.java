@@ -1,6 +1,7 @@
 package iMat.checkout;
 
 import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
+import iMat.BackendWrapper;
 import iMat.MainController;
 import iMat.checkout.cartconfirmation.CartConfirmationController;
 import iMat.checkout.confirmation.ConfirmationController;
@@ -18,6 +19,8 @@ import java.util.ResourceBundle;
 public class CheckoutController implements Initializable {
 
     private MainController mc;
+
+    private BackendWrapper wrapper;
 
     private DeliveryInfoController dic;
 
@@ -90,6 +93,7 @@ public class CheckoutController implements Initializable {
 
     public void injectMainController(MainController mc){
         this.mc = mc;
+        this.wrapper = MainController.getBackendWrapper();
     }
 
     public void startCheckout(){
@@ -98,9 +102,14 @@ public class CheckoutController implements Initializable {
     }
 
     public void onConfirmCartNextButtonClicked(){
-            System.out.println("Inloggad");
+        //if (mc.isLoggedIn()) {
             deliveryInfoAnchor.setVisible(true);
             deliveryInfoAnchor.toFront();
+        //}
+        //else{
+
+        //}
+
     }
 
     public void onDeliveryInfoNextButtonClicked(){
@@ -139,6 +148,14 @@ public class CheckoutController implements Initializable {
     public void onConfirmationBackButtonClicked(){
         paymentInfoAnchor.setVisible(true);
         paymentInfoAnchor.toFront();
+    }
+
+    public BackendWrapper getWrapper(){
+        return this.wrapper;
+    }
+
+    public MainController getMc(){
+        return this.mc;
     }
 
 }

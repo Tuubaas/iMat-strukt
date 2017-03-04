@@ -40,6 +40,9 @@ public class CartConfirmationController implements Initializable{
     @FXML
     public void onConfirmCartNextButtonClicked() {
         cc.onConfirmCartNextButtonClicked();
+        if (cc.getMc().isLoggedIn()){
+
+        }
     }
 
     public void onCartConfirmationBackButton(){

@@ -1,0 +1,35 @@
+.svg-path {
+    -fx-fill: #00000080;
+}
+
+.svg-path:hover {
+    -fx-fill: aqua;
+}
+
+#deliveryInfoStackPane {
+    -fx-background-color: #fff
+}
+
+#loggedInAnchor {
+    -fx-background-color: #fff;
+}
+
+#notLoggedInAnchor {
+    -fx-background-color: #fff;
+}
+
+#notLoggedInStackPane {
+    -fx-background-color: #fff;
+}
+
+#logInDeliveryInfo {
+    -fx-background-color: #fff;
+}
+
+#guestDeliveryInfo {
+    -fx-background-color: #fff;
+}
+
+#blankDeliveryInfo {
+    -fx-background-color: #fff;
+}
