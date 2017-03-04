@@ -50,8 +50,8 @@ public class PaymentInfoController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         paymentInfoCardTemplatePic.setImage(new Image(String.valueOf(getClass().getClassLoader().getResource("resources/kreditkort.png"))));
         paymentInfoCardBacksideTemplatePic.setImage(new Image(String.valueOf(getClass().getClassLoader().getResource("resources/kreditkortbaksida.png"))));
-        visaLogoImage.setImage(new Image(String.valueOf(getClass().getClassLoader().getResource("resources/kreditkortbaksida.png"))));
-        mcLogoImage.setImage(new Image(String.valueOf(getClass().getClassLoader().getResource("resources/kreditkortbaksida.png"))));
+        visaLogoImage.setImage(new Image(String.valueOf(getClass().getClassLoader().getResource("resources/Visa_lgo.png"))));
+        mcLogoImage.setImage(new Image(String.valueOf(getClass().getClassLoader().getResource("resources/MasterCard_Logo.svg.png"))));
 
     }
 
