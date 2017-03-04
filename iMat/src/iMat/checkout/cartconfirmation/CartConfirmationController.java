@@ -16,6 +16,8 @@ public class CartConfirmationController implements Initializable{
 
     private CheckoutController cc;
 
+    private DeliveryInfoController dc;
+
     @FXML
     private Button cartConfirmationNextButton;
     @FXML
@@ -35,11 +37,21 @@ public class CartConfirmationController implements Initializable{
     public void injectCheckoutController(CheckoutController cc){
         this.cc = cc;
     }
-    
+
+    public void injectDeliveryInfoController(DeliveryInfoController dc){
+        this.dc = dc;
+    }
 
     @FXML
     public void onConfirmCartNextButtonClicked() {
         cc.onConfirmCartNextButtonClicked();
+        if (cc.getMc().isLoggedIn()){
+            dc.loggedInAnchorToFront();
+        }
+        else {
+            dc.notLoggedInAnchorToFront();
+        }
+
     }
 
     public void onCartConfirmationBackButton(){

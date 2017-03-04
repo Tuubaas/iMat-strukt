@@ -78,12 +78,12 @@
       </AnchorPane>
       <AnchorPane fx:id="notLoggedInAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1040.0" stylesheets="@deliveryinfo.css">
          <children>
-            <RadioButton fx:id="guestRadioButton" layoutX="665.0" layoutY="20.0" mnemonicParsing="false" onAction="#onLoginRadioButtonClicked" text="Fortästt som gäst">
+            <RadioButton fx:id="guestRadioButton" layoutX="665.0" layoutY="20.0" mnemonicParsing="false" onAction="#onGuestRadioButtonClicked" text="Fortästt som gäst">
                <font>
                   <Font size="18.0" />
                </font>
             </RadioButton>
-            <RadioButton fx:id="logInRadioButton" layoutX="207.5" layoutY="18.0" mnemonicParsing="false" onAction="#onGuestRadioButtonClicked" text="Logga in">
+            <RadioButton fx:id="logInRadioButton" layoutX="207.5" layoutY="18.0" mnemonicParsing="false" onAction="#onLoginRadioButtonClicked" text="Logga in">
                <font>
                   <Font size="18.0" />
                </font>
@@ -199,7 +199,11 @@
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <Label fx:id="logInWarning" layoutX="520.0" layoutY="162.0" prefHeight="17.0" prefWidth="0.0" AnchorPane.leftAnchor="520.0" AnchorPane.rightAnchor="520.0" />
+                        <Label fx:id="logInWarning" alignment="CENTER" layoutX="320.0" layoutY="162.0" prefHeight="17.0" prefWidth="400.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
                      </children></AnchorPane>
                </children>
             </StackPane>

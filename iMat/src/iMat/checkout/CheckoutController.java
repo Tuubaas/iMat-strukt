@@ -87,6 +87,7 @@ public class CheckoutController implements Initializable {
         deliveryInfoController.injectCheckoutController(this);
         paymentInfoController.injectCheckoutController(this);
         confirmationController.injectCheckoutController(this);
+        cartConfirmationController.injectDeliveryInfoController(this.deliveryInfoController);
         startCheckout();
         System.out.println("Test commit");
     }
@@ -156,6 +157,10 @@ public class CheckoutController implements Initializable {
 
     public MainController getMc(){
         return this.mc;
+    }
+
+    public DeliveryInfoController getDc(){
+        return this.deliveryInfoController;
     }
 
 }

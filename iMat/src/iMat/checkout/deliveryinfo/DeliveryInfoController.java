@@ -71,7 +71,8 @@ public class DeliveryInfoController implements Initializable{
     @FXML
     private Label logInWarning;
 
-    final ToggleGroup group = new ToggleGroup();
+
+    private final ToggleGroup group = new ToggleGroup();
 
 
     @Override
@@ -129,8 +130,22 @@ public class DeliveryInfoController implements Initializable{
             loggedInAnchor.toFront();
             setDeliveryInfo();
         } else {
+            logInWarning.setStyle("-fx-text-fill: red");
             logInWarning.setText("Fel användarnamn/lösenord!");
         }
+    }
+
+    public void loggedInAnchorToFront(){
+        loggedInAnchor.setVisible(true);
+        loggedInAnchor.toFront();
+        setDeliveryInfo();
+    }
+
+    public void notLoggedInAnchorToFront(){
+        notLoggedInAnchor.setVisible(true);
+        notLoggedInAnchor.toFront();
+        blankDeliveryInfo.setVisible(true);
+        blankDeliveryInfo.toFront();
     }
 
 }
