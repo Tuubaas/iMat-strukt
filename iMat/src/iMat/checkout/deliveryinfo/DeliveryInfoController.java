@@ -24,6 +24,7 @@ public class DeliveryInfoController implements Initializable{
 
     private MainController mc;
 
+    //Anchors and Stacks
     @FXML
     private StackPane deliveryInfoStackPane;
     @FXML
@@ -38,6 +39,8 @@ public class DeliveryInfoController implements Initializable{
     private AnchorPane guestDeliveryInfo;
     @FXML
     private AnchorPane blankDeliveryInfo;
+
+    //Logged in fields
     @FXML
     private TextField deliveryInfoFirstName;
     @FXML
@@ -58,10 +61,14 @@ public class DeliveryInfoController implements Initializable{
     private ChoiceBox deliveryInfoDayChoice;
     @FXML
     private ChoiceBox deliveryInfoTimeChoice;
+
+    //Not logged in, top buttons
     @FXML
     private RadioButton logInRadioButton;
     @FXML
     private RadioButton guestRadioButton;
+
+    //Not logged in, login fields
     @FXML
     private TextField logInUsername;
     @FXML
@@ -70,6 +77,38 @@ public class DeliveryInfoController implements Initializable{
     private Button logInButton;
     @FXML
     private Label logInWarning;
+
+    //not logged in, guest fields
+    @FXML
+    private TextField guestAdress;
+    @FXML
+    private TextField guestCity;
+    @FXML
+    private TextField guestFirstName;
+    @FXML
+    private TextField guestMail;
+    @FXML
+    private TextField guestPostCode;
+    @FXML
+    private TextField guestPhone;
+    @FXML
+    private TextField guestLastName;
+    @FXML
+    private TextField guestUserName;
+    @FXML
+    private TextField guestPassword;
+    @FXML
+    private ChoiceBox guestDayChoice;
+    @FXML
+    private ChoiceBox guestMonthChoice;
+    @FXML
+    private ChoiceBox guestTimeChoice;
+    @FXML
+    private Button guestNextButton;
+    @FXML
+    private Button guestBackButton;
+    @FXML
+    private CheckBox guestRegCheckBox;
 
 
     private final ToggleGroup group = new ToggleGroup();
@@ -90,6 +129,22 @@ public class DeliveryInfoController implements Initializable{
     }
     public void onDeliveryInfoNextButtonClicked(){
         cc.onDeliveryInfoNextButtonClicked();
+        if (guestRegCheckBox.isSelected()){
+            Customer customer = cc.getWrapper().getCustomer();
+            User user = cc.getWrapper().getUser();
+            customer.setFirstName(guestFirstName.getText());
+            customer.setLastName(guestLastName.getText());
+            customer.setAddress(guestAdress.getText());
+            customer.setEmail(guestMail.getText());
+            customer.setPostAddress(guestCity.getText());
+            customer.setPostCode(guestPostCode.getText());
+            customer.setMobilePhoneNumber(guestPhone.getText());
+        /*user.setUserName(guestUserName.getText());
+        user.setPassword(guestPassword.getText());*/
+        }
+        else {
+
+        }
     }
 
     public void onDeliveryInfoBackButtonClicked(){
@@ -146,6 +201,24 @@ public class DeliveryInfoController implements Initializable{
         notLoggedInAnchor.toFront();
         blankDeliveryInfo.setVisible(true);
         blankDeliveryInfo.toFront();
+        guestUserName.setVisible(false);
+        guestPassword.setVisible(false);
+    }
+
+    public void onGuestRegCheckBoxChecked(){
+        if (guestRegCheckBox.isSelected()) {
+            guestFirstName.setLayoutX(guestFirstName.getLayoutX() - 250);
+            guestLastName.setLayoutX(guestLastName.getLayoutX() - 250);
+            guestUserName.setVisible(true);
+            guestPassword.setVisible(true);
+        }
+        else {
+            guestUserName.setVisible(false);
+            guestPassword.setVisible(false);
+            guestFirstName.setLayoutX(guestFirstName.getLayoutX() + 250);
+            guestLastName.setLayoutX(guestLastName.getLayoutX() + 250);
+
+        }
     }
 
 }
