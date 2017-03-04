@@ -208,4 +208,9 @@ public class MainController implements Initializable {
         shopController.update();
         settingsPanelController.update();
     }
+
+    public void goToPurchaseHistory(){
+        goToShop();
+        shopController.goToPurchaseHistory();
+    }
 }
