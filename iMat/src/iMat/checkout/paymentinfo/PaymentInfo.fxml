@@ -11,16 +11,16 @@
    <children>
       <ImageView fx:id="paymentInfoCardTemplatePic" fitHeight="150.0" fitWidth="237.6731301939058" layoutX="565.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="paymentInfoCardBacksideTemplatePic" fitHeight="150.0" fitWidth="237.6731301939058" layoutX="565.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true" />
-      <TextField fx:id="paymentInfoCardNumber" layoutX="119.0" layoutY="73.0" prefHeight="35.0" prefWidth="360.0" AnchorPane.leftAnchor="119.0">
+      <TextField fx:id="paymentInfoCardNumber" layoutX="261.0" layoutY="130.0" prefHeight="35.0" prefWidth="238.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="paymentInfoCardHolder" layoutX="120.0" layoutY="213.0" prefHeight="35.0" prefWidth="360.0" AnchorPane.leftAnchor="120.0">
+      <TextField fx:id="paymentInfoCardHolder" layoutX="261.0" layoutY="248.0" prefHeight="35.0" prefWidth="238.0">
          <font>
             <Font size="18.0" />
          </font></TextField>
-      <ChoiceBox fx:id="paymentInfoExpireMonth" layoutX="120.0" layoutY="147.0" prefHeight="27.0" prefWidth="49.0" />
+      <ChoiceBox fx:id="paymentInfoExpireMonth" layoutX="261.0" layoutY="193.0" prefHeight="27.0" prefWidth="49.0" />
       <Label layoutX="346.5" layoutY="40.0" text="Fyll i din betalningsinformation" AnchorPane.topAnchor="10.0">
          <font>
             <Font size="24.0" />
@@ -36,23 +36,23 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <ChoiceBox fx:id="paymentInfoExpireYear" layoutX="179.0" layoutY="147.0" prefHeight="27.0" prefWidth="49.0" />
-      <Label layoutX="171.0" layoutY="149.0" text="/">
+      <ChoiceBox fx:id="paymentInfoExpireYear" layoutX="319.0" layoutY="193.0" prefHeight="27.0" prefWidth="49.0" />
+      <Label layoutX="312.0" layoutY="195.0" text="/">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="120.0" layoutY="44.0" text="Kortnummer">
+      <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="136.0" prefHeight="23.0" prefWidth="244.0" text="Kortnummer: " AnchorPane.leftAnchor="15.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="120.0" layoutY="118.0" text="Giltighetsdatum Månad / År">
+      <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="195.0" text="Giltighetsdatum Månad / År: " AnchorPane.leftAnchor="15.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="120.0" layoutY="184.0" text="Kortinnehavandes Namn">
+      <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="254.0" prefHeight="23.0" prefWidth="244.0" text="Kortinnehavandes Namn: " AnchorPane.leftAnchor="15.0">
          <font>
             <Font size="18.0" />
          </font>
@@ -62,19 +62,29 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="16.0" layoutX="665.0" layoutY="150.0" stroke="#dd0000" strokeType="INSIDE" width="18.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="16.0" layoutX="688.0" layoutY="150.0" stroke="#dd0000" strokeType="INSIDE" width="18.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="15.0" layoutX="767.0" layoutY="261.0" stroke="#dd0000" strokeType="INSIDE" width="20.0" />
-      <Label layoutX="120.0" layoutY="258.0" text="CVC/CVV">
+      <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="313.0" prefHeight="23.0" prefWidth="244.0" text="CVC/CVV: " AnchorPane.leftAnchor="15.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="paymentInfoCardCVC" layoutX="120.0" layoutY="287.0" prefHeight="35.0" prefWidth="84.0">
+      <TextField fx:id="paymentInfoCardCVC" layoutX="261.0" layoutY="307.0" prefHeight="35.0" prefWidth="84.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <Line endX="-25.0" endY="40.0" layoutX="605.0" layoutY="91.0" startX="-125.0" stroke="#dd0000" />
-      <Line endX="50.0" endY="55.0" layoutX="615.0" layoutY="101.0" startX="-387.0" startY="60.0" stroke="#dd0000" />
-      <Line endX="-35.0" endY="77.0" layoutX="615.0" layoutY="101.0" startX="-135.0" startY="130.0" stroke="#dd0000" />
-      <Line endX="152.0" endY="165.0" layoutX="615.0" layoutY="101.0" startX="-411.0" startY="200.0" stroke="#dd0000" />
+      <Line endX="-25.0" endY="40.0" layoutX="605.0" layoutY="91.0" startX="-106.0" startY="55.0" stroke="#dd0000" />
+      <Line endX="-40.0" endY="55.0" layoutX="615.0" layoutY="101.0" startX="-247.0" startY="105.0" stroke="#dd0000" />
+      <Line endX="50.0" endY="55.0" layoutX="615.0" layoutY="101.0" startX="-40.0" startY="55.0" stroke="#dd0000" />
+      <Line endX="-35.0" endY="77.0" layoutX="615.0" layoutY="101.0" startX="-116.0" startY="162.0" stroke="#dd0000" />
+      <Line endX="152.0" endY="165.0" layoutX="615.0" layoutY="101.0" startX="-270.0" startY="225.0" stroke="#dd0000" />
+      <Label alignment="CENTER_RIGHT" layoutX="25.0" layoutY="79.0" prefHeight="23.0" prefWidth="244.0" text="Korttyp: " AnchorPane.leftAnchor="15.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="visaRadioButton" layoutX="261.0" layoutY="82.0" mnemonicParsing="false" />
+      <ImageView fx:id="visaLogoImage" fitHeight="60.0" fitWidth="100.0" layoutX="286.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" />
+      <RadioButton fx:id="mcRadioButton" layoutX="402.0" layoutY="82.0" mnemonicParsing="false" />
+      <ImageView fx:id="mcLogoImage" fitHeight="60.0" fitWidth="100.0" layoutX="426.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

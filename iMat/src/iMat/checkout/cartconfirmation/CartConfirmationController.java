@@ -1,6 +1,7 @@
 package iMat.checkout.cartconfirmation;
 
 import iMat.checkout.CheckoutController;
+import iMat.checkout.deliveryinfo.DeliveryInfoController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

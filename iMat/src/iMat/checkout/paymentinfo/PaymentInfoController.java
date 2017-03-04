@@ -37,11 +37,22 @@ public class PaymentInfoController implements Initializable {
     private TextField paymentInfoCardNumber;
     @FXML
     private TextField paymentInfoCardCVC;
+    @FXML
+    private RadioButton visaRadioButton;
+    @FXML
+    private RadioButton mcRadioButton;
+    @FXML
+    private ImageView visaLogoImage;
+    @FXML
+    private ImageView mcLogoImage;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         paymentInfoCardTemplatePic.setImage(new Image(String.valueOf(getClass().getClassLoader().getResource("resources/kreditkort.png"))));
         paymentInfoCardBacksideTemplatePic.setImage(new Image(String.valueOf(getClass().getClassLoader().getResource("resources/kreditkortbaksida.png"))));
+        visaLogoImage.setImage(new Image(String.valueOf(getClass().getClassLoader().getResource("resources/kreditkortbaksida.png"))));
+        mcLogoImage.setImage(new Image(String.valueOf(getClass().getClassLoader().getResource("resources/kreditkortbaksida.png"))));
+
     }
 
     public void injectCheckoutController(CheckoutController cc) {

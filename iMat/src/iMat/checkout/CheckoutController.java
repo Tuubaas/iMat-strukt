@@ -19,6 +19,8 @@ public class CheckoutController implements Initializable {
 
     private MainController mc;
 
+    private DeliveryInfoController dic;
+
     //Controllers
     @FXML
     private CartConfirmationController cartConfirmationController;
@@ -96,16 +98,9 @@ public class CheckoutController implements Initializable {
     }
 
     public void onConfirmCartNextButtonClicked(){
-        if (mc.isLoggedIn()){
             System.out.println("Inloggad");
             deliveryInfoAnchor.setVisible(true);
             deliveryInfoAnchor.toFront();
-        }
-        else {
-            System.out.println("Inte inloggad");
-            mc.logInAnchor.setVisible(true);
-            mc.logInAnchor.toFront();
-        }
     }
 
     public void onDeliveryInfoNextButtonClicked(){
@@ -145,7 +140,5 @@ public class CheckoutController implements Initializable {
         paymentInfoAnchor.setVisible(true);
         paymentInfoAnchor.toFront();
     }
-
-
 
 }
