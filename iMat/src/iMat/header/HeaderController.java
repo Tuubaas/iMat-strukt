@@ -1,6 +1,5 @@
 package iMat.header;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
 import iMat.MainController;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -13,7 +12,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Color;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -121,5 +119,10 @@ public class HeaderController implements Initializable {
     @FXML
     public void onSettingsButtonClicked() {
         mc.showSettings(true);
+    }
+
+    @FXML
+    public void onHistoryButtonClicked() {
+        mc.goToPurchaseHistory();
     }
 }

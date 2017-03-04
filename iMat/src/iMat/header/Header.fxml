@@ -66,8 +66,9 @@
                             <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <MenuButton fx:id="accountMenuButton" alignment="CENTER" ellipsisString="" mnemonicParsing="false" popupSide="TOP" prefHeight="40.0" prefWidth="120.0" text="Konto" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                              <MenuButton fx:id="accountMenuButton" alignment="CENTER" ellipsisString="" mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" text="Konto" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                                 <items>
+                                    <MenuItem fx:id="historyButton" mnemonicParsing="false" onAction="#onHistoryButtonClicked" text="Tidigare köp" />
                                   <MenuItem fx:id="settingsButton" mnemonicParsing="false" onAction="#onSettingsButtonClicked" text="Inställningar" />
                                   <MenuItem fx:id="logOutButton" mnemonicParsing="false" onAction="#onLogOutClicked" text="Logga ut" />
                                 </items>

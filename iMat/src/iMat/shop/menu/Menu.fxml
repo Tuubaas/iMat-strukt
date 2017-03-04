@@ -1,189 +1,278 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Accordion?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TitledPane?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-
-<AnchorPane fx:id="mainAnchor" prefHeight="1080.0" prefWidth="240.0" stylesheets="@menu.css" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.shop.menu.MenuController">
-   <children>
-      <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="1080.0" minHeight="10.0" prefHeight="300.0" vgrow="SOMETIMES" />
-         </rowConstraints>
-         <children>
-            <Accordion fx:id="accordion" prefHeight="1080.0" prefWidth="600.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3">
-              <panes>
-                <TitledPane fx:id="category1" animated="false" onMouseClicked="#onFruitAndVegetablesTiledPaneClicked" text="Frukt och grönt">
-                  <content>
-                    <AnchorPane>
-                           <children>
-                              <VBox layoutX="32.4" layoutY="-11.6" prefHeight="689.0" prefWidth="238.0" spacing="1.0" styleClass="v-box" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-15.0" AnchorPane.rightAnchor="-15.0" AnchorPane.topAnchor="0.0">
-                                 <children>
-                                    <Button fx:id="berriesButton" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#onBerriesButtonClicked" prefHeight="20.0" prefWidth="240.0" text="Bär" />
-                                    <Button fx:id="fruitButton" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#onFruitButtonClicked" prefHeight="20.0" prefWidth="240.0" text="Frukt" />
-                                    <Button fx:id="lemonAndLimeButton" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#onLemonAndLimeButtonClicked" prefHeight="20.0" prefWidth="240.0" text="Citron och Lime" />
-                                    <Button fx:id="exoticFruitsButton" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#onExoticFruitsButtonClicked" prefHeight="20.0" prefWidth="240.0" text="Exotiska frukter" />
-                                    <Button fx:id="cabbageAndRootVegetablesButton" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#onCabbageAndRootVegetablesButtonClicked" prefHeight="20.0" prefWidth="240.0" text="Sallad och rotfrukter" />
-                                    <Button fx:id="freshHerbsButton" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#onFreshHerbsButtonClicked" prefHeight="20.0" prefWidth="240.0" text="Färska örter" />
-                                    <Button fx:id="otherVegetablesButton" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#onOtherVegetablesButtonClicked" prefHeight="20.0" prefWidth="240.0" text="Övrigt" />
-                                 </children>
-                              </VBox>
-                           </children>
-                        </AnchorPane>
-                  </content>
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                </TitledPane>
-                <TitledPane fx:id="category2" alignment="BASELINE_LEFT" animated="false" onMouseClicked="#onMilkAndRefrigeratedTiledPaneClicked" text="Mjölk och kylvaror">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                           <children>
-                              <VBox prefHeight="689.0" prefWidth="238.0" spacing="1.0" styleClass="v-box" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-10.0" AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="0.0">
-                                 <children>
-                                    <Button fx:id="cheeseButton" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#onCheeseButtonClicked" prefHeight="20.0" prefWidth="240.0" text="Ost" />
-                                    <Button fx:id="milkButton" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#onMilkButtonClicked" prefHeight="20.0" prefWidth="240.0" text="Mjölk" />
-                                    <Button fx:id="eggsButton" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#onEggsButtonClicked" prefHeight="20.0" prefWidth="240.0" text="Ägg" />
-                                    <Button fx:id="juiceButton" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#onJuiceButtonClicked" prefHeight="20.0" prefWidth="240.0" text="Juice" />
-                                    <Button fx:id="yoghurtButton" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#onYoghurtButtonClicked" prefHeight="20.0" prefWidth="240.0" text="Yoghurt" />
-                                 </children>
-                              </VBox>
-                           </children></AnchorPane>
-                  </content>
-                     <opaqueInsets>
-                        <Insets top="5.0" />
-                     </opaqueInsets>
-                     <padding>
-                        <Insets top="5.0" />
-                     </padding>
-                </TitledPane>
-                <TitledPane fx:id="category3" animated="false" onMouseClicked="#onMeatFishBirdTiledPaneClicked" text="Kött, fisk och fågel">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="v-box">
-                           <children>
-                              <VBox prefHeight="689.0" prefWidth="238.0" spacing="1.0" styleClass="v-box" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-10.0" AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="0.0">
-                                 <children>
-                                    <Button fx:id="meatButton" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#onMeatButtonClicked" prefHeight="20.0" prefWidth="240.0" text="Kött" />
-                                    <Button fx:id="fishButton" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#onFishButtonClicked" prefHeight="20.0" prefWidth="240.0" text="Fisk" />
-                                    <Button fx:id="birdButton" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#onBirdButtonClicked" prefHeight="20.0" prefWidth="240.0" text="Fågel" />
-                                 </children>
-                              </VBox>
-                           </children></AnchorPane>
-                  </content>
-                     <opaqueInsets>
-                        <Insets top="555551.0" />
-                     </opaqueInsets>
-                     <padding>
-                        <Insets top="5.0" />
-                     </padding>
-                </TitledPane>
-                  <TitledPane fx:id="category4" animated="false" onMouseClicked="#onBreadAndPastriesTiledPaneClicked" text="Bröd och bakverk">
-                     <content>
-                        <AnchorPane fx:id="breadAnchor" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                           <children>
-                              <VBox prefHeight="689.0" prefWidth="238.0" spacing="1.0" styleClass="v-box" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-10.0" AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="0.0">
-                                 <children>
-                                    <Button fx:id="breadButton" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#onBreadButtonClicked" prefHeight="20.0" prefWidth="240.0" text="Bröd" />
-                                    <Button fx:id="pastryButton" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#onPastryButtonClicked" prefHeight="20.0" prefWidth="240.0" text="Bakverk" />
-                                 </children>
-                              </VBox>
-                           </children></AnchorPane>
-                     </content>
-                     <opaqueInsets>
-                        <Insets top="5.0" />
-                     </opaqueInsets>
-                     <padding>
-                        <Insets top="5.0" />
-                     </padding>
-                  </TitledPane>
-                  <TitledPane fx:id="category5" animated="false" onMouseClicked="#onDryProductsTiledPaneClicked" text="Torrvaror">
-                     <content>
-                        <AnchorPane fx:id="pastriesAnchor" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                           <children>
-                              <VBox prefHeight="689.0" prefWidth="238.0" spacing="1.0" styleClass="v-box" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-10.0" AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="0.0">
-                                 <children>
-                                    <Button fx:id="flourAndBakingButton" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#onFlourAndBakingButtonClicked" prefHeight="20.0" prefWidth="240.0" text="Mjöl och bakning" />
-                                    <Button fx:id="nutsAndSeedsButton" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#onNutsAndSeedsButtonClicked" prefHeight="20.0" prefWidth="240.0" text="Nötter och frön" />
-                                    <Button fx:id="pastaAndRiceButton" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#onPastaAndRiceButtonClicked" prefHeight="20.0" prefWidth="240.0" text="Pasta och ris" />
-                                    <Button fx:id="dryHerbsButton" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#onDryHerbsButtonClicked" prefHeight="20.0" prefWidth="240.0" text="Torra örter" />
-                                    <Button fx:id="coffeeAndTeaButton" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#onCoffeeAndTeaButtonClicked" prefHeight="20.0" prefWidth="240.0" text="Kaffe och te" />
-                                 </children>
-                              </VBox>
-                           </children></AnchorPane>
-                     </content>
-                     <opaqueInsets>
-                        <Insets top="5.0" />
-                     </opaqueInsets>
-                     <padding>
-                        <Insets top="5.0" />
-                     </padding>
-                  </TitledPane>
-                  <TitledPane fx:id="category6" animated="false" onMouseClicked="#onCandyAndSnacksTiledPaneClicked" text="Godis och snacks">
-                     <content>
-                        <AnchorPane fx:id="candyAnchor" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                           <children>
-                              <VBox prefHeight="689.0" prefWidth="238.0" spacing="1.0" styleClass="v-box" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-10.0" AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="0.0">
-                                 <children>
-                                    <Button fx:id="candyButton" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#onCandyButtonClicked" prefHeight="20.0" prefWidth="240.0" text="Godis" />
-                                    <Button fx:id="chipsButton" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#onChipsButtonClicked" prefHeight="20.0" prefWidth="240.0" text="Chips" />
-                                    <Button fx:id="snackNutsButton" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#onSnackNutsButtonClicked" prefHeight="20.0" prefWidth="240.0" text="Nötter" />
-                                    <Button fx:id="iceCreamButton" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#onIceCreamButtonClicked" prefHeight="20.0" prefWidth="240.0" text="Glass" />
-                                 </children>
-                              </VBox>
-                           </children></AnchorPane>
-                     </content>
-                     <opaqueInsets>
-                        <Insets top="5.0" />
-                     </opaqueInsets>
-                     <padding>
-                        <Insets top="5.0" />
-                     </padding>
-                  </TitledPane>
-                  <TitledPane fx:id="category7" animated="false" onMouseClicked="#onDrinksTiledPaneClicked" text="Dryck">
-                     <content>
-                        <AnchorPane fx:id="drinksAnchor" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                           <children>
-                              <VBox prefHeight="689.0" prefWidth="238.0" spacing="1.0" styleClass="v-box" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-10.0" AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="0.0">
-                                 <children>
-                                    <Button fx:id="sodaButton" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#onSodaButtonClicked" prefHeight="20.0" prefWidth="250.0" text="Läsk" />
-                                 </children>
-                              </VBox>
-                           </children></AnchorPane>
-                     </content>
-                     <opaqueInsets>
-                        <Insets top="5.0" />
-                     </opaqueInsets>
-                     <padding>
-                        <Insets top="5.0" />
-                     </padding>
-                  </TitledPane>
-              </panes>
-            </Accordion>
-            <Button fx:id="favoriteButton" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onFavoriteButtonClicked" prefHeight="39.0" prefWidth="250.0" text="Favoriter">
-               <padding>
-                  <Insets left="35.0" />
-               </padding>
-            </Button>
-            <Label alignment="BASELINE_CENTER" text="Sortiment" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-         </children>
-      </GridPane>
-   </children>
+<AnchorPane fx:id="mainAnchor" prefHeight="1080.0" prefWidth="240.0" stylesheets="@menu.css"
+            xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="iMat.shop.menu.MenuController">
+    <children>
+        <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                  AnchorPane.topAnchor="0.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="1080.0" minHeight="10.0" prefHeight="300.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <children>
+                <Accordion fx:id="accordion" prefHeight="1080.0" prefWidth="600.0" GridPane.hgrow="ALWAYS"
+                           GridPane.rowIndex="3">
+                    <panes>
+                        <TitledPane fx:id="category1" animated="false"
+                                    onMouseClicked="#onFruitAndVegetablesTiledPaneClicked" text="Frukt och grönt">
+                            <content>
+                                <AnchorPane>
+                                    <children>
+                                        <VBox layoutX="32.4" layoutY="-11.6" prefHeight="689.0" prefWidth="238.0"
+                                              spacing="1.0" styleClass="v-box" AnchorPane.bottomAnchor="0.0"
+                                              AnchorPane.leftAnchor="-15.0" AnchorPane.rightAnchor="-15.0"
+                                              AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Button fx:id="berriesButton" minHeight="0.0" minWidth="0.0"
+                                                        mnemonicParsing="false" onAction="#onBerriesButtonClicked"
+                                                        prefHeight="20.0" prefWidth="240.0" text="Bär"/>
+                                                <Button fx:id="fruitButton" minHeight="0.0" minWidth="0.0"
+                                                        mnemonicParsing="false" onAction="#onFruitButtonClicked"
+                                                        prefHeight="20.0" prefWidth="240.0" text="Frukt"/>
+                                                <Button fx:id="lemonAndLimeButton" minHeight="0.0" minWidth="0.0"
+                                                        mnemonicParsing="false" onAction="#onLemonAndLimeButtonClicked"
+                                                        prefHeight="20.0" prefWidth="240.0" text="Citron och Lime"/>
+                                                <Button fx:id="exoticFruitsButton" minHeight="0.0" minWidth="0.0"
+                                                        mnemonicParsing="false" onAction="#onExoticFruitsButtonClicked"
+                                                        prefHeight="20.0" prefWidth="240.0" text="Exotiska frukter"/>
+                                                <Button fx:id="cabbageAndRootVegetablesButton" minHeight="0.0"
+                                                        minWidth="0.0" mnemonicParsing="false"
+                                                        onAction="#onCabbageAndRootVegetablesButtonClicked"
+                                                        prefHeight="20.0" prefWidth="240.0"
+                                                        text="Sallad och rotfrukter"/>
+                                                <Button fx:id="freshHerbsButton" minHeight="0.0" minWidth="0.0"
+                                                        mnemonicParsing="false" onAction="#onFreshHerbsButtonClicked"
+                                                        prefHeight="20.0" prefWidth="240.0" text="Färska örter"/>
+                                                <Button fx:id="otherVegetablesButton" minHeight="0.0" minWidth="0.0"
+                                                        mnemonicParsing="false"
+                                                        onAction="#onOtherVegetablesButtonClicked" prefHeight="20.0"
+                                                        prefWidth="240.0" text="Övrigt"/>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </TitledPane>
+                        <TitledPane fx:id="category2" alignment="BASELINE_LEFT" animated="false"
+                                    onMouseClicked="#onMilkAndRefrigeratedTiledPaneClicked" text="Mjölk och kylvaror">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <VBox prefHeight="689.0" prefWidth="238.0" spacing="1.0" styleClass="v-box"
+                                              AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-10.0"
+                                              AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Button fx:id="cheeseButton" minHeight="0.0" minWidth="0.0"
+                                                        mnemonicParsing="false" onAction="#onCheeseButtonClicked"
+                                                        prefHeight="20.0" prefWidth="240.0" text="Ost"/>
+                                                <Button fx:id="milkButton" minHeight="0.0" minWidth="0.0"
+                                                        mnemonicParsing="false" onAction="#onMilkButtonClicked"
+                                                        prefHeight="20.0" prefWidth="240.0" text="Mjölk"/>
+                                                <Button fx:id="eggsButton" minHeight="0.0" minWidth="0.0"
+                                                        mnemonicParsing="false" onAction="#onEggsButtonClicked"
+                                                        prefHeight="20.0" prefWidth="240.0" text="Ägg"/>
+                                                <Button fx:id="juiceButton" minHeight="0.0" minWidth="0.0"
+                                                        mnemonicParsing="false" onAction="#onJuiceButtonClicked"
+                                                        prefHeight="20.0" prefWidth="240.0" text="Juice"/>
+                                                <Button fx:id="yoghurtButton" minHeight="0.0" minWidth="0.0"
+                                                        mnemonicParsing="false" onAction="#onYoghurtButtonClicked"
+                                                        prefHeight="20.0" prefWidth="240.0" text="Yoghurt"/>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                            <opaqueInsets>
+                                <Insets top="5.0"/>
+                            </opaqueInsets>
+                            <padding>
+                                <Insets top="5.0"/>
+                            </padding>
+                        </TitledPane>
+                        <TitledPane fx:id="category3" animated="false" onMouseClicked="#onMeatFishBirdTiledPaneClicked"
+                                    text="Kött, fisk och fågel">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"
+                                            styleClass="v-box">
+                                    <children>
+                                        <VBox prefHeight="689.0" prefWidth="238.0" spacing="1.0" styleClass="v-box"
+                                              AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-10.0"
+                                              AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Button fx:id="meatButton" minHeight="0.0" minWidth="0.0"
+                                                        mnemonicParsing="false" onAction="#onMeatButtonClicked"
+                                                        prefHeight="20.0" prefWidth="240.0" text="Kött"/>
+                                                <Button fx:id="fishButton" minHeight="0.0" minWidth="0.0"
+                                                        mnemonicParsing="false" onAction="#onFishButtonClicked"
+                                                        prefHeight="20.0" prefWidth="240.0" text="Fisk"/>
+                                                <Button fx:id="birdButton" minHeight="0.0" minWidth="0.0"
+                                                        mnemonicParsing="false" onAction="#onBirdButtonClicked"
+                                                        prefHeight="20.0" prefWidth="240.0" text="Fågel"/>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                            <opaqueInsets>
+                                <Insets top="555551.0"/>
+                            </opaqueInsets>
+                            <padding>
+                                <Insets top="5.0"/>
+                            </padding>
+                        </TitledPane>
+                        <TitledPane fx:id="category4" animated="false"
+                                    onMouseClicked="#onBreadAndPastriesTiledPaneClicked" text="Bröd och bakverk">
+                            <content>
+                                <AnchorPane fx:id="breadAnchor" minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                                            prefWidth="200.0">
+                                    <children>
+                                        <VBox prefHeight="689.0" prefWidth="238.0" spacing="1.0" styleClass="v-box"
+                                              AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-10.0"
+                                              AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Button fx:id="breadButton" minHeight="0.0" minWidth="0.0"
+                                                        mnemonicParsing="false" onAction="#onBreadButtonClicked"
+                                                        prefHeight="20.0" prefWidth="240.0" text="Bröd"/>
+                                                <Button fx:id="pastryButton" minHeight="0.0" minWidth="0.0"
+                                                        mnemonicParsing="false" onAction="#onPastryButtonClicked"
+                                                        prefHeight="20.0" prefWidth="240.0" text="Bakverk"/>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                            <opaqueInsets>
+                                <Insets top="5.0"/>
+                            </opaqueInsets>
+                            <padding>
+                                <Insets top="5.0"/>
+                            </padding>
+                        </TitledPane>
+                        <TitledPane fx:id="category5" animated="false" onMouseClicked="#onDryProductsTiledPaneClicked"
+                                    text="Torrvaror">
+                            <content>
+                                <AnchorPane fx:id="pastriesAnchor" minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                                            prefWidth="200.0">
+                                    <children>
+                                        <VBox prefHeight="689.0" prefWidth="238.0" spacing="1.0" styleClass="v-box"
+                                              AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-10.0"
+                                              AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Button fx:id="flourAndBakingButton" minHeight="0.0" minWidth="0.0"
+                                                        mnemonicParsing="false"
+                                                        onAction="#onFlourAndBakingButtonClicked" prefHeight="20.0"
+                                                        prefWidth="240.0" text="Mjöl och bakning"/>
+                                                <Button fx:id="nutsAndSeedsButton" minHeight="0.0" minWidth="0.0"
+                                                        mnemonicParsing="false" onAction="#onNutsAndSeedsButtonClicked"
+                                                        prefHeight="20.0" prefWidth="240.0" text="Nötter och frön"/>
+                                                <Button fx:id="pastaAndRiceButton" minHeight="0.0" minWidth="0.0"
+                                                        mnemonicParsing="false" onAction="#onPastaAndRiceButtonClicked"
+                                                        prefHeight="20.0" prefWidth="240.0" text="Pasta och ris"/>
+                                                <Button fx:id="dryHerbsButton" minHeight="0.0" minWidth="0.0"
+                                                        mnemonicParsing="false" onAction="#onDryHerbsButtonClicked"
+                                                        prefHeight="20.0" prefWidth="240.0" text="Torra örter"/>
+                                                <Button fx:id="coffeeAndTeaButton" minHeight="0.0" minWidth="0.0"
+                                                        mnemonicParsing="false" onAction="#onCoffeeAndTeaButtonClicked"
+                                                        prefHeight="20.0" prefWidth="240.0" text="Kaffe och te"/>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                            <opaqueInsets>
+                                <Insets top="5.0"/>
+                            </opaqueInsets>
+                            <padding>
+                                <Insets top="5.0"/>
+                            </padding>
+                        </TitledPane>
+                        <TitledPane fx:id="category6" animated="false"
+                                    onMouseClicked="#onCandyAndSnacksTiledPaneClicked" text="Godis och snacks">
+                            <content>
+                                <AnchorPane fx:id="candyAnchor" minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                                            prefWidth="200.0">
+                                    <children>
+                                        <VBox prefHeight="689.0" prefWidth="238.0" spacing="1.0" styleClass="v-box"
+                                              AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-10.0"
+                                              AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Button fx:id="candyButton" minHeight="0.0" minWidth="0.0"
+                                                        mnemonicParsing="false" onAction="#onCandyButtonClicked"
+                                                        prefHeight="20.0" prefWidth="240.0" text="Godis"/>
+                                                <Button fx:id="chipsButton" minHeight="0.0" minWidth="0.0"
+                                                        mnemonicParsing="false" onAction="#onChipsButtonClicked"
+                                                        prefHeight="20.0" prefWidth="240.0" text="Chips"/>
+                                                <Button fx:id="snackNutsButton" minHeight="0.0" minWidth="0.0"
+                                                        mnemonicParsing="false" onAction="#onSnackNutsButtonClicked"
+                                                        prefHeight="20.0" prefWidth="240.0" text="Nötter"/>
+                                                <Button fx:id="iceCreamButton" minHeight="0.0" minWidth="0.0"
+                                                        mnemonicParsing="false" onAction="#onIceCreamButtonClicked"
+                                                        prefHeight="20.0" prefWidth="240.0" text="Glass"/>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                            <opaqueInsets>
+                                <Insets top="5.0"/>
+                            </opaqueInsets>
+                            <padding>
+                                <Insets top="5.0"/>
+                            </padding>
+                        </TitledPane>
+                        <TitledPane fx:id="category7" animated="false" onMouseClicked="#onDrinksTiledPaneClicked"
+                                    text="Dryck">
+                            <content>
+                                <AnchorPane fx:id="drinksAnchor" minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                                            prefWidth="200.0">
+                                    <children>
+                                        <VBox prefHeight="689.0" prefWidth="238.0" spacing="1.0" styleClass="v-box"
+                                              AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-10.0"
+                                              AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <Button fx:id="sodaButton" minHeight="0.0" minWidth="0.0"
+                                                        mnemonicParsing="false" onAction="#onSodaButtonClicked"
+                                                        prefHeight="20.0" prefWidth="250.0" text="Läsk"/>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                            <opaqueInsets>
+                                <Insets top="5.0"/>
+                            </opaqueInsets>
+                            <padding>
+                                <Insets top="5.0"/>
+                            </padding>
+                        </TitledPane>
+                    </panes>
+                </Accordion>
+                <Button fx:id="favoriteButton" alignment="CENTER_RIGHT" mnemonicParsing="false"
+                        onAction="#onFavoriteButtonClicked" prefHeight="39.0" prefWidth="250.0" text="Favoriter">
+                    <padding>
+                        <Insets left="35.0"/>
+                    </padding>
+                </Button>
+                <Label alignment="BASELINE_CENTER" text="Sortiment" GridPane.halignment="CENTER" GridPane.rowIndex="2"
+                       GridPane.valignment="BOTTOM">
+                    <font>
+                        <Font size="20.0"/>
+                    </font>
+                </Label>
+            </children>
+        </GridPane>
+    </children>
 </AnchorPane>
