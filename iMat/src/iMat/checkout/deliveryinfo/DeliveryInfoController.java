@@ -60,6 +60,8 @@ public class DeliveryInfoController implements Initializable{
     private DatePicker deliveryInfoDatePicker;
     @FXML
     private ChoiceBox deliveryInfoTimeChoice;
+    @FXML
+    private Label LoginWarningLabel;
 
     //Not logged in, top buttons
     @FXML
@@ -106,6 +108,8 @@ public class DeliveryInfoController implements Initializable{
     private Button guestBackButton;
     @FXML
     private CheckBox guestRegCheckBox;
+    @FXML
+    private Label guestWarningLabel;
 
 
     private final ToggleGroup group = new ToggleGroup();
@@ -128,7 +132,14 @@ public class DeliveryInfoController implements Initializable{
     public void injectMainController(MainController mc){
         this.mc = mc;
     }
+
     public void onDeliveryInfoNextButtonClicked(){
+        if (cc.getMc().isLoggedIn()){
+            if (deliveryInfoFirstName.getText().equals("") || deliveryInfoLastName.getText().equals("") || deliveryInfoAdress.getText().equals("")){
+
+            }
+
+        }
         cc.onDeliveryInfoNextButtonClicked();
         if (guestRegCheckBox.isSelected()){
             Customer customer = cc.getWrapper().getCustomer();
