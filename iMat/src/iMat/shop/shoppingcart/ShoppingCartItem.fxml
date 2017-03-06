@@ -14,7 +14,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="amountField" layoutX="3.0" layoutY="5.0" prefHeight="41.0" prefWidth="58.0" text="1">
+      <TextField fx:id="amountField" layoutX="5.0" layoutY="8.0" prefHeight="36.0" prefWidth="58.0" text="1">
          <font>
             <Font size="14.0" />
          </font>
