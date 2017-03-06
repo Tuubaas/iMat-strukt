@@ -59,5 +59,7 @@ public class ShoppingCartController implements Initializable {
         for(ShoppingItem p : wrapper.getShoppingCart().getItems()){
             itemBox.getChildren().add(new ShoppingCartItem(p, this));
         }
+
+        itemBox.setPrefHeight(itemBox.getChildren().size() * 50 + 100);
     }
 }
