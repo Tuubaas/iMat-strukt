@@ -89,12 +89,12 @@
                                  </GridPane.margin>
                               </Label>
                               <Label fx:id="eMailLabel" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="200.0" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" />
-                              <ImageView fitHeight="52.0" fitWidth="53.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
+                              <ImageView fitHeight="50.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="RIGHT">
                                  <image>
-                                    <Image url="@../../resources/profile.jpeg" />
+                                    <Image url="@../../resources/manager-512.png" />
                                  </image>
                                  <GridPane.margin>
-                                    <Insets right="20.0" />
+                                    <Insets right="25.0" />
                                  </GridPane.margin>
                               </ImageView>
                            </children>
