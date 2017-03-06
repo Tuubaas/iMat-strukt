@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Bounds;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.ColorInput;
 import javafx.scene.image.ImageView;
@@ -29,7 +30,7 @@ public class LogInController implements Initializable {
     @FXML
     private TextField loginUsername;
     @FXML
-    private TextField loginPassword;
+    private PasswordField loginPassword;
     @FXML
     private Button loginButton;
     @FXML
@@ -41,7 +42,7 @@ public class LogInController implements Initializable {
     @FXML
     private TextField regUserName;
     @FXML
-    private TextField regPassword;
+    private PasswordField regPassword;
     @FXML
     private Button regButton;
     @FXML

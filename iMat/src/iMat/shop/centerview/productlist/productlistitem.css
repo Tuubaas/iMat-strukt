@@ -8,7 +8,6 @@
 
 .button {
     -fx-background-color: "A1CCA6";
-    -fx-text-fill: ladder(background, white 49%, black 50%);
 }
 
 .button:hover {

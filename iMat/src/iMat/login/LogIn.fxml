@@ -9,11 +9,12 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.control.PasswordField?>
 <AnchorPane id="background" fx:id="mainAnchor" maxHeight="1080.0" maxWidth="1920.0" minHeight="0.0" minWidth="0.0" onMouseClicked="#onMainPaneClicked" pickOnBounds="false" prefHeight="720.0" prefWidth="1280.0" stylesheets="@login.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.login.LogInController">
     <AnchorPane id="window" layoutX="390.0" layoutY="110.0" maxHeight="1080.0" minHeight="0.0" prefHeight="500.0" prefWidth="500.0" stylesheets="@login.css">
         <TextField fx:id="loginUsername" layoutX="35.0" layoutY="98.0" onAction="#onLoginUsernameFieldAction" prefHeight="25.0" prefWidth="187.0" />
         <Line endY="-220.0" layoutX="251.0" layoutY="299.0" startY="220.0" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="249.0" AnchorPane.rightAnchor="249.0" AnchorPane.topAnchor="29.0" />
-        <TextField fx:id="loginPassword" layoutX="35.0" layoutY="157.0" onAction="#onLoginPasswordFieldAction" prefHeight="25.0" prefWidth="187.0" />
+        <PasswordField fx:id="loginPassword" layoutX="35.0" layoutY="157.0" onAction="#onLoginPasswordFieldAction" prefHeight="25.0" prefWidth="187.0" />
         <Label layoutX="82.0" layoutY="30.0" text="Logga in">
             <font>
                 <Font size="24.0" />
@@ -63,7 +64,7 @@
                 <Font size="18.0" />
             </font>
         </Label>
-        <TextField fx:id="regPassword" layoutX="281.0" layoutY="343.0" onAction="#onRegPasswordFieldAction" prefHeight="25.0" prefWidth="187.0" />
+        <PasswordField fx:id="regPassword" layoutX="281.0" layoutY="343.0" onAction="#onRegPasswordFieldAction" prefHeight="25.0" prefWidth="187.0" />
         <Label layoutX="281.0" layoutY="316.0" text="Lösenord">
             <font>
                 <Font size="18.0" />
@@ -76,7 +77,7 @@
         </Button>
         <ImageView fx:id="exitImage" fitHeight="25.0" fitWidth="25.0" layoutX="61.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true" styleClass="exit-image" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <image>
-                <Image url="@../../resources/Exit.png" />
+                <Image url="@../../resources/exit.png" />
             </image>
         </ImageView>
       <Label fx:id="loginWarning" alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="244.0" prefHeight="20.0" prefWidth="230.0" textFill="RED" AnchorPane.bottomAnchor="236.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="250.0">
