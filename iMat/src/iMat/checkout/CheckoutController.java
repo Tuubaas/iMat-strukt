@@ -103,30 +103,21 @@ public class CheckoutController implements Initializable {
     }
 
     public void onConfirmCartNextButtonClicked(){
-        //if (mc.isLoggedIn()) {
             deliveryInfoAnchor.setVisible(true);
             deliveryInfoAnchor.toFront();
-        //}
-        //else{
-
-        //}
-
     }
 
     public void onDeliveryInfoNextButtonClicked(){
-        System.out.println("Går från Delivery info");
         paymentInfoAnchor.setVisible(true);
         paymentInfoAnchor.toFront();
     }
 
     public void onPaymentInfoNextButtonClicked(){
-        System.out.println("Går från Payment info");
         confirmationAnchor.setVisible(true);
         confirmationAnchor.toFront();
     }
 
     public void onConfirmationNextButtonClicked(){
-        System.out.println("går från Confirmation");
         mc.purchaseDoneAnchor.setVisible(true);
         mc.purchaseDoneAnchor.toFront();
     }

@@ -4,6 +4,7 @@ package iMat.checkout.deliveryinfo;
 import iMat.BackendWrapper;
 import iMat.MainController;
 import iMat.checkout.CheckoutController;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -56,9 +57,7 @@ public class DeliveryInfoController implements Initializable{
     @FXML
     private TextField deliveryInfoCity;
     @FXML
-    private ChoiceBox deliveryInfoMonthChoice;
-    @FXML
-    private ChoiceBox deliveryInfoDayChoice;
+    private DatePicker deliveryInfoDatePicker;
     @FXML
     private ChoiceBox deliveryInfoTimeChoice;
 
@@ -98,9 +97,7 @@ public class DeliveryInfoController implements Initializable{
     @FXML
     private TextField guestPassword;
     @FXML
-    private ChoiceBox guestDayChoice;
-    @FXML
-    private ChoiceBox guestMonthChoice;
+    private DatePicker guestDatePicker;
     @FXML
     private ChoiceBox guestTimeChoice;
     @FXML
@@ -118,6 +115,10 @@ public class DeliveryInfoController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         logInRadioButton.setToggleGroup(group);
         guestRadioButton.setToggleGroup(group);
+        guestTimeChoice.setItems(FXCollections.observableArrayList("Förmiddag, 8-12", "Eftermiddag, 13-17"));
+        guestTimeChoice.getSelectionModel().selectFirst();
+        deliveryInfoTimeChoice.setItems(FXCollections.observableArrayList("Förmiddag, 8-12", "Eftermiddag, 13-17"));
+        deliveryInfoTimeChoice.getSelectionModel().selectFirst();
     }
 
     public void injectCheckoutController(CheckoutController cc){
@@ -178,7 +179,6 @@ public class DeliveryInfoController implements Initializable{
         User user = MainController.getBackendWrapper().getUser();
 
         if (user.getPassword().equals(pass) && user.getUserName().equals(name)) {
-            System.out.println("Login success");
             cc.getMc().login();
             cc.getMc().showLogin(false);
             loggedInAnchor.setVisible(true);
@@ -219,6 +219,10 @@ public class DeliveryInfoController implements Initializable{
             guestLastName.setLayoutX(guestLastName.getLayoutX() + 250);
 
         }
+    }
+
+    public String getSelectedDate(){
+        return guestDatePicker.getValue().toString();
     }
 
 }
