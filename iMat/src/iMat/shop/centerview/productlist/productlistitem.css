@@ -15,10 +15,20 @@
     -fx-background-color: #AAAAAA;
 }
 
+/* Uppåtknapp
+*/
 .increment-arrow-button {
     -fx-background-color:  "A1CCA6";
 }
+.increment-arrow-button:hover {
+    -fx-background-color: #AAAAAA;
+}
 
+/* Neråtknapp
+*/
 .decrement-arrow-button {
     -fx-background-color:  "A1CCA6";
+}
+.decrement-arrow-button:hover {
+    -fx-background-color: #AAAAAA;
 }

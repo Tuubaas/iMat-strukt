@@ -1,9 +1,10 @@
 .button{
-    -fx-base: darkgrey;
+    -fx-background-color: "A1CCA6";
+    -fx-background-radius: 1em;
 }
 
 .button:hover {
-    -fx-skin: "com.sun.javafx.scene.control.skin.ButtonSkin";
+    -fx-background-color: #AAAAAA;
 }
 
 .vbox {
