@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainAnchor" maxHeight="1080.0" maxWidth="1920.0" prefHeight="720.0" prefWidth="1280.0" stylesheets="@header.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.header.HeaderController">
+<AnchorPane fx:id="mainAnchor" maxHeight="1080.0" maxWidth="1920.0" prefHeight="720.0" prefWidth="1280.0" stylesheets="@header.css" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.header.HeaderController">
    <children>
       <AnchorPane id="mainAnchor" fx:id="headerAnchor" layoutY="15.0" prefHeight="120.0" stylesheets="@header.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -95,5 +95,6 @@
             </ImageView>
          </children>
       </AnchorPane>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

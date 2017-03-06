@@ -6,3 +6,13 @@
     -fx-border-insets: 0 -1 0 -1;
     -fx-background-color: white;
 }
+
+
+.button:hover {
+    -fx-background-color: #AAAAAA;
+
+}
+
+.button {
+    -fx-background-color: "A1CCA6";
+}

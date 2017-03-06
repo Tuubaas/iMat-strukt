@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainPane" prefHeight="720.0" prefWidth="1280.0" stylesheets="@welcomepage.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.welcomepage.WelcomePageController">
+<AnchorPane fx:id="mainPane" prefHeight="720.0" prefWidth="1280.0" stylesheets="@welcomepage.css" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.welcomepage.WelcomePageController">
    <children>
       <GridPane layoutY="-14.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-14.0">
          <columnConstraints>
@@ -24,7 +24,7 @@
          <children>
             <Button fx:id="startButton" alignment="CENTER" mnemonicParsing="false" onAction="#startButtonPressed" onKeyPressed="#startButtonPressed" prefHeight="120.0" prefWidth="400.0" text="Börja handla" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
                <font>
-                  <Font size="24.0" />
+                  <Font size="36.0" />
                </font>
                <GridPane.margin>
                   <Insets />
