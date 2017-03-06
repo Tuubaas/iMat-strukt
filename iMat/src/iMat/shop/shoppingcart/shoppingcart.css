@@ -2,6 +2,14 @@
     -fx-background-color: grey;
 }
 
+.anchor-pane {
+    -fx-background-color: #AAAAAA;
+}
+
 .button {
     -fx-background-color: "A1CCA6";
+}
+
+.button:hover {
+    -fx-background-color: #AAAAAA;
 }
