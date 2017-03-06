@@ -4,26 +4,24 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="230.0" styleClass="pane" stylesheets="@shoppingcartitem.css" type="Pane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button fx:id="removeButton" layoutX="204.0" layoutY="13.0" mnemonicParsing="false" onAction="#onRemoveButtonClicked" text="X" />
-      <Line endY="48.0" layoutX="200.0" layoutY="1.0" />
-      <Label fx:id="productNameLabel" layoutX="60.0" layoutY="1.0" prefHeight="27.0" prefWidth="146.0" text="Västerbotten">
+      <Button fx:id="removeButton" layoutX="198.0" layoutY="12.0" mnemonicParsing="false" onAction="#onRemoveButtonClicked" text="X" textFill="#000000b2" />
+      <Label fx:id="productNameLabel" layoutX="69.0" layoutY="1.0" prefHeight="27.0" prefWidth="122.0" text="Västerbotten">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="amountField" layoutX="3.0" layoutY="5.0" prefHeight="41.0" prefWidth="51.0" text="1">
+      <TextField fx:id="amountField" layoutX="5.0" layoutY="8.0" prefHeight="36.0" prefWidth="58.0" text="1">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <Label fx:id="priceTotalLabel" layoutX="60.0" layoutY="25.0" prefHeight="27.0" prefWidth="146.0" text="TotPris">
+      <Label fx:id="priceTotalLabel" layoutX="69.0" layoutY="23.0" prefHeight="27.0" prefWidth="122.0" text="TotPris">
          <font>
-            <Font size="18.0" />
+            <Font size="14.0" />
          </font>
       </Label>
    </children>

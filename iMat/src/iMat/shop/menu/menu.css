@@ -5,6 +5,7 @@
     -fx-font-size: 18;
     -fx-background-color: "BAD2E6";
     -fx-text-fill: black;
+    -fx-background-radius: 0.5em;
 }
 
 .titled-pane .title:hover {
@@ -23,12 +24,10 @@
 
 }
 
-
 .grid-pane > .accordion >  {
     -fx-background-color: white;
 
     }
-
 
 .v-box > .button {
     -fx-font-size: 14;
@@ -51,6 +50,7 @@
     -fx-padding: 0 0 0 35;
     -fx-background-color: "BAD2E6";
     -fx-text-fill: black;
+    -fx-background-radius: 0.5em;
 
 }
 

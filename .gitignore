@@ -13,3 +13,4 @@ hs_err_pid*
 .nbcproject
 workspace.xml
 tasks.xml
+.idea

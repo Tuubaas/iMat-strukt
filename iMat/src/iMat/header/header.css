@@ -1,8 +1,8 @@
 #mainAnchor {
-    -fx-border-color: black;
+    -fx-border-color: "CAE2CD";
     -fx-border-width: 1;
     -fx-border-style: hidden hidden solid hidden;
-    -fx-border-insets: 0 0 -1 0;
+    -fx-border-insets: 0 0 -2 0;
     -fx-background-color: #F3FDED;
 }
 
