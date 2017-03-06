@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 <AnchorPane fx:id="mainAnchor" prefHeight="1080.0" prefWidth="240.0" stylesheets="@menu.css"
-            xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="iMat.shop.menu.MenuController">
     <children>
         <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
@@ -15,13 +15,12 @@
             </columnConstraints>
             <rowConstraints>
                 <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES"/>
-                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES"/>
                 <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES"/>
                 <RowConstraints maxHeight="1080.0" minHeight="10.0" prefHeight="300.0" vgrow="SOMETIMES"/>
             </rowConstraints>
             <children>
                 <Accordion fx:id="accordion" prefHeight="1080.0" prefWidth="600.0" GridPane.hgrow="ALWAYS"
-                           GridPane.rowIndex="3">
+                           GridPane.rowIndex="2">
                     <panes>
                         <TitledPane fx:id="category1" animated="false"
                                     onMouseClicked="#onFruitAndVegetablesTiledPaneClicked" text="Frukt och grönt">
@@ -266,7 +265,7 @@
                         <Insets left="35.0"/>
                     </padding>
                 </Button>
-                <Label alignment="BASELINE_CENTER" text="Sortiment" GridPane.halignment="CENTER" GridPane.rowIndex="2"
+                <Label alignment="BASELINE_CENTER" text="Sortiment" GridPane.halignment="CENTER" GridPane.rowIndex="1"
                        GridPane.valignment="BOTTOM">
                     <font>
                         <Font size="20.0"/>
