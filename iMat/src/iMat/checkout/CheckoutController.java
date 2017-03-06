@@ -24,6 +24,8 @@ public class CheckoutController implements Initializable {
 
     private DeliveryInfoController dic;
 
+    private PaymentInfoController pic;
+
     //Controllers
     @FXML
     private CartConfirmationController cartConfirmationController;
@@ -88,8 +90,8 @@ public class CheckoutController implements Initializable {
         paymentInfoController.injectCheckoutController(this);
         confirmationController.injectCheckoutController(this);
         cartConfirmationController.injectDeliveryInfoController(this.deliveryInfoController);
+        deliveryInfoController.injectPaymentInfoController(this.paymentInfoController);
         startCheckout();
-        System.out.println("Test commit");
     }
 
     public void injectMainController(MainController mc){

@@ -4,6 +4,7 @@ package iMat.checkout.deliveryinfo;
 import iMat.BackendWrapper;
 import iMat.MainController;
 import iMat.checkout.CheckoutController;
+import iMat.checkout.paymentinfo.PaymentInfoController;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -15,6 +16,7 @@ import se.chalmers.ait.dat215.project.User;
 import sun.plugin.javascript.navig.Anchor;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class DeliveryInfoController implements Initializable{
@@ -24,6 +26,8 @@ public class DeliveryInfoController implements Initializable{
     private BackendWrapper wrapper;
 
     private MainController mc;
+
+    private PaymentInfoController pc;
 
     //Anchors and Stacks
     @FXML
@@ -61,7 +65,7 @@ public class DeliveryInfoController implements Initializable{
     @FXML
     private ChoiceBox deliveryInfoTimeChoice;
     @FXML
-    private Label LoginWarningLabel;
+    private Label loginWarningLabel;
 
     //Not logged in, top buttons
     @FXML
@@ -133,29 +137,51 @@ public class DeliveryInfoController implements Initializable{
         this.mc = mc;
     }
 
+    public void injectPaymentInfoController(PaymentInfoController pc){
+        this.pc = pc;
+    }
+
     public void onDeliveryInfoNextButtonClicked(){
         if (cc.getMc().isLoggedIn()){
-            if (deliveryInfoFirstName.getText().equals("") || deliveryInfoLastName.getText().equals("") || deliveryInfoAdress.getText().equals("")){
-
+            if (deliveryInfoFirstName.getText().equals("") || deliveryInfoLastName.getText().equals("") || deliveryInfoAdress.getText().equals("") || deliveryInfoMail.getText().equals("") || deliveryInfoPostCode.getText().equals("") || deliveryInfoPhone.getText().equals("") || deliveryInfoCity.getText().equals("") || deliveryInfoDatePicker.getValue().equals(null) || deliveryInfoTimeChoice.getValue().equals(null)){
+                loginWarningLabel.setStyle("-fx-fill-text: red");
+                loginWarningLabel.setText("Du måste fylla i alla fält!");
             }
-
-        }
-        cc.onDeliveryInfoNextButtonClicked();
-        if (guestRegCheckBox.isSelected()){
-            Customer customer = cc.getWrapper().getCustomer();
-            User user = cc.getWrapper().getUser();
-            customer.setFirstName(guestFirstName.getText());
-            customer.setLastName(guestLastName.getText());
-            customer.setAddress(guestAdress.getText());
-            customer.setEmail(guestMail.getText());
-            customer.setPostAddress(guestCity.getText());
-            customer.setPostCode(guestPostCode.getText());
-            customer.setMobilePhoneNumber(guestPhone.getText());
-        /*user.setUserName(guestUserName.getText());
-        user.setPassword(guestPassword.getText());*/
+            else {
+                cc.onDeliveryInfoNextButtonClicked();
+                pc.setPaymentInfo();
+            }
         }
         else {
-
+            if (guestFirstName.getText().equals("") || guestLastName.getText().equals("") || guestAdress.getText().equals("") || guestCity.getText().equals("") || guestMail.getText().equals("") || guestPhone.getText().equals("") || guestPostCode.getText().equals("") || guestDatePicker.getValue().equals(null) || guestTimeChoice.getValue().equals(null)){
+                guestWarningLabel.setStyle("-fx-fill-text: red");
+                guestWarningLabel.setText("Du måste fylla i alla fält!");
+            }
+            else {
+                if (guestRegCheckBox.isSelected()){
+                    if (guestUserName.getText().equals("") || guestPassword.getText().equals("")){
+                        guestWarningLabel.setStyle("-fx-fill-text: red");
+                        guestWarningLabel.setText("Du måste fylla i alla fält!");
+                    }
+                    else {
+                        Customer customer = cc.getWrapper().getCustomer();
+                        User user = cc.getWrapper().getUser();
+                        customer.setFirstName(guestFirstName.getText());
+                        customer.setLastName(guestLastName.getText());
+                        customer.setAddress(guestAdress.getText());
+                        customer.setEmail(guestMail.getText());
+                        customer.setPostAddress(guestCity.getText());
+                        customer.setPostCode(guestPostCode.getText());
+                        customer.setMobilePhoneNumber(guestPhone.getText());
+                        user.setUserName(guestUserName.getText());
+                        user.setPassword(guestPassword.getText());
+                        cc.onDeliveryInfoNextButtonClicked();
+                    }
+                }
+                else {
+                    cc.onDeliveryInfoNextButtonClicked();
+                }
+            }
         }
     }
 

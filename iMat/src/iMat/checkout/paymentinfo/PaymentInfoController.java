@@ -1,6 +1,7 @@
 package iMat.checkout.paymentinfo;
 
 
+import iMat.BackendWrapper;
 import iMat.MainController;
 import iMat.checkout.CheckoutController;
 import javafx.fxml.FXML;
@@ -11,6 +12,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import se.chalmers.ait.dat215.project.CreditCard;
+import se.chalmers.ait.dat215.project.Customer;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -20,6 +23,8 @@ public class PaymentInfoController implements Initializable {
     private CheckoutController cc;
 
     private MainController mc;
+
+    BackendWrapper wrapper;
 
     @FXML
     private AnchorPane paymentInfoAnchor;
@@ -86,6 +91,15 @@ public class PaymentInfoController implements Initializable {
 
     public String getCardCVC(){
         return paymentInfoCardCVC.getText();
+    }
+
+    public void setPaymentInfo(){
+        CreditCard creditCard = cc.getWrapper().getCreditCard();
+        paymentInfoCardHolder.setText(creditCard.getHoldersName());
+        paymentInfoCardNumber.setText(creditCard.getCardNumber());
+        paymentInfoCardCVC.setText("" + creditCard.getVerificationCode());
+        paymentInfoExpireMonth.setValue(creditCard.getValidMonth());
+        paymentInfoExpireYear.setValue(creditCard.getValidYear());
     }
 
 }
