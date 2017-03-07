@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import se.chalmers.ait.dat215.project.ShoppingCart;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -20,8 +21,6 @@ public class ConfirmationController implements Initializable{
     private DeliveryInfoController dic;
 
     private PaymentInfoController pic;
-
-    private BackendWrapper wrapper;
 
     @FXML
     private Label adressLabel;
@@ -58,11 +57,11 @@ public class ConfirmationController implements Initializable{
     }
 
 public void setConfirmationLabels(){
-
+    ShoppingCart shoppingCart = cc.getWrapper().getShoppingCart();
     adressLabel.setText(dic.getSelectedAdress());
     deliveryTimeLabel.setText(dic.getSelectedDate());
     cardNumberLabel.setText(pic.getCardNumber());
-
+    totalPriceLabel.setText(shoppingCart.getTotal() + "kr");
 }
 
 }
