@@ -5,9 +5,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.VBox;
 import se.chalmers.ait.dat215.project.Product;
-import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -18,26 +19,30 @@ public class ProductListController implements Initializable {
     private CenterViewController centerViewController;
 
     @FXML
-    private ScrollPane mainAnchor;
+    private AnchorPane mainAnchor;
+    @FXML
+    private ScrollPane scrollAnchor;
     @FXML
     private FlowPane flowPane;
     @FXML
     private Label label;
+    @FXML
+    private VBox noProductsPane;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        noProductsPane.setVisible(false);
     }
 
     public void setHeight(int height) {
         mainAnchor.setPrefHeight(height);
-        mainAnchor.setPrefViewportHeight(height);
+        scrollAnchor.setPrefViewportHeight(height);
         flowPane.setPrefHeight(height);
     }
 
     public void setWidth(int width) {
         mainAnchor.setPrefWidth(width);
-        mainAnchor.setPrefViewportWidth(width);
+        scrollAnchor.setPrefViewportWidth(width);
         flowPane.setPrefWidth(width - 15);
     }
 
@@ -47,20 +52,25 @@ public class ProductListController implements Initializable {
     public void setProducts(Set<Product> set) {
         flowPane.getChildren().clear();
 
-        //Om inga produkter finns att visa, visa text.
-        if(set == null || set.isEmpty()){
+        if (set == null) {
+            System.out.println("[JÄTTEFEL] Försökte visa upp ett Set<Product> men den aktuella parametern var en " +
+                    "nullpointer. Någonstans skickas en nullpointer in, fel av oss alltså.");
             flowPane.getChildren().add(label);
+            return;
         }
 
-        //Fail-safe. Bör inte behövs när programmet är färdigt.
-        if(set == null)
-            return;
+        //Om inga produkter finns att visa, visa noProductsPane
+        if (set.isEmpty()) {
+            noProductsPane.setVisible(true);
+        } else {
+            noProductsPane.setVisible(false);
+        }
 
         for (Product p : set) {
             flowPane.getChildren().add(new ProductListItemController(p, this));
         }
 
-        mainAnchor.setVvalue(0);
+        scrollAnchor.setVvalue(0);    //Resetar scrollen så den hamnar högst upp.
     }
 
     public void injectCenterViewController(CenterViewController cw) {

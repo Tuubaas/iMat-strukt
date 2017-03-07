@@ -4,10 +4,12 @@ import iMat.MainController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.VBox;
 import se.chalmers.ait.dat215.project.Order;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
@@ -40,7 +42,7 @@ public class PurchaseHistoryOrder extends AnchorPane implements Initializable {
     private Label dateLabel;
 
     @FXML
-    private FlowPane flowPane;
+    private VBox vbox;
 
     public PurchaseHistoryOrder(Order order){
         this.order = order;
@@ -72,9 +74,10 @@ public class PurchaseHistoryOrder extends AnchorPane implements Initializable {
 
     public void setWidth(int width){
         mainAnchor.setPrefWidth(width);
+        vbox.setPrefWidth(width - 10);
 
         for(PurchaseHistoryOrderItem item : orderItems){
-            item.setWidth(width - 20);
+            item.setWidth(width - 120);
         }
     }
 
@@ -104,14 +107,15 @@ public class PurchaseHistoryOrder extends AnchorPane implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        vbox.setAlignment(Pos.TOP_CENTER);
         for(ShoppingItem item : order.getItems()){
             orderItems.add(new PurchaseHistoryOrderItem(item));
         }
 
-        flowPane.setPrefHeight(order.getItems().size() * 70 + 50);
+        vbox.setPrefHeight(order.getItems().size() * 70 + 50);
 
         for(PurchaseHistoryOrderItem item : orderItems){
-            flowPane.getChildren().add(item);
+            vbox.getChildren().add(item);
         }
 
         orderIDLabel.setText(String.valueOf(order.getOrderNumber()));
