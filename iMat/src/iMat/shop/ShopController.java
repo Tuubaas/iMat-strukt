@@ -8,7 +8,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.ait.dat215.project.Product;
-import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -43,16 +42,21 @@ public class ShopController implements Initializable {
         shoppingCartController.injectShopController(this);
         centerViewController.injectShopContoller(this);
 
+
+        /*
+          Lyssnare för höjd och bredd av Shop. Anropar sina subcontrollers som justerar sig efter dem nya måtten.
+         */
         mainAnchor.heightProperty().addListener((observable, oldValue, newValue) -> {
             int value = newValue.intValue();
-            shoppingCartController.setHeight((int) (value - 120));
-            menuController.setHeight((int) (value - 120));
-            centerViewController.setHeight((int) (value - 120));
+            // minus 102 pga att Header är 101 + 1 för att bordern till Header ska synas.
+            shoppingCartController.setHeight(value - 102);
+            menuController.setHeight(value - 102);
+            centerViewController.setHeight(value - 102);
         });
 
         mainAnchor.widthProperty().addListener((observable, oldValue, newValue) -> {
             int value = newValue.intValue();
-            centerViewController.setWidth(value - 240*2);
+            centerViewController.setWidth(value - 240 * 2);
         });
     }
 
@@ -76,22 +80,22 @@ public class ShopController implements Initializable {
         centerViewController.goToShopHome();
     }
 
-    public void showProducts(Set<Product> set){
+    public void showProducts(Set<Product> set) {
         centerViewController.showProducts(set);
     }
 
-    public void goToProductList(){
+    public void goToProductList() {
         centerViewController.goToProductList();
     }
 
-    public void goToPurchaseHistory(){
+    public void goToPurchaseHistory() {
         centerViewController.goToPurchaseHistory();
     }
 
     /**
      * Uppdaterar sig själv och alla subcontrollers.
      */
-    public void update(){
+    public void update() {
         shoppingCartController.update();
     }
 }
