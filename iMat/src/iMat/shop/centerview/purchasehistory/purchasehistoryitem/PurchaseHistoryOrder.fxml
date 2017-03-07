@@ -6,9 +6,9 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <fx:root fx:id="mainAnchor" maxHeight="1080.0" maxWidth="1920.0" minHeight="200.0" minWidth="200.0" prefHeight="281.0" prefWidth="406.0" stylesheets="@../purchasehistory.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
@@ -53,11 +53,13 @@
       </GridPane>
       <ScrollPane layoutY="40.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="45.0">
          <content>
-            <FlowPane fx:id="flowPane" alignment="TOP_CENTER" columnHalignment="CENTER" hgap="5.0" prefHeight="100.0" prefWidth="385.0" rowValignment="TOP" vgap="5.0">
+            <VBox fx:id="vbox" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="390.0" spacing="5.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
                <padding>
-                  <Insets left="5.0" top="5.0" />
-               </padding>
-            </FlowPane>
+                  <Insets top="5.0" />
+               </padding></VBox>
          </content>
       </ScrollPane>
       <Button fx:id="addMarkedButton" layoutX="246.0" layoutY="40.0" minHeight="20.0" mnemonicParsing="false" onAction="#onAddMarkedButtonClicked" prefHeight="28.0" prefWidth="160.0" text="Lägg till valda i kundvagn" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
