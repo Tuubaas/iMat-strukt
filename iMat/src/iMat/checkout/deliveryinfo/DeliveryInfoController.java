@@ -125,8 +125,10 @@ public class DeliveryInfoController implements Initializable{
         guestRadioButton.setToggleGroup(group);
         guestTimeChoice.setItems(FXCollections.observableArrayList("Förmiddag, 8-12", "Eftermiddag, 13-17"));
         guestTimeChoice.getSelectionModel().selectFirst();
+        guestDatePicker.setValue(LocalDate.now());
         deliveryInfoTimeChoice.setItems(FXCollections.observableArrayList("Förmiddag, 8-12", "Eftermiddag, 13-17"));
         deliveryInfoTimeChoice.getSelectionModel().selectFirst();
+        deliveryInfoDatePicker.setValue(LocalDate.now());
     }
 
     public void injectCheckoutController(CheckoutController cc){
@@ -143,8 +145,8 @@ public class DeliveryInfoController implements Initializable{
 
     public void onDeliveryInfoNextButtonClicked(){
         if (cc.getMc().isLoggedIn()){
-            if (deliveryInfoFirstName.getText().equals("") || deliveryInfoLastName.getText().equals("") || deliveryInfoAdress.getText().equals("") || deliveryInfoMail.getText().equals("") || deliveryInfoPostCode.getText().equals("") || deliveryInfoPhone.getText().equals("") || deliveryInfoCity.getText().equals("") || deliveryInfoDatePicker.getValue().equals(null) || deliveryInfoTimeChoice.getValue().equals(null)){
-                loginWarningLabel.setStyle("-fx-fill-text: red");
+            if (deliveryInfoFirstName.getText().equals("") || deliveryInfoLastName.getText().equals("") || deliveryInfoAdress.getText().equals("") || deliveryInfoMail.getText().equals("") || deliveryInfoPostCode.getText().equals("") || deliveryInfoPhone.getText().equals("") || deliveryInfoCity.getText().equals("") || deliveryInfoDatePicker.getValue() == null || deliveryInfoTimeChoice.getValue() == null){
+                loginWarningLabel.setStyle("-fx-text-fill: red");
                 loginWarningLabel.setText("Du måste fylla i alla fält!");
             }
             else {
@@ -153,14 +155,14 @@ public class DeliveryInfoController implements Initializable{
             }
         }
         else {
-            if (guestFirstName.getText().equals("") || guestLastName.getText().equals("") || guestAdress.getText().equals("") || guestCity.getText().equals("") || guestMail.getText().equals("") || guestPhone.getText().equals("") || guestPostCode.getText().equals("") || guestDatePicker.getValue().equals(null) || guestTimeChoice.getValue().equals(null)){
-                guestWarningLabel.setStyle("-fx-fill-text: red");
+            if (guestFirstName.getText().equals("") || guestLastName.getText().equals("") || guestAdress.getText().equals("") || guestCity.getText().equals("") || guestMail.getText().equals("") || guestPhone.getText().equals("") || guestPostCode.getText().equals("") || guestDatePicker.getValue() ==null || guestTimeChoice.getValue() == null){
+                guestWarningLabel.setStyle("-fx-text-fill: red");
                 guestWarningLabel.setText("Du måste fylla i alla fält!");
             }
             else {
                 if (guestRegCheckBox.isSelected()){
                     if (guestUserName.getText().equals("") || guestPassword.getText().equals("")){
-                        guestWarningLabel.setStyle("-fx-fill-text: red");
+                        guestWarningLabel.setStyle("-fx-text-fill: red");
                         guestWarningLabel.setText("Du måste fylla i alla fält!");
                     }
                     else {
@@ -258,8 +260,18 @@ public class DeliveryInfoController implements Initializable{
         }
     }
 
-    public String getSelectedDate(){
+    public String getSelectedDate() {
+        if (cc.getMc().isLoggedIn()) {
+            return deliveryInfoDatePicker.getValue().toString();
+        }
         return guestDatePicker.getValue().toString();
+    }
+
+    public String getSelectedAdress(){
+        if (cc.getMc().isLoggedIn()){
+            return deliveryInfoAdress.getText() + " "+ deliveryInfoPostCode.getText() + ", " + deliveryInfoCity.getText();
+        }
+        return guestAdress.getText() + " " + guestPostCode + ", " + guestCity.getText();
     }
 
 }

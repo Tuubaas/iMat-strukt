@@ -86,5 +86,10 @@
       <ImageView fx:id="visaLogoImage" fitHeight="60.0" fitWidth="100.0" layoutX="286.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" />
       <RadioButton fx:id="mcRadioButton" layoutX="402.0" layoutY="82.0" mnemonicParsing="false" />
       <ImageView fx:id="mcLogoImage" fitHeight="60.0" fitWidth="100.0" layoutX="426.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="warningLabel" contentDisplay="CENTER" layoutX="370.0" layoutY="345.0" prefWidth="300.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -91,6 +91,9 @@ public class CheckoutController implements Initializable {
         confirmationController.injectCheckoutController(this);
         cartConfirmationController.injectDeliveryInfoController(this.deliveryInfoController);
         deliveryInfoController.injectPaymentInfoController(this.paymentInfoController);
+        paymentInfoController.injectConfirmationController(this.confirmationController);
+        confirmationController.injectPaymentInfoController(this.paymentInfoController);
+        confirmationController.injectDeliveryInfoController(this.deliveryInfoController);
         startCheckout();
     }
 
