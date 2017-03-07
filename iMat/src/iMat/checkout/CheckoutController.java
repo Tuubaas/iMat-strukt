@@ -123,7 +123,8 @@ public class CheckoutController implements Initializable {
     }
 
     public void onConfirmationNextButtonClicked(){
-
+        mc.checkoutAnchor.setVisible(false);
+        mc.goToPurchaseDone();
     }
 
     public void onCartConfirmationBackButtonClicked(){

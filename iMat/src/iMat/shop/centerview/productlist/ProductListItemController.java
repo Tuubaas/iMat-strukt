@@ -74,6 +74,13 @@ public class ProductListItemController extends AnchorPane {
 
     @FXML
     public void onAddBtnClicked() {
+        for (ShoppingItem p : wrapper.getShoppingCart().getItems()){
+            if (this.product.equals(p.getProduct())){
+                p.setAmount(p.getAmount() + spinner.valueProperty().getValue());
+                productListController.getCenterViewController().getShopController().getMainController().update();
+                return;
+            }
+        }
         wrapper.getShoppingCart().addItem(new ShoppingItem(this.product, spinner.valueProperty().getValue()));
         productListController.getCenterViewController().getShopController().getMainController().update();
     }
