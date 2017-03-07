@@ -123,13 +123,12 @@ public class CheckoutController implements Initializable {
     }
 
     public void onConfirmationNextButtonClicked(){
-        mc.purchaseDoneAnchor.setVisible(true);
-        mc.purchaseDoneAnchor.toFront();
+
     }
 
     public void onCartConfirmationBackButtonClicked(){
-        mc.mainAnchor.setVisible(true);
-        mc.mainAnchor.toFront();
+        mc.checkoutAnchor.setVisible(false);
+        mc.checkoutAnchor.toBack();
     }
 
     public void onDeliveryInfoBackButtonClicked(){
@@ -153,10 +152,6 @@ public class CheckoutController implements Initializable {
 
     public MainController getMc(){
         return this.mc;
-    }
-
-    public DeliveryInfoController getDc(){
-        return this.deliveryInfoController;
     }
 
 }
