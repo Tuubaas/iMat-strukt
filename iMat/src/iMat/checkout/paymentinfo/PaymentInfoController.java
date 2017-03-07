@@ -1,16 +1,18 @@
 package iMat.checkout.paymentinfo;
 
 
+import iMat.BackendWrapper;
 import iMat.MainController;
 import iMat.checkout.CheckoutController;
+import iMat.checkout.confirmation.ConfirmationController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import se.chalmers.ait.dat215.project.CreditCard;
+import se.chalmers.ait.dat215.project.Customer;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -20,6 +22,10 @@ public class PaymentInfoController implements Initializable {
     private CheckoutController cc;
 
     private MainController mc;
+
+    BackendWrapper wrapper;
+
+    private ConfirmationController conf;
 
     @FXML
     private AnchorPane paymentInfoAnchor;
@@ -45,9 +51,15 @@ public class PaymentInfoController implements Initializable {
     private ImageView visaLogoImage;
     @FXML
     private ImageView mcLogoImage;
+    @FXML
+    private Label warningLabel;
+
+    private ToggleGroup group = new ToggleGroup();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        visaRadioButton.setToggleGroup(group);
+        mcRadioButton.setToggleGroup(group);
         paymentInfoCardTemplatePic.setImage(new Image(String.valueOf(getClass().getClassLoader().getResource("resources/kreditkort.png"))));
         paymentInfoCardBacksideTemplatePic.setImage(new Image(String.valueOf(getClass().getClassLoader().getResource("resources/kreditkortbaksida.png"))));
         visaLogoImage.setImage(new Image(String.valueOf(getClass().getClassLoader().getResource("resources/Visa_lgo.png"))));
@@ -59,9 +71,20 @@ public class PaymentInfoController implements Initializable {
         this.cc = cc;
     }
 
+    public void injectConfirmationController(ConfirmationController conf){
+        this.conf = conf;
+    }
+
     @FXML
     public void onPaymentInfoNextButtonClicked() {
-        cc.onPaymentInfoNextButtonClicked();
+        if (paymentInfoCardHolder.getText().equals("") || paymentInfoCardNumber.getText().equals("") || paymentInfoCardCVC.getText().equals("") || paymentInfoExpireMonth.getValue() == "" || paymentInfoExpireYear.getValue() == null || group.getSelectedToggle() == null) {
+            warningLabel.setStyle("-fx-text-fill: red");
+            warningLabel.setText("Du måste fylla i alla fält");
+        }
+        else {
+            cc.onPaymentInfoNextButtonClicked();
+            conf.setConfirmationLabels();
+        }
     }
 
     public void onPaymentInfoBackButtonClicked(){
@@ -86,6 +109,15 @@ public class PaymentInfoController implements Initializable {
 
     public String getCardCVC(){
         return paymentInfoCardCVC.getText();
+    }
+
+    public void setPaymentInfo(){
+        CreditCard creditCard = cc.getWrapper().getCreditCard();
+        paymentInfoCardHolder.setText(creditCard.getHoldersName());
+        paymentInfoCardNumber.setText(creditCard.getCardNumber());
+        paymentInfoCardCVC.setText("" + creditCard.getVerificationCode());
+        paymentInfoExpireMonth.setValue(creditCard.getValidMonth());
+        paymentInfoExpireYear.setValue(creditCard.getValidYear());
     }
 
 }
