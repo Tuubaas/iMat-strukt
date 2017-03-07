@@ -6,19 +6,17 @@ import iMat.shop.ShopController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
-import se.chalmers.ait.dat215.project.Product;
+import se.chalmers.ait.dat215.project.CartEvent;
+import se.chalmers.ait.dat215.project.ShoppingCartListener;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ShoppingCartController implements Initializable {
+public class ShoppingCartController implements Initializable, ShoppingCartListener {
 
     /*
     Denna klass speglar endast vad som finns i IMatDataHandler.getInstance().getShoppingCart();
@@ -37,29 +35,35 @@ public class ShoppingCartController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        MainController.getBackendWrapper().getShoppingCart().addShoppingCartListener(this);
         itemBox.alignmentProperty().setValue(Pos.TOP_CENTER);
         update();
     }
 
-    public void injectShopController(ShopController sc){
+    public void injectShopController(ShopController sc) {
         this.sc = sc;
     }
 
-    public void setHeight(int height){
+    public void setHeight(int height) {
         mainAnchor.setPrefHeight(height);
     }
 
-    public void onGoToCheckoutButtonClicked(){
+    public void onGoToCheckoutButtonClicked() {
         sc.getMainController().goToCheckout();
     }
 
-    public void update(){
+    public void update() {
         itemBox.getChildren().clear();
 
-        for(ShoppingItem p : wrapper.getShoppingCart().getItems()){
+        for (ShoppingItem p : wrapper.getShoppingCart().getItems()) {
             itemBox.getChildren().add(new ShoppingCartItem(p, this));
         }
 
         itemBox.setPrefHeight(itemBox.getChildren().size() * 50 + 100);
+    }
+
+    @Override
+    public void shoppingCartChanged(CartEvent cartEvent) {
+        update();
     }
 }

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<fx:root fx:id="mainAnchor" maxHeight="-Infinity" maxWidth="400.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="300.0" styleClass="anchor-pane" stylesheets="@purchasehistoryorderitem.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <CheckBox fx:id="checkBox" layoutX="241.0" layoutY="27.0" mnemonicParsing="false" selected="true" text="Vald" AnchorPane.bottomAnchor="26.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="27.0" />
+      <ImageView fx:id="image" fitHeight="52.0" fitWidth="60.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <image>
+            <Image url="@../../../../../resources/Greystar.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="productNameLabel" layoutX="74.0" layoutY="12.0" text="Västerbotten" AnchorPane.leftAnchor="74.0" AnchorPane.topAnchor="5.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="amountLabel" layoutX="75.0" layoutY="30.0" text="Antal:" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="75.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="costLabel" layoutX="75.0" layoutY="48.0" text="Kostnad:" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="75.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</fx:root>

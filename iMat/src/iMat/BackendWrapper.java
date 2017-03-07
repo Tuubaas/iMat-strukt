@@ -33,8 +33,6 @@ public class BackendWrapper {
     }
 
 
-
-
     /**
      * Ger tillbaka en produkts bild i sin originalstorlek.
      */
@@ -116,15 +114,29 @@ public class BackendWrapper {
     /**
      * Ger tillbaka ShoppingCarten som finns i datahandlern.
      */
-    public ShoppingCart getShoppingCart(){
+    public ShoppingCart getShoppingCart() {
         return datahandler.getShoppingCart();
     }
 
     /**
      * Ger tillbaka Creditcard-objektet som finns i datahandlern.
      */
-    public CreditCard getCreditCard(){
+    public CreditCard getCreditCard() {
         return datahandler.getCreditCard();
+    }
+
+    /**
+     *  Ger tillbaka alla tidigare lagda ordrar
+     */
+    public List<Order> getOrders() {
+        return datahandler.getOrders();
+    }
+
+    /**
+     * Gör den nuvarande kundvagnen till en order med möjlighet att ta bort det som finns i kundvangen
+     */
+    public void placeOrder(boolean clearShoppingCart){
+        datahandler.placeOrder(clearShoppingCart);
     }
 
 
