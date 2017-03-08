@@ -32,12 +32,12 @@
                <font>
                   <Font size="18.0" />
                </font></Button>
-            <ImageView fitHeight="37.0" fitWidth="43.0" opacity="0.3" pickOnBounds="true" preserveRatio="true" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+            <ImageView fitHeight="28.0" fitWidth="27.0" opacity="0.3" pickOnBounds="true" preserveRatio="true" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
                <image>
                   <Image url="@../../../resources/shoppingCart.png" />
                </image>
                <GridPane.margin>
-                  <Insets right="20.0" />
+                  <Insets left="55.0" right="20.0" />
                </GridPane.margin></ImageView>
             <ScrollPane fx:id="itemScrollPane" prefHeight="360.0" prefWidth="240.0" GridPane.rowIndex="1">
                <content>
@@ -52,7 +52,7 @@
                   <Font size="20.0" />
                </font>
                <GridPane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="30.0" />
                </GridPane.margin>
             </Label>
          </children>

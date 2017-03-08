@@ -2,9 +2,9 @@
 -fx-background-color: #ffffff;
 }
 
-.button{
+.button {
     -fx-background-color: "A1CCA6";
-    -fx-background-radius: 1em;
+    -fx-background-radius: 0.5em;
 }
 
 .button:hover {
@@ -14,4 +14,8 @@
 .vbox {
    -fx-alignment: center;
     -fx-spacing: 60;
+}
+
+.button {
+    -fx-background-color: "A1CCA6";
 }

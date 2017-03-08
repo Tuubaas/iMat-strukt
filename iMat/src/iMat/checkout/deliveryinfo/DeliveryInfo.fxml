@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
 
-<StackPane fx:id="deliveryInfoStackPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.checkout.deliveryinfo.DeliveryInfoController">
+<StackPane fx:id="deliveryInfoStackPane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.checkout.deliveryinfo.DeliveryInfoController">
    <children>
       <AnchorPane fx:id="loggedInAnchor" prefHeight="400.0" prefWidth="1040.0" stylesheets="@deliveryinfo.css">
          <children>
@@ -82,12 +89,12 @@
       </AnchorPane>
       <AnchorPane fx:id="notLoggedInAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1040.0" stylesheets="@deliveryinfo.css">
          <children>
-            <RadioButton fx:id="guestRadioButton" layoutX="665.0" layoutY="20.0" mnemonicParsing="false" onAction="#onGuestRadioButtonClicked" text="Fortästt som gäst">
+            <RadioButton fx:id="guestRadioButton" layoutX="204.0" layoutY="18.0" mnemonicParsing="false" onAction="#onGuestRadioButtonClicked" text="Fortsätt som gäst">
                <font>
                   <Font size="18.0" />
                </font>
             </RadioButton>
-            <RadioButton fx:id="logInRadioButton" layoutX="207.5" layoutY="18.0" mnemonicParsing="false" onAction="#onLoginRadioButtonClicked" text="Logga in">
+            <RadioButton fx:id="logInRadioButton" layoutX="400.0" layoutY="18.0" mnemonicParsing="false" onAction="#onLoginRadioButtonClicked" text="Logga in">
                <font>
                   <Font size="18.0" />
                </font>
@@ -188,7 +195,7 @@
                               <Font size="18.0" />
                            </font>
                         </Button>
-                        <Label layoutX="120.0" layoutY="-4.0" text="Fyll i din Leveransinformation">
+                        <Label layoutX="117.0" layoutY="-3.0" text="Fyll i din Leveransinformation">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -200,13 +207,13 @@
                            </font>
                         </Label>
                         <DatePicker fx:id="guestDatePicker" layoutX="207.0" layoutY="264.0" />
-                        <ChoiceBox fx:id="guestTimeChoice" layoutX="410.0" layoutY="264.0" prefWidth="150.0" />
+                        <ChoiceBox fx:id="guestTimeChoice" layoutX="483.0" layoutY="264.0" prefWidth="150.0" />
                         <Label alignment="CENTER_RIGHT" layoutX="58.0" layoutY="266.0" prefWidth="139.0" text="Tid för leverans:">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <CheckBox fx:id="guestRegCheckBox" alignment="TOP_LEFT" layoutX="633.0" layoutY="10.0" mnemonicParsing="false" onAction="#onGuestRegCheckBoxChecked" prefHeight="70.0" prefWidth="293.0" text="Checka i denna för att registrera denna information som en användare" wrapText="true">
+                        <CheckBox fx:id="guestRegCheckBox" alignment="TOP_LEFT" layoutX="633.0" layoutY="10.0" mnemonicParsing="false" onAction="#onGuestRegCheckBoxChecked" prefHeight="70.0" prefWidth="293.0" text="Checka i här om du vill skapa en ny användare med dessa uppgifter" wrapText="true">
                            <font>
                               <Font size="18.0" />
                            </font>
