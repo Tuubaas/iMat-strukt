@@ -9,17 +9,22 @@
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="230.0" styleClass="pane" stylesheets="@shoppingcartitem.css" type="Pane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Button fx:id="removeButton" layoutX="198.0" layoutY="12.0" mnemonicParsing="false" onAction="#onRemoveButtonClicked" text="X" textFill="#000000b2" />
-      <Label fx:id="productNameLabel" layoutX="69.0" layoutY="1.0" prefHeight="27.0" prefWidth="122.0" text="Västerbotten">
+      <Label fx:id="productNameLabel" layoutX="6.0" layoutY="1.0" prefHeight="27.0" prefWidth="113.0" text="Västerbotten">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="amountField" layoutX="5.0" layoutY="8.0" prefHeight="36.0" prefWidth="58.0" text="1">
+      <TextField fx:id="amountField" layoutX="125.0" layoutY="4.0" prefHeight="41.0" prefWidth="34.0" text="1">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label fx:id="priceTotalLabel" layoutX="6.0" layoutY="19.0" prefHeight="27.0" prefWidth="122.0" text="TotPris">
          <font>
             <Font size="14.0" />
          </font>
-      </TextField>
-      <Label fx:id="priceTotalLabel" layoutX="69.0" layoutY="23.0" prefHeight="27.0" prefWidth="122.0" text="TotPris">
+      </Label>
+      <Label fx:id="priceTotalLabel1" layoutX="161.0" layoutY="12.0" prefHeight="27.0" prefWidth="34.0" text="Unit">
          <font>
             <Font size="14.0" />
          </font>
