@@ -122,6 +122,7 @@ public class MainController implements Initializable {
     public void goToCheckout() {
         hideAllComponents();
         showHeader(true);
+        checkoutController.doSetCartItems();
         checkoutAnchor.setVisible(true);
         checkoutAnchor.toFront();
         headerController.setSearchBarVisible(false);

@@ -5,20 +5,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="1040.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="1040.0" style="-fx-background-color: #ffffff;" stylesheets="@cartconfirmationitem.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label fx:id="itemName" layoutX="65.0" layoutY="24.0" text="Label">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="288.0" layoutY="24.0" text="Label">
+      <Label fx:id="itemPrice" layoutX="288.0" layoutY="24.0" text="Label">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Spinner layoutX="573.0" layoutY="22.0" prefHeight="27.0" prefWidth="84.0" />
-      <Label layoutX="890.0" layoutY="24.0" text="Label">
+      <Spinner fx:id="itemSpinner" layoutX="573.0" layoutY="22.0" prefHeight="27.0" prefWidth="84.0" />
+      <Label fx:id="totalPrice" layoutX="890.0" layoutY="24.0" text="Label">
          <font>
             <Font size="18.0" />
          </font>

@@ -4,6 +4,7 @@ import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
 import iMat.BackendWrapper;
 import iMat.MainController;
 import iMat.checkout.cartconfirmation.CartConfirmationController;
+import iMat.checkout.cartconfirmation.CartConfirmationItem;
 import iMat.checkout.confirmation.ConfirmationController;
 import iMat.checkout.deliveryinfo.DeliveryInfoController;
 import iMat.checkout.paymentinfo.PaymentInfoController;
@@ -154,6 +155,10 @@ public class CheckoutController implements Initializable {
 
     public MainController getMc(){
         return this.mc;
+    }
+
+    public void doSetCartItems(){
+        cartConfirmationController.setCartProducts();
     }
 
 }
