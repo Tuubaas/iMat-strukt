@@ -32,6 +32,22 @@ public class BackendWrapper {
         initMainCategories();
     }
 
+    public void addItem(ShoppingItem item) {
+        double amount = item.getAmount();
+
+        for (ShoppingItem i : datahandler.getShoppingCart().getItems()) {
+            if (i.getProduct().equals(item.getProduct())) {
+                amount += i.getAmount();
+                datahandler.getShoppingCart().removeItem(i.getProduct().getProductId());
+                datahandler.getShoppingCart().addProduct(item.getProduct(), amount);
+                return;
+            }
+
+
+        }
+
+        datahandler.getShoppingCart().addItem(item);
+    }
 
     /**
      * Ger tillbaka en produkts bild i sin originalstorlek.

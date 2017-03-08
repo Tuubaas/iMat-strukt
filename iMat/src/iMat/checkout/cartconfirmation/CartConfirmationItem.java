@@ -40,7 +40,7 @@ public class CartConfirmationItem extends AnchorPane implements Initializable{
     public CartConfirmationItem(ShoppingItem item, CartConfirmationController ccc){
         this.item = item;
         this.ccc = ccc;
-
+        System.out.println(item.getAmount());
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CartConfirmationItem.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -53,9 +53,21 @@ public class CartConfirmationItem extends AnchorPane implements Initializable{
         itemName.setText(item.getProduct().getName());
         itemSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1,10000));
         itemSpinner.getValueFactory().setValue((int)item.getAmount());
+        System.out.println(item.getAmount() + "konstruktor");
         itemPrice.setText(item.getProduct().getPrice() + " " + item.getProduct().getUnit());
         totalPrice.setText(item.getTotal() + " kr");
 
+
+        itemSpinner.valueProperty().addListener(new ChangeListener<Integer>() {
+            @Override
+            public void changed(ObservableValue<? extends Integer> observable, Integer oldValue, Integer newValue) {
+                item.setAmount(newValue);
+                totalPrice.setText(item.getTotal() + " kr");
+                System.out.println(item.getAmount());
+                System.out.println(newValue);
+                ccc.getCC().getMc().update();
+            }
+        });
     }
 
     public void updateCartItems(int newValue){
@@ -67,17 +79,12 @@ public class CartConfirmationItem extends AnchorPane implements Initializable{
         }
     }
 
+    public void updateItem(int newValue){
+
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        itemSpinner.valueProperty().addListener(new ChangeListener<Integer>() {
-            @Override
-            public void changed(ObservableValue<? extends Integer> observable, Integer oldValue, Integer newValue) {
-                item.setAmount(newValue);
-                itemSpinner.getValueFactory().setValue((int)item.getAmount());
-                totalPrice.setText(item.getTotal() + " kr");
 
-            }
-        });
     }
 }

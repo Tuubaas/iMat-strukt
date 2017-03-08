@@ -1,7 +1,8 @@
 #window {
-    -fx-background-color: rgba(230, 230, 230, 150);
+    -fx-background-color: "EFEEEE";
     -fx-border-color: black;
-    -fx-border-width: 1;
+    -fx-border-width: 0;
+    -fx-background-radius: 1em;
 }
 
 #background {
@@ -14,4 +15,8 @@
 
 .button:hover {
     -fx-background-color: #AAAAAA;
+}
+
+.line {
+    -fx-stroke: white;
 }
