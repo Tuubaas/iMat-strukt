@@ -63,6 +63,7 @@
 .titled-pane {
     -fx-animated: true;
     -fx-text-fill: black;
+    -fx-collapsible: true;
 }
 
 

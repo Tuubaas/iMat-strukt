@@ -5,15 +5,16 @@ import iMat.MainController;
 import iMat.shop.ShopController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TitledPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Border;
+import javafx.scene.layout.VBox;
 import se.chalmers.ait.dat215.project.Product;
 
-import javax.swing.border.LineBorder;
-import java.awt.*;
 import java.net.URL;
 import java.util.HashSet;
 import java.util.ResourceBundle;
@@ -22,16 +23,27 @@ public class MenuController implements Initializable {
 
     private ShopController sc;
     private BackendWrapper wrapper = MainController.getBackendWrapper();
-    ;
 
     @FXML
     private AnchorPane mainAnchor;
 
     @FXML
-    private Accordion accordion;
+    private Button favoriteButton;
+
+    @FXML
+    private ScrollPane titledPanesScrollPane;
+
+    @FXML
+    private AnchorPane titledPanesAnchor;
 
     @FXML
     private TitledPane category1;
+
+    @FXML
+    private AnchorPane category1Pane;
+
+    @FXML
+    private VBox titledPanesVbox;
 
     @FXML
     private Button berriesButton;
@@ -56,6 +68,9 @@ public class MenuController implements Initializable {
 
     @FXML
     private TitledPane category2;
+
+    @FXML
+    private AnchorPane category2Pane;
 
     @FXML
     private Button cheeseButton;
@@ -144,12 +159,6 @@ public class MenuController implements Initializable {
     @FXML
     private Button sodaButton;
 
-    @FXML
-    private Button favoriteButton;
-
-    @FXML
-    private Button historyButton;
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     }
@@ -177,6 +186,30 @@ public class MenuController implements Initializable {
     }
 
     /*
+     * Jätteful kod - Räknar ut den totala höjden för alla TitledPanes.
+     * Adderar sedan ihop det och sätter sedan deras gemensamma anchor till den höjden.
+     * Görs för att dynamiskt kunna visa scrollbar:en när den behövs.
+     */
+
+    private void resizeTitledPanesAnchor() {
+        //FOR IF IF IF - funkar
+        double totalheight = 0;
+        for (Node node : titledPanesVbox.getChildren()) {
+            if (node instanceof TitledPane) {
+                TitledPane pane = (TitledPane) node;
+
+                totalheight += 45;  //Lägg till 25 pixlar för varje knapp
+                if (pane.isExpanded()) {
+                    if (pane.getContent() instanceof AnchorPane) {
+                        totalheight += ((AnchorPane) pane.getContent()).getPrefHeight() + 20;
+                    }
+                }
+            }
+        }
+        titledPanesAnchor.setPrefHeight(totalheight);
+    }
+
+    /*
     Metoder för när man trycker på vår accordion
     Gör en snabb check för att kolla om panelen stängdes eller öppnades
      */
@@ -184,42 +217,49 @@ public class MenuController implements Initializable {
     public void onFruitAndVegetablesTiledPaneClicked() {
         if (category1.isExpanded())
             sc.getMainController().showProducts(wrapper.getFruitsAndVegetablesList());
+        resizeTitledPanesAnchor();
     }
 
     @FXML
     public void onMilkAndRefrigeratedTiledPaneClicked() {
         if (category2.isExpanded())
             sc.getMainController().showProducts(wrapper.getMilkAndRefrigeratedList());
+        resizeTitledPanesAnchor();
     }
 
     @FXML
     public void onMeatFishBirdTiledPaneClicked() {
         if (category3.isExpanded())
             sc.getMainController().showProducts(wrapper.getMeatFishBirdList());
+        resizeTitledPanesAnchor();
     }
 
     @FXML
     public void onBreadAndPastriesTiledPaneClicked() {
         if (category4.isExpanded())
             sc.getMainController().showProducts(wrapper.getBreadAndPastriesList());
+        resizeTitledPanesAnchor();
     }
 
     @FXML
     public void onDryProductsTiledPaneClicked() {
         if (category5.isExpanded())
             sc.getMainController().showProducts(wrapper.getDryProductsList());
+        resizeTitledPanesAnchor();
     }
 
     @FXML
     public void onCandyAndSnacksTiledPaneClicked() {
         if (category6.isExpanded())
             sc.getMainController().showProducts(wrapper.getCandyAndSnacksList());
+        resizeTitledPanesAnchor();
     }
 
     @FXML
     public void onDrinksTiledPaneClicked() {
         if (category7.isExpanded())
             sc.getMainController().showProducts(wrapper.getDrinksList());
+        resizeTitledPanesAnchor();
     }
 
 
