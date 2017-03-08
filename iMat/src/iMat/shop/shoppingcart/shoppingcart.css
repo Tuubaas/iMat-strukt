@@ -8,6 +8,7 @@
 
 .button {
     -fx-background-color: "A1CCA6";
+    -fx-text-fill: black;
 }
 
 .button:hover {
