@@ -20,6 +20,7 @@
 
 .button {
     -fx-background-color: "A1CCA6";
+    -fx-background-radius: 0.5em;
 }
 
 .button:hover {
