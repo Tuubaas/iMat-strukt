@@ -13,3 +13,7 @@
 .button:hover {
     -fx-background-color: #AAAAAA;
 }
+
+.menu-button {
+    -fx-background-color: "A1CCA6";
+}

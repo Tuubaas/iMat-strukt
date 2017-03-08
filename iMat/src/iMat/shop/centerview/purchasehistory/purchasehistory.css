@@ -3,8 +3,9 @@
 }
 
 #header{
-    -fx-border-color: black;
+    -fx-border-color: white;
     -fx-border-insets: 0 0 1 0;
     -fx-border-width: 1;
     -fx-border-style: hidden hidden solid hidden;
+    -fx-background-color: white;
 }

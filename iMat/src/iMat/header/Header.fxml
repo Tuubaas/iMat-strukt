@@ -89,12 +89,12 @@
                                  </GridPane.margin>
                               </Label>
                               <Label fx:id="eMailLabel" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="200.0" GridPane.halignment="RIGHT" GridPane.valignment="CENTER" />
-                              <ImageView fitHeight="50.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="RIGHT">
+                              <ImageView fitHeight="38.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="RIGHT">
                                  <image>
                                     <Image url="@../../resources/manager-512.png" />
                                  </image>
                                  <GridPane.margin>
-                                    <Insets right="25.0" />
+                                    <Insets right="35.0" />
                                  </GridPane.margin>
                               </ImageView>
                            </children>
@@ -103,14 +103,9 @@
                   </AnchorPane>
                </children>
             </StackPane>
-            <ImageView fx:id="logo" fitHeight="96.0" fitWidth="265.0" layoutX="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="0.0">
+            <ImageView fx:id="logo" fitHeight="63.0" fitWidth="150.0" layoutX="14.0" layoutY="8.0" opacity="0.88" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="30.2403564453125" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="8.0">
                <image>
                   <Image url="@../../resources/iMat-logo.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="109.0" fitWidth="131.0" layoutX="322.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../resources/worker.png" />
                </image>
             </ImageView>
          </children>
