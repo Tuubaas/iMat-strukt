@@ -68,7 +68,7 @@ public class ProductListItemController extends AnchorPane {
         } else if (product.getUnitSuffix().equals("st")) {
             unitLabel.setText("Antal stycken:");
         }
-
+        
         star.setOnMouseClicked(event -> onStarClicked());
     }
 

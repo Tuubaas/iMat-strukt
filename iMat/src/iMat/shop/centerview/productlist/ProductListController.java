@@ -62,9 +62,6 @@ public class ProductListController implements Initializable {
         //Om inga produkter finns att visa, visa noProductsPane
         if (set.isEmpty()) {
             noProductsPane.setVisible(true);
-            if(!centerViewController.getShopController().getMainController().isLoggedIn()){
-                //a
-            }
         } else {
             noProductsPane.setVisible(false);
         }
