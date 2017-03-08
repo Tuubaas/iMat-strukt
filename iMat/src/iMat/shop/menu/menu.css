@@ -3,7 +3,7 @@
     -fx-pref-height: 40;
     -fx-alignment: baseline-left;
     -fx-font-size: 18;
-    -fx-background-color: "BAD2E6";
+    -fx-background-color: "CDEAE7";
     -fx-text-fill: black;
     -fx-background-radius: 0.5em;
 }
@@ -48,7 +48,7 @@
     -fx-font-size: 18;
     -fx-alignment: center-left;
     -fx-padding: 0 0 0 35;
-    -fx-background-color: "BAD2E6";
+    -fx-background-color: "CDEAE7";
     -fx-text-fill: black;
     -fx-background-radius: 0.5em;
 
