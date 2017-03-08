@@ -98,4 +98,12 @@ public class ShopController implements Initializable {
     public void update() {
         shoppingCartController.update();
     }
+
+    public void showFavorites(){
+        centerViewController.showFavorites();
+    }
+
+    public void updateFavoritePane(){
+        centerViewController.updateFavoritePane();
+    }
 }

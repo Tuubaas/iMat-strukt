@@ -1,5 +1,6 @@
 package iMat.shop.centerview.productlist;
 
+import iMat.MainController;
 import iMat.shop.centerview.CenterViewController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -62,6 +63,7 @@ public class ProductListController implements Initializable {
         //Om inga produkter finns att visa, visa noProductsPane
         if (set.isEmpty()) {
             noProductsPane.setVisible(true);
+            label.setText("Whoops, det verkar inte finnas några varor att visa!\nGör en ny sökning eller välj en kategori");
         } else {
             noProductsPane.setVisible(false);
         }
@@ -79,5 +81,34 @@ public class ProductListController implements Initializable {
 
     public CenterViewController getCenterViewController() {
         return centerViewController;
+    }
+
+    public void showFavorites() {
+        flowPane.getChildren().clear();
+
+        if (centerViewController.getShopController().getMainController().isLoggedIn()) {
+            Set<Product> favorites = MainController.getBackendWrapper().getFavourites();
+
+            //Om inga produkter finns att visa, visa noProductsPane
+            if (favorites.isEmpty()) {
+                noProductsPane.setVisible(true);
+                label.setText("Just nu har du inga favoriter.\nDu kan favorisera en produkt genom att trycka på dess stjärna.\nSök eller välj en kategori för att hitta produkter.");
+            } else {
+                noProductsPane.setVisible(false);
+            }
+
+            for (Product p : favorites) {
+                flowPane.getChildren().add(new ProductListItemController(p, this));
+            }
+        } else {
+            noProductsPane.setVisible(true);
+            label.setText("Du måste vara inloggad för att kunna använda dig av favoriter!\nLogga in eller registrera dig med knappen uppe till höger.");
+        }
+
+        scrollAnchor.setVvalue(0);    //Resetar scrollen så den hamnar högst upp.
+    }
+
+    public void updateFavoritePane(){
+        showFavorites();
     }
 }
