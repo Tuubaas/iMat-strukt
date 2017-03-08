@@ -33,3 +33,13 @@
 #blankDeliveryInfo {
     -fx-background-color: #fff;
 }
+
+.choice-box {
+    -fx-background-color: "A1CCA6";
+    -fx-font-size: 18px;
+}
+
+.date-picker {
+    -fx-show-week-numbers: true;
+    -fx-font-size: 18px;
+}

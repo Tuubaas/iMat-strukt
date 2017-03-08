@@ -34,3 +34,11 @@
 #paymentInfoAnchor {
     -fx-background-color: #fff;
 }
+
+.button {
+    -fx-background-color: "A1CCA6";
+}
+
+.anchor-pane {
+    -fx-background-radius: 1em;
+}

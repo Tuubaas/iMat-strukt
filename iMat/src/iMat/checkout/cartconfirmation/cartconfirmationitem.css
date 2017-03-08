@@ -22,3 +22,7 @@
 .decrement-arrow-button:hover {
     -fx-background-color: #AAAAAA;
 }
+
+.spinner > .text-field {
+    -fx-font-size: 18px;
+}

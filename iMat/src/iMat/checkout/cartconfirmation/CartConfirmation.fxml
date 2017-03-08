@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -10,7 +11,10 @@
    <children>
       <ScrollPane fx:id="cartConfirmationScrollPane" layoutX="104.0" layoutY="38.0" prefHeight="350.0" prefWidth="1040.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <content>
-            <FlowPane fx:id="cartConfirmationFlowPane" prefHeight="200.0" prefWidth="200.0" />
+            <FlowPane fx:id="cartConfirmationFlowPane" alignment="TOP_CENTER" columnHalignment="CENTER" prefHeight="200.0" prefWidth="1025.0" rowValignment="TOP" vgap="5.0">
+               <padding>
+                  <Insets top="5.0" />
+               </padding></FlowPane>
          </content>
       </ScrollPane>
       <Button fx:id="cartConfirmationBackButton" layoutX="52.0" layoutY="337.0" mnemonicParsing="false" onAction="#onCartConfirmationBackButton" prefHeight="40.0" prefWidth="120.0" text="Tillbaka" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="40.0">
