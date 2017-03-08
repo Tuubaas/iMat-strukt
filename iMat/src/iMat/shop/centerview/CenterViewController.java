@@ -111,4 +111,14 @@ public class CenterViewController implements Initializable {
     public ShopController getShopController() {
         return shopController;
     }
+
+    public void showFavorites(){
+        productListAnchor.toFront();
+        productListAnchor.setVisible(true);
+        productListController.showFavorites();
+    }
+
+    public void updateFavoritePane(){
+        productListController.updateFavoritePane();
+    }
 }

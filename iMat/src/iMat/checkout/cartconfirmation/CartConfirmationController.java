@@ -75,4 +75,8 @@ public class CartConfirmationController implements Initializable{
     public CheckoutController getCC(){
         return this.cc;
     }
+
+    public void clearFlowPane(){
+        cartConfirmationFlowPane.getChildren().clear();
+    }
 }
