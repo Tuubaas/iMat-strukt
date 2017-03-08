@@ -26,14 +26,17 @@
    <children>
        <AnchorPane id="window" layoutX="390.0" layoutY="110.0" maxHeight="1080.0" minHeight="0.0" prefHeight="500.0" prefWidth="500.0" stylesheets="@settingspanel.css">
          <children>
-            <SplitPane dividerPositions="0.2963709677419355" layoutX="56.0" layoutY="126.0" prefHeight="500.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <SplitPane id="window" dividerPositions="0.2963709677419355" layoutX="-9.0" layoutY="-9.0" prefHeight="509.0" prefWidth="509.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-9.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-9.0">
               <items>
                   <VBox maxWidth="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="120.0" spacing="2.0">
                      <children>
-                        <Button fx:id="personalInfoButton" mnemonicParsing="false" onAction="#onPersonalInfoButtonClicked" prefHeight="164.0" prefWidth="500.0" text="Personlig information" textAlignment="CENTER" wrapText="true">
+                        <Button fx:id="personalInfoButton" mnemonicParsing="false" onAction="#onPersonalInfoButtonClicked" prefHeight="170.0" prefWidth="130.0" text="Personlig inform- ation" textAlignment="CENTER" wrapText="true">
                            <font>
                               <Font size="18.0" />
                            </font>
+                           <VBox.margin>
+                              <Insets left="1.0" top="1.0" />
+                           </VBox.margin>
                         </Button>
                         <Button fx:id="paymentButton" mnemonicParsing="false" onAction="#onPaymentInfoButtonClicked" prefHeight="164.0" prefWidth="500.0" text="Betalning">
                            <font>
@@ -50,11 +53,11 @@
                         <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
                      </padding>
                   </VBox>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="547.0" prefWidth="392.0">
                      <children>
                         <StackPane prefHeight="496.0" prefWidth="363.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <AnchorPane fx:id="aboutPane" prefHeight="200.0" prefWidth="200.0" styleClass="informationPanes">
+                              <AnchorPane id="window" fx:id="aboutPane" prefHeight="200.0" prefWidth="200.0" styleClass="informationPanes">
                                  <children>
                                     <ImageView fitHeight="241.0" fitWidth="302.0" layoutX="22.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -74,7 +77,7 @@
                                     </Label>
                                  </children>
                               </AnchorPane>
-                              <AnchorPane fx:id="personalPane" prefHeight="200.0" prefWidth="200.0" styleClass="informationPanes">
+                              <AnchorPane id="window" fx:id="personalPane" prefHeight="200.0" prefWidth="200.0" styleClass="informationPanes">
                                  <children>
                                     <Line endX="240.0" layoutX="103.0" layoutY="105.0" startX="-100.0" />
                                     <TextField fx:id="usernameField" layoutX="14.0" layoutY="25.0" prefWidth="200.0" />
@@ -110,7 +113,7 @@
                                     <Label fx:id="passwordWarningLabel" layoutX="229.0" layoutY="75.0" text="Måste anges!" textFill="RED" visible="false" />
                                  </children>
                               </AnchorPane>
-                              <AnchorPane fx:id="paymentPane" prefHeight="200.0" prefWidth="200.0" styleClass="informationPanes">
+                              <AnchorPane id="window" fx:id="paymentPane" prefHeight="507.0" prefWidth="371.0" styleClass="informationPanes">
                                  <children>
                                     <Button fx:id="paymentActionButton" layoutX="216.0" layoutY="390.0" mnemonicParsing="false" onAction="#onPaymentActionButtonClicked" prefHeight="40.0" prefWidth="80.0" text="Ändra" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
                                     <ImageView fitHeight="50.0" fitWidth="68.0" layoutX="199.0" layoutY="411.0" pickOnBounds="true" preserveRatio="true" rotate="49.4">
