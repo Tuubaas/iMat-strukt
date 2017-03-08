@@ -15,8 +15,8 @@
                <children>
                   <TableView id="table" fx:id="tableView" layoutY="64.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="378.0" prefWidth="170.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
-                      <TableColumn fx:id="idColumn" editable="false" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="50.0" resizable="false" text="Order #" />
-                      <TableColumn fx:id="dateColumn" editable="false" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="117.0" text="Datum" />
+                      <TableColumn fx:id="dateColumn" editable="false" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="107.0" text="Datum" />
+                      <TableColumn fx:id="totalColumn" editable="false" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="60.0" resizable="false" text="Pris" />
                     </columns>
                   </TableView>
                </children></AnchorPane>
