@@ -4,9 +4,12 @@ import iMat.MainController;
 import iMat.checkout.CheckoutController;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
@@ -35,6 +38,8 @@ public class CartConfirmationItem extends AnchorPane implements Initializable{
     private Label itemPrice;
     @FXML
     private Label totalPrice;
+    @FXML
+    private Button deleteButton;
 
 
     public CartConfirmationItem(ShoppingItem item, CartConfirmationController ccc){
@@ -68,9 +73,10 @@ public class CartConfirmationItem extends AnchorPane implements Initializable{
                 ccc.getCC().getMc().update();
             }
         });
+
     }
 
-    public void updateCartItems(int newValue){
+    public void updateCartItems(){
         for (ShoppingItem item : MainController.getBackendWrapper().getShoppingCart().getItems()){
             itemName.setText(item.getProduct().getName());
             itemSpinner.getValueFactory().setValue((int)item.getAmount());
@@ -79,12 +85,15 @@ public class CartConfirmationItem extends AnchorPane implements Initializable{
         }
     }
 
-    public void updateItem(int newValue){
-
-    }
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        deleteButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                MainController.getBackendWrapper().getShoppingCart().removeItem(item);
+                ccc.getCC().getMc().update();
+                ccc.setCartProducts();
+            }
+        });
     }
 }
