@@ -37,7 +37,7 @@ public class CartConfirmationItem extends AnchorPane{
         this.ccc = ccc;
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(
-                ".fxml"));
+                "CartConfirmationItem.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
         try {

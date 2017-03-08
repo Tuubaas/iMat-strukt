@@ -7,7 +7,7 @@
 
 <AnchorPane fx:id="cartConfirmationAnchor" prefHeight="400.0" prefWidth="1040.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.checkout.cartconfirmation.CartConfirmationController">
    <children>
-      <ScrollPane fx:id="cartConfirmationScrollPane" layoutX="104.0" layoutY="38.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ScrollPane fx:id="cartConfirmationScrollPane" layoutX="104.0" layoutY="38.0" prefHeight="350.0" prefWidth="1040.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <content>
           <AnchorPane fx:id="cartConfirmationScrollAnchor" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
         </content>
