@@ -106,22 +106,21 @@ public class PurchaseHistoryController implements Initializable {
         tipLabel.setVisible(true);
     }
 
-    /**
-     * Klass för att göra listan självgående.
+    /*
+     * Klass för att göra så att TableView:n läser av ID och totalpris
      */
     public class OrderWrapper {
         private final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 
         private final Order order;
         private final SimpleStringProperty date;
-        private final SimpleStringProperty id;
         private final SimpleIntegerProperty total;
 
         OrderWrapper(Order order) {
             this.order = order;
-            this.id = new SimpleStringProperty(String.valueOf(order.getOrderNumber()));
             this.date = new SimpleStringProperty(formatter.format(order.getDate()));
 
+            //Calculate total
             double total = 0;
             for (ShoppingItem item : order.getItems()) {
                 total += item.getTotal();
@@ -140,14 +139,6 @@ public class PurchaseHistoryController implements Initializable {
 
         public SimpleStringProperty dateProperty() {
             return date;
-        }
-
-        public String getId() {
-            return id.get();
-        }
-
-        public SimpleStringProperty idProperty() {
-            return id;
         }
 
         public int getTotal() {
