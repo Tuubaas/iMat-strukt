@@ -12,9 +12,9 @@
 
 <AnchorPane id="background" fx:id="mainAnchor" maxHeight="1080.0" maxWidth="1920.0" minHeight="0.0" minWidth="0.0" onMouseClicked="#onMainPaneClicked" pickOnBounds="false" prefHeight="720.0" prefWidth="1280.0" stylesheets="@login.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.login.LogInController">
     <AnchorPane id="window" layoutX="390.0" layoutY="110.0" maxHeight="1080.0" minHeight="0.0" prefHeight="500.0" prefWidth="500.0" stylesheets="@login.css">
-        <TextField fx:id="loginUsername" layoutX="35.0" layoutY="98.0" onAction="#onLoginUsernameFieldAction" prefHeight="25.0" prefWidth="187.0" />
+        <TextField fx:id="loginUsername" layoutX="35.0" layoutY="98.0" onAction="#onLoginUsernameFieldAction" prefHeight="25.0" prefWidth="187.0" promptText="anna_andersson" />
         <Line endY="-220.0" layoutX="251.0" layoutY="299.0" startY="220.0" stroke="#0000003a" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="249.0" AnchorPane.rightAnchor="249.0" AnchorPane.topAnchor="29.0" />
-        <PasswordField fx:id="loginPassword" layoutX="35.0" layoutY="157.0" onAction="#onLoginPasswordFieldAction" prefHeight="25.0" prefWidth="187.0" />
+        <PasswordField fx:id="loginPassword" layoutX="35.0" layoutY="157.0" onAction="#onLoginPasswordFieldAction" prefHeight="25.0" prefWidth="187.0" promptText="7hGwks" />
         <Label layoutX="82.0" layoutY="30.0" text="Logga in">
             <font>
                 <Font size="24.0" />
@@ -40,8 +40,8 @@
                 <Font size="18.0" />
             </font>
         </Label>
-        <TextField fx:id="regFirstName" layoutX="281.0" layoutY="101.0" onAction="#onRegFirstNameFieldAction" prefHeight="25.0" prefWidth="187.0" />
-        <TextField fx:id="regLastName" layoutX="281.0" layoutY="160.0" onAction="#onRegLastNameFieldAction" prefHeight="25.0" prefWidth="187.0" />
+        <TextField fx:id="regFirstName" layoutX="281.0" layoutY="101.0" onAction="#onRegFirstNameFieldAction" prefHeight="25.0" prefWidth="187.0" promptText="Anna" />
+        <TextField fx:id="regLastName" layoutX="281.0" layoutY="160.0" onAction="#onRegLastNameFieldAction" prefHeight="25.0" prefWidth="187.0" promptText="Andersson" />
         <Label layoutX="281.0" layoutY="74.0" text="Förnamn">
             <font>
                 <Font size="18.0" />
@@ -52,8 +52,8 @@
                 <Font size="18.0" />
             </font>
         </Label>
-        <TextField fx:id="regEMail" layoutX="281.0" layoutY="222.0" onAction="#onRegEmailFieldAction" prefHeight="25.0" prefWidth="187.0" />
-        <TextField fx:id="regUserName" layoutX="281.0" layoutY="281.0" onAction="#onRegUsernameFieldAction" prefHeight="25.0" prefWidth="187.0" />
+        <TextField fx:id="regEMail" layoutX="281.0" layoutY="222.0" onAction="#onRegEmailFieldAction" prefHeight="25.0" prefWidth="187.0" promptText="anna.a@mail.com" />
+        <TextField fx:id="regUserName" layoutX="281.0" layoutY="281.0" onAction="#onRegUsernameFieldAction" prefHeight="25.0" prefWidth="187.0" promptText="anna_andersson" />
         <Label layoutX="281.0" layoutY="195.0" text="E-postadress">
             <font>
                 <Font size="18.0" />
@@ -64,7 +64,7 @@
                 <Font size="18.0" />
             </font>
         </Label>
-        <PasswordField fx:id="regPassword" layoutX="281.0" layoutY="343.0" onAction="#onRegPasswordFieldAction" prefHeight="25.0" prefWidth="187.0" />
+        <PasswordField fx:id="regPassword" layoutX="281.0" layoutY="343.0" onAction="#onRegPasswordFieldAction" prefHeight="25.0" prefWidth="187.0" promptText="7hGwks" />
         <Label layoutX="281.0" layoutY="316.0" text="Lösenord">
             <font>
                 <Font size="18.0" />
