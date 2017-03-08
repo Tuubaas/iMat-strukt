@@ -71,4 +71,8 @@ public class CartConfirmationController implements Initializable{
             cartConfirmationFlowPane.getChildren().add(new CartConfirmationItem(item, this));
         }
     }
+
+    public CheckoutController getCC(){
+        return this.cc;
+    }
 }
