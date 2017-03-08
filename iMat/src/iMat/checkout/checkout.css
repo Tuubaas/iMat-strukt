@@ -1,9 +1,9 @@
 .svg-path {
-    -fx-fill: #00000080;
+    -fx-fill:"A1CCA6";
 }
 
 .svg-path:hover {
-    -fx-fill: aqua;
+    -fx-fill: #AAAAAA;
 }
 
 }

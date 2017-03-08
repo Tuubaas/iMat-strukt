@@ -32,13 +32,13 @@
             </AnchorPane>
          </children>
       </StackPane>
-      <GridPane layoutX="100.0" layoutY="150.0" prefHeight="40.0" prefWidth="1080.0" AnchorPane.topAnchor="30.0">
+      <GridPane layoutX="79.0" layoutY="11.0" prefHeight="67.0" prefWidth="1101.0" AnchorPane.topAnchor="11.0">
          <children>
             <SVGPath fx:id="arrow11" content="M100,100 L131,115 100,130 270,130 300,115 275,100 z" fill="#00000080" styleClass="svg-path" GridPane.halignment="CENTER" />
             <SVGPath fx:id="arrow31" content="M100,100 L131,115 100,130 270,130 300,115 275,100 z" fill="#00000080" styleClass="svg-path" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
             <SVGPath fx:id="arrow41" content="M100,100 L131,115 100,130 270,130 300,115 275,100 z" fill="#00000080" styleClass="svg-path" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
             <SVGPath fx:id="arrow51" content="M100,100 L131,115 100,130 270,130 300,115 275,100 z" fill="#00000080" styleClass="svg-path" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
-            <Label fx:id="arrowLabel11" text="Bekräfta varukorg" GridPane.halignment="CENTER" />
+            <Label fx:id="arrowLabel11" prefHeight="31.0" prefWidth="116.0" text="Bekräfta varukorg" GridPane.halignment="CENTER" />
             <Label fx:id="arrowLabel31" text="Leveransuppgifter" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
             <Label fx:id="arrowLabel41" text="Betalinformation" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
             <Label fx:id="arrowLabel51" text="Bekräfta köp" GridPane.columnIndex="3" GridPane.halignment="CENTER" />

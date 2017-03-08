@@ -21,7 +21,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainAnchor" maxHeight="1080.0" maxWidth="1920.0" minHeight="-Infinity" prefHeight="500.0" prefWidth="1280.0" stylesheets="@header.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.header.HeaderController">
+<AnchorPane fx:id="mainAnchor" maxHeight="1080.0" maxWidth="1920.0" minHeight="-Infinity" prefHeight="758.0" prefWidth="1292.0" stylesheets="@header.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.header.HeaderController">
    <children>
       <AnchorPane id="mainAnchor" fx:id="headerAnchor" layoutX="1.0" minHeight="-Infinity" prefHeight="101.0" prefWidth="1280.0" stylesheets="@header.css" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -113,7 +113,6 @@
                   <Image url="@../../resources/worker.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="117.0" fitWidth="229.0" layoutX="2.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>
    </children>
