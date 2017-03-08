@@ -50,6 +50,7 @@ public class ConfirmationController implements Initializable{
 
     public void onConfirmationNextButtonClicked() {
         cc.onConfirmationNextButtonClicked();
+        cc.getMc().getPurchaseDoneController().writeReceipt();
     }
 
     public void onConfirmationBackButtonClicked(){

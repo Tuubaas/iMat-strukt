@@ -48,7 +48,10 @@
             </Button>
             <AnchorPane fx:id="confirmationAnchorPane" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                <children>
-                  <TextArea fx:id="receiptField" layoutX="182.0" layoutY="69.0" prefHeight="371.0" prefWidth="640.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0" />
+                  <TextArea fx:id="receiptField" layoutX="182.0" layoutY="69.0" prefHeight="371.0" prefWidth="640.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font></TextArea>
                </children></AnchorPane>
          </children>
       </GridPane>

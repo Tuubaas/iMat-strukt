@@ -224,4 +224,8 @@ public class MainController implements Initializable {
     public void updateFavoritePane(){
         shopController.updateFavoritePane();
     }
+
+    public PurchaseDoneController getPurchaseDoneController(){
+        return this.purchaseDoneController;
+    }
 }
