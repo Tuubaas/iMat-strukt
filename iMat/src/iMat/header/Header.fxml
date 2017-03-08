@@ -19,7 +19,7 @@
    <children>
       <AnchorPane id="mainAnchor" fx:id="headerAnchor" layoutX="1.0" minHeight="-Infinity" prefHeight="101.0" prefWidth="1280.0" stylesheets="@header.css" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane fx:id="searchPane" layoutX="439.0" layoutY="38.0" maxWidth="700.0" prefHeight="40.0" prefWidth="400.0" scaleShape="false" AnchorPane.bottomAnchor="0.0">
+            <AnchorPane fx:id="searchPane" layoutX="439.0" layoutY="36.0" maxWidth="700.0" prefHeight="63.0" prefWidth="400.0" scaleShape="false" AnchorPane.bottomAnchor="0.0">
                <children>
                   <TextField fx:id="searchField" onAction="#onSearchPerformed" prefHeight="45.0" prefWidth="335.0" promptText="Ex. mjölk, bröd..." AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="65.0">
                      <font>
