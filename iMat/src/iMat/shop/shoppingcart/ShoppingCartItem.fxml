@@ -16,7 +16,7 @@
       </Label>
       <TextField fx:id="amountField" layoutX="125.0" layoutY="4.0" prefHeight="41.0" prefWidth="34.0" text="1">
          <font>
-            <Font size="18.0" />
+            <Font size="14.0" />
          </font>
       </TextField>
       <Label fx:id="priceTotalLabel" layoutX="6.0" layoutY="19.0" prefHeight="27.0" prefWidth="122.0" text="TotPris">
