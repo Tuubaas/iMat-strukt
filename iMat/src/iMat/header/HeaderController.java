@@ -41,8 +41,6 @@ public class HeaderController implements Initializable {
     @FXML
     private ImageView logo;
     @FXML
-    private Label eMailLabel;
-    @FXML
     private Label loggedInAsLabel;
 
 
@@ -84,7 +82,6 @@ public class HeaderController implements Initializable {
     private void updateLoginState() {
         if (mc.isLoggedIn()) {
             this.setLoggedinPane(true);
-            eMailLabel.setText(MainController.getBackendWrapper().getCustomer().getEmail());
             loggedInAsLabel.setText(String.format("Inloggad som: %s %s", MainController.getBackendWrapper().getCustomer().getFirstName(),
                     MainController.getBackendWrapper().getCustomer().getLastName()));
         } else {
