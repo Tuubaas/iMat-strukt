@@ -44,7 +44,6 @@ public class CartConfirmationItem extends AnchorPane implements Initializable{
     @FXML
     private Label itemUnit;
 
-
     public CartConfirmationItem(ShoppingItem item, CartConfirmationController ccc){
         this.item = item;
         this.ccc = ccc;

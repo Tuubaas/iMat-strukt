@@ -26,6 +26,8 @@ public class ShoppingCartItem extends Pane {
     private TextField amountField;
     @FXML
     private Label priceTotalLabel;
+    @FXML
+    private Label itemUnit;
 
     public ShoppingCartItem(ShoppingItem item, ShoppingCartController scc) {
         this.shoppingCartController = scc;
@@ -55,6 +57,7 @@ public class ShoppingCartItem extends Pane {
         this.productNameLabel.setText(item.getProduct().getName());
         this.amountField.setText(String.valueOf(item.getAmount()));
         this.priceTotalLabel.setText(String.valueOf(item.getTotal()) + " kr");
+        this.itemUnit.setText(item.getProduct().getUnitSuffix());
     }
 
     @FXML
