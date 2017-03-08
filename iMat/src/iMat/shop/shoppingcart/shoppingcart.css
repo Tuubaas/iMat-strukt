@@ -1,9 +1,9 @@
 .grid-pane {
-    -fx-background-color: grey;
+    -fx-background-color: "D0D0D0";
 }
 
-.anchor-pane {
-    -fx-background-color: #AAAAAA;
+.scroll-pane {
+    -fx-background-color: "D0D0D0";
 }
 
 .button {
