@@ -31,7 +31,7 @@
                   <Insets />
                </VBox.margin>
             </ImageView>
-            <Label fx:id="label" alignment="CENTER" contentDisplay="CENTER" prefHeight="67.0" prefWidth="427.0" text="Whoops, det verkar inte finnas några varor att visa! Gör en ny sökning eller välj en kategori" textAlignment="CENTER" wrapText="true">
+            <Label fx:id="label" alignment="CENTER" contentDisplay="CENTER" prefHeight="135.0" prefWidth="572.0" text="Whoops, det verkar inte finnas några varor att visa!Gör en ny sökning eller välj en kategori" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font size="18.0" />
                </font>

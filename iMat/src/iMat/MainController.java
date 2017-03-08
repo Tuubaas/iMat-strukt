@@ -194,6 +194,7 @@ public class MainController implements Initializable {
     public void login() {
         this.isLoggedIn = true;
         headerController.update();
+        updateFavoritePane();
     }
 
     public void logout() {
@@ -213,5 +214,14 @@ public class MainController implements Initializable {
     public void goToPurchaseHistory(){
         goToShop();
         shopController.goToPurchaseHistory();
+    }
+
+    public void showFavorites(){
+        shopController.showFavorites();
+        shopController.goToProductList();
+    }
+
+    public void updateFavoritePane(){
+        shopController.updateFavoritePane();
     }
 }

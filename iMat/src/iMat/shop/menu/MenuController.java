@@ -168,12 +168,7 @@ public class MenuController implements Initializable {
 
     @FXML
     public void onFavoriteButtonClicked() {
-        if (sc.getMainController().isLoggedIn()) {
-            sc.showProducts(wrapper.getFavourites());
-        } else {
-            //Skicka in tom lista med produkter om ej inloggad
-            sc.showProducts(new HashSet<>());
-        }
+        sc.getMainController().showFavorites();
     }
 
     @FXML
