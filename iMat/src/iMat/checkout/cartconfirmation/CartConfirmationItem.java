@@ -19,6 +19,7 @@ import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
 public class CartConfirmationItem extends AnchorPane implements Initializable{
@@ -54,13 +55,18 @@ public class CartConfirmationItem extends AnchorPane implements Initializable{
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
+        double price = item.getProduct().getPrice();
+        price = Math.round(price * 100.0 )/100.0;
+        String newPrice = String.format("%.2f",price);
+        System.out.println(price);
+        System.out.println(newPrice);
+
 
         itemName.setText(item.getProduct().getName());
         itemSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1,10000));
         itemSpinner.getValueFactory().setValue((int)item.getAmount());
-        System.out.println(item.getAmount() + "konstruktor");
-        itemPrice.setText(item.getProduct().getPrice() + " " + item.getProduct().getUnit());
-        totalPrice.setText(item.getTotal() + " kr");
+        itemPrice.setText(new DecimalFormat("##.###").format(item.getProduct().getPrice()) + " " + item.getProduct().getUnit());
+        totalPrice.setText(new DecimalFormat("##.###").format(item.getTotal()) + " kr");
 
 
         itemSpinner.valueProperty().addListener(new ChangeListener<Integer>() {
