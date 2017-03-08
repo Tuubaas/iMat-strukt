@@ -41,6 +41,8 @@ public class CartConfirmationItem extends AnchorPane implements Initializable{
     private Label totalPrice;
     @FXML
     private Button deleteButton;
+    @FXML
+    private Label itemUnit;
 
 
     public CartConfirmationItem(ShoppingItem item, CartConfirmationController ccc){
@@ -67,6 +69,7 @@ public class CartConfirmationItem extends AnchorPane implements Initializable{
         itemSpinner.getValueFactory().setValue((int)item.getAmount());
         itemPrice.setText(new DecimalFormat("##.###").format(item.getProduct().getPrice()) + " " + item.getProduct().getUnit());
         totalPrice.setText(new DecimalFormat("##.###").format(item.getTotal()) + " kr");
+        itemUnit.setText(item.getProduct().getUnitSuffix());
 
 
         itemSpinner.valueProperty().addListener(new ChangeListener<Integer>() {
@@ -88,6 +91,7 @@ public class CartConfirmationItem extends AnchorPane implements Initializable{
             itemSpinner.getValueFactory().setValue((int)item.getAmount());
             itemPrice.setText(item.getProduct().getPrice() + " " + item.getProduct().getUnit());
             totalPrice.setText(item.getTotal() + " kr");
+            itemUnit.setText(item.getProduct().getUnitSuffix());
         }
     }
 
