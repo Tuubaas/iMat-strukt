@@ -23,7 +23,7 @@ public class ConfirmationController implements Initializable{
     private PaymentInfoController pic;
 
     @FXML
-    private Label adressLabel;
+    private Label addressLabel;
     @FXML
     private Label deliveryTimeLabel;
     @FXML
@@ -56,12 +56,12 @@ public class ConfirmationController implements Initializable{
         cc.onConfirmationBackButtonClicked();
     }
 
-public void setConfirmationLabels(){
-    ShoppingCart shoppingCart = cc.getWrapper().getShoppingCart();
-    adressLabel.setText(dic.getSelectedAdress());
-    deliveryTimeLabel.setText(dic.getSelectedDate());
-    cardNumberLabel.setText(pic.getCardNumber());
-    totalPriceLabel.setText(shoppingCart.getTotal() + "kr");
-}
+    public void setConfirmationLabels() {
+        ShoppingCart shoppingCart = cc.getWrapper().getShoppingCart();
+        addressLabel.setText(dic.getSelectedAdress());
+        deliveryTimeLabel.setText(dic.getSelectedDate());
+        cardNumberLabel.setText(pic.getCardNumber());
+        totalPriceLabel.setText(shoppingCart.getTotal() + "kr");
+    }
 
 }

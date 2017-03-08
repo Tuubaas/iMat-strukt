@@ -1,0 +1,17 @@
+.mainAnchor{
+-fx-background-color: #ffffff;
+}
+
+.button{
+    -fx-background-color: "A1CCA6";
+    -fx-background-radius: 1em;
+}
+
+.button:hover {
+    -fx-background-color: #AAAAAA;
+}
+
+.vbox {
+   -fx-alignment: center;
+    -fx-spacing: 60;
+}

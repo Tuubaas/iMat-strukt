@@ -11,7 +11,7 @@
    <children>
       <ImageView fx:id="paymentInfoCardTemplatePic" fitHeight="150.0" fitWidth="237.6731301939058" layoutX="565.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="paymentInfoCardBacksideTemplatePic" fitHeight="150.0" fitWidth="237.6731301939058" layoutX="565.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true" />
-      <TextField fx:id="paymentInfoCardNumber" layoutX="261.0" layoutY="130.0" prefHeight="35.0" prefWidth="238.0">
+      <TextField fx:id="paymentInfoCardNumber" layoutX="261.0" layoutY="130.0" onKeyPressed="#updateCardNumberInput" prefHeight="35.0" prefWidth="238.0">
          <font>
             <Font size="18.0" />
          </font>

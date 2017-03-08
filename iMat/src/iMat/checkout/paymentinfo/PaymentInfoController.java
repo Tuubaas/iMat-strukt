@@ -5,6 +5,7 @@ import iMat.BackendWrapper;
 import iMat.MainController;
 import iMat.checkout.CheckoutController;
 import iMat.checkout.confirmation.ConfirmationController;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -64,7 +65,7 @@ public class PaymentInfoController implements Initializable {
         paymentInfoCardBacksideTemplatePic.setImage(new Image(String.valueOf(getClass().getClassLoader().getResource("resources/kreditkortbaksida.png"))));
         visaLogoImage.setImage(new Image(String.valueOf(getClass().getClassLoader().getResource("resources/Visa_lgo.png"))));
         mcLogoImage.setImage(new Image(String.valueOf(getClass().getClassLoader().getResource("resources/MasterCard_Logo.svg.png"))));
-
+        setChoiceBoxItems();
     }
 
     public void injectCheckoutController(CheckoutController cc) {
@@ -114,10 +115,37 @@ public class PaymentInfoController implements Initializable {
     public void setPaymentInfo(){
         CreditCard creditCard = cc.getWrapper().getCreditCard();
         paymentInfoCardHolder.setText(creditCard.getHoldersName());
-        paymentInfoCardNumber.setText(creditCard.getCardNumber());
+        paymentInfoCardNumber.setText(setCardNumberFormat());
         paymentInfoCardCVC.setText("" + creditCard.getVerificationCode());
         paymentInfoExpireMonth.setValue(creditCard.getValidMonth());
         paymentInfoExpireYear.setValue(creditCard.getValidYear());
+        if (creditCard.getCardType().equals("Visa")){
+            visaRadioButton.fire();
+        }
+        else {
+            mcRadioButton.fire();
+        }
+    }
+
+    private String setCardNumberFormat(){
+            CreditCard creditCard = cc.getWrapper().getCreditCard();
+            String credit = creditCard.getCardNumber();
+            String newCredit = credit.substring(0, 4) + " " + credit.substring(4, 8) + " " + credit.substring(8, 12) + " " + credit.substring(12, 16);
+            return newCredit;
+    }
+
+    public void updateCardNumberInput() {
+        if (paymentInfoCardNumber.getText().length() == 15) {
+            String credit = paymentInfoCardNumber.getText();
+            paymentInfoCardNumber.setText(credit.substring(0, 4) + " " + credit.substring(4, 8) + " " + credit.substring(8, 12) + " " + credit.substring(12, 16));
+        }
+    }
+
+    public void setChoiceBoxItems(){
+        paymentInfoExpireMonth.setItems(FXCollections.observableArrayList(1,2,3,4,5,6,7,8,9,10,11,12));
+        paymentInfoExpireMonth.getSelectionModel().selectFirst();
+        paymentInfoExpireYear.setItems(FXCollections.observableArrayList(17,18,19,20,21,22,23,24,25,26,27));
+        paymentInfoExpireYear.getSelectionModel().selectFirst();
     }
 
 }

@@ -14,8 +14,8 @@ public class iMat extends Application {
         primaryStage.setTitle("iMat");
         primaryStage.setScene(new Scene(root, 1280, 720));
         primaryStage.show();
-        primaryStage.setMinWidth(800);
-        primaryStage.setMinHeight(725);
+        primaryStage.setMinWidth(1280);
+        primaryStage.setMinHeight(720);
 
         primaryStage.setOnCloseRequest(event -> MainController.getBackendWrapper().shutDown());
     }

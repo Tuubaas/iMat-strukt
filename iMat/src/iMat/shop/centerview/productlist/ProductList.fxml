@@ -3,22 +3,40 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane fx:id="mainAnchor" prefHeight="500.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.shop.centerview.productlist.ProductListController">
-   <content>
-      <FlowPane fx:id="flowPane" alignment="TOP_LEFT" columnHalignment="RIGHT" hgap="10.0" prefHeight="485.0" prefWidth="800.0" vgap="10.0">
-         <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-         </padding>
+<AnchorPane fx:id="mainAnchor" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.shop.centerview.productlist.ProductListController">
+   <children>
+      <ScrollPane fx:id="scrollAnchor" prefHeight="500.0" prefWidth="802.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <FlowPane fx:id="flowPane" alignment="TOP_LEFT" columnHalignment="RIGHT" hgap="10.0" prefHeight="485.0" prefWidth="800.0" vgap="10.0">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </FlowPane>
+         </content>
+      </ScrollPane>
+      <VBox fx:id="noProductsPane" alignment="CENTER" layoutX="188.0" layoutY="136.0" prefHeight="500.0" prefWidth="802.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label fx:id="label" text="Whoops, det verkar inte finnas några varor att visa!">
+            <ImageView fitHeight="78.0" fitWidth="247.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../resources/iMat-logo.png" />
+               </image>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </ImageView>
+            <Label fx:id="label" alignment="CENTER" contentDisplay="CENTER" prefHeight="67.0" prefWidth="427.0" text="Whoops, det verkar inte finnas några varor att visa! Gör en ny sökning eller välj en kategori" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
          </children>
-      </FlowPane>
-   </content>
-</ScrollPane>
+      </VBox>
+   </children>
+</AnchorPane>

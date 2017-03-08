@@ -77,7 +77,7 @@ public class DeliveryInfoController implements Initializable{
     @FXML
     private TextField logInUsername;
     @FXML
-    private TextField logInPassword;
+    private PasswordField logInPassword;
     @FXML
     private Button logInButton;
     @FXML
@@ -114,6 +114,10 @@ public class DeliveryInfoController implements Initializable{
     private CheckBox guestRegCheckBox;
     @FXML
     private Label guestWarningLabel;
+    @FXML
+    private Label usernameLabel;
+    @FXML
+    private Label passWordLabel;
 
 
     private final ToggleGroup group = new ToggleGroup();
@@ -242,21 +246,22 @@ public class DeliveryInfoController implements Initializable{
         blankDeliveryInfo.toFront();
         guestUserName.setVisible(false);
         guestPassword.setVisible(false);
+        usernameLabel.setVisible(false);
+        passWordLabel.setVisible(false);
     }
 
     public void onGuestRegCheckBoxChecked(){
         if (guestRegCheckBox.isSelected()) {
-            guestFirstName.setLayoutX(guestFirstName.getLayoutX() - 250);
-            guestLastName.setLayoutX(guestLastName.getLayoutX() - 250);
             guestUserName.setVisible(true);
             guestPassword.setVisible(true);
+            usernameLabel.setVisible(true);
+            passWordLabel.setVisible(true);
         }
         else {
             guestUserName.setVisible(false);
             guestPassword.setVisible(false);
-            guestFirstName.setLayoutX(guestFirstName.getLayoutX() + 250);
-            guestLastName.setLayoutX(guestLastName.getLayoutX() + 250);
-
+            usernameLabel.setVisible(false);
+            passWordLabel.setVisible(false);
         }
     }
 

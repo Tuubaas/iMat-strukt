@@ -1,20 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.shop.centerview.purchasehistory.PurchaseHistoryController">
+<AnchorPane fx:id="mainAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@purchasehistory.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.shop.centerview.purchasehistory.PurchaseHistoryController">
    <children>
-      <SplitPane dividerPositions="0.3" layoutX="125.0" layoutY="114.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <SplitPane dividerPositions="0.27424749163879597" layoutX="125.0" layoutY="114.0" maxHeight="1080.0" maxWidth="1920.0" minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <AnchorPane fx:id="listViewPane" maxWidth="-Infinity" minHeight="0.0" minWidth="-Infinity" prefHeight="378.0" prefWidth="170.0">
                <children>
-                  <ListView fx:id="listView" layoutX="-38.0" layoutY="108.0" prefHeight="398.0" prefWidth="176.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <TableView id="table" fx:id="tableView" layoutY="64.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="378.0" prefWidth="170.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="idColumn" editable="false" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="50.0" resizable="false" text="Order #" />
+                      <TableColumn fx:id="dateColumn" editable="false" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="117.0" text="Datum" />
+                    </columns>
+                  </TableView>
                </children></AnchorPane>
-            <VBox fx:id="itemList" prefHeight="200.0" prefWidth="100.0" />
+            <AnchorPane fx:id="orderItemPane" maxHeight="1080.0" maxWidth="1920.0" minHeight="0.0" minWidth="0.0">
+               <children>
+                  <Label fx:id="tipLabel" alignment="CENTER" layoutX="96.0" layoutY="181.0" text="Välj en order i listan för att se dess innehåll!" />
+               </children>
+            </AnchorPane>
         </items>
       </SplitPane>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" layoutY="-2.0" prefHeight="27.0" prefWidth="170.0" text="Ordrar" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="-2.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
