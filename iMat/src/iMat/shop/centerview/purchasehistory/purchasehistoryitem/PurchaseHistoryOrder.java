@@ -12,6 +12,7 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 import se.chalmers.ait.dat215.project.Order;
 import se.chalmers.ait.dat215.project.ShoppingItem;
+import sun.applet.Main;
 
 import java.io.IOException;
 import java.net.URL;
@@ -44,7 +45,7 @@ public class PurchaseHistoryOrder extends AnchorPane implements Initializable {
     @FXML
     private VBox vbox;
 
-    public PurchaseHistoryOrder(Order order){
+    public PurchaseHistoryOrder(Order order) {
         this.order = order;
         orderItems = new ArrayList<>();
 
@@ -59,47 +60,53 @@ public class PurchaseHistoryOrder extends AnchorPane implements Initializable {
         }
     }
 
-    private void setTotalPriceLabel(){
+    private void setTotalPriceLabel() {
         Double total = 0d;
-        for(ShoppingItem item : this.order.getItems()){
+        for (ShoppingItem item : this.order.getItems()) {
             total += item.getTotal();
         }
 
         totalPriceLabel.setText(total.toString() + " kr");
     }
 
-    public void setHeight(int height){
+    public void setHeight(int height) {
         mainAnchor.setPrefHeight(height);
     }
 
-    public void setWidth(int width){
+    public void setWidth(int width) {
         mainAnchor.setPrefWidth(width);
         vbox.setPrefWidth(width - 10);
 
-        for(PurchaseHistoryOrderItem item : orderItems){
+        for (PurchaseHistoryOrderItem item : orderItems) {
             item.setWidth(width - 120);
         }
     }
 
     @FXML
-    public void onUnMarkAllButtonClicked(){
-        for(PurchaseHistoryOrderItem item : orderItems){
+    public void onUnMarkAllButtonClicked() {
+        for (PurchaseHistoryOrderItem item : orderItems) {
             item.setChecked(false);
         }
     }
 
     @FXML
-    public void onMarkAllButtonClicked(){
-        for(PurchaseHistoryOrderItem item : orderItems){
+    public void onMarkAllButtonClicked() {
+        for (PurchaseHistoryOrderItem item : orderItems) {
             item.setChecked(true);
         }
     }
 
     @FXML
-    public void onAddMarkedButtonClicked(){
-        for(PurchaseHistoryOrderItem item : orderItems){
-            if(item.isChecked()){
-                System.out.println("adding...");
+    public void onAddMarkedButtonClicked() {
+        //Fråga mig inte om denna men den funkar
+        for (PurchaseHistoryOrderItem item : orderItems) {
+            if (item.isChecked()) {
+                for (ShoppingItem p : MainController.getBackendWrapper().getShoppingCart().getItems()) {
+                    if (item.getShoppingItem().getProduct().equals(p.getProduct())) {
+                        p.setAmount(p.getAmount() + item.getShoppingItem().getAmount());
+                        return;
+                    }
+                }
                 MainController.getBackendWrapper().getShoppingCart().addItem(item.getShoppingItem());
             }
         }
@@ -108,13 +115,13 @@ public class PurchaseHistoryOrder extends AnchorPane implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         vbox.setAlignment(Pos.TOP_CENTER);
-        for(ShoppingItem item : order.getItems()){
+        for (ShoppingItem item : order.getItems()) {
             orderItems.add(new PurchaseHistoryOrderItem(item));
         }
 
         vbox.setPrefHeight(order.getItems().size() * 70 + 50);
 
-        for(PurchaseHistoryOrderItem item : orderItems){
+        for (PurchaseHistoryOrderItem item : orderItems) {
             vbox.getChildren().add(item);
         }
 

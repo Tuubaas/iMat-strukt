@@ -41,8 +41,6 @@ public class HeaderController implements Initializable {
     @FXML
     private ImageView logo;
     @FXML
-    private Label eMailLabel;
-    @FXML
     private Label loggedInAsLabel;
 
 
@@ -62,6 +60,9 @@ public class HeaderController implements Initializable {
             }
         });
         logo.setOnMouseClicked(event -> mc.goToShopHome());
+
+        accountAnchorPane.toBack();
+        accountAnchorPane.setVisible(false);
     }
 
     public void injectMainController(MainController mc) {
@@ -80,18 +81,27 @@ public class HeaderController implements Initializable {
 
     private void updateLoginState() {
         if (mc.isLoggedIn()) {
-            //Gör inloggad-relaterade saker
-            this.accountAnchorPane.toFront();
-            accountAnchorPane.setVisible(true);
-            logInAnchorPane.setVisible(false);
-            eMailLabel.setText(MainController.getBackendWrapper().getCustomer().getEmail());
+            this.setLoggedinPane(true);
             loggedInAsLabel.setText(String.format("Inloggad som: %s %s", MainController.getBackendWrapper().getCustomer().getFirstName(),
                     MainController.getBackendWrapper().getCustomer().getLastName()));
         } else {
-            //Visa inloggningspanelen
-            this.logInAnchorPane.toFront();
-            this.logInAnchorPane.setVisible(true);
+            this.setLoggedinPane(false);
         }
+    }
+
+    private void setLoggedinPane(boolean isLoggedin) {
+        if (isLoggedin) {
+            logInAnchorPane.toBack();
+            logInAnchorPane.setVisible(false);
+            accountAnchorPane.toFront();
+            accountAnchorPane.setVisible(true);
+        } else {
+            accountAnchorPane.toBack();
+            accountAnchorPane.setVisible(false);
+            logInAnchorPane.toFront();
+            logInAnchorPane.setVisible(true);
+        }
+
     }
 
     public void setSearchBarVisible(boolean flag) {

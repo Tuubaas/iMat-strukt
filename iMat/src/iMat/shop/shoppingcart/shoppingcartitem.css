@@ -1,8 +1,9 @@
 .pane{
-    -fx-border-color: black;
+    -fx-border-color: white;
     -fx-border-width: 0;
     -fx-background-radius: 0.5em;
-    -fx-background-color: "E9E8E8";
+    -fx-background-color: white;
 
     /* top-left, top-right, bottom-right, and bottom-left corners, in that order. */
 }
+

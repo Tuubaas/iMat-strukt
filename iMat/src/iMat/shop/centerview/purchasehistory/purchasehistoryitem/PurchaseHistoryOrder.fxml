@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -11,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<fx:root fx:id="mainAnchor" maxHeight="1080.0" maxWidth="1920.0" minHeight="200.0" minWidth="200.0" prefHeight="281.0" prefWidth="406.0" stylesheets="@../purchasehistory.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="mainAnchor" maxHeight="1080.0" maxWidth="1920.0" minHeight="200.0" minWidth="200.0" prefHeight="281.0" prefWidth="406.0" stylesheets="@../purchasehistory.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <GridPane id="header" prefHeight="45.0" prefWidth="406.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <columnConstraints>
@@ -21,8 +26,8 @@
             <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" percentWidth="35.0" prefWidth="100.0" />
          </columnConstraints>
          <rowConstraints>
-            <RowConstraints minHeight="10.0" percentHeight="50.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" percentHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="22.5" minHeight="22.5" percentHeight="50.0" prefHeight="22.5" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="22.5" minHeight="22.5" percentHeight="50.0" prefHeight="22.5" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
             <Label text="Ordernummer:" />
@@ -51,9 +56,9 @@
             </Label>
          </children>
       </GridPane>
-      <ScrollPane layoutY="40.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="45.0">
+      <ScrollPane layoutY="43.0" prefHeight="179.0" prefWidth="406.0" AnchorPane.bottomAnchor="59.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="43.0">
          <content>
-            <VBox fx:id="vbox" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="390.0" spacing="5.0">
+            <VBox fx:id="vbox" alignment="BOTTOM_CENTER" minHeight="-Infinity" prefHeight="176.0" prefWidth="398.0" spacing="5.0">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -62,15 +67,15 @@
                </padding></VBox>
          </content>
       </ScrollPane>
-      <Button fx:id="addMarkedButton" layoutX="246.0" layoutY="40.0" minHeight="20.0" mnemonicParsing="false" onAction="#onAddMarkedButtonClicked" prefHeight="28.0" prefWidth="160.0" text="Lägg till valda i kundvagn" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
-      <Button fx:id="markAllButton" layoutX="135.0" layoutY="254.0" mnemonicParsing="false" onAction="#onMarkAllButtonClicked" prefHeight="25.0" prefWidth="80.0" text="Markera alla" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="90.0">
+      <Button fx:id="addMarkedButton" layoutX="232.0" layoutY="239.0" minHeight="20.0" mnemonicParsing="false" onAction="#onAddMarkedButtonClicked" prefHeight="28.0" prefWidth="174.0" text="Lägg till valda i kundvagn" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="0.0" />
+      <Button fx:id="markAllButton" layoutX="114.0" layoutY="239.0" mnemonicParsing="false" onAction="#onMarkAllButtonClicked" prefHeight="28.0" prefWidth="107.0" text="Markera alla" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="114.0">
          <font>
-            <Font size="10.0" />
+            <Font size="12.0" />
          </font>
       </Button>
-      <Button fx:id="unMarkAllButton" layoutX="14.0" layoutY="254.0" mnemonicParsing="false" onAction="#onUnMarkAllButtonClicked" prefHeight="25.0" prefWidth="80.0" text="Avmarkera alla" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0">
+      <Button fx:id="unMarkAllButton" layoutY="239.0" mnemonicParsing="false" onAction="#onUnMarkAllButtonClicked" prefHeight="28.0" prefWidth="107.0" text="Avmarkera alla" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="0.0">
          <font>
-            <Font size="10.0" />
+            <Font size="12.0" />
          </font>
       </Button>
    </children>

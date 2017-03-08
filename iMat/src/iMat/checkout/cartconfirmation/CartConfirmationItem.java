@@ -1,5 +1,9 @@
 package iMat.checkout.cartconfirmation;
 
+import iMat.MainController;
+import iMat.checkout.CheckoutController;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -14,9 +18,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class CartConfirmationItem extends AnchorPane{
+public class CartConfirmationItem extends AnchorPane implements Initializable{
 
-    private ShoppingItem item;
+    private final ShoppingItem item;
+    private CheckoutController cc;
     private CartConfirmationController ccc;
 
 
@@ -36,8 +41,7 @@ public class CartConfirmationItem extends AnchorPane{
         this.item = item;
         this.ccc = ccc;
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(
-                "CartConfirmationItem.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CartConfirmationItem.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
         try {
@@ -49,10 +53,31 @@ public class CartConfirmationItem extends AnchorPane{
         itemName.setText(item.getProduct().getName());
         itemSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1,10000));
         itemSpinner.getValueFactory().setValue((int)item.getAmount());
-        itemPrice.setText("" + item.getProduct().getPrice());
-        totalPrice.setText("" + item.getAmount());
+        itemPrice.setText(item.getProduct().getPrice() + " " + item.getProduct().getUnit());
+        totalPrice.setText(item.getTotal() + " kr");
 
     }
 
+    public void updateCartItems(int newValue){
+        for (ShoppingItem item : MainController.getBackendWrapper().getShoppingCart().getItems()){
+            itemName.setText(item.getProduct().getName());
+            itemSpinner.getValueFactory().setValue((int)item.getAmount());
+            itemPrice.setText(item.getProduct().getPrice() + " " + item.getProduct().getUnit());
+            totalPrice.setText(item.getTotal() + " kr");
+        }
+    }
 
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        itemSpinner.valueProperty().addListener(new ChangeListener<Integer>() {
+            @Override
+            public void changed(ObservableValue<? extends Integer> observable, Integer oldValue, Integer newValue) {
+                item.setAmount(newValue);
+                itemSpinner.getValueFactory().setValue((int)item.getAmount());
+                totalPrice.setText(item.getTotal() + " kr");
+
+            }
+        });
+    }
 }

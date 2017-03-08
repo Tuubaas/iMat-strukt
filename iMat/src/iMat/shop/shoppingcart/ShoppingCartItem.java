@@ -53,7 +53,7 @@ public class ShoppingCartItem extends Pane {
         this.item = item;
 
         this.productNameLabel.setText(item.getProduct().getName());
-        this.amountField.setText(String.valueOf(item.getAmount()) + " " + item.getProduct().getUnitSuffix());
+        this.amountField.setText(String.valueOf(item.getAmount()));
         this.priceTotalLabel.setText(String.valueOf(item.getTotal()) + " kr");
     }
 

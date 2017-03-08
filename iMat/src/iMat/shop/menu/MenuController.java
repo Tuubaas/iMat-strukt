@@ -10,16 +10,19 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TitledPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Border;
+import se.chalmers.ait.dat215.project.Product;
 
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.net.URL;
+import java.util.HashSet;
 import java.util.ResourceBundle;
 
 public class MenuController implements Initializable {
 
     private ShopController sc;
-    private BackendWrapper wrapper  = MainController.getBackendWrapper();;
+    private BackendWrapper wrapper = MainController.getBackendWrapper();
+    ;
 
     @FXML
     private AnchorPane mainAnchor;
@@ -165,7 +168,12 @@ public class MenuController implements Initializable {
 
     @FXML
     public void onFavoriteButtonClicked() {
-        sc.showProducts(wrapper.getFavourites());
+        if (sc.getMainController().isLoggedIn()) {
+            sc.showProducts(wrapper.getFavourites());
+        } else {
+            //Skicka in tom lista med produkter om ej inloggad
+            sc.showProducts(new HashSet<>());
+        }
     }
 
     @FXML
@@ -184,38 +192,38 @@ public class MenuController implements Initializable {
     }
 
     @FXML
-    public void onMilkAndRefrigeratedTiledPaneClicked(){
-        if(category2.isExpanded())
+    public void onMilkAndRefrigeratedTiledPaneClicked() {
+        if (category2.isExpanded())
             sc.getMainController().showProducts(wrapper.getMilkAndRefrigeratedList());
     }
 
     @FXML
-    public void onMeatFishBirdTiledPaneClicked(){
-        if(category3.isExpanded())
+    public void onMeatFishBirdTiledPaneClicked() {
+        if (category3.isExpanded())
             sc.getMainController().showProducts(wrapper.getMeatFishBirdList());
     }
 
     @FXML
-    public void onBreadAndPastriesTiledPaneClicked(){
-        if(category4.isExpanded())
+    public void onBreadAndPastriesTiledPaneClicked() {
+        if (category4.isExpanded())
             sc.getMainController().showProducts(wrapper.getBreadAndPastriesList());
     }
 
     @FXML
-    public void onDryProductsTiledPaneClicked(){
-        if(category5.isExpanded())
+    public void onDryProductsTiledPaneClicked() {
+        if (category5.isExpanded())
             sc.getMainController().showProducts(wrapper.getDryProductsList());
     }
 
     @FXML
-    public void onCandyAndSnacksTiledPaneClicked(){
-        if(category6.isExpanded())
+    public void onCandyAndSnacksTiledPaneClicked() {
+        if (category6.isExpanded())
             sc.getMainController().showProducts(wrapper.getCandyAndSnacksList());
     }
 
     @FXML
-    public void onDrinksTiledPaneClicked (){
-        if(category7.isExpanded())
+    public void onDrinksTiledPaneClicked() {
+        if (category7.isExpanded())
             sc.getMainController().showProducts(wrapper.getDrinksList());
     }
 
