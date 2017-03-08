@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import se.chalmers.ait.dat215.project.CartEvent;
@@ -28,15 +29,22 @@ public class ShoppingCartController implements Initializable, ShoppingCartListen
 
     @FXML
     private AnchorPane mainAnchor;
+
     @FXML
     private Button goToCheckoutButton;
+
     @FXML
-    private VBox itemBox;
+    private ScrollPane itemScrollPane;
+
+    @FXML
+    private VBox cartItemBox;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        cartItemBox.setAlignment(Pos.TOP_CENTER);
         MainController.getBackendWrapper().getShoppingCart().addShoppingCartListener(this);
-        itemBox.alignmentProperty().setValue(Pos.TOP_CENTER);
+        cartItemBox.alignmentProperty().setValue(Pos.TOP_CENTER);
         update();
     }
 
@@ -53,13 +61,13 @@ public class ShoppingCartController implements Initializable, ShoppingCartListen
     }
 
     public void update() {
-        itemBox.getChildren().clear();
+        cartItemBox.getChildren().clear();
 
         for (ShoppingItem p : wrapper.getShoppingCart().getItems()) {
-            itemBox.getChildren().add(new ShoppingCartItem(p, this));
+            cartItemBox.getChildren().add(new ShoppingCartItem(p, this));
         }
 
-        itemBox.setPrefHeight(itemBox.getChildren().size() * 50 + 100);
+        cartItemBox.setPrefHeight(cartItemBox.getChildren().size() * 50 + 100);
     }
 
     @Override
