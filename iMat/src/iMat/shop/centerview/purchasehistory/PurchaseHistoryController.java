@@ -32,7 +32,7 @@ public class PurchaseHistoryController implements Initializable {
     private TableView<OrderWrapper> tableView;
 
     @FXML
-    private TableColumn<OrderWrapper, Integer> totalColumn;
+    private TableColumn<OrderWrapper, String> totalColumn;
 
     @FXML
     private TableColumn<OrderWrapper, String> dateColumn;
@@ -114,7 +114,7 @@ public class PurchaseHistoryController implements Initializable {
 
         private final Order order;
         private final SimpleStringProperty date;
-        private final SimpleIntegerProperty total;
+        private final SimpleStringProperty total;
 
         OrderWrapper(Order order) {
             this.order = order;
@@ -126,7 +126,7 @@ public class PurchaseHistoryController implements Initializable {
                 total += item.getTotal();
             }
 
-            this.total = new SimpleIntegerProperty((int) total);
+            this.total = new SimpleStringProperty(String.valueOf(total) + " kr");
         }
 
         public Order getOrder() {
@@ -141,11 +141,11 @@ public class PurchaseHistoryController implements Initializable {
             return date;
         }
 
-        public int getTotal() {
+        public String getTotal() {
             return total.get();
         }
 
-        public SimpleIntegerProperty totalProperty() {
+        public SimpleStringProperty totalProperty() {
             return total;
         }
     }

@@ -55,6 +55,8 @@ public class ShoppingCartController implements Initializable, ShoppingCartListen
     public void update() {
         itemBox.getChildren().clear();
 
+        System.out.println("Uppdateras");
+
         for (ShoppingItem p : wrapper.getShoppingCart().getItems()) {
             itemBox.getChildren().add(new ShoppingCartItem(p, this));
         }

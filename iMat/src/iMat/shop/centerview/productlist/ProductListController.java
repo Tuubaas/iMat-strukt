@@ -53,7 +53,7 @@ public class ProductListController implements Initializable {
         flowPane.getChildren().clear();
 
         if (set == null) {
-            System.out.println("[JÄTTEFEL] Försökte visa upp ett Set<Product> men den aktuella parametern var en " +
+            System.err.println("[JÄTTEFEL] Försökte visa upp ett Set<Product> men den aktuella parametern var en " +
                     "nullpointer. Någonstans skickas en nullpointer in, fel av oss alltså.");
             flowPane.getChildren().add(label);
             return;
@@ -62,6 +62,9 @@ public class ProductListController implements Initializable {
         //Om inga produkter finns att visa, visa noProductsPane
         if (set.isEmpty()) {
             noProductsPane.setVisible(true);
+            if(!centerViewController.getShopController().getMainController().isLoggedIn()){
+                //a
+            }
         } else {
             noProductsPane.setVisible(false);
         }
