@@ -195,7 +195,7 @@ public class DeliveryInfoController implements Initializable{
         cc.onDeliveryInfoBackButtonClicked();
     }
 
-    public void setDeliveryInfo(){
+    private void setDeliveryInfo(){
         Customer customer = cc.getWrapper().getCustomer();
         deliveryInfoFirstName.setText(customer.getFirstName());
         deliveryInfoLastName.setText(customer.getLastName());

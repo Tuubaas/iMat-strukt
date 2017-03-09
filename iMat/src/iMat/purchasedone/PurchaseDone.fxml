@@ -40,10 +40,15 @@
             </Button>
             <AnchorPane fx:id="confirmationAnchorPane" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                <children>
-                  <TextArea fx:id="receiptField" layoutX="182.0" layoutY="69.0" prefHeight="371.0" prefWidth="640.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                  <TextArea fx:id="receiptField" layoutX="182.0" layoutY="69.0" prefHeight="294.0" prefWidth="600.0" AnchorPane.bottomAnchor="57.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
                      <font>
                         <Font size="18.0" />
                      </font></TextArea>
+                  <Label fx:id="totalPrice" layoutX="320.0" layoutY="321.0" prefHeight="26.0" prefWidth="300.0" text="Label">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
                </children></AnchorPane>
             <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="240.0" text="Tack för ditt köp!" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
                <font>
