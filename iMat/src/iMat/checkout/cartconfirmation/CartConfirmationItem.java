@@ -66,18 +66,36 @@ public class CartConfirmationItem extends AnchorPane implements Initializable{
         itemName.setText(item.getProduct().getName());
         itemSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1,10000));
         itemSpinner.getValueFactory().setValue((int)item.getAmount());
-        itemPrice.setText(String.format("%.2f",item.getProduct().getPrice())  + " " + item.getProduct().getUnit());
-                //new DecimalFormat("##.###").format(item.getProduct().getPrice()) + " " + item.getProduct().getUnit());
-        totalPrice.setText(String.format("%.2f",item.getTotal()) + " kr");
-                //new DecimalFormat("##.###").format(item.getTotal()) + " kr");
-        itemUnit.setText(item.getProduct().getUnitSuffix());
 
+        if (item.getProduct().getUnitSuffix().equals("kg")) {
+            totalPrice.setText(item.getTotal()/10 + " kr");
+            itemUnit.setText("Hg");
+        } else {
+            totalPrice.setText(item.getTotal() + " kr");
+            itemUnit.setText(item.getProduct().getUnitSuffix());
+        }
+
+
+        itemPrice.setText(String.format("%.2f",item.getProduct().getPrice())  + " kr/" + item.getProduct().getUnitSuffix());
+                //new DecimalFormat("##.###").format(item.getProduct().getPrice()) + " " + item.getProduct().getUnit());
+        //totalPrice.setText(String.format("%.2f",item.getTotal()) + " kr");
+                //new DecimalFormat("##.###").format(item.getTotal()) + " kr");
+        //itemUnit.setText(item.getProduct().getUnitSuffix());
 
         itemSpinner.valueProperty().addListener(new ChangeListener<Integer>() {
             @Override
             public void changed(ObservableValue<? extends Integer> observable, Integer oldValue, Integer newValue) {
                 item.setAmount(newValue);
-                totalPrice.setText(String.format("%.2f",item.getTotal()) + " kr");
+
+                if (item.getProduct().getUnitSuffix().equals("kg")) {
+                    totalPrice.setText(item.getTotal()/10 + " kr");
+                    itemUnit.setText("Hg");
+                } else {
+                    totalPrice.setText(item.getTotal() + " kr");
+                    itemUnit.setText(item.getProduct().getUnitSuffix());
+                }
+
+                //totalPrice.setText(String.format("%.2f",item.getTotal()) + " kr");
                 ccc.setTotalLabel();
                 System.out.println(item.getAmount());
                 System.out.println(newValue);
@@ -93,7 +111,7 @@ public class CartConfirmationItem extends AnchorPane implements Initializable{
             itemSpinner.getValueFactory().setValue((int)item.getAmount());
             itemPrice.setText(item.getProduct().getPrice() + " " + item.getProduct().getUnit());
 
-            if (item.getProduct().getUnitSuffix() == "kg") {
+            if (item.getProduct().getUnitSuffix().equals("kg")) {
                 totalPrice.setText(item.getTotal()/10 + " kr");
                 itemUnit.setText("Hg");
             } else {
