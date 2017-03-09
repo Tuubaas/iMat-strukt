@@ -60,4 +60,29 @@
     -fx-collapsible: true;
 }
 
+#subCatButtonClicked {
+    -fx-font-size: 14;
+    -fx-alignment: baseline-left;
+    -fx-pref-height: 25;
+    -fx-pref-width: 250;
+    -fx-padding: 0 0 0 30;
+    -fx-background-color: #AAAAAA;
+}
+
+#subCatButtonClicked:hover {
+    -fx-background-color: #AAAAAA;
+}
+
+#subCatButtonStandard {
+    -fx-font-size: 14;
+    -fx-alignment: baseline-left;
+    -fx-pref-height: 25;
+    -fx-pref-width: 250;
+    -fx-padding: 0 0 0 30;
+    -fx-background-color: white;
+}
+
+#subCatButtonStandard:hover {
+    -fx-background-color: #AAAAAA;
+}
 

@@ -106,4 +106,12 @@ public class ShopController implements Initializable {
     public void updateFavoritePane(){
         centerViewController.updateFavoritePane();
     }
+
+    public void resetAllSubCategoryButtons(){
+        menuController.resetAllSubCategoryButtons();
+    }
+
+    public void closeAllCategorys(){
+        menuController.closeAllCategorys();
+    }
 }
