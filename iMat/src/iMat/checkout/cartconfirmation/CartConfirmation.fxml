@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -8,7 +13,7 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="cartConfirmationAnchor" prefHeight="400.0" prefWidth="1040.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.checkout.cartconfirmation.CartConfirmationController">
+<AnchorPane fx:id="cartConfirmationAnchor" prefHeight="499.0" prefWidth="1040.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.checkout.cartconfirmation.CartConfirmationController">
    <children>
       <ScrollPane fx:id="cartConfirmationScrollPane" layoutX="104.0" layoutY="38.0" prefHeight="350.0" prefWidth="1040.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <content>
@@ -18,17 +23,17 @@
                </padding></FlowPane>
          </content>
       </ScrollPane>
-      <Button fx:id="cartConfirmationBackButton" layoutX="52.0" layoutY="337.0" mnemonicParsing="false" onAction="#onCartConfirmationBackButton" prefHeight="40.0" prefWidth="120.0" text="Tillbaka" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="40.0">
+      <Button fx:id="cartConfirmationBackButton" layoutX="52.0" layoutY="337.0" mnemonicParsing="false" onAction="#onCartConfirmationBackButton" prefHeight="40.0" prefWidth="120.0" text="Tillbaka" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="cartConfirmationNextButton" layoutX="915.0" layoutY="357.0" mnemonicParsing="false" onAction="#onConfirmCartNextButtonClicked" prefHeight="40.0" prefWidth="120.0" text="Nästa" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="40.0">
+      <Button fx:id="cartConfirmationNextButton" layoutX="915.0" layoutY="357.0" mnemonicParsing="false" onAction="#onConfirmCartNextButtonClicked" prefHeight="40.0" prefWidth="120.0" text="Nästa" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="0.0">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Label fx:id="totalLabel" alignment="CENTER_RIGHT" layoutX="666.0" layoutY="313.0" prefHeight="26.0" prefWidth="300.0" text="Label">
+      <Label fx:id="totalLabel" alignment="CENTER_RIGHT" layoutX="740.0" layoutY="406.0" prefHeight="26.0" prefWidth="300.0" text="Label">
          <font>
             <Font size="20.0" />
          </font>

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ChoiceBox?>
@@ -12,9 +16,9 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="deliveryInfoStackPane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.checkout.deliveryinfo.DeliveryInfoController">
+<StackPane fx:id="deliveryInfoStackPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.checkout.deliveryinfo.DeliveryInfoController">
    <children>
-      <AnchorPane fx:id="loggedInAnchor" prefHeight="400.0" prefWidth="1040.0" stylesheets="@deliveryinfo.css">
+      <AnchorPane fx:id="loggedInAnchor" prefHeight="499.0" prefWidth="1040.0" stylesheets="@deliveryinfo.css">
          <children>
             <Label alignment="CENTER_RIGHT" layoutX="304.0" layoutY="51.0" prefWidth="139.0" text="Förnamn:" AnchorPane.leftAnchor="300.0">
                <font>
@@ -87,7 +91,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="notLoggedInAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1040.0" stylesheets="@deliveryinfo.css">
+      <AnchorPane fx:id="notLoggedInAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="499.0" prefWidth="1040.0" stylesheets="@deliveryinfo.css">
          <children>
             <RadioButton fx:id="guestRadioButton" layoutX="204.0" layoutY="18.0" mnemonicParsing="false" onAction="#onGuestRadioButtonClicked" text="Fortsätt som gäst">
                <font>
@@ -99,7 +103,7 @@
                   <Font size="18.0" />
                </font>
             </RadioButton>
-            <StackPane fx:id="notLoggedInStackPane" prefHeight="340.0" prefWidth="1040.0" stylesheets="@deliveryinfo.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <StackPane fx:id="notLoggedInStackPane" prefHeight="439.0" prefWidth="1040.0" stylesheets="@deliveryinfo.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
                   <AnchorPane fx:id="blankDeliveryInfo" prefHeight="200.0" prefWidth="200.0" stylesheets="@deliveryinfo.css">
                      <children>
@@ -109,7 +113,7 @@
                            </font>
                         </Label>
                      </children></AnchorPane>
-                  <AnchorPane fx:id="logInDeliveryInfo" prefHeight="340.0" prefWidth="1040.0" stylesheets="@deliveryinfo.css">
+                  <AnchorPane fx:id="logInDeliveryInfo" prefHeight="439.0" prefWidth="1040.0" stylesheets="@deliveryinfo.css">
                      <children>
                         <TextField fx:id="logInUsername" layoutX="414.0" layoutY="66.0" prefHeight="35.0" prefWidth="285.0">
                            <font>
@@ -147,7 +151,7 @@
                            </font>
                         </Label>
                      </children></AnchorPane>
-                  <AnchorPane fx:id="guestDeliveryInfo" prefHeight="340.0" prefWidth="1040.0" stylesheets="@deliveryinfo.css">
+                  <AnchorPane fx:id="guestDeliveryInfo" prefHeight="380.0" prefWidth="1040.0" stylesheets="@deliveryinfo.css">
                      <children>
                         <TextField fx:id="guestFirstName" layoutX="206.0" layoutY="33.0" prefHeight="27.0" prefWidth="267.0" />
                         <Label alignment="CENTER_RIGHT" layoutX="58.0" layoutY="35.0" prefWidth="139.0" text="Förnamn:">
@@ -155,32 +159,32 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="guestLastName" layoutX="206.0" layoutY="66.0" prefHeight="27.0" prefWidth="267.0" />
-                        <Label alignment="CENTER_RIGHT" layoutX="58.0" layoutY="68.0" prefWidth="139.0" text="Efternamn:">
+                        <TextField fx:id="guestLastName" layoutX="206.0" layoutY="72.0" prefHeight="27.0" prefWidth="267.0" />
+                        <Label alignment="CENTER_RIGHT" layoutX="58.0" layoutY="74.0" prefWidth="139.0" text="Efternamn:">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="guestAdress" layoutX="206.0" layoutY="99.0" prefHeight="27.0" prefWidth="267.0" />
-                        <Label alignment="CENTER_RIGHT" layoutX="58.0" layoutY="101.0" prefWidth="139.0" text="Adress:">
+                        <TextField fx:id="guestAdress" layoutX="206.0" layoutY="111.0" prefHeight="27.0" prefWidth="267.0" />
+                        <Label alignment="CENTER_RIGHT" layoutX="58.0" layoutY="113.0" prefWidth="139.0" text="Adress:">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="guestPostCode" layoutX="206.0" layoutY="132.0" prefHeight="27.0" prefWidth="134.0" />
-                        <Label alignment="CENTER_RIGHT" layoutX="58.0" layoutY="134.0" prefWidth="139.0" text="Postkod:">
+                        <TextField fx:id="guestPostCode" layoutX="206.0" layoutY="150.0" prefHeight="27.0" prefWidth="134.0" />
+                        <Label alignment="CENTER_RIGHT" layoutX="58.0" layoutY="152.0" prefWidth="139.0" text="Postkod:">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="guestCity" layoutX="206.0" layoutY="165.0" prefHeight="27.0" prefWidth="267.0" />
-                        <Label alignment="CENTER_RIGHT" layoutX="58.0" layoutY="167.0" prefWidth="139.0" text="Postort:">
+                        <TextField fx:id="guestCity" layoutX="206.0" layoutY="189.0" prefHeight="27.0" prefWidth="267.0" />
+                        <Label alignment="CENTER_RIGHT" layoutX="57.0" layoutY="191.0" prefWidth="139.0" text="Postort:">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="guestMail" layoutX="206.0" layoutY="198.0" prefHeight="27.0" prefWidth="267.0" />
-                        <Label alignment="CENTER_RIGHT" layoutX="58.0" layoutY="200.0" prefWidth="139.0" text="E-mailadress:">
+                        <TextField fx:id="guestMail" layoutX="206.0" layoutY="228.0" prefHeight="27.0" prefWidth="267.0" />
+                        <Label alignment="CENTER_RIGHT" layoutX="58.0" layoutY="230.0" prefWidth="139.0" text="E-mailadress:">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -200,15 +204,15 @@
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="guestPhone" layoutX="207.0" layoutY="232.0" prefHeight="27.0" prefWidth="267.0" />
-                        <Label alignment="CENTER_RIGHT" layoutX="58.0" layoutY="233.0" text="Telefonnummer:">
+                        <TextField fx:id="guestPhone" layoutX="207.0" layoutY="263.0" prefHeight="27.0" prefWidth="267.0" />
+                        <Label alignment="CENTER_RIGHT" layoutX="58.0" layoutY="264.0" text="Telefonnummer:">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <DatePicker fx:id="guestDatePicker" layoutX="207.0" layoutY="264.0" />
-                        <ChoiceBox fx:id="guestTimeChoice" layoutX="483.0" layoutY="264.0" prefWidth="150.0" />
-                        <Label alignment="CENTER_RIGHT" layoutX="58.0" layoutY="266.0" prefWidth="139.0" text="Tid för leverans:">
+                        <DatePicker fx:id="guestDatePicker" layoutX="207.0" layoutY="301.0" />
+                        <ChoiceBox fx:id="guestTimeChoice" layoutX="483.0" layoutY="301.0" prefWidth="150.0" />
+                        <Label alignment="CENTER_RIGHT" layoutX="58.0" layoutY="303.0" prefWidth="139.0" text="Tid för leverans:">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -220,7 +224,7 @@
                         </CheckBox>
                         <TextField fx:id="guestUserName" layoutX="763.0" layoutY="99.0" />
                         <TextField fx:id="guestPassword" layoutX="763.0" layoutY="132.0" />
-                        <Label fx:id="guestWarningLabel" contentDisplay="CENTER" layoutX="370.0" layoutY="300.0" prefWidth="300.0">
+                        <Label fx:id="guestWarningLabel" contentDisplay="CENTER" layoutX="370.0" layoutY="348.0" prefWidth="300.0">
                            <font>
                               <Font size="18.0" />
                            </font>

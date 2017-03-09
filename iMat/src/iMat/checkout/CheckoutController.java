@@ -98,6 +98,14 @@ public class CheckoutController implements Initializable {
         startCheckout();
     }
 
+    public void setWidth(double newValue){
+        loggedInAnchor.setPrefWidth(newValue);
+    }
+
+    public void setHeight(double newValue){
+        loggedInAnchor.setPrefHeight(newValue);
+    }
+
     public void injectMainController(MainController mc){
         this.mc = mc;
         this.wrapper = MainController.getBackendWrapper();

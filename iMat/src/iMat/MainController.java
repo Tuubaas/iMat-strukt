@@ -76,6 +76,7 @@ public class MainController implements Initializable {
             welcomePageController.setWidth(value);
             purchaseDoneController.setWidth(value);
             settingsPanelController.setWidth(value);
+            checkoutController.setWidth(value);
         });
         mainAnchor.heightProperty().addListener((observable, oldValue, newValue) -> {
             int value = newValue.intValue();
@@ -84,6 +85,7 @@ public class MainController implements Initializable {
             welcomePageController.setHeight(value);
             purchaseDoneController.setHeight(value);
             settingsPanelController.setHeight(value);
+            checkoutController.setHeight(value);
         });
 
         update();
