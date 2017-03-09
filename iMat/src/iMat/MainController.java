@@ -105,21 +105,18 @@ public class MainController implements Initializable {
         headerController.setSearchBarVisible(true);
         shopAnchor.setVisible(true);
         shopAnchor.toFront();
-        closeAllCategorys();
     }
 
     public void goToWelcomePage() {
         hideAllComponents();
         welcomePageAnchor.toFront();
         welcomePageAnchor.setVisible(true);
-        closeAllCategorys();
     }
 
     public void goToPurchaseDone() {
         hideAllComponents();
         purchaseDoneAnchor.toFront();
         purchaseDoneAnchor.setVisible(true);
-        closeAllCategorys();
     }
 
     public void goToCheckout() {
@@ -129,7 +126,6 @@ public class MainController implements Initializable {
         checkoutAnchor.setVisible(true);
         checkoutAnchor.toFront();
         headerController.setSearchBarVisible(false);
-        closeAllCategorys();
     }
 
     public void showHeader(boolean flag) {
@@ -171,8 +167,6 @@ public class MainController implements Initializable {
     public void goToShopHome() {
         goToShop();
         shopController.goToShopHome();
-        shopController.resetAllSubCategoryButtons();
-        closeAllCategorys();
     }
 
     public void showProducts(Set<Product> set) {
@@ -192,8 +186,6 @@ public class MainController implements Initializable {
      */
     public void performSearch(String searchTerms) {
         shopController.showProducts(wrapper.search(searchTerms));
-        shopController.resetAllSubCategoryButtons();
-        closeAllCategorys();
     }
 
     /*
@@ -201,13 +193,12 @@ public class MainController implements Initializable {
      */
     public void login() {
         this.isLoggedIn = true;
-        goToShop();
-        update();
+        headerController.update();
+        updateFavoritePane();
     }
 
     public void logout() {
         this.isLoggedIn = false;
-        goToShopHome();
         update();
     }
 
@@ -218,31 +209,23 @@ public class MainController implements Initializable {
         headerController.update();
         shopController.update();
         settingsPanelController.update();
-        updateProductList();
     }
 
     public void goToPurchaseHistory() {
         goToShop();
         shopController.goToPurchaseHistory();
-        shopController.resetAllSubCategoryButtons();
-        closeAllCategorys();
     }
 
     public void showFavorites() {
         shopController.showFavorites();
         shopController.goToProductList();
-        shopController.resetAllSubCategoryButtons();
+    }
+
+    public void updateFavoritePane() {
+        shopController.updateFavoritePane();
     }
 
     public PurchaseDoneController getPurchaseDoneController() {
         return this.purchaseDoneController;
-    }
-
-    public void closeAllCategorys() {
-        shopController.closeAllCategorys();
-    }
-
-    public void updateProductList() {
-        shopController.updateProductList();
     }
 }

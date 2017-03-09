@@ -82,7 +82,7 @@ public class PurchaseHistoryController implements Initializable {
         mainAnchor.setPrefWidth(width);
     }
 
-    private void update() {
+    public void update() {
         tableView.getItems().clear();
 
         for (Order order : MainController.getBackendWrapper().getOrders()) {

@@ -99,27 +99,11 @@ public class ShopController implements Initializable {
         shoppingCartController.update();
     }
 
-    public void showFavorites() {
+    public void showFavorites(){
         centerViewController.showFavorites();
     }
 
-    public void updateFavoritePane() {
+    public void updateFavoritePane(){
         centerViewController.updateFavoritePane();
-    }
-
-    public void resetAllSubCategoryButtons() {
-        menuController.resetAllSubCategoryButtons();
-    }
-
-    public void closeAllCategorys() {
-        menuController.closeAllCategorys();
-    }
-
-    public void updateProductList() {
-        centerViewController.updateProductList();
-    }
-
-    public boolean isShowingFavorites() {
-        return centerViewController.isShowingFavorites();
     }
 }

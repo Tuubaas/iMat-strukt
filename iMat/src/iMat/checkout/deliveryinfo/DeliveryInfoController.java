@@ -242,8 +242,7 @@ public class DeliveryInfoController implements Initializable{
     public void notLoggedInAnchorToFront(){
         notLoggedInAnchor.setVisible(true);
         notLoggedInAnchor.toFront();
-        guestDeliveryInfo.setVisible(true);
-        guestDeliveryInfo.toFront();
+        guestRadioButton.fire();
         guestUserName.setVisible(false);
         guestPassword.setVisible(false);
         usernameLabel.setVisible(false);

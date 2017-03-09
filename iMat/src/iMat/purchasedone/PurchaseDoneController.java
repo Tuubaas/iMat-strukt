@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.ait.dat215.project.ShoppingCart;
 import se.chalmers.ait.dat215.project.ShoppingItem;
@@ -26,6 +28,8 @@ public class PurchaseDoneController implements Initializable {
     private AnchorPane confirmationAnchorPane;
     @FXML
     private TextArea receiptField;
+    @FXML
+    private ImageView purchaseDoneImage;
 
     private MainController mc;
 
@@ -34,6 +38,8 @@ public class PurchaseDoneController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        purchaseDoneImage.setImage(new Image(String.valueOf(getClass().getClassLoader().getResource("resources/iMat-logo.png"))));
+
 
         receiptField.setEditable(false);
     }

@@ -2,6 +2,7 @@ package iMat.checkout.confirmation;
 
 
 import iMat.BackendWrapper;
+import iMat.MainController;
 import iMat.checkout.CheckoutController;
 import iMat.checkout.deliveryinfo.DeliveryInfoController;
 import iMat.checkout.paymentinfo.PaymentInfoController;
@@ -49,8 +50,12 @@ public class ConfirmationController implements Initializable{
     }
 
     public void onConfirmationNextButtonClicked() {
-        cc.onConfirmationNextButtonClicked();
         cc.getMc().getPurchaseDoneController().writeReceipt();
+        if (cc.getMc().isLoggedIn()){
+            cc.getWrapper().placeOrder(true);
+            cc.getMc().updatePurchaseHistory();
+        }
+        cc.onConfirmationNextButtonClicked();
     }
 
     public void onConfirmationBackButtonClicked(){
