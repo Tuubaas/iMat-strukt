@@ -5,6 +5,10 @@
     -fx-background-radius: 1em;
 }
 
+.button:hover {
+    -fx-background-color: #AAAAAA;
+}
+
 /* Uppåtknapp
 */
 .increment-arrow-button {
