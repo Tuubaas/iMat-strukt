@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Label?>
@@ -9,31 +15,34 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainAnchor" maxHeight="1080.0" maxWidth="1920.0" minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.shop.centerview.shophome.ShopHomeController">
+<AnchorPane fx:id="mainAnchor" maxHeight="1080.0" maxWidth="1920.0" minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.shop.centerview.shophome.ShopHomeController">
    <children>
       <VBox alignment="CENTER" layoutX="97.0" layoutY="10.0" maxHeight="1080.0" maxWidth="1920.0" minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="800.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label text="Välkommen in i butiken!">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Label text="Välj en kategori eller sök för att hitta din produkt">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <padding>
-                  <Insets bottom="10.0" />
-               </padding>
-            </Label>
             <ImageView fx:id="image" fitHeight="400.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="true">
                <viewport>
                   <Rectangle2D />
                </viewport>
                <image>
-                  <Image url="@/resources/shopHomeImage.jpg" />
+                  <Image url="@../../../../resources/Store.jpg" />
                </image>
+               <VBox.margin>
+                  <Insets top="-20.0" />
+               </VBox.margin>
             </ImageView>
+            <Label text="Välkommen in i butiken!">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Label>
+            <Label text="Välj en kategori eller sök för att hitta din produkt">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </Label>
          </children>
       </VBox>
    </children>
