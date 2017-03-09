@@ -46,7 +46,7 @@ public class CenterViewController implements Initializable {
         purchaseHistoryController.injectCenterViewController(this);
     }
 
-    public void showProducts(Set<Product> set){
+    public void showProducts(Set<Product> set) {
         productListAnchor.toFront();
         productListAnchor.setVisible(true);
         productListController.setProducts(set);
@@ -113,13 +113,21 @@ public class CenterViewController implements Initializable {
         return shopController;
     }
 
-    public void showFavorites(){
+    public void showFavorites() {
         productListAnchor.toFront();
         productListAnchor.setVisible(true);
         productListController.showFavorites();
     }
 
-    public void updateFavoritePane(){
+    public void updateFavoritePane() {
         productListController.updateFavoritePane();
+    }
+
+    public void updateProductList() {
+        productListController.update();
+    }
+
+    public boolean isShowingFavorites() {
+        return productListController.isShowingFavorites() && mainAnchor.getChildren().indexOf(productListAnchor) == 0;
     }
 }

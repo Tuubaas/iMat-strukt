@@ -12,12 +12,15 @@ import javafx.scene.layout.VBox;
 import se.chalmers.ait.dat215.project.Product;
 
 import java.net.URL;
+import java.util.HashSet;
 import java.util.ResourceBundle;
 import java.util.Set;
 
 public class ProductListController implements Initializable {
 
     private CenterViewController centerViewController;
+    private Set<Product> currentProducts;
+    private boolean isShowingFavorites = false;
 
     @FXML
     private AnchorPane mainAnchor;
@@ -51,6 +54,7 @@ public class ProductListController implements Initializable {
     Tar bort produkter som visas nu och visar upp dem nya som kom i metodanropet.
      */
     public void setProducts(Set<Product> set) {
+        this.currentProducts = set;
         flowPane.getChildren().clear();
 
         if (set == null) {
@@ -73,6 +77,7 @@ public class ProductListController implements Initializable {
         }
 
         scrollAnchor.setVvalue(0);    //Resetar scrollen så den hamnar högst upp.
+        isShowingFavorites = false;
     }
 
     public void injectCenterViewController(CenterViewController cw) {
@@ -88,6 +93,7 @@ public class ProductListController implements Initializable {
 
         if (centerViewController.getShopController().getMainController().isLoggedIn()) {
             Set<Product> favorites = MainController.getBackendWrapper().getFavourites();
+            currentProducts = favorites;
 
             //Om inga produkter finns att visa, visa noProductsPane
             if (favorites.isEmpty()) {
@@ -106,9 +112,23 @@ public class ProductListController implements Initializable {
         }
 
         scrollAnchor.setVvalue(0);    //Resetar scrollen så den hamnar högst upp.
+        isShowingFavorites = true;
     }
 
-    public void updateFavoritePane(){
+    public void updateFavoritePane() {
         showFavorites();
+    }
+
+    public void update() {
+        if (currentProducts == null) {
+            setProducts(new HashSet<>());
+            return;
+        }
+
+        setProducts(currentProducts);
+    }
+
+    public boolean isShowingFavorites(){
+        return isShowingFavorites;
     }
 }

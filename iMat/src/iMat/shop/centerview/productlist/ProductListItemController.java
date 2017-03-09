@@ -4,10 +4,7 @@ import iMat.BackendWrapper;
 import iMat.MainController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.Spinner;
-import javafx.scene.control.SpinnerValueFactory;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -39,6 +36,8 @@ public class ProductListItemController extends AnchorPane {
     @FXML
     private ImageView star;
 
+    private Tooltip starTooltip;
+
     public ProductListItemController(Product p, ProductListController plc) {
         this.product = p;
         this.productListController = plc;
@@ -52,14 +51,23 @@ public class ProductListItemController extends AnchorPane {
             throw new RuntimeException(exception);
         }
 
+        if (productListController.getCenterViewController().getShopController().getMainController().isLoggedIn()) {
+            starTooltip = new Tooltip("Tryck här för att lägga till eller ta bort en produkt som favorit");
+        } else {
+            starTooltip = new Tooltip("Du måste vara inloggad för att kunna använda favoriter. Logga in uppe till höger.");
+        }
+
         titleLabel.setText(product.getName());
         image.setImage(MainController.getBackendWrapper().getFXImage(p));
         priceLabel.setText(product.getPrice() + " " + product.getUnit());
         spinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 10000));
 
-        if (MainController.getBackendWrapper().isFavorite(product)) {
-            star.setImage(new Image(String.valueOf(getClass().getClassLoader().getResource("resources/Star.png"))));
+        if (productListController.getCenterViewController().getShopController().getMainController().isLoggedIn()) {
+            if (MainController.getBackendWrapper().isFavorite(product)) {
+                star.setImage(new Image(String.valueOf(getClass().getClassLoader().getResource("resources/Star.png"))));
+            }
         }
+        Tooltip.install(star, starTooltip);
 
         if (product.getUnitSuffix().equals("kg")) {
             unitLabel.setText("Antal Kg:");
@@ -74,8 +82,8 @@ public class ProductListItemController extends AnchorPane {
 
     @FXML
     public void onAddBtnClicked() {
-        for (ShoppingItem p : wrapper.getShoppingCart().getItems()){
-            if (this.product.equals(p.getProduct())){
+        for (ShoppingItem p : wrapper.getShoppingCart().getItems()) {
+            if (this.product.equals(p.getProduct())) {
                 p.setAmount(p.getAmount() + spinner.valueProperty().getValue());
                 productListController.getCenterViewController().getShopController().getMainController().update();
                 return;
@@ -90,6 +98,8 @@ public class ProductListItemController extends AnchorPane {
      */
     @FXML
     public void onStarClicked() {
+        if (!productListController.getCenterViewController().getShopController().getMainController().isLoggedIn())
+            return;
 
         System.out.println("Starclicked");
         if (!MainController.getBackendWrapper().isFavorite(this.product)) {

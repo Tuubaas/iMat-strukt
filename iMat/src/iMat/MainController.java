@@ -201,12 +201,12 @@ public class MainController implements Initializable {
      */
     public void login() {
         this.isLoggedIn = true;
-        headerController.update();
-        updateFavoritePane();
+        update();
     }
 
     public void logout() {
         this.isLoggedIn = false;
+        goToShopHome();
         update();
     }
 
@@ -217,6 +217,7 @@ public class MainController implements Initializable {
         headerController.update();
         shopController.update();
         settingsPanelController.update();
+        updateProductList();
     }
 
     public void goToPurchaseHistory() {
@@ -232,15 +233,15 @@ public class MainController implements Initializable {
         shopController.resetAllSubCategoryButtons();
     }
 
-    public void updateFavoritePane() {
-        shopController.updateFavoritePane();
-    }
-
     public PurchaseDoneController getPurchaseDoneController() {
         return this.purchaseDoneController;
     }
 
-    public void closeAllCategorys(){
+    public void closeAllCategorys() {
         shopController.closeAllCategorys();
+    }
+
+    public void updateProductList() {
+        shopController.updateProductList();
     }
 }
