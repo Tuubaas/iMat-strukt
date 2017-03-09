@@ -15,16 +15,16 @@
    <children>
       <ImageView fx:id="paymentInfoCardTemplatePic" fitHeight="150.0" fitWidth="237.6731301939058" layoutX="565.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true" visible="false" />
       <ImageView fx:id="paymentInfoCardBacksideTemplatePic" fitHeight="150.0" fitWidth="237.6731301939058" layoutX="565.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true" visible="false" />
-      <TextField fx:id="paymentInfoCardNumber" layoutX="261.0" layoutY="130.0" onKeyPressed="#updateCardNumberInput" prefHeight="35.0" prefWidth="238.0">
+      <TextField fx:id="paymentInfoCardNumber" layoutX="261.0" layoutY="130.0" onKeyPressed="#updateCardNumberInput" prefHeight="35.0" prefWidth="238.0" visible="false">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="paymentInfoCardHolder" layoutX="261.0" layoutY="248.0" prefHeight="35.0" prefWidth="238.0">
+      <TextField fx:id="paymentInfoCardHolder" layoutX="261.0" layoutY="248.0" prefHeight="35.0" prefWidth="238.0" visible="false">
          <font>
             <Font size="18.0" />
          </font></TextField>
-      <ChoiceBox fx:id="paymentInfoExpireMonth" layoutX="261.0" layoutY="193.0" prefHeight="27.0" prefWidth="49.0" />
+      <ChoiceBox fx:id="paymentInfoExpireMonth" layoutX="261.0" layoutY="193.0" prefHeight="27.0" prefWidth="49.0" visible="false" />
       <Label layoutX="346.5" layoutY="40.0" text="Fyll i din betalningsinformation" AnchorPane.topAnchor="10.0">
          <font>
             <Font size="24.0" />
@@ -40,23 +40,23 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <ChoiceBox fx:id="paymentInfoExpireYear" layoutX="319.0" layoutY="193.0" prefHeight="27.0" prefWidth="49.0" />
-      <Label layoutX="312.0" layoutY="195.0" text="/">
+      <ChoiceBox fx:id="paymentInfoExpireYear" layoutX="319.0" layoutY="193.0" prefHeight="27.0" prefWidth="49.0" visible="false" />
+      <Label fx:id="slashLabel" layoutX="312.0" layoutY="195.0" text="/" visible="false">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="136.0" prefHeight="23.0" prefWidth="244.0" text="Kortnummer: " AnchorPane.leftAnchor="15.0">
+      <Label fx:id="cardNumberLabel" alignment="CENTER_RIGHT" layoutX="15.0" layoutY="136.0" prefHeight="23.0" prefWidth="244.0" text="Kortnummer: " visible="false" AnchorPane.leftAnchor="15.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="195.0" text="Giltighetsdatum Månad / År: " AnchorPane.leftAnchor="15.0">
+      <Label fx:id="expiryDateLabel" alignment="CENTER_RIGHT" layoutX="15.0" layoutY="195.0" text="Giltighetsdatum Månad / År: " visible="false" AnchorPane.leftAnchor="15.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="254.0" prefHeight="23.0" prefWidth="244.0" text="Kortinnehavandes Namn: " AnchorPane.leftAnchor="15.0">
+      <Label fx:id="cardHolderNameLabel" alignment="CENTER_RIGHT" layoutX="15.0" layoutY="254.0" prefHeight="23.0" prefWidth="244.0" text="Kortinnehavandes Namn: " visible="false" AnchorPane.leftAnchor="15.0">
          <font>
             <Font size="18.0" />
          </font>
@@ -66,12 +66,12 @@
       <Rectangle fx:id="cardMonth" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="16.0" layoutX="665.0" layoutY="150.0" stroke="#dd0000" strokeType="INSIDE" visible="false" width="18.0" />
       <Rectangle fx:id="cardYear" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="16.0" layoutX="688.0" layoutY="150.0" stroke="#dd0000" strokeType="INSIDE" visible="false" width="18.0" />
       <Rectangle fx:id="cardCvc" arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="15.0" layoutX="767.0" layoutY="261.0" stroke="#dd0000" strokeType="INSIDE" visible="false" width="20.0" />
-      <Label alignment="CENTER_RIGHT" layoutX="15.0" layoutY="313.0" prefHeight="23.0" prefWidth="244.0" text="CVC/CVV: " AnchorPane.leftAnchor="15.0">
+      <Label fx:id="cvcLabel" alignment="CENTER_RIGHT" layoutX="15.0" layoutY="313.0" prefHeight="23.0" prefWidth="244.0" text="CVC/CVV: " visible="false" AnchorPane.leftAnchor="15.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="paymentInfoCardCVC" layoutX="261.0" layoutY="307.0" prefHeight="35.0" prefWidth="84.0">
+      <TextField fx:id="paymentInfoCardCVC" layoutX="261.0" layoutY="307.0" prefHeight="35.0" prefWidth="84.0" visible="false">
          <font>
             <Font size="18.0" />
          </font>
@@ -86,15 +86,15 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <RadioButton fx:id="visaRadioButton" layoutX="261.0" layoutY="82.0" mnemonicParsing="false" />
+      <RadioButton fx:id="visaRadioButton" layoutX="261.0" layoutY="82.0" mnemonicParsing="false" onAction="#responsiveEnablingCard" />
       <ImageView fx:id="visaLogoImage" fitHeight="60.0" fitWidth="100.0" layoutX="286.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" />
-      <RadioButton fx:id="mcRadioButton" layoutX="402.0" layoutY="82.0" mnemonicParsing="false" />
+      <RadioButton fx:id="mcRadioButton" layoutX="402.0" layoutY="82.0" mnemonicParsing="false" onAction="#responsiveEnablingCard" />
       <ImageView fx:id="mcLogoImage" fitHeight="60.0" fitWidth="100.0" layoutX="426.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="warningLabel" contentDisplay="CENTER" layoutX="370.0" layoutY="345.0" prefWidth="300.0">
+      <Label fx:id="warningLabel" contentDisplay="CENTER" layoutX="264.0" layoutY="347.0" prefHeight="23.0" prefWidth="262.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="helpButton" layoutX="529.0" layoutY="330.0" mnemonicParsing="false" onAction="#onHelpButtonClicked" prefHeight="27.0" prefWidth="24.0" text="?" />
+      <Button fx:id="helpButton" layoutX="499.0" layoutY="319.0" mnemonicParsing="false" onAction="#onHelpButtonClicked" prefHeight="27.0" prefWidth="24.0" text="?" visible="false" />
    </children>
 </AnchorPane>

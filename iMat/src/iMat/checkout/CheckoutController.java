@@ -162,16 +162,23 @@ public class CheckoutController implements Initializable {
     public void onDeliveryInfoBackButtonClicked(){
         cartConfirmationAnchor.setVisible(true);
         cartConfirmationAnchor.toFront();
+        confirmCartButton.setId("onNextButtonClicked");
+        deliveryInfoButton.setId("onButtonVisited");
     }
 
-    public void onPaymentInfoBackButtonClicked(){
+    public void onPaymentInfoBackButtonClicked() {
         deliveryInfoAnchor.setVisible(true);
         deliveryInfoAnchor.toFront();
+        paymentInfoButton.setId("onButtonVisited");
+        deliveryInfoButton.setId("onNextButtonClicked");
+
     }
 
-    public void onConfirmationBackButtonClicked(){
+    public void onConfirmationBackButtonClicked() {
         paymentInfoAnchor.setVisible(true);
         paymentInfoAnchor.toFront();
+        confirmPurchaseButton.setId("onButtonVisited");
+        paymentInfoButton.setId("onNextButtonClicked");
     }
 
     public BackendWrapper getWrapper(){
