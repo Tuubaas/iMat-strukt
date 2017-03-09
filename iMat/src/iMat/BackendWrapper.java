@@ -851,14 +851,16 @@ public class BackendWrapper {
     public double getTotalPrice(){
         double price = 0.0;
         for (ShoppingItem item : getShoppingCart().getItems()){
-            for (int i = 0; i < item.getAmount(); i++) {
-                if (item.getProduct().getUnit().equals("kg")) {
-                    price = price + ((item.getProduct().getPrice()) / 10);
+                if (item.getProduct().getUnitSuffix().equals("kg")) {
+                    for (int i = 0; i < item.getAmount(); i++) {
+                        price = price + ((item.getProduct().getPrice()) / 10);
+                    }
                 } else {
-                    price = price + item.getProduct().getPrice();
+                    for (int i = 0; i < item.getAmount(); i++) {
+                        price = price + item.getProduct().getPrice();
+                    }
                 }
             }
-        }
         return price;
     }
 
