@@ -5,9 +5,9 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1040.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.checkout.confirmation.ConfirmationController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1040.0" stylesheets="@confirmation.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.checkout.confirmation.ConfirmationController">
    <children>
-      <Label layoutX="425.0" layoutY="34.0" text="Bekräfta ditt köp" AnchorPane.topAnchor="10.0">
+      <Label layoutX="409.0" layoutY="14.0" text="Bekräfta ditt köp" AnchorPane.topAnchor="14.0">
          <font>
             <Font size="24.0" />
          </font>
@@ -52,9 +52,9 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="confirmationNextButton" layoutX="915.0" layoutY="357.0" mnemonicParsing="false" onAction="#onConfirmationNextButtonClicked" prefHeight="40.0" prefWidth="120.0" text="Nästa" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="40.0">
+      <Button id="finishButton" fx:id="confirmationNextButton" layoutX="421.0" layoutY="346.0" mnemonicParsing="false" onAction="#onConfirmationNextButtonClicked" prefHeight="49.0" prefWidth="167.0" text="Slutför köp" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="452.0">
          <font>
-            <Font size="18.0" />
+            <Font size="24.0" />
          </font>
       </Button>
       <Button fx:id="confirmationBackButton" layoutX="405.0" layoutY="305.0" mnemonicParsing="false" onAction="#onConfirmationBackButtonClicked" prefHeight="40.0" prefWidth="120.0" text="Tillbaka" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="40.0">

@@ -7,3 +7,10 @@
     /* top-left, top-right, bottom-right, and bottom-left corners, in that order. */
 }
 
+.button{
+    -fx-background-color: #AAAAAA;
+}
+
+.button: hover {
+    -fx-background-color: "FF7871";
+}

@@ -15,34 +15,27 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainAnchor" maxHeight="1080.0" maxWidth="1920.0" minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.shop.centerview.shophome.ShopHomeController">
+<AnchorPane fx:id="mainAnchor" maxHeight="1080.0" maxWidth="1920.0" minHeight="0.0" minWidth="0.0" prefHeight="582.0" prefWidth="948.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.shop.centerview.shophome.ShopHomeController">
    <children>
       <VBox alignment="TOP_CENTER" layoutX="97.0" layoutY="10.0" maxHeight="1080.0" maxWidth="1920.0" minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="800.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ImageView fx:id="image" fitHeight="400.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="true">
-               <viewport>
-                  <Rectangle2D />
-               </viewport>
-               <image>
-                  <Image url="@../../../../resources/Store.jpg" />
-               </image>
-               <VBox.margin>
-                  <Insets top="45.0" />
-               </VBox.margin>
-            </ImageView>
-            <Label text="Välkommen in i butiken!">
-               <font>
-                  <Font size="34.0" />
-               </font>
-            </Label>
-            <Label text="Välj en kategori eller sök för att hitta din produkt">
-               <font>
-                  <Font size="19.0" />
-               </font>
-               <padding>
-                  <Insets bottom="10.0" />
-               </padding>
-            </Label>
+            <AnchorPane maxHeight="600.0" maxWidth="954.0" minHeight="500.0" minWidth="805.0" prefHeight="593.0" prefWidth="952.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" layoutX="115.0" layoutY="103.0" prefHeight="138.0" prefWidth="558.0" text="Välkommen in i butiken!">
+                     <font>
+                        <Font size="47.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="192.0" layoutY="213.0" text="Välj en kategori eller sök för att hitta din produkt">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </AnchorPane>
          </children>
       </VBox>
    </children>

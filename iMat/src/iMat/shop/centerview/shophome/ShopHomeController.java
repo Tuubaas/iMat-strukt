@@ -16,25 +16,32 @@ public class ShopHomeController implements Initializable {
 
     @FXML
     private AnchorPane mainAnchor;
-    @FXML
-    private ImageView image;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        image.setImage(new Image(String.valueOf(getClass().getClassLoader().getResource("resources/Store.jpg"))));
-    }
 
     public void setHeight(int height) {
         mainAnchor.setPrefHeight(height);
-        image.setFitHeight(height - 100);
+
     }
 
     public void setWidth(int width) {
         mainAnchor.setPrefWidth(width);
-        image.setFitWidth(width - 100);
+
     }
 
     public void injectCenterViewController(CenterViewController cw){
         this.centerViewController = cw;
+    }
+
+    /**
+     * Called to initialize a controller after its root element has been
+     * completely processed.
+     *
+     * @param location  The location used to resolve relative paths for the root object, or
+     *                  <tt>null</tt> if the location is not known.
+     * @param resources The resources used to localize the root object, or <tt>null</tt> if
+     */
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
     }
 }
