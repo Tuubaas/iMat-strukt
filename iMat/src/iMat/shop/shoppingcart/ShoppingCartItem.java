@@ -57,12 +57,12 @@ public class ShoppingCartItem extends Pane {
         this.productNameLabel.setText(item.getProduct().getName());
         this.amountField.setText(String.valueOf(item.getAmount()));
 
-        if (this.item.getProduct().getUnitSuffix() == "Kg") {
-            this.priceTotalLabel.setText(String.valueOf(item.getTotal()/10) + " kr");
+        if (this.item.getProduct().getUnitSuffix().equals("kg")) {
+            this.priceTotalLabel.setText(String.format("%.2f",item.getTotal()/10) + " kr");
             this.itemUnit.setText("Hg");
         } else {
             this.itemUnit.setText(item.getProduct().getUnitSuffix());
-            this.priceTotalLabel.setText(String.valueOf(item.getTotal()) + " kr");
+            this.priceTotalLabel.setText(String.format("%.2f",item.getTotal()) + " kr");
         }
     }
 
