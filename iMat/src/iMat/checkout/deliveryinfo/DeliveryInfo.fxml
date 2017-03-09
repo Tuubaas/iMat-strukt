@@ -73,12 +73,12 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <Button fx:id="deliveryInfoNextButton" layoutX="905.0" layoutY="347.0" mnemonicParsing="false" onAction="#onDeliveryInfoNextButtonClicked" prefHeight="40.0" prefWidth="120.0" stylesheets="@deliveryinfo.css" text="Nästa" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="40.0">
+            <Button fx:id="deliveryInfoNextButton" layoutX="905.0" layoutY="347.0" mnemonicParsing="false" onAction="#onDeliveryInfoNextButtonClicked" prefHeight="40.0" prefWidth="120.0" stylesheets="@deliveryinfo.css" text="Nästa" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="0.0">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button fx:id="deliveryInfoBackButton" layoutX="42.0" layoutY="327.0" mnemonicParsing="false" onAction="#onDeliveryInfoBackButtonClicked" prefHeight="40.0" prefWidth="120.0" stylesheets="@deliveryinfo.css" text="Tillbaka" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="40.0">
+            <Button fx:id="deliveryInfoBackButton" layoutX="42.0" layoutY="327.0" mnemonicParsing="false" onAction="#onDeliveryInfoBackButtonClicked" prefHeight="40.0" prefWidth="120.0" stylesheets="@deliveryinfo.css" text="Tillbaka" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0">
                <font>
                   <Font size="18.0" />
                </font>
@@ -105,7 +105,7 @@
                   <Font size="18.0" />
                </font>
             </RadioButton>
-            <StackPane fx:id="notLoggedInStackPane" prefHeight="439.0" prefWidth="1040.0" stylesheets="@deliveryinfo.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <StackPane fx:id="notLoggedInStackPane" prefHeight="449.0" prefWidth="1040.0" stylesheets="@deliveryinfo.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
                   <AnchorPane fx:id="blankDeliveryInfo" prefHeight="200.0" prefWidth="200.0" stylesheets="@deliveryinfo.css">
                      <children>
@@ -153,12 +153,12 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Button fx:id="guestBackButton" mnemonicParsing="false" onAction="#onDeliveryInfoBackButtonClicked" prefHeight="40.0" prefWidth="120.0" stylesheets="@deliveryinfo.css" text="Tillbaka" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="40.0">
+                        <Button fx:id="guestBackButton" mnemonicParsing="false" onAction="#onDeliveryInfoBackButtonClicked" prefHeight="40.0" prefWidth="120.0" stylesheets="@deliveryinfo.css" text="Tillbaka" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Button>
-                        <Button fx:id="guestNextButton" mnemonicParsing="false" onAction="#onDeliveryInfoNextButtonClicked" prefHeight="40.0" prefWidth="120.0" stylesheets="@deliveryinfo.css" text="Nästa" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="40.0">
+                        <Button fx:id="guestNextButton" mnemonicParsing="false" onAction="#onDeliveryInfoNextButtonClicked" prefHeight="40.0" prefWidth="120.0" stylesheets="@deliveryinfo.css" text="Nästa" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="0.0">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -232,7 +232,7 @@
                               <Font size="18.0" />
                            </font>
                         </Button>
-                        <Button layoutX="26.0" layoutY="390.0" mnemonicParsing="false" onAction="#notLoggedInAnchorToFront" prefHeight="35.0" prefWidth="120.0" stylesheets="@deliveryinfo.css" text="Tillbaka">
+                        <Button layoutX="26.0" layoutY="390.0" mnemonicParsing="false" onAction="#notLoggedInAnchorToFront" prefHeight="40.0" prefWidth="120.0" stylesheets="@deliveryinfo.css" text="Tillbaka" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0">
                            <font>
                               <Font size="18.0" />
                            </font>

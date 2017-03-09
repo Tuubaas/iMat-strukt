@@ -130,6 +130,8 @@ public class MainController implements Initializable {
         checkoutController.setTotalLabel(wrapper.getShoppingCart().getTotal());
         checkoutAnchor.setVisible(true);
         checkoutAnchor.toFront();
+        checkoutController.cartConfirmationAnchorToFront();
+        checkoutController.startCheckout();
         headerController.setSearchBarVisible(false);
     }
 
