@@ -863,17 +863,27 @@ public class BackendWrapper {
             }
         return price;
     }
-    /*
+
 
     public boolean isValidName(String s) {
         boolean isValid = false;
         for (Character c : s.toCharArray()) {
-            if (!c.isLetter()) {
+            if (!c.isLetter() && !c.equals(" ") && !c.equals("-")) {
                 return isValid;
             }
         }
         isValid = true;
         return isValid;
+    }
+
+    public boolean isValidCvcCode(String s) {
+        boolean isValid = false;
+        for (Character c : s.toCharArray()) {
+            if(!c.isDigit()) {
+                return isValid;
+            }
+
+        }
     }
 
 */
