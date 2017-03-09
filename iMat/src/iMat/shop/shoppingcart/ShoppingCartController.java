@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
@@ -38,6 +39,9 @@ public class ShoppingCartController implements Initializable, ShoppingCartListen
 
     @FXML
     private VBox cartItemBox;
+
+    @FXML
+    private Label totalPriceLabel;
 
 
     @Override
@@ -74,6 +78,8 @@ public class ShoppingCartController implements Initializable, ShoppingCartListen
         }
 
         cartItemBox.setPrefHeight(cartItemBox.getChildren().size() * 50 + 100);
+
+        totalPriceLabel.setText("Totalpris: " + wrapper.getShoppingCart().getTotal() + " kr");
     }
 
     @Override
