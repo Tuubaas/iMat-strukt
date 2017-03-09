@@ -48,7 +48,13 @@ public class PaymentInfoController implements Initializable {
     @FXML
     private TextField paymentInfoCardHolder;
     @FXML
-    private TextField paymentInfoCardNumber;
+    private TextField paymentInfoCardNumber1;
+    @FXML
+    private TextField paymentInfoCardNumber2;
+    @FXML
+    private TextField paymentInfoCardNumber3;
+    @FXML
+    private TextField paymentInfoCardNumber4;
     @FXML
     private TextField paymentInfoCardCVC;
     @FXML
@@ -119,7 +125,7 @@ public class PaymentInfoController implements Initializable {
 
     @FXML
     public void onPaymentInfoNextButtonClicked() {
-        if (paymentInfoCardHolder.getText().equals("") || paymentInfoCardNumber.getText().equals("") || paymentInfoCardCVC.getText().equals("") || paymentInfoExpireMonth.getValue() == "" || paymentInfoExpireYear.getValue() == null || group.getSelectedToggle() == null) {
+        if (paymentInfoCardHolder.getText().equals("") || paymentInfoCardNumber1.getText().equals("") || paymentInfoCardNumber2.getText().equals("") || paymentInfoCardNumber3.getText().equals("") || paymentInfoCardNumber4.getText().equals("") || paymentInfoCardCVC.getText().equals("") || paymentInfoExpireMonth.getValue() == "" || paymentInfoExpireYear.getValue() == null || group.getSelectedToggle() == null) {
             warningLabel.setStyle("-fx-text-fill: red");
             warningLabel.setText("Du måste fylla i alla fält");
         } else {
@@ -137,7 +143,7 @@ public class PaymentInfoController implements Initializable {
     }
 
     public String getCardNumber() {
-        return paymentInfoCardNumber.getText();
+        return paymentInfoCardNumber1.getText() + paymentInfoCardNumber2.getText() + paymentInfoCardNumber3.getText() + paymentInfoCardNumber4.getText();
     }
 
     public String getCardExpireMonth() {
@@ -155,7 +161,10 @@ public class PaymentInfoController implements Initializable {
     public void setPaymentInfo() {
         CreditCard creditCard = cc.getWrapper().getCreditCard();
         paymentInfoCardHolder.setText(creditCard.getHoldersName());
-        paymentInfoCardNumber.setText(setCardNumberFormat());
+        paymentInfoCardNumber1.setText(creditCard.getCardNumber().substring(0,4));
+        paymentInfoCardNumber2.setText(creditCard.getCardNumber().substring(4,8));
+        paymentInfoCardNumber3.setText(creditCard.getCardNumber().substring(8,12));
+        paymentInfoCardNumber4.setText(creditCard.getCardNumber().substring(12,16));
         paymentInfoCardCVC.setText("" + creditCard.getVerificationCode());
         paymentInfoExpireMonth.setValue(creditCard.getValidMonth());
         paymentInfoExpireYear.setValue(creditCard.getValidYear());
@@ -173,12 +182,12 @@ public class PaymentInfoController implements Initializable {
         return newCredit;
     }
 
-    public void updateCardNumberInput() {
+    /*public void updateCardNumberInput() {
         if (paymentInfoCardNumber.getText().length() == 15) {
             String credit = paymentInfoCardNumber.getText();
             paymentInfoCardNumber.setText(credit.substring(0, 4) + " " + credit.substring(4, 8) + " " + credit.substring(8, 12) + " " + credit.substring(12, 16));
         }
-    }
+    }*/
 
     private void setChoiceBoxItems() {
         paymentInfoExpireMonth.setItems(FXCollections.observableArrayList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12));
@@ -227,7 +236,10 @@ public class PaymentInfoController implements Initializable {
             slashLabel.setVisible(true);
             cardHolderNameLabel.setVisible(true);
             cvcLabel.setVisible(true);
-            paymentInfoCardNumber.setVisible(true);
+            paymentInfoCardNumber1.setVisible(true);
+            paymentInfoCardNumber2.setVisible(true);
+            paymentInfoCardNumber3.setVisible(true);
+            paymentInfoCardNumber4.setVisible(true);
             paymentInfoCardHolder.setVisible(true);
             paymentInfoExpireMonth.setVisible(true);
             paymentInfoExpireYear.setVisible(true);

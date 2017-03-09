@@ -21,11 +21,16 @@
    <children>
             <ImageView fx:id="paymentInfoCardTemplatePic" fitHeight="150.0" fitWidth="237.6731301939058" layoutX="565.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true" visible="false" />
             <ImageView fx:id="paymentInfoCardBacksideTemplatePic" fitHeight="150.0" fitWidth="237.6731301939058" layoutX="565.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true" visible="false" />
-            <TextField fx:id="paymentInfoCardNumber" layoutX="261.0" layoutY="130.0" onKeyPressed="#updateCardNumberInput" prefHeight="35.0" prefWidth="238.0" visible="false">
+            <TextField fx:id="paymentInfoCardNumber1" layoutX="261.0" layoutY="130.0" prefHeight="35.0" prefWidth="72.0" visible="false">
       <font>
          <Font size="18.0" />
       </font>
    </TextField>
+      <TextField fx:id="paymentInfoCardNumber2" layoutX="333.0" layoutY="130.0" prefHeight="35.0" prefWidth="72.0" visible="false">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
             <TextField fx:id="paymentInfoCardHolder" layoutX="261.0" layoutY="248.0" prefHeight="35.0" prefWidth="238.0" visible="false">
       <font>
          <Font size="18.0" />
@@ -103,5 +108,15 @@
             <Font size="18.0" />
          </font>
       </Button>
+      <TextField fx:id="paymentInfoCardNumber3" layoutX="405.0" layoutY="130.0" prefHeight="35.0" prefWidth="72.0" visible="false">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="paymentInfoCardNumber4" layoutX="477.0" layoutY="130.0" prefHeight="35.0" prefWidth="72.0" visible="false">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
    </children>
 </AnchorPane>
