@@ -86,3 +86,19 @@
     -fx-background-color: #AAAAAA;
 }
 
+#favoriteButtonStandard {
+    -fx-background-color: "A1CCA6";
+}
+
+#favoriteButtonStandard:hover {
+    -fx-background-color: #AAAAAA;
+}
+
+#favoriteButtonClicked {
+    -fx-background-color: #AAAAAA;
+}
+
+#favoriteButtonClicked:hover {
+    -fx-background-color: #AAAAAA;
+}
+

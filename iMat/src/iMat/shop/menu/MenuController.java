@@ -183,12 +183,9 @@ public class MenuController implements Initializable {
 
     @FXML
     public void onFavoriteButtonClicked() {
+        resetAllSubCategoryButtons();
+        favoriteButton.setId("favoriteButtonClicked");
         sc.getMainController().showFavorites();
-    }
-
-    @FXML
-    public void onHistoryButtonClicked() {
-        sc.goToPurchaseHistory();
     }
 
     /*
@@ -221,50 +218,65 @@ public class MenuController implements Initializable {
      */
     @FXML
     public void onFruitAndVegetablesTiledPaneClicked() {
-        if (category1.isExpanded())
+        if (category1.isExpanded()) {
             sc.getMainController().showProducts(wrapper.getFruitsAndVegetablesList());
+            resetAllSubCategoryButtons();
+        }
         resizeTitledPanesAnchor();
     }
 
     @FXML
     public void onMilkAndRefrigeratedTiledPaneClicked() {
-        if (category2.isExpanded())
+        if (category2.isExpanded()) {
             sc.getMainController().showProducts(wrapper.getMilkAndRefrigeratedList());
+            resetAllSubCategoryButtons();
+        }
         resizeTitledPanesAnchor();
     }
 
     @FXML
     public void onMeatFishBirdTiledPaneClicked() {
-        if (category3.isExpanded())
+
+        if (category3.isExpanded()) {
             sc.getMainController().showProducts(wrapper.getMeatFishBirdList());
+            resetAllSubCategoryButtons();
+        }
         resizeTitledPanesAnchor();
     }
 
     @FXML
     public void onBreadAndPastriesTiledPaneClicked() {
-        if (category4.isExpanded())
+        if (category4.isExpanded()) {
             sc.getMainController().showProducts(wrapper.getBreadAndPastriesList());
+            resetAllSubCategoryButtons();
+        }
         resizeTitledPanesAnchor();
     }
 
     @FXML
     public void onDryProductsTiledPaneClicked() {
-        if (category5.isExpanded())
+        if (category5.isExpanded()) {
             sc.getMainController().showProducts(wrapper.getDryProductsList());
+            resetAllSubCategoryButtons();
+        }
         resizeTitledPanesAnchor();
     }
 
     @FXML
     public void onCandyAndSnacksTiledPaneClicked() {
-        if (category6.isExpanded())
+        if (category6.isExpanded()) {
             sc.getMainController().showProducts(wrapper.getCandyAndSnacksList());
+            resetAllSubCategoryButtons();
+        }
         resizeTitledPanesAnchor();
     }
 
     @FXML
     public void onDrinksTiledPaneClicked() {
-        if (category7.isExpanded())
+        if (category7.isExpanded()) {
             sc.getMainController().showProducts(wrapper.getDrinksList());
+            resetAllSubCategoryButtons();
+        }
         resizeTitledPanesAnchor();
     }
 
@@ -515,6 +527,8 @@ public class MenuController implements Initializable {
         snackNutsButton.setId("subCatButtonStandard");
         sodaButton.setId("subCatButtonStandard");
         yoghurtButton.setId("subCatButtonStandard");
+
+        favoriteButton.setId("favoriteButtonStandard");
     }
 
     public void closeAllCategorys() {

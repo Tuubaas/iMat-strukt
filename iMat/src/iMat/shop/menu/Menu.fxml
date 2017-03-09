@@ -21,29 +21,27 @@
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="41.0" minHeight="41.0" prefHeight="41.0" vgrow="SOMETIMES" />
                 <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints maxHeight="2000.0" minHeight="10.0" prefHeight="500.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <Button fx:id="favoriteButton" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onFavoriteButtonClicked" prefHeight="39.0" prefWidth="250.0" text="Favoriter">
+                <Button fx:id="favoriteButton" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onFavoriteButtonClicked" prefHeight="40.0" prefWidth="225.0" stylesheets="@menu.css" text="Favoriter">
                     <padding>
                         <Insets left="35.0" />
                     </padding>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
                 </Button>
                 <Label alignment="BASELINE_CENTER" text="Sortiment" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
                     <font>
                         <Font size="20.0" />
                     </font>
-                </Label>
-            <ImageView fitHeight="31.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="RIGHT">
                <GridPane.margin>
-                  <Insets right="15.0" />
+                  <Insets />
                </GridPane.margin>
-               <image>
-                  <Image url="@../../../resources/Star.png" />
-               </image>
-            </ImageView>
+                </Label>
             <ScrollPane fx:id="titledPanesScrollPane" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
               <content>
                 <AnchorPane fx:id="titledPanesAnchor" maxHeight="3000.0" maxWidth="240.0" minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="225.0">
@@ -201,11 +199,22 @@
                                         </padding>
                                     </TitledPane>
                            </children>
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
                         </VBox>
                      </children>
                   </AnchorPane>
               </content>
             </ScrollPane>
+            <ImageView fitHeight="31.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="RIGHT">
+               <image>
+                  <Image url="@../../../resources/Star.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets right="20.0" />
+               </GridPane.margin>
+            </ImageView>
             </children>
         </GridPane>
     </children>
