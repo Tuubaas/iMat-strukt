@@ -12,7 +12,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.ait.dat215.project.ShoppingCart;
 import se.chalmers.ait.dat215.project.ShoppingItem;
-import sun.jvm.hotspot.debugger.MachineDescriptionIA64;
 
 import java.net.URL;
 import java.util.ResourceBundle;

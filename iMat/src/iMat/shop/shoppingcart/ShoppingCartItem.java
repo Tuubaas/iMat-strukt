@@ -70,6 +70,7 @@ public class ShoppingCartItem extends Pane {
     public void amountChanged(double newAmount) {
         item.setAmount(newAmount);
         updateItem(item);
+        shoppingCartController.updateTotal();
     }
 
     @FXML
