@@ -66,8 +66,10 @@ public class CartConfirmationItem extends AnchorPane implements Initializable{
         itemName.setText(item.getProduct().getName());
         itemSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1,10000));
         itemSpinner.getValueFactory().setValue((int)item.getAmount());
-        itemPrice.setText(new DecimalFormat("##.###").format(item.getProduct().getPrice()) + " " + item.getProduct().getUnit());
-        totalPrice.setText(new DecimalFormat("##.###").format(item.getTotal()) + " kr");
+        itemPrice.setText(String.format("%.2f",item.getProduct().getPrice())  + " kr");
+                //new DecimalFormat("##.###").format(item.getProduct().getPrice()) + " " + item.getProduct().getUnit());
+        totalPrice.setText(String.format("%.2f",item.getTotal()) + " kr");
+                //new DecimalFormat("##.###").format(item.getTotal()) + " kr");
         itemUnit.setText(item.getProduct().getUnitSuffix());
 
 
@@ -75,7 +77,7 @@ public class CartConfirmationItem extends AnchorPane implements Initializable{
             @Override
             public void changed(ObservableValue<? extends Integer> observable, Integer oldValue, Integer newValue) {
                 item.setAmount(newValue);
-                totalPrice.setText(item.getTotal() + " kr");
+                totalPrice.setText(String.format("%.2f",item.getTotal()) + " kr");
                 System.out.println(item.getAmount());
                 System.out.println(newValue);
                 ccc.getCC().getMc().update();

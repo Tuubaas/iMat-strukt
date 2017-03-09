@@ -63,7 +63,7 @@ public class PurchaseDoneController implements Initializable {
 
     public void writeReceipt(){
         for (ShoppingItem item : MainController.getBackendWrapper().getShoppingCart().getItems()){
-            receipt = receipt + "\n" + item.getProduct().getName() + "       " + item.getAmount() + " á " + item.getProduct().getPrice() + "       " + item.getTotal() + "\n";
+            receipt = receipt + "\n" + item.getProduct().getName() + "          " + item.getAmount() + " " + item.getProduct().getUnitSuffix() + "  á  " + item.getProduct().getPrice() + "   " + item.getProduct().getUnit() + "          " + item.getTotal() + "\n";
         }
         receiptField.setText(receipt);
     }
