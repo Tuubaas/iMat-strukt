@@ -92,8 +92,14 @@ public class CartConfirmationItem extends AnchorPane implements Initializable{
             itemName.setText(item.getProduct().getName());
             itemSpinner.getValueFactory().setValue((int)item.getAmount());
             itemPrice.setText(item.getProduct().getPrice() + " " + item.getProduct().getUnit());
-            totalPrice.setText(item.getTotal() + " kr");
-            itemUnit.setText(item.getProduct().getUnitSuffix());
+
+            if (item.getProduct().getUnitSuffix() == "kg") {
+                totalPrice.setText(item.getTotal()/10 + " kr");
+                itemUnit.setText("Hg");
+            } else {
+                totalPrice.setText(item.getTotal() + " kr");
+                itemUnit.setText(item.getProduct().getUnitSuffix());
+            }
         }
     }
 
