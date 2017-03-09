@@ -6,16 +6,21 @@ import iMat.shop.ShopController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import se.chalmers.ait.dat215.project.CartEvent;
+import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ShoppingCartListener;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class ShoppingCartController implements Initializable, ShoppingCartListener {
@@ -65,6 +70,13 @@ public class ShoppingCartController implements Initializable, ShoppingCartListen
     }
 
     public void update() {
+        List<Product> preUpdateProducts = new ArrayList<>();
+        for (Node n : cartItemBox.getChildren()) {
+            if (n instanceof ShoppingCartItem) {
+                ShoppingCartItem item = (ShoppingCartItem) n;
+                preUpdateProducts.add(item.getShoppingItem().getProduct());
+            }
+        }
         cartItemBox.getChildren().clear();
 
         if (wrapper.getShoppingCart().getItems().isEmpty()) {
@@ -74,12 +86,15 @@ public class ShoppingCartController implements Initializable, ShoppingCartListen
         }
 
         for (ShoppingItem p : wrapper.getShoppingCart().getItems()) {
-            cartItemBox.getChildren().add(new ShoppingCartItem(p, this));
+            ShoppingCartItem item = new ShoppingCartItem(p, this);
+            cartItemBox.getChildren().add(0, item);
+            if (!preUpdateProducts.contains(p.getProduct())) {
+                item.flashGreen();
+            }
         }
 
         cartItemBox.setPrefHeight(cartItemBox.getChildren().size() * 50 + 100);
-
-        totalPriceLabel.setText("Totalpris: " + String.format("%.2f",wrapper.getTotalPrice()) + " kr");
+        totalPriceLabel.setText("Totalpris: " + String.format("%.2f", wrapper.getShoppingCart().getTotal()) + " kr");
     }
 
     @Override
@@ -87,11 +102,11 @@ public class ShoppingCartController implements Initializable, ShoppingCartListen
         update();
     }
 
-    public void updateTotal(){
-        totalPriceLabel.setText("Totalpris: " + String.format("%.2f",wrapper.getShoppingCart().getTotal()) + " kr");
+    public void updateTotal() {
+        totalPriceLabel.setText("Totalpris: " + String.format("%.2f", wrapper.getShoppingCart().getTotal()) + " kr");
     }
 
-    public ShopController getShopController(){
+    public ShopController getShopController() {
         return this.shopController;
     }
 }

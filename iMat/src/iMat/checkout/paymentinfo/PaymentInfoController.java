@@ -72,7 +72,7 @@ public class PaymentInfoController implements Initializable {
         this.cc = cc;
     }
 
-    public void injectConfirmationController(ConfirmationController conf){
+    public void injectConfirmationController(ConfirmationController conf) {
         this.conf = conf;
     }
 
@@ -81,57 +81,55 @@ public class PaymentInfoController implements Initializable {
         if (paymentInfoCardHolder.getText().equals("") || paymentInfoCardNumber.getText().equals("") || paymentInfoCardCVC.getText().equals("") || paymentInfoExpireMonth.getValue() == "" || paymentInfoExpireYear.getValue() == null || group.getSelectedToggle() == null) {
             warningLabel.setStyle("-fx-text-fill: red");
             warningLabel.setText("Du måste fylla i alla fält");
-        }
-        else {
+        } else {
             cc.onPaymentInfoNextButtonClicked();
             conf.setConfirmationLabels();
         }
     }
 
-    public void onPaymentInfoBackButtonClicked(){
+    public void onPaymentInfoBackButtonClicked() {
         cc.onPaymentInfoBackButtonClicked();
     }
 
-    public String getCardHolder(){
+    public String getCardHolder() {
         return paymentInfoCardHolder.getText();
     }
 
-    public String getCardNumber(){
+    public String getCardNumber() {
         return paymentInfoCardNumber.getText();
     }
 
-    public String getCardExpireMonth(){
+    public String getCardExpireMonth() {
         return paymentInfoExpireMonth.getValue().toString();
     }
 
-    public String getCardExpireYear(){
+    public String getCardExpireYear() {
         return paymentInfoExpireYear.getValue().toString();
     }
 
-    public String getCardCVC(){
+    public String getCardCVC() {
         return paymentInfoCardCVC.getText();
     }
 
-    public void setPaymentInfo(){
+    public void setPaymentInfo() {
         CreditCard creditCard = cc.getWrapper().getCreditCard();
         paymentInfoCardHolder.setText(creditCard.getHoldersName());
         paymentInfoCardNumber.setText(setCardNumberFormat());
         paymentInfoCardCVC.setText("" + creditCard.getVerificationCode());
         paymentInfoExpireMonth.setValue(creditCard.getValidMonth());
         paymentInfoExpireYear.setValue(creditCard.getValidYear());
-        if (creditCard.getCardType().equals("Visa")){
+        if (creditCard.getCardType().equals("Visa")) {
             visaRadioButton.fire();
-        }
-        else {
+        } else {
             mcRadioButton.fire();
         }
     }
 
-    private String setCardNumberFormat(){
-            CreditCard creditCard = cc.getWrapper().getCreditCard();
-            String credit = creditCard.getCardNumber();
-            String newCredit = credit.substring(0, 4) + " " + credit.substring(4, 8) + " " + credit.substring(8, 12) + " " + credit.substring(12, 16);
-            return newCredit;
+    private String setCardNumberFormat() {
+        CreditCard creditCard = cc.getWrapper().getCreditCard();
+        String credit = creditCard.getCardNumber();
+        String newCredit = credit.substring(0, 4) + " " + credit.substring(4, 8) + " " + credit.substring(8, 12) + " " + credit.substring(12, 16);
+        return newCredit;
     }
 
     public void updateCardNumberInput() {
@@ -141,10 +139,10 @@ public class PaymentInfoController implements Initializable {
         }
     }
 
-    private void setChoiceBoxItems(){
-        paymentInfoExpireMonth.setItems(FXCollections.observableArrayList(1,2,3,4,5,6,7,8,9,10,11,12));
+    private void setChoiceBoxItems() {
+        paymentInfoExpireMonth.setItems(FXCollections.observableArrayList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12));
         paymentInfoExpireMonth.getSelectionModel().selectFirst();
-        paymentInfoExpireYear.setItems(FXCollections.observableArrayList(17,18,19,20,21,22,23,24,25,26,27));
+        paymentInfoExpireYear.setItems(FXCollections.observableArrayList(17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27));
         paymentInfoExpireYear.getSelectionModel().selectFirst();
     }
 
