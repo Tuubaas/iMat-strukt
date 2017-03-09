@@ -91,7 +91,8 @@ public class PaymentInfoController implements Initializable {
     private Label slashLabel;
     @FXML
     private Label cardHolderNameLabel;
-
+    @FXML
+    private Label cvcLabel;
 
 
 
@@ -221,9 +222,18 @@ public class PaymentInfoController implements Initializable {
 
     public void responsiveEnablingCard() {
         if (visaRadioButton.isSelected() || mcRadioButton.isSelected()) {
-
+            cardNumberLabel.setVisible(true);
+            expiryDateLabel.setVisible(true);
+            slashLabel.setVisible(true);
+            cardHolderNameLabel.setVisible(true);
+            cvcLabel.setVisible(true);
+            paymentInfoCardNumber.setVisible(true);
+            paymentInfoCardHolder.setVisible(true);
+            paymentInfoExpireMonth.setVisible(true);
+            paymentInfoExpireYear.setVisible(true);
+            paymentInfoCardCVC.setVisible(true);
+            helpButton.setVisible(true);
         }
-
     }
 }
 
