@@ -12,6 +12,7 @@ import javafx.scene.layout.VBox;
 import se.chalmers.ait.dat215.project.Product;
 
 import java.net.URL;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.ResourceBundle;
 import java.util.Set;
@@ -21,6 +22,7 @@ public class ProductListController implements Initializable {
     private CenterViewController centerViewController;
     private Set<Product> currentProducts;
     private boolean isShowingFavorites = false;
+    private HashMap<Product, ProductListItemController> itemBuffer;
 
     @FXML
     private AnchorPane mainAnchor;
@@ -36,6 +38,16 @@ public class ProductListController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         noProductsPane.setVisible(false);
+    }
+
+    public void initItemBuffer() {
+        if(itemBuffer != null)
+            return;
+
+        itemBuffer = new HashMap<>();
+        for (Product p : MainController.getBackendWrapper().getAllProducts()) {
+            itemBuffer.put(p, new ProductListItemController(p, this));
+        }
     }
 
     public void setHeight(int height) {
@@ -54,6 +66,7 @@ public class ProductListController implements Initializable {
     Tar bort produkter som visas nu och visar upp dem nya som kom i metodanropet.
      */
     public void setProducts(Set<Product> set) {
+        initItemBuffer();
         this.currentProducts = set;
         flowPane.getChildren().clear();
 
@@ -73,7 +86,7 @@ public class ProductListController implements Initializable {
         }
 
         for (Product p : set) {
-            flowPane.getChildren().add(new ProductListItemController(p, this));
+            flowPane.getChildren().add(itemBuffer.get(p));
         }
 
         scrollAnchor.setVvalue(0);    //Resetar scrollen så den hamnar högst upp.
@@ -89,6 +102,7 @@ public class ProductListController implements Initializable {
     }
 
     public void showFavorites() {
+        initItemBuffer();
         flowPane.getChildren().clear();
 
         if (centerViewController.getShopController().getMainController().isLoggedIn()) {
@@ -104,7 +118,7 @@ public class ProductListController implements Initializable {
             }
 
             for (Product p : favorites) {
-                flowPane.getChildren().add(new ProductListItemController(p, this));
+                flowPane.getChildren().add(itemBuffer.get(p));
             }
         } else {
             noProductsPane.setVisible(true);
@@ -129,7 +143,7 @@ public class ProductListController implements Initializable {
         scrollAnchor.setVvalue(preScrollValue);
     }
 
-    public boolean isShowingFavorites(){
+    public boolean isShowingFavorites() {
         return isShowingFavorites;
     }
 }

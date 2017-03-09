@@ -28,8 +28,10 @@ public class BackendWrapper {
     Creates all sub- and main categories.
      */
     private BackendWrapper() {
+        System.out.println("[BackendWrapper] Initializing backend...");
         initSubCategories();
         initMainCategories();
+        System.out.println("[BackendWrapper] Done!");
     }
 
     public void addItem(ShoppingItem item) {
@@ -142,7 +144,7 @@ public class BackendWrapper {
     }
 
     /**
-     *  Ger tillbaka alla tidigare lagda ordrar
+     * Ger tillbaka alla tidigare lagda ordrar
      */
     public List<Order> getOrders() {
         return datahandler.getOrders();
@@ -151,7 +153,7 @@ public class BackendWrapper {
     /**
      * Gör den nuvarande kundvagnen till en order med möjlighet att ta bort det som finns i kundvangen
      */
-    public void placeOrder(boolean clearShoppingCart){
+    public void placeOrder(boolean clearShoppingCart) {
         datahandler.placeOrder(clearShoppingCart);
     }
 
@@ -848,23 +850,27 @@ public class BackendWrapper {
         return drinksList;
     }
 
-    public double getTotalPrice(){
+    public List<Product> getAllProducts() {
+        return datahandler.getProducts();
+    }
+
+    public double getTotalPrice() {
         double price = 0.0;
-        for (ShoppingItem item : getShoppingCart().getItems()){
-                if (item.getProduct().getUnitSuffix().equals("kg")) {
-                    for (int i = 0; i < item.getAmount(); i++) {
-                        price = price + ((item.getProduct().getPrice()) / 10);
-                    }
-                } else {
-                    for (int i = 0; i < item.getAmount(); i++) {
-                        price = price + item.getProduct().getPrice();
-                    }
+        for (ShoppingItem item : getShoppingCart().getItems()) {
+            if (item.getProduct().getUnitSuffix().equals("kg")) {
+                for (int i = 0; i < item.getAmount(); i++) {
+                    price = price + ((item.getProduct().getPrice()) / 10);
+                }
+            } else {
+                for (int i = 0; i < item.getAmount(); i++) {
+                    price = price + item.getProduct().getPrice();
                 }
             }
+        }
         return price;
     }
 
-
+/*
     public boolean isValidName(String s) {
         boolean isValid = false;
         for (Character c : s.toCharArray()) {
@@ -879,7 +885,7 @@ public class BackendWrapper {
     public boolean isValidCvcCode(String s) {
         boolean isValid = false;
         for (Character c : s.toCharArray()) {
-            if(!c.isDigit()) {
+            if (!c.isDigit()) {
                 return isValid;
             }
 
@@ -887,7 +893,6 @@ public class BackendWrapper {
     }
 
 */
-
 
 
 }
