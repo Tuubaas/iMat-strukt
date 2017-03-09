@@ -66,7 +66,7 @@ public class CartConfirmationItem extends AnchorPane implements Initializable{
         itemName.setText(item.getProduct().getName());
         itemSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1,10000));
         itemSpinner.getValueFactory().setValue((int)item.getAmount());
-        itemPrice.setText(String.format("%.2f",item.getProduct().getPrice())  + " kr");
+        itemPrice.setText(String.format("%.2f",item.getProduct().getPrice())  + " " + item.getProduct().getUnit());
                 //new DecimalFormat("##.###").format(item.getProduct().getPrice()) + " " + item.getProduct().getUnit());
         totalPrice.setText(String.format("%.2f",item.getTotal()) + " kr");
                 //new DecimalFormat("##.###").format(item.getTotal()) + " kr");

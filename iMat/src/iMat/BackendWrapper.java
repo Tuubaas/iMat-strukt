@@ -847,4 +847,18 @@ public class BackendWrapper {
     public Set<Product> getDrinksList() {
         return drinksList;
     }
+
+    public double getTotalPrice(){
+        double price = 0.0;
+        for (ShoppingItem item : getShoppingCart().getItems()){
+            for (int i = 0; i < item.getAmount(); i++) {
+                if (item.getProduct().getUnit().equals("kg")) {
+                    price = price + ((item.getProduct().getPrice()) / 10);
+                } else {
+                    price = price + item.getProduct().getPrice();
+                }
+            }
+        }
+        return price;
+    }
 }

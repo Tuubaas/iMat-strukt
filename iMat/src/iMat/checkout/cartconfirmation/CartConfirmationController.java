@@ -83,6 +83,6 @@ public class CartConfirmationController implements Initializable{
     }
 
     public void setTotalLabel() {
-        totalLabel.setText("Totalpris: " + String.format("%.2f",cc.getWrapper().getShoppingCart().getTotal()) + " kr");
+        totalLabel.setText("Totalpris: " + String.format("%.2f",cc.getWrapper().getTotalPrice()) + " kr");
     }
 }
