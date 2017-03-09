@@ -25,7 +25,7 @@ public class ShoppingCartController implements Initializable, ShoppingCartListen
     För att se till att den är uppdaterad bör update() i MainController kallas när det är lämpligt.
      */
 
-    private ShopController sc;
+    private ShopController shopController;
     private BackendWrapper wrapper = MainController.getBackendWrapper();
 
     @FXML
@@ -53,7 +53,7 @@ public class ShoppingCartController implements Initializable, ShoppingCartListen
     }
 
     public void injectShopController(ShopController sc) {
-        this.sc = sc;
+        this.shopController = sc;
     }
 
     public void setHeight(int height) {
@@ -61,7 +61,7 @@ public class ShoppingCartController implements Initializable, ShoppingCartListen
     }
 
     public void onGoToCheckoutButtonClicked() {
-        sc.getMainController().goToCheckout();
+        shopController.getMainController().goToCheckout();
     }
 
     public void update() {
@@ -85,5 +85,13 @@ public class ShoppingCartController implements Initializable, ShoppingCartListen
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
         update();
+    }
+
+    public void updateTotal(){
+        totalPriceLabel.setText("Totalpris: " + String.format("%.2f",wrapper.getShoppingCart().getTotal()) + " kr");
+    }
+
+    public ShopController getShopController(){
+        return this.shopController;
     }
 }
