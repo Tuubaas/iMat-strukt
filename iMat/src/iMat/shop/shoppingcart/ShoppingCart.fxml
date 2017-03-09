@@ -21,8 +21,8 @@
         </columnConstraints>
         <rowConstraints>
           <RowConstraints maxHeight="45.0" minHeight="45.0" prefHeight="45.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="1080.0" minHeight="10.0" prefHeight="348.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="80.0" minHeight="80.0" prefHeight="80.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="1080.0" minHeight="10.0" prefHeight="333.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="88.0" minHeight="80.0" prefHeight="88.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <Button fx:id="goToCheckoutButton" mnemonicParsing="false" onAction="#onGoToCheckoutButtonClicked" prefHeight="50.0" prefWidth="220.0" text="Gå till kassan" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
@@ -57,7 +57,7 @@
             </Label>
             <Label fx:id="totalPriceLabel" text="Totalpris: " GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
                <font>
-                  <Font size="14.0" />
+                  <Font size="18.0" />
                </font>
                <GridPane.margin>
                   <Insets top="2.0" />
