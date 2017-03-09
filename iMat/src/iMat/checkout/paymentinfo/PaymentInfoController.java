@@ -9,12 +9,18 @@ import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Line;
+import javafx.scene.shape.Rectangle;
 import se.chalmers.ait.dat215.project.CreditCard;
 import se.chalmers.ait.dat215.project.Customer;
 
+import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -23,6 +29,7 @@ public class PaymentInfoController implements Initializable {
     private CheckoutController cc;
 
     private MainController mc;
+    private boolean cardIsVisible = false;
 
     BackendWrapper wrapper;
 
@@ -54,6 +61,39 @@ public class PaymentInfoController implements Initializable {
     private ImageView mcLogoImage;
     @FXML
     private Label warningLabel;
+    @FXML
+    private Button helpButton;
+    @FXML
+    private Rectangle cardNumber;
+    @FXML
+    private Rectangle cardMonth;
+    @FXML
+    private Rectangle cardYear;
+    @FXML
+    private Rectangle cardName;
+    @FXML
+    private Rectangle cardCvc;
+    @FXML
+    private Line lineOne;
+    @FXML
+    private Line lineTwo;
+    @FXML
+    private Line lineThree;
+    @FXML
+    private Line lineFour;
+    @FXML
+    private Line lineFive;
+    @FXML
+    private Label cardNumberLabel;
+    @FXML
+    private Label expiryDateLabel;
+    @FXML
+    private Label slashLabel;
+    @FXML
+    private Label cardHolderNameLabel;
+
+
+
 
     private ToggleGroup group = new ToggleGroup();
 
@@ -146,4 +186,44 @@ public class PaymentInfoController implements Initializable {
         paymentInfoExpireYear.getSelectionModel().selectFirst();
     }
 
+    public void onHelpButtonClicked() {
+        if (cardIsVisible) {
+            cardNumber.setVisible(false);
+            cardMonth.setVisible(false);
+            cardYear.setVisible(false);
+            cardName.setVisible(false);
+            cardCvc.setVisible(false);
+            lineOne.setVisible(false);
+            lineTwo.setVisible(false);
+            lineThree.setVisible(false);
+            lineFour.setVisible(false);
+            lineFive.setVisible(false);
+            paymentInfoCardBacksideTemplatePic.setVisible(false);
+            paymentInfoCardTemplatePic.setVisible(false);
+            cardIsVisible = false;
+        } else {
+            cardNumber.setVisible(true);
+            cardMonth.setVisible(true);
+            cardYear.setVisible(true);
+            cardName.setVisible(true);
+            cardCvc.setVisible(true);
+            lineOne.setVisible(true);
+            lineTwo.setVisible(true);
+            lineThree.setVisible(true);
+            lineFour.setVisible(true);
+            lineFive.setVisible(true);
+            paymentInfoCardBacksideTemplatePic.setVisible(true);
+            paymentInfoCardTemplatePic.setVisible(true);
+            cardIsVisible = true;
+        }
+
+    }
+
+    public void responsiveEnablingCard() {
+        if (visaRadioButton.isSelected() || mcRadioButton.isSelected()) {
+
+        }
+
+    }
 }
+
