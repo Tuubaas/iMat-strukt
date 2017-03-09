@@ -56,8 +56,14 @@ public class ShoppingCartItem extends Pane {
 
         this.productNameLabel.setText(item.getProduct().getName());
         this.amountField.setText(String.valueOf(item.getAmount()));
-        this.priceTotalLabel.setText(String.valueOf(item.getTotal()) + " kr");
-        this.itemUnit.setText(item.getProduct().getUnitSuffix());
+
+        if (this.item.getProduct().getUnitSuffix() == "Kg") {
+            this.priceTotalLabel.setText(String.valueOf(item.getTotal()/10) + " kr");
+            this.itemUnit.setText("Hg");
+        } else {
+            this.itemUnit.setText(item.getProduct().getUnitSuffix());
+            this.priceTotalLabel.setText(String.valueOf(item.getTotal()) + " kr");
+        }
     }
 
     @FXML
