@@ -122,4 +122,8 @@ public class CenterViewController implements Initializable {
     public void updateFavoritePane(){
         productListController.updateFavoritePane();
     }
+
+    public void updatePurchaseHistory(){
+        purchaseHistoryController.update();
+    }
 }

@@ -106,4 +106,8 @@ public class ShopController implements Initializable {
     public void updateFavoritePane(){
         centerViewController.updateFavoritePane();
     }
+
+    public void updatePurchaseHistory() {
+        centerViewController.updatePurchaseHistory();
+    }
 }

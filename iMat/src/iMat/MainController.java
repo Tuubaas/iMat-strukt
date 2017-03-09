@@ -228,4 +228,8 @@ public class MainController implements Initializable {
     public PurchaseDoneController getPurchaseDoneController() {
         return this.purchaseDoneController;
     }
+
+    public void updatePurchaseHistory(){
+        shopController.updatePurchaseHistory();
+    }
 }
