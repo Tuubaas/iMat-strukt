@@ -10,6 +10,7 @@ import iMat.checkout.deliveryinfo.DeliveryInfoController;
 import iMat.checkout.paymentinfo.PaymentInfoController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.SVGPath;
@@ -83,6 +84,14 @@ public class CheckoutController implements Initializable {
     private Label arrowLabel31;
     @FXML
     private SVGPath arrow41;
+    @FXML
+    private Button confirmCartButton;
+    @FXML
+    private Button deliveryInfoButton;
+    @FXML
+    private Button paymentInfoButton;
+    @FXML
+    private Button confirmPurchaseButton;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -114,21 +123,31 @@ public class CheckoutController implements Initializable {
     public void startCheckout(){
         cartConfirmationAnchor.setVisible(true);
         cartConfirmationAnchor.toFront();
+        confirmCartButton.setId("onNextButtonClicked");
     }
 
     public void onConfirmCartNextButtonClicked(){
-            deliveryInfoAnchor.setVisible(true);
-            deliveryInfoAnchor.toFront();
+        deliveryInfoAnchor.setVisible(true);
+        deliveryInfoAnchor.toFront();
+        confirmCartButton.setId("onButtonVisited");
+        deliveryInfoButton.setId("onNextButtonClicked");
+        deliveryInfoButton.setDisable(false);
     }
 
     public void onDeliveryInfoNextButtonClicked(){
         paymentInfoAnchor.setVisible(true);
         paymentInfoAnchor.toFront();
+        deliveryInfoButton.setId("onButtonVisited");
+        paymentInfoButton.setId("onNextButtonClicked");
+        paymentInfoButton.setDisable(false);
     }
 
     public void onPaymentInfoNextButtonClicked(){
         confirmationAnchor.setVisible(true);
         confirmationAnchor.toFront();
+        confirmPurchaseButton.setId("onNextButtonClicked");
+        paymentInfoButton.setId("onButtonVisited");
+        confirmPurchaseButton.setDisable(false);
     }
 
     public void onConfirmationNextButtonClicked(){

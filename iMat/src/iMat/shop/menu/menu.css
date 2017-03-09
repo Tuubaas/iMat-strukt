@@ -3,10 +3,11 @@
     -fx-pref-height: 40;
     -fx-alignment: baseline-left;
     -fx-font-size: 18;
-    -fx-background-color: "A1CCA6";
+    -fx-background-color: "A1CCA6"; //mellangrön
     -fx-text-fill: black;
     -fx-background-radius: 0.5em;
 }
+
 
 .titled-pane .title:hover {
     -fx-background-color: #AAAAAA;
@@ -89,7 +90,7 @@
 }
 
 #favoriteButtonStandard {
-    -fx-background-color: "A1CCA6";
+    -fx-background-color: "67A586";
 }
 
 #favoriteButtonStandard:hover {
@@ -103,4 +104,3 @@
 #favoriteButtonClicked:hover {
     -fx-background-color: #AAAAAA;
 }
-

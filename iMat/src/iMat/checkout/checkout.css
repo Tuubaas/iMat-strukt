@@ -42,3 +42,13 @@
     -fx-background-radius: 1em;
     -fx-background-color: #F3FDED;
 }
+
+#onNextButtonClicked {
+    -fx-background-color: "0582D3";
+    -fx-text-fill: white;
+}
+
+#onButtonVisited {
+    -fx-background-color: "A1CCA6";
+    -fx-text-fill: black;
+}
