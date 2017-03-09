@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 
-<AnchorPane fx:id="loggedInAnchor" prefHeight="500.0" prefWidth="1280.0" styleClass="checkout" stylesheets="@checkout.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.checkout.CheckoutController">
+<AnchorPane fx:id="loggedInAnchor" prefHeight="500.0" prefWidth="1280.0" stylesheets="@checkout.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.checkout.CheckoutController">
    <children>
       <StackPane layoutX="120.0" layoutY="100.0" prefHeight="401.0" prefWidth="1042.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="100.0">
          <children>
@@ -34,10 +35,10 @@
       </StackPane>
       <GridPane layoutX="79.0" layoutY="11.0" prefHeight="67.0" prefWidth="1101.0" AnchorPane.topAnchor="11.0">
          <children>
-            <SVGPath fx:id="arrow11" content="M100,100 L131,115 100,130 270,130 300,115 275,100 z" fill="#00000080" styleClass="svg-path" GridPane.halignment="CENTER" />
-            <SVGPath fx:id="arrow31" content="M100,100 L131,115 100,130 270,130 300,115 275,100 z" fill="#00000080" styleClass="svg-path" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
-            <SVGPath fx:id="arrow41" content="M100,100 L131,115 100,130 270,130 300,115 275,100 z" fill="#00000080" styleClass="svg-path" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
-            <SVGPath fx:id="arrow51" content="M100,100 L131,115 100,130 270,130 300,115 275,100 z" fill="#00000080" styleClass="svg-path" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
+            <SVGPath fx:id="arrow11" content="M100,100 L131,115 100,130 270,130 300,115 275,100 z" fill="#00000080" scaleX="1.2" scaleY="1.2" styleClass="svg-path" GridPane.halignment="CENTER" />
+            <SVGPath fx:id="arrow31" content="M100,100 L131,115 100,130 270,130 300,115 275,100 z" fill="#00000080" scaleX="1.2" scaleY="1.2" styleClass="svg-path" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+            <SVGPath fx:id="arrow41" content="M100,100 L131,115 100,130 270,130 300,115 275,100 z" fill="#00000080" scaleX="1.2" scaleY="1.2" styleClass="svg-path" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+            <SVGPath fx:id="arrow51" content="M100,100 L131,115 100,130 270,130 300,115 275,100 z" fill="#00000080" scaleX="1.2" scaleY="1.2" styleClass="svg-path" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
             <Label fx:id="arrowLabel11" prefHeight="31.0" prefWidth="116.0" text="Bekräfta varukorg" GridPane.halignment="CENTER" />
             <Label fx:id="arrowLabel31" text="Leveransuppgifter" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
             <Label fx:id="arrowLabel41" text="Betalinformation" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
@@ -57,4 +58,8 @@
          </rowConstraints>
       </GridPane>
    </children>
+   <styleClass>
+      <String fx:value="checkout" />
+      <String fx:value="anchor-pane" />
+   </styleClass>
 </AnchorPane>
