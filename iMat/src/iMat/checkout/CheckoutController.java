@@ -129,9 +129,7 @@ public class CheckoutController implements Initializable {
     }
 
     public void onCartConfirmationBackButtonClicked(){
-        mc.checkoutAnchor.setVisible(false);
-        mc.shopAnchor.setVisible(true);
-        mc.shopAnchor.toFront();
+        mc.goToShop();
     }
 
     public void onDeliveryInfoBackButtonClicked(){

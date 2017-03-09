@@ -90,7 +90,6 @@ public class ProductListItemController extends AnchorPane {
             }
         }
         wrapper.getShoppingCart().addItem(new ShoppingItem(this.product, spinner.valueProperty().getValue()));
-        productListController.getCenterViewController().getShopController().getMainController().update();
     }
 
     /*

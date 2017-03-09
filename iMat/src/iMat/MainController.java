@@ -201,6 +201,7 @@ public class MainController implements Initializable {
      */
     public void login() {
         this.isLoggedIn = true;
+        goToShop();
         update();
     }
 

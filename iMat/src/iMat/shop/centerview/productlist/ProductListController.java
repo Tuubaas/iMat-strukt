@@ -124,8 +124,9 @@ public class ProductListController implements Initializable {
             setProducts(new HashSet<>());
             return;
         }
-
+        double preScrollValue = scrollAnchor.getVvalue();
         setProducts(currentProducts);
+        scrollAnchor.setVvalue(preScrollValue);
     }
 
     public boolean isShowingFavorites(){

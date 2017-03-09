@@ -42,9 +42,9 @@ public class ShoppingCartController implements Initializable, ShoppingCartListen
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        cartItemBox.setAlignment(Pos.TOP_CENTER);
+        cartItemBox.setAlignment(Pos.TOP_RIGHT);
+        cartItemBox.alignmentProperty().setValue(Pos.TOP_RIGHT);
         MainController.getBackendWrapper().getShoppingCart().addShoppingCartListener(this);
-        cartItemBox.alignmentProperty().setValue(Pos.TOP_CENTER);
         update();
     }
 
