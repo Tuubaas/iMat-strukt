@@ -864,5 +864,19 @@ public class BackendWrapper {
         return price;
     }
 
-    //Commit
+    public boolean isValidName(String s) {
+        boolean isValid = false;
+        for (Character c : s.toCharArray()) {
+            if (!c.isLetter()) {
+                return isValid;
+            }
+        }
+        isValid = true;
+        return isValid;
+    }
+
+
+
+
+
 }
