@@ -863,6 +863,7 @@ public class BackendWrapper {
             }
         return price;
     }
+    /*
 
     public boolean isValidName(String s) {
         boolean isValid = false;
@@ -875,7 +876,7 @@ public class BackendWrapper {
         return isValid;
     }
 
-
+*/
 
 
 
