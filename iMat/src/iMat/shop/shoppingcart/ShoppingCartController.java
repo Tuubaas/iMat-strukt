@@ -79,7 +79,7 @@ public class ShoppingCartController implements Initializable, ShoppingCartListen
 
         cartItemBox.setPrefHeight(cartItemBox.getChildren().size() * 50 + 100);
 
-        totalPriceLabel.setText("Totalpris: " + String.format("%.2f",wrapper.getShoppingCart().getTotal()) + " kr");
+        totalPriceLabel.setText("Totalpris: " + String.format("%.2f",wrapper.getTotalPrice()) + " kr");
     }
 
     @Override

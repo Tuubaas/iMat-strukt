@@ -70,6 +70,6 @@ public class PurchaseDoneController implements Initializable {
     }
 
     public void setTotalPrice(){
-        totalPrice.setText(String.format("%.2f", MainController.getBackendWrapper().getShoppingCart().getTotal()) + " kr");
+        totalPrice.setText(String.format("%.2f", MainController.getBackendWrapper().getTotalPrice()) + " kr");
     }
 }
