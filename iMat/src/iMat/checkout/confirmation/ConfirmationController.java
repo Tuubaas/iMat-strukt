@@ -51,6 +51,7 @@ public class ConfirmationController implements Initializable{
 
     public void onConfirmationNextButtonClicked() {
         cc.getMc().getPurchaseDoneController().writeReceipt();
+        cc.getMc().getPurchaseDoneController().setTotalPrice();
         if (cc.getMc().isLoggedIn()){
             cc.getWrapper().placeOrder(true);
             cc.getMc().updatePurchaseHistory();
@@ -67,7 +68,7 @@ public class ConfirmationController implements Initializable{
         addressLabel.setText(dic.getSelectedAdress());
         deliveryTimeLabel.setText(dic.getSelectedDate());
         cardNumberLabel.setText(pic.getCardNumber());
-        totalPriceLabel.setText(shoppingCart.getTotal() + "kr");
+        totalPriceLabel.setText(String.format("%.2f",shoppingCart.getTotal()) + "kr");
     }
 
 }

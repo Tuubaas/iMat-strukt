@@ -70,7 +70,7 @@ public class ProductListItemController extends AnchorPane {
         Tooltip.install(star, starTooltip);
 
         if (product.getUnitSuffix().equals("kg")) {
-            unitLabel.setText("Antal Kg:");
+            unitLabel.setText("Antal Hekto:");
         } else if (product.getUnitSuffix().equals("förp")) {
             unitLabel.setText("Antal förpackningar:");
         } else if (product.getUnitSuffix().equals("st")) {
