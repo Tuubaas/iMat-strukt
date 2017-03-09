@@ -1,6 +1,7 @@
 package iMat.shop.centerview.purchasehistory.purchasehistoryitem;
 
 import iMat.MainController;
+import iMat.shop.centerview.purchasehistory.PurchaseHistoryController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -24,7 +25,8 @@ import java.util.ResourceBundle;
 public class PurchaseHistoryOrder extends AnchorPane implements Initializable {
 
     private final Order order;
-    private List<PurchaseHistoryOrderItem> orderItems;
+    private final PurchaseHistoryController purchaseHistoryController;
+    private final List<PurchaseHistoryOrderItem> orderItems;
     private final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 
     @FXML
@@ -45,8 +47,9 @@ public class PurchaseHistoryOrder extends AnchorPane implements Initializable {
     @FXML
     private VBox vbox;
 
-    public PurchaseHistoryOrder(Order order) {
+    public PurchaseHistoryOrder(Order order, PurchaseHistoryController purchaseHistoryController) {
         this.order = order;
+        this.purchaseHistoryController = purchaseHistoryController;
         orderItems = new ArrayList<>();
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(
@@ -101,15 +104,20 @@ public class PurchaseHistoryOrder extends AnchorPane implements Initializable {
         //Fråga mig inte om denna men den funkar
         for (PurchaseHistoryOrderItem item : orderItems) {
             if (item.isChecked()) {
-                for (ShoppingItem p : MainController.getBackendWrapper().getShoppingCart().getItems()) {
-                    if (item.getShoppingItem().getProduct().equals(p.getProduct())) {
-                        p.setAmount(p.getAmount() + item.getShoppingItem().getAmount());
-                        return;
+                boolean alreadyInCart = false;
+                for (ShoppingItem inCartItem : MainController.getBackendWrapper().getShoppingCart().getItems()) {
+                    if (item.getShoppingItem().getProduct().equals(inCartItem.getProduct())) {
+                        alreadyInCart = true;
+                        inCartItem.setAmount(inCartItem.getAmount() + item.getShoppingItem().getAmount());
+                        break;
                     }
                 }
-                MainController.getBackendWrapper().getShoppingCart().addItem(item.getShoppingItem());
+                if (!alreadyInCart) {
+                    MainController.getBackendWrapper().getShoppingCart().addItem(new ShoppingItem(item.getShoppingItem().getProduct(), item.getShoppingItem().getAmount()));
+                }
             }
         }
+        purchaseHistoryController.getCenterViewController().getShopController().getMainController().update();
     }
 
     @Override

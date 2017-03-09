@@ -43,6 +43,7 @@ public class CenterViewController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         productListController.injectCenterViewController(this);
         shopHomeController.injectCenterViewController(this);
+        purchaseHistoryController.injectCenterViewController(this);
     }
 
     public void showProducts(Set<Product> set){

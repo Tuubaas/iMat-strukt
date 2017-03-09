@@ -147,8 +147,8 @@ public class MainController implements Initializable {
         logInAnchor.setVisible(flag);
     }
 
-    public void showSettings(boolean flag){
-        if(flag)
+    public void showSettings(boolean flag) {
+        if (flag)
             settingsAnchor.toFront();
         else
             settingsAnchor.toBack();
@@ -189,7 +189,7 @@ public class MainController implements Initializable {
     }
 
     /*
-    Metoden som ska anropas när en inloggning har utförts och godkänts
+     * Metoden som ska anropas när en inloggning har utförts och godkänts
      */
     public void login() {
         this.isLoggedIn = true;
@@ -202,7 +202,7 @@ public class MainController implements Initializable {
         update();
     }
 
-    /**
+    /*
      * Uppdaterar sig själv och alla subcontrollers
      */
     public void update() {
@@ -211,21 +211,21 @@ public class MainController implements Initializable {
         settingsPanelController.update();
     }
 
-    public void goToPurchaseHistory(){
+    public void goToPurchaseHistory() {
         goToShop();
         shopController.goToPurchaseHistory();
     }
 
-    public void showFavorites(){
+    public void showFavorites() {
         shopController.showFavorites();
         shopController.goToProductList();
     }
 
-    public void updateFavoritePane(){
+    public void updateFavoritePane() {
         shopController.updateFavoritePane();
     }
 
-    public PurchaseDoneController getPurchaseDoneController(){
+    public PurchaseDoneController getPurchaseDoneController() {
         return this.purchaseDoneController;
     }
 }

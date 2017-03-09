@@ -6,23 +6,29 @@ import iMat.shop.ShopController;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TitledPane;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Border;
 import javafx.scene.layout.VBox;
-import se.chalmers.ait.dat215.project.Product;
 
 import java.net.URL;
-import java.util.HashSet;
 import java.util.ResourceBundle;
 
 public class MenuController implements Initializable {
 
     private ShopController sc;
     private BackendWrapper wrapper = MainController.getBackendWrapper();
+    private static final String subCategoryButtonStyleClassStandard =
+                    "-fx-background-color:white;";
+
+    private static final String subCategoryButtonStyleClassClicked =
+            "-fx-font-size: 14;" +
+                    "-fx-alignment:baseline-left;" +
+                    "-fx-pref-height:25;" +
+                    "-fx-pref-width:250;" +
+                    "-fx-padding: 0 0 0 30;" +
+                    "-fx-background-color:#AAAAAA;";
 
     @FXML
     private AnchorPane mainAnchor;
@@ -269,36 +275,50 @@ public class MenuController implements Initializable {
 
     @FXML
     public void onBerriesButtonClicked() {
+        resetAllSubCategoryButtons();
+        berriesButton.setStyle(subCategoryButtonStyleClassClicked);
         sc.getMainController().showProducts(wrapper.getBerriesList());
     }
 
     @FXML
     public void onFruitButtonClicked() {
+        resetAllSubCategoryButtons();
+        fruitButton.setStyle(subCategoryButtonStyleClassClicked);
         sc.getMainController().showProducts(wrapper.getFruitsList());
     }
 
     @FXML
     public void onLemonAndLimeButtonClicked() {
+        resetAllSubCategoryButtons();
+        lemonAndLimeButton.setStyle(subCategoryButtonStyleClassClicked);
         sc.getMainController().showProducts(wrapper.getLemonAndLimeList());
     }
 
     @FXML
     public void onExoticFruitsButtonClicked() {
+        resetAllSubCategoryButtons();
+        exoticFruitsButton.setStyle(subCategoryButtonStyleClassClicked);
         sc.getMainController().showProducts(wrapper.getExoticFruitsList());
     }
 
     @FXML
     public void onCabbageAndRootVegetablesButtonClicked() {
+        resetAllSubCategoryButtons();
+        cabbageAndRootVegetablesButton.setStyle(subCategoryButtonStyleClassClicked);
         sc.getMainController().showProducts(wrapper.getCabbageAndRootVegetablesList());
     }
 
     @FXML
     public void onFreshHerbsButtonClicked() {
+        resetAllSubCategoryButtons();
+        freshHerbsButton.setStyle(subCategoryButtonStyleClassClicked);
         sc.getMainController().showProducts(wrapper.getFreshHerbsList());
     }
 
     @FXML
     public void onOtherVegetablesButtonClicked() {
+        resetAllSubCategoryButtons();
+        otherVegetablesButton.setStyle(subCategoryButtonStyleClassClicked);
         sc.getMainController().showProducts(wrapper.getOtherVegetablesList());
     }
 
@@ -308,26 +328,36 @@ public class MenuController implements Initializable {
 
     @FXML
     public void onCheeseButtonClicked() {
+        resetAllSubCategoryButtons();
+        cheeseButton.setStyle(subCategoryButtonStyleClassClicked);
         sc.getMainController().showProducts(wrapper.getCheeseList());
     }
 
     @FXML
     public void onMilkButtonClicked() {
+        resetAllSubCategoryButtons();
+        milkButton.setStyle(subCategoryButtonStyleClassClicked);
         sc.getMainController().showProducts(wrapper.getMilkList());
     }
 
     @FXML
     public void onEggsButtonClicked() {
+        resetAllSubCategoryButtons();
+        eggsButton.setStyle(subCategoryButtonStyleClassClicked);
         sc.getMainController().showProducts(wrapper.getEggsList());
     }
 
     @FXML
     public void onJuiceButtonClicked() {
+        resetAllSubCategoryButtons();
+        juiceButton.setStyle(subCategoryButtonStyleClassClicked);
         sc.getMainController().showProducts(wrapper.getJuiceList());
     }
 
     @FXML
     public void onYoghurtButtonClicked() {
+        resetAllSubCategoryButtons();
+        yoghurtButton.setStyle(subCategoryButtonStyleClassClicked);
         sc.getMainController().showProducts(wrapper.getYoghurtList());
     }
 
@@ -337,16 +367,22 @@ public class MenuController implements Initializable {
 
     @FXML
     public void onMeatButtonClicked() {
+        resetAllSubCategoryButtons();
+        meatButton.setStyle(subCategoryButtonStyleClassClicked);
         sc.getMainController().showProducts(wrapper.getMeatList());
     }
 
     @FXML
     public void onFishButtonClicked() {
+        resetAllSubCategoryButtons();
+        fishButton.setStyle(subCategoryButtonStyleClassClicked);
         sc.getMainController().showProducts(wrapper.getFishAndCrayfishList());
     }
 
     @FXML
     public void onBirdButtonClicked() {
+        resetAllSubCategoryButtons();
+        birdButton.setStyle(subCategoryButtonStyleClassClicked);
         sc.getMainController().showProducts(wrapper.getBirdsList());
     }
 
@@ -356,11 +392,15 @@ public class MenuController implements Initializable {
 
     @FXML
     public void onBreadButtonClicked() {
+        resetAllSubCategoryButtons();
+        breadButton.setStyle(subCategoryButtonStyleClassClicked);
         sc.getMainController().showProducts(wrapper.getBreadList());
     }
 
     @FXML
     public void onPastryButtonClicked() {
+        resetAllSubCategoryButtons();
+        pastryButton.setStyle(subCategoryButtonStyleClassClicked);
         sc.getMainController().showProducts(wrapper.getPastryList());
     }
 
@@ -370,26 +410,36 @@ public class MenuController implements Initializable {
 
     @FXML
     public void onFlourAndBakingButtonClicked() {
+        resetAllSubCategoryButtons();
+        flourAndBakingButton.setStyle(subCategoryButtonStyleClassClicked);
         sc.getMainController().showProducts(wrapper.getFlourAndBakingList());
     }
 
     @FXML
     public void onNutsAndSeedsButtonClicked() {
+        resetAllSubCategoryButtons();
+        nutsAndSeedsButton.setStyle(subCategoryButtonStyleClassClicked);
         sc.getMainController().showProducts(wrapper.getNutsAndSeedsList());
     }
 
     @FXML
     public void onPastaAndRiceButtonClicked() {
+        resetAllSubCategoryButtons();
+        pastaAndRiceButton.setStyle(subCategoryButtonStyleClassClicked);
         sc.getMainController().showProducts(wrapper.getPastaAndRiceList());
     }
 
     @FXML
     public void onDryHerbsButtonClicked() {
+        resetAllSubCategoryButtons();
+        dryHerbsButton.setStyle(subCategoryButtonStyleClassClicked);
         sc.getMainController().showProducts(wrapper.getDryHerbsList());
     }
 
     @FXML
     public void onCoffeeAndTeaButtonClicked() {
+        resetAllSubCategoryButtons();
+        coffeeAndTeaButton.setStyle(subCategoryButtonStyleClassClicked);
         sc.getMainController().showProducts(wrapper.getCoffeeAndTeaList());
     }
 
@@ -399,22 +449,30 @@ public class MenuController implements Initializable {
 
     @FXML
     public void onCandyButtonClicked() {
-        //Inte lika kul som det låter :(
+        resetAllSubCategoryButtons();
+        candyButton.setStyle(subCategoryButtonStyleClassClicked);
+        //Inte lika kul som det låter...
         sc.getMainController().showProducts(wrapper.getCandyList());
     }
 
     @FXML
     public void onChipsButtonClicked() {
+        resetAllSubCategoryButtons();
+        chipsButton.setStyle(subCategoryButtonStyleClassClicked);
         sc.getMainController().showProducts(wrapper.getChipsList());
     }
 
     @FXML
     public void onSnackNutsButtonClicked() {
+        resetAllSubCategoryButtons();
+        snackNutsButton.setStyle(subCategoryButtonStyleClassClicked);
         sc.getMainController().showProducts(wrapper.getSnackNutsList());
     }
 
     @FXML
     public void onIceCreamButtonClicked() {
+        //resetAllSubCategoryButtons();
+        iceCreamButton.arm();
         sc.getMainController().showProducts(wrapper.getIceCreamList());
     }
 
@@ -424,6 +482,38 @@ public class MenuController implements Initializable {
 
     @FXML
     public void onSodaButtonClicked() {
+        resetAllSubCategoryButtons();
+        sodaButton.setStyle(subCategoryButtonStyleClassClicked);
         sc.getMainController().showProducts(wrapper.getSodaList());
+    }
+
+    private void resetAllSubCategoryButtons() {
+        berriesButton.setStyle(subCategoryButtonStyleClassStandard);
+        birdButton.setStyle(subCategoryButtonStyleClassStandard);
+        breadButton.setStyle(subCategoryButtonStyleClassStandard);
+        cabbageAndRootVegetablesButton.setStyle(subCategoryButtonStyleClassStandard);
+        candyButton.setStyle(subCategoryButtonStyleClassStandard);
+        cheeseButton.setStyle(subCategoryButtonStyleClassStandard);
+        chipsButton.setStyle(subCategoryButtonStyleClassStandard);
+        coffeeAndTeaButton.setStyle(subCategoryButtonStyleClassStandard);
+        dryHerbsButton.setStyle(subCategoryButtonStyleClassStandard);
+        eggsButton.setStyle(subCategoryButtonStyleClassStandard);
+        exoticFruitsButton.setStyle(subCategoryButtonStyleClassStandard);
+        fishButton.setStyle(subCategoryButtonStyleClassStandard);
+        flourAndBakingButton.setStyle(subCategoryButtonStyleClassStandard);
+        freshHerbsButton.setStyle(subCategoryButtonStyleClassStandard);
+        fruitButton.setStyle(subCategoryButtonStyleClassStandard);
+        iceCreamButton.setStyle(subCategoryButtonStyleClassStandard);
+        juiceButton.setStyle(subCategoryButtonStyleClassStandard);
+        meatButton.setStyle(subCategoryButtonStyleClassStandard);
+        lemonAndLimeButton.setStyle(subCategoryButtonStyleClassStandard);
+        milkButton.setStyle(subCategoryButtonStyleClassStandard);
+        nutsAndSeedsButton.setStyle(subCategoryButtonStyleClassStandard);
+        otherVegetablesButton.setStyle(subCategoryButtonStyleClassStandard);
+        pastaAndRiceButton.setStyle(subCategoryButtonStyleClassStandard);
+        pastryButton.setStyle(subCategoryButtonStyleClassStandard);
+        snackNutsButton.setStyle(subCategoryButtonStyleClassStandard);
+        sodaButton.setStyle(subCategoryButtonStyleClassStandard);
+        yoghurtButton.setStyle(subCategoryButtonStyleClassStandard);
     }
 }

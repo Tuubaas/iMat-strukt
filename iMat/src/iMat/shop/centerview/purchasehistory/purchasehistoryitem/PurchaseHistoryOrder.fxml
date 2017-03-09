@@ -26,30 +26,33 @@
          </rowConstraints>
          <children>
             <Label text="Ordernummer:" />
-            <Label text="Antal varor:" GridPane.rowIndex="1" />
-            <Label text="Totalpris:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label text="Antal varor:" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+            <Label text="Totalpris:" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.valignment="TOP" />
             <Label fx:id="orderIDLabel" text="nummer" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets left="5.0" />
                </GridPane.margin>
             </Label>
-            <Label fx:id="totalItemsLabel" text="antal" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Label fx:id="totalItemsLabel" text="antal" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets left="5.0" />
                </GridPane.margin>
             </Label>
-            <Label fx:id="totalPriceLabel" text="pris" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <Label fx:id="totalPriceLabel" text="pris" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.valignment="TOP">
                <GridPane.margin>
                   <Insets left="5.0" />
                </GridPane.margin>
             </Label>
-            <Label text="Datum:" GridPane.columnIndex="2" />
+            <Label text="Köpet genomfördes:" GridPane.columnIndex="2" />
             <Label fx:id="dateLabel" text="date" GridPane.columnIndex="3">
                <GridPane.margin>
                   <Insets left="5.0" />
                </GridPane.margin>
             </Label>
          </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
       </GridPane>
       <ScrollPane layoutY="43.0" prefHeight="179.0" prefWidth="406.0" AnchorPane.bottomAnchor="59.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="43.0">
          <content>

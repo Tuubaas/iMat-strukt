@@ -10,24 +10,20 @@
 
 .titled-pane .title:hover {
     -fx-background-color: #AAAAAA;
-    }
-
+}
 
 .v-box > .button:hover {
     -fx-background-color: #AAAAAA;
-
 }
 
 .grid-pane > .label {
     -fx-alignment: baseline-center;
     -fx-text-fill: black;
-
 }
 
-.grid-pane > .accordion >  {
+.grid-pane > .accordion > {
     -fx-background-color: white;
-
-    }
+}
 
 .v-box > .button {
     -fx-font-size: 14;
@@ -54,10 +50,8 @@
 
 }
 
-
 .button:hover {
     -fx-background-color: #AAAAAA;
-
 }
 
 .titled-pane {

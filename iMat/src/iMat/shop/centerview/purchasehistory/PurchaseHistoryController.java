@@ -1,6 +1,7 @@
 package iMat.shop.centerview.purchasehistory;
 
 import iMat.MainController;
+import iMat.shop.centerview.CenterViewController;
 import iMat.shop.centerview.purchasehistory.purchasehistoryitem.PurchaseHistoryOrder;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -21,6 +22,8 @@ import java.util.ResourceBundle;
 public class PurchaseHistoryController implements Initializable {
 
     private PurchaseHistoryOrder currentItem;
+    private CenterViewController centerViewController;
+
 
     @FXML
     private AnchorPane mainAnchor;
@@ -49,11 +52,6 @@ public class PurchaseHistoryController implements Initializable {
         totalColumn.setCellValueFactory(new PropertyValueFactory<>("total"));
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
 
-        // TA BORT DESSA TVÅ RADER INNAN LANSERING!!!
-        System.out.println("Rad " + Thread.currentThread().getStackTrace()[1].getLineNumber() + ", PurchaseHistoryController. TA BORT DENNA KODRAD INNNAN LANSERING!!!!!!!!!!!!!");
-        MainController.getBackendWrapper().placeOrder(true);
-        //
-
         this.update();
         showNoOrder();
 
@@ -75,6 +73,7 @@ public class PurchaseHistoryController implements Initializable {
         });
     }
 
+
     public void setHeight(int height) {
         mainAnchor.setPrefHeight(height);
     }
@@ -92,7 +91,7 @@ public class PurchaseHistoryController implements Initializable {
     }
 
     private void setOrderToShow(Order order) {
-        currentItem = new PurchaseHistoryOrder(order);
+        currentItem = new PurchaseHistoryOrder(order, this);
         currentItem.setHeight((int) orderItemPane.getHeight());
         currentItem.setWidth((int) orderItemPane.getWidth());
         orderItemPane.getChildren().clear();
@@ -104,6 +103,14 @@ public class PurchaseHistoryController implements Initializable {
         orderItemPane.getChildren().clear();
         currentItem = null;
         tipLabel.setVisible(true);
+    }
+
+    public CenterViewController getCenterViewController() {
+        return centerViewController;
+    }
+
+    public void injectCenterViewController(CenterViewController centerViewController) {
+        this.centerViewController = centerViewController;
     }
 
     /*
