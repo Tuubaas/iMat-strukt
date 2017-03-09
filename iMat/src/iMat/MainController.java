@@ -123,6 +123,7 @@ public class MainController implements Initializable {
         hideAllComponents();
         showHeader(true);
         checkoutController.doSetCartItems();
+        checkoutController.setTotalLabel(wrapper.getShoppingCart().getTotal());
         checkoutAnchor.setVisible(true);
         checkoutAnchor.toFront();
         headerController.setSearchBarVisible(false);

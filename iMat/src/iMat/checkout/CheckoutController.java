@@ -159,4 +159,8 @@ public class CheckoutController implements Initializable {
         cartConfirmationController.setCartProducts();
     }
 
+    public void setTotalLabel(double price){
+        cartConfirmationController.setTotalLabel();
+    }
+
 }

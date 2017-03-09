@@ -78,6 +78,7 @@ public class CartConfirmationItem extends AnchorPane implements Initializable{
             public void changed(ObservableValue<? extends Integer> observable, Integer oldValue, Integer newValue) {
                 item.setAmount(newValue);
                 totalPrice.setText(String.format("%.2f",item.getTotal()) + " kr");
+                ccc.setTotalLabel();
                 System.out.println(item.getAmount());
                 System.out.println(newValue);
                 ccc.getCC().getMc().update();

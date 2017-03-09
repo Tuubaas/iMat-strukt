@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
@@ -34,6 +35,8 @@ public class CartConfirmationController implements Initializable{
     private FlowPane cartConfirmationFlowPane;
     @FXML
     private ScrollPane cartConfirmationScrollPane;
+    @FXML
+    private Label totalLabel;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -78,5 +81,9 @@ public class CartConfirmationController implements Initializable{
 
     public void clearFlowPane(){
         cartConfirmationFlowPane.getChildren().clear();
+    }
+
+    public void setTotalLabel() {
+        totalLabel.setText(String.format("%.2f",cc.getWrapper().getShoppingCart().getTotal()) + " kr");
     }
 }
