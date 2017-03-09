@@ -26,3 +26,19 @@
 .button:hover {
     -fx-background-color: #AAAAAA;
 }
+
+#onButtonClicked {
+    -fx-background-color: #AAAAAA;
+}
+
+#onButtonClicked:hover {
+    -fx-background-color: #AAAAAA;
+}
+
+#buttonNotClicked {
+    -fx-background-color: #A1CCA6;
+}
+
+buttonNotClicked:hover {
+    -fx-background-color: #AAAAAA;
+}

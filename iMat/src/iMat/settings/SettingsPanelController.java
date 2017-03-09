@@ -259,18 +259,24 @@ public class SettingsPanelController implements Initializable {
     public void onPersonalInfoButtonClicked() {
         update();
         personalPane.toFront();
+        resetAllButtons();
+        personalInfoButton.setId("onButtonClicked");
     }
 
     @FXML
     public void onPaymentInfoButtonClicked() {
         update();
         paymentPane.toFront();
+        resetAllButtons();
+        paymentButton.setId("onButtonClicked");
     }
 
     @FXML
     public void onAboutButtonClicked() {
         update();
         aboutPane.toFront();
+        resetAllButtons();
+        aboutButton.setId("onButtonClicked");
     }
 
     @FXML
@@ -394,5 +400,11 @@ public class SettingsPanelController implements Initializable {
         validMonth.setValue(card.getValidMonth());
         validYear.setValue(card.getValidYear());
         securityCode.setText(String.valueOf(card.getVerificationCode()));
+    }
+
+    private void resetAllButtons(){
+        paymentButton.setId("buttonNotClicked");
+        personalInfoButton.setId("buttonNotClicked");
+        aboutButton.setId("buttonNotClicked");
     }
 }
