@@ -63,6 +63,12 @@ public class ShoppingCartController implements Initializable, ShoppingCartListen
     public void update() {
         cartItemBox.getChildren().clear();
 
+        if (wrapper.getShoppingCart().getItems().isEmpty()) {
+            goToCheckoutButton.setDisable(true);
+        } else {
+            goToCheckoutButton.setDisable(false);
+        }
+
         for (ShoppingItem p : wrapper.getShoppingCart().getItems()) {
             cartItemBox.getChildren().add(new ShoppingCartItem(p, this));
         }
