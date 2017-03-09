@@ -1,11 +1,3 @@
-#finishButton {
-    -fx-background-color: "0582D3";
-}
-
-#finishButton: hover {
-     -fx-background-color: #AAAAAA;
-}
-
 .button {
     -fx-background-color: "67A586";
     -fx-text-fill: white;

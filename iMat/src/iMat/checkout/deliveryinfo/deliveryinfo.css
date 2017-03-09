@@ -39,7 +39,20 @@
     -fx-font-size: 18px;
 }
 
+.choice-box: hover {
+    -fx-background-color: #AAAAAA;
+}
+
 .date-picker {
     -fx-show-week-numbers: true;
     -fx-font-size: 18px;
+}
+
+.button {
+    -fx-background-color: "67A586";
+    -fx-text-fill: white;
+}
+
+.button:hover {
+    -fx-background-color: #AAAAAA;
 }

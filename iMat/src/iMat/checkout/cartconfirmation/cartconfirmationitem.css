@@ -30,3 +30,12 @@
 .spinner > .text-field {
     -fx-font-size: 18px;
 }
+
+.button {
+    -fx-background-color: #AAAAAA;
+    -fx-text-fill: white;
+}
+
+.button: hover {
+    -fx-background-color: "FF7871";
+}
