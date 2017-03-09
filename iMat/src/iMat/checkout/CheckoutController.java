@@ -129,7 +129,7 @@ public class CheckoutController implements Initializable {
     }
 
     public void onCartConfirmationBackButtonClicked(){
-        mc.goToShop();
+        mc.goToShopHome();
     }
 
     public void onDeliveryInfoBackButtonClicked(){

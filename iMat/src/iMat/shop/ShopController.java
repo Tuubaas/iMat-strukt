@@ -110,4 +110,12 @@ public class ShopController implements Initializable {
     public void updatePurchaseHistory() {
         centerViewController.updatePurchaseHistory();
     }
+
+    public void closeAllCategorys(){
+        menuController.closeAllCategorys();
+    }
+
+    public void resetAllMenuButtons(){
+        menuController.resetAllSubCategoryButtons();
+    }
 }

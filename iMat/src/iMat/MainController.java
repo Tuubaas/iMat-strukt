@@ -97,6 +97,8 @@ public class MainController implements Initializable {
         showHeader(false);
         showLogin(false);
         showSettings(false);
+        resetAllMenuButtons();
+        closeAllCategorys();
     }
 
     public void goToShop() {
@@ -168,6 +170,8 @@ public class MainController implements Initializable {
     public void goToShopHome() {
         goToShop();
         shopController.goToShopHome();
+        closeAllCategorys();
+        resetAllMenuButtons();
     }
 
     public void showProducts(Set<Product> set) {
@@ -230,7 +234,15 @@ public class MainController implements Initializable {
         return this.purchaseDoneController;
     }
 
-    public void updatePurchaseHistory(){
+    public void updatePurchaseHistory() {
         shopController.updatePurchaseHistory();
+    }
+
+    public void closeAllCategorys() {
+        shopController.closeAllCategorys();
+    }
+
+    public void resetAllMenuButtons() {
+        shopController.resetAllMenuButtons();
     }
 }
