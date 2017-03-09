@@ -6,7 +6,6 @@
     -fx-fill: #AAAAAA;
 }
 
-}
 
 #loggedInAnchor {
     -fx-background-color: #fff;
@@ -41,4 +40,5 @@
 
 .anchor-pane {
     -fx-background-radius: 1em;
+    -fx-background-color: #F3FDED;
 }
