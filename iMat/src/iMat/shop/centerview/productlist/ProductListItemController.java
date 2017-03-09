@@ -90,6 +90,7 @@ public class ProductListItemController extends AnchorPane {
      */
     @FXML
     public void onStarClicked() {
+
         System.out.println("Starclicked");
         if (!MainController.getBackendWrapper().isFavorite(this.product)) {
             MainController.getBackendWrapper().addFavorite(this.product);
