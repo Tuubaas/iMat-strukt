@@ -100,7 +100,6 @@ public class ProductListItemController extends AnchorPane {
         if (!productListController.getCenterViewController().getShopController().getMainController().isLoggedIn())
             return;
 
-        System.out.println("Starclicked");
         if (!MainController.getBackendWrapper().isFavorite(this.product)) {
             MainController.getBackendWrapper().addFavorite(this.product);
             star.setImage(new Image((String.valueOf(getClass().getClassLoader().getResource(

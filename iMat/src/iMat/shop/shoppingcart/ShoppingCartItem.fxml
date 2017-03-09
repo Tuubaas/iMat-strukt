@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="218.0" styleClass="pane" stylesheets="@shoppingcartitem.css" type="Pane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="mainAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="218.0" styleClass="pane" stylesheets="@shoppingcartitem.css" type="Pane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Button fx:id="removeButton" layoutX="188.0" layoutY="12.0" mnemonicParsing="false" onAction="#onRemoveButtonClicked" text="X" textFill="#000000b2" />
       <Label fx:id="productNameLabel" layoutX="3.0" layoutY="1.0" prefHeight="27.0" prefWidth="107.0" text="Västerbotten">
@@ -29,5 +29,6 @@
             <Font size="14.0" />
          </font>
       </Label>
+      <Pane fx:id="flashPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.0" prefHeight="50.0" prefWidth="218.0" styleClass="pane" stylesheets="@shoppingcartitem.css" />
    </children>
 </fx:root>

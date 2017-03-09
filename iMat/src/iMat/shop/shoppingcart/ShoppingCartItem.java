@@ -2,12 +2,19 @@ package iMat.shop.shoppingcart;
 
 import iMat.BackendWrapper;
 import iMat.MainController;
+import javafx.animation.Animation;
+import javafx.animation.FadeTransition;
+import javafx.animation.FillTransition;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.util.Duration;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.io.IOException;
@@ -18,6 +25,11 @@ public class ShoppingCartItem extends Pane {
     private ShoppingCartController shoppingCartController;
     private BackendWrapper wrapper = MainController.getBackendWrapper();
 
+
+    @FXML
+    private Pane flashPane;
+    @FXML
+    private Pane mainAnchor;
     @FXML
     private Button removeButton;
     @FXML
@@ -41,6 +53,7 @@ public class ShoppingCartItem extends Pane {
             throw new RuntimeException(exception);
         }
 
+        flashPane.setVisible(false);
         updateItem(item);
         amountField.textProperty().addListener((observable, oldValue, newValue) -> {
             try {
@@ -53,16 +66,15 @@ public class ShoppingCartItem extends Pane {
 
     public void updateItem(ShoppingItem item) {
         this.item = item;
-
         this.productNameLabel.setText(item.getProduct().getName());
         this.amountField.setText(String.valueOf(item.getAmount()));
 
         if (this.item.getProduct().getUnitSuffix().equals("kg")) {
-            this.priceTotalLabel.setText(String.format("%.2f",item.getTotal()/10) + " kr");
+            this.priceTotalLabel.setText(String.format("%.2f", item.getTotal() / 10) + " kr");
             this.itemUnit.setText("Hg");
         } else {
             this.itemUnit.setText(item.getProduct().getUnitSuffix());
-            this.priceTotalLabel.setText(String.format("%.2f",item.getTotal()) + " kr");
+            this.priceTotalLabel.setText(String.format("%.2f", item.getTotal()) + " kr");
         }
     }
 
@@ -81,5 +93,23 @@ public class ShoppingCartItem extends Pane {
 
     public ShoppingItem getShoppingItem() {
         return item;
+    }
+
+    public void flashGreen() {
+        flashPane.setVisible(true);
+        flashPane.setOpacity(0);
+        flashPane.setStyle("-fx-background-color: lightgreen");
+
+        FadeTransition transition = new FadeTransition(Duration.millis(300), flashPane);
+        transition.setFromValue(0);
+        transition.setToValue(1);
+        transition.setOnFinished(event -> {
+            FadeTransition back = new FadeTransition(Duration.millis(300), flashPane);
+            back.setFromValue(1);
+            back.setToValue(0);
+            back.setOnFinished(event1 -> flashPane.setVisible(false));
+            back.play();
+        });
+        transition.play();
     }
 }

@@ -11,6 +11,13 @@
     -fx-background-color: #AAAAAA;
 }
 
-.button: hover {
+.button:hover {
     -fx-background-color: "FF7871";
+}
+.overlay-pane {
+    -fx-border-color: white;
+    -fx-opacity: 0;
+    -fx-border-width: 0;
+    -fx-background-radius: 0.5em;
+    -fx-background-color: lightgreen;
 }
