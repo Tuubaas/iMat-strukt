@@ -127,10 +127,10 @@ public class DeliveryInfoController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         logInRadioButton.setToggleGroup(group);
         guestRadioButton.setToggleGroup(group);
-        guestTimeChoice.setItems(FXCollections.observableArrayList("Förmiddag, 8-12", "Eftermiddag, 13-17"));
+        guestTimeChoice.setItems(FXCollections.observableArrayList("Förmiddag", "Eftermiddag"));
         guestTimeChoice.getSelectionModel().selectFirst();
         guestDatePicker.setValue(LocalDate.now());
-        deliveryInfoTimeChoice.setItems(FXCollections.observableArrayList("Förmiddag, 8-12", "Eftermiddag, 13-17"));
+        deliveryInfoTimeChoice.setItems(FXCollections.observableArrayList("Förmiddag", "Eftermiddag"));
         deliveryInfoTimeChoice.getSelectionModel().selectFirst();
         deliveryInfoDatePicker.setValue(LocalDate.now());
     }

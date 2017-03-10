@@ -11,6 +11,7 @@ import javafx.scene.effect.ColorInput;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import se.chalmers.ait.dat215.project.CreditCard;
 import se.chalmers.ait.dat215.project.Customer;
 import se.chalmers.ait.dat215.project.User;
@@ -37,7 +38,16 @@ public class SettingsPanelController implements Initializable {
     private Button paymentActionButton;
 
     @FXML
-    private TextField cardNumberField;
+    private TextField cardNumberField1;
+
+    @FXML
+    private TextField cardNumberField2;
+
+    @FXML
+    private TextField cardNumberField3;
+
+    @FXML
+    private TextField cardNumberField11;
 
     @FXML
     private TextField holdersNameField;
@@ -295,7 +305,10 @@ public class SettingsPanelController implements Initializable {
 
     private void makePaymentEditable(boolean flag) {
         flag = !flag;
-        cardNumberField.setDisable(flag);
+        cardNumberField1.setDisable(flag);
+        cardNumberField2.setDisable(flag);
+        cardNumberField3.setDisable(flag);
+        cardNumberField11.setDisable(flag);
         holdersNameField.setDisable(flag);
         cardType.setDisable(flag);
         validMonth.setDisable(flag);
@@ -349,7 +362,7 @@ public class SettingsPanelController implements Initializable {
 
 
         //Klarade testet ovan. Spara datan i fältet i databasen
-        card.setCardNumber(cardNumberField.getText());
+        card.setCardNumber(cardNumberField1.getText() + cardNumberField2.getText() + cardNumberField3.getText() + cardNumberField11.getText());
         card.setHoldersName(holdersNameField.getText());
         card.setCardType(cardType.getValue());
         card.setValidMonth(validMonth.getValue());
@@ -363,12 +376,12 @@ public class SettingsPanelController implements Initializable {
     }
 
     private boolean isLegitCardNumber() {
-        if (cardNumberField.getText().length() > 19 || cardNumberField.getText().length() < 14)
+        if (!(cardNumberField1.getText().length() == 4) && !(cardNumberField2.getText().length() == 4) && !(cardNumberField3.getText().length() == 4) && !(cardNumberField11.getText().length() == 4))  {
             return false;
-
-        if (!cardNumberField.getText().matches("[0-9]+"))
+        }
+        if (!cardNumberField1.getText().matches("[0-9]+") && cardNumberField2.getText().matches("[0-9]+") && cardNumberField3.getText().matches("[0-9]+") && cardNumberField11.getText().matches("[0-9]+")) {
             return false;
-
+        }
         return true;
     }
 
@@ -394,7 +407,12 @@ public class SettingsPanelController implements Initializable {
         mobilePhoneField.setText(customer.getMobilePhoneNumber());
 
         //Paymentinfo
-        cardNumberField.setText(card.getCardNumber());
+        if (card.getCardNumber().length() == 16) {
+            cardNumberField1.setText(card.getCardNumber().substring(0, 4));
+            cardNumberField2.setText(card.getCardNumber().substring(4, 8));
+            cardNumberField3.setText(card.getCardNumber().substring(8, 12));
+            cardNumberField11.setText(card.getCardNumber().substring(12, 16));
+        }
         holdersNameField.setText(card.getHoldersName());
         cardType.setValue(card.getCardType());
         validMonth.setValue(card.getValidMonth());

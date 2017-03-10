@@ -104,7 +104,6 @@ public class CheckoutController implements Initializable {
         paymentInfoController.injectConfirmationController(this.confirmationController);
         confirmationController.injectPaymentInfoController(this.paymentInfoController);
         confirmationController.injectDeliveryInfoController(this.deliveryInfoController);
-        startCheckout();
     }
 
     public void setWidth(double newValue){
@@ -123,6 +122,7 @@ public class CheckoutController implements Initializable {
     public void startCheckout(){
         cartConfirmationAnchor.setVisible(true);
         cartConfirmationAnchor.toFront();
+        confirmCartButton.setDisable(false);
         confirmCartButton.setId("onNextButtonClicked");
     }
 
@@ -153,6 +153,7 @@ public class CheckoutController implements Initializable {
     public void onConfirmationNextButtonClicked(){
         mc.checkoutAnchor.setVisible(false);
         mc.goToPurchaseDone();
+        clearCheckout();
     }
 
     public void onCartConfirmationBackButtonClicked(){
@@ -197,4 +198,14 @@ public class CheckoutController implements Initializable {
         cartConfirmationController.setTotalLabel();
     }
 
+    public void cartConfirmationAnchorToFront(){
+        cartConfirmationAnchor.toFront();
+    }
+
+    public void clearCheckout(){
+        confirmCartButton.setDisable(true);
+        deliveryInfoButton.setDisable(true);
+        paymentInfoButton.setDisable(true);
+        confirmPurchaseButton.setDisable(true);
+    }
 }

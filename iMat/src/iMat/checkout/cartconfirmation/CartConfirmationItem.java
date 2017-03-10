@@ -68,10 +68,10 @@ public class CartConfirmationItem extends AnchorPane implements Initializable{
         itemSpinner.getValueFactory().setValue((int)item.getAmount());
 
         if (item.getProduct().getUnitSuffix().equals("kg")) {
-            totalPrice.setText(item.getTotal()/10 + " kr");
+            totalPrice.setText(String.format("%.2f",item.getTotal()/10) + " kr");
             itemUnit.setText("Hg");
         } else {
-            totalPrice.setText(item.getTotal() + " kr");
+            totalPrice.setText(String.format("%.2f",item.getTotal()) + " kr");
             itemUnit.setText(item.getProduct().getUnitSuffix());
         }
 
@@ -88,10 +88,10 @@ public class CartConfirmationItem extends AnchorPane implements Initializable{
                 item.setAmount(newValue);
 
                 if (item.getProduct().getUnitSuffix().equals("kg")) {
-                    totalPrice.setText(item.getTotal()/10 + " kr");
+                    totalPrice.setText(String.format("%.2f",item.getTotal()/10) + " kr");
                     itemUnit.setText("Hg");
                 } else {
-                    totalPrice.setText(item.getTotal() + " kr");
+                    totalPrice.setText(String.format("%.2f",item.getTotal()) + " kr");
                     itemUnit.setText(item.getProduct().getUnitSuffix());
                 }
 
@@ -105,7 +105,7 @@ public class CartConfirmationItem extends AnchorPane implements Initializable{
 
     }
 
-    public void updateCartItems(){
+    /*public void updateCartItems(){
         for (ShoppingItem item : MainController.getBackendWrapper().getShoppingCart().getItems()){
             itemName.setText(item.getProduct().getName());
             itemSpinner.getValueFactory().setValue((int)item.getAmount());
@@ -119,7 +119,7 @@ public class CartConfirmationItem extends AnchorPane implements Initializable{
                 itemUnit.setText(item.getProduct().getUnitSuffix());
             }
         }
-    }
+    }*/
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
