@@ -88,13 +88,13 @@
                                     <Font size="18.0" />
                                  </font>
                               </MenuButton>
-                              <Label fx:id="loggedInAsLabel" alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="141.0" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
-                                 <GridPane.margin>
-                                    <Insets bottom="40.0" />
-                                 </GridPane.margin>
+                              <Label fx:id="loggedInAsLabel" alignment="CENTER_RIGHT" prefHeight="19.0" prefWidth="196.0">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
+                                 <GridPane.margin>
+                                    <Insets bottom="40.0" />
+                                 </GridPane.margin>
                               </Label>
                            </children>
                         </GridPane>
