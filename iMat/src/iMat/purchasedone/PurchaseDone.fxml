@@ -37,7 +37,7 @@
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
                   <ImageView fx:id="purchaseDoneImage" fitHeight="158.0" fitWidth="350.0" layoutX="60.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label layoutX="60.0" layoutY="295.0" prefHeight="49.0" prefWidth="286.0" text="Kundtjänst: 0768 642 642">
+                  <Label layoutX="60.0" layoutY="295.0" prefHeight="49.0" prefWidth="286.0" text="Kundtjänst tel: 0768 642 642">
                      <font>
                         <Font size="18.0" />
                      </font>
