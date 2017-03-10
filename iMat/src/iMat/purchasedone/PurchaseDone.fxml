@@ -43,7 +43,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <Button fx:id="printConfirmationButton" maxHeight="53.0" minHeight="30.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="227.0" text="Skriv ut bekräftelse" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
+            <Button fx:id="printConfirmationButton" maxHeight="53.0" minHeight="30.0" mnemonicParsing="false" onAction="#printReceipt" prefHeight="53.0" prefWidth="227.0" text="Skriv ut bekräftelse" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
                <font>
                   <Font size="18.0" />
                </font>
@@ -54,12 +54,12 @@
                      <font>
                         <Font size="18.0" />
                      </font></TextArea>
-                  <Label fx:id="totalPrice" layoutX="320.0" layoutY="268.0" prefHeight="26.0" prefWidth="300.0" text="Label">
+                  <Label fx:id="totalPrice" layoutX="320.0" layoutY="315.0" prefHeight="26.0" prefWidth="300.0" text="Label">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="209.0" layoutY="268.0" prefHeight="26.0" prefWidth="82.0" text="Totalt: ">
+                  <Label layoutX="209.0" layoutY="315.0" prefHeight="26.0" prefWidth="82.0" text="Totalt: ">
                      <font>
                         <Font size="20.0" />
                      </font>

@@ -68,7 +68,7 @@ public class ConfirmationController implements Initializable{
         ShoppingCart shoppingCart = cc.getWrapper().getShoppingCart();
         addressLabel.setText(dic.getSelectedAdress());
         deliveryTimeLabel.setText(dic.getSelectedDate());
-        cardNumberLabel.setText(pic.getCardNumber());
+        cardNumberLabel.setText(pic.getCardNumber().substring(0,4) + " " + pic.getCardNumber().substring(4,8) + " " + pic.getCardNumber().substring(8,12) + " "+ pic.getCardNumber().substring(12,16));
         totalPriceLabel.setText(String.format("%.2f",cc.getWrapper().getTotalPrice()) + "kr");
     }
 
