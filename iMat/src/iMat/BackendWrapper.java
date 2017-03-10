@@ -868,6 +868,10 @@ public class BackendWrapper {
         return price;
     }
 
+    public void resetProgram(){
+        datahandler.reset();
+    }
+
 /*
     public boolean isValidName(String s) {
         boolean isValid = false;
