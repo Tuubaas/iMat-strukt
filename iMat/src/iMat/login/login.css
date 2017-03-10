@@ -10,7 +10,8 @@
 }
 
 .button {
-    -fx-background-color: "A1CCA6";
+    -fx-background-color: "67A586";
+    -fx-text-fill: white;
 }
 
 .button:hover {

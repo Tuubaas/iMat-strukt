@@ -17,7 +17,11 @@
 
 .menu-button {
     -fx-background-color: "67A586";
-    -fx-text-fill: white;
+
+}
+
+.menu-button: hover {
+    -fx-background-color: #AAAAAA;
 }
 
 #icon: hover {

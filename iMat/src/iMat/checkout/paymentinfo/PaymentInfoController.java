@@ -23,6 +23,7 @@ import se.chalmers.ait.dat215.project.Customer;
 import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 
 public class PaymentInfoController implements Initializable {
 
@@ -247,5 +248,7 @@ public class PaymentInfoController implements Initializable {
             helpButton.setVisible(true);
         }
     }
+
+
 }
 

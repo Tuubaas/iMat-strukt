@@ -17,7 +17,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="paymentInfoAnchor" prefHeight="499.0" prefWidth="1039.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.checkout.paymentinfo.PaymentInfoController">
+<AnchorPane fx:id="paymentInfoAnchor" prefHeight="499.0" prefWidth="1039.0" stylesheets="@paymentInfo.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.checkout.paymentinfo.PaymentInfoController">
    <children>
             <ImageView fx:id="paymentInfoCardTemplatePic" fitHeight="150.0" fitWidth="237.6731301939058" layoutX="565.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true" visible="false" />
             <ImageView fx:id="paymentInfoCardBacksideTemplatePic" fitHeight="150.0" fitWidth="237.6731301939058" layoutX="565.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true" visible="false" />
