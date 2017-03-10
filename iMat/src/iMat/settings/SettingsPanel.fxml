@@ -83,69 +83,6 @@
                                     </Label>
                                  </children>
                               </AnchorPane>
-                              <AnchorPane id="window" fx:id="paymentPane" prefHeight="507.0" prefWidth="371.0" styleClass="informationPanes">
-                                 <children>
-                                    <Button fx:id="paymentActionButton" layoutX="312.0" layoutY="305.0" mnemonicParsing="false" onAction="#onPaymentActionButtonClicked" prefHeight="40.0" prefWidth="80.0" text="Ändra" AnchorPane.bottomAnchor="162.0" AnchorPane.rightAnchor="14.0">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                    </Button>
-                                    <ImageView fitHeight="50.0" fitWidth="68.0" layoutX="199.0" layoutY="411.0" pickOnBounds="true" preserveRatio="true" rotate="49.4">
-                                       <image>
-                                          <Image url="@../../resources/bentArrow.png" />
-                                       </image>
-                                    </ImageView>
-                                    <TextField fx:id="cardNumberField1" disable="true" layoutX="190.0" layoutY="123.0" prefHeight="27.0" prefWidth="50.0" promptText="0000" />
-                                    <Label layoutX="74.0" layoutY="125.0" text="Kortnummer">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="14.0" layoutY="161.0" text="Innehavarens namn">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                    </Label>
-                                    <TextField fx:id="holdersNameField" disable="true" layoutX="190.0" layoutY="159.0" prefWidth="200.0" promptText="Anna Andersson" />
-                                    <Label layoutX="116.0" layoutY="198.0" text="Korttyp">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                    </Label>
-                                    <TextField fx:id="securityCode" disable="true" layoutX="192.0" layoutY="269.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="76.0" promptText="000" />
-                                    <Label layoutX="65.0" layoutY="270.0" prefHeight="23.0" prefWidth="128.0" text="Säkerhetskod">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                    </Label>
-                                    <ComboBox fx:id="cardType" disable="true" layoutX="190.0" layoutY="196.0" prefHeight="27.0" prefWidth="200.0" />
-                                    <Label layoutX="105.0" layoutY="234.0" text="Giltigt till">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                    </Label>
-                                    <ComboBox fx:id="validMonth" disable="true" layoutX="191.0" layoutY="232.0" prefHeight="27.0" prefWidth="76.0" promptText="MM" />
-                                    <ComboBox fx:id="validYear" disable="true" layoutX="270.0" layoutY="232.0" prefHeight="25.0" prefWidth="76.0" promptText="ÅÅ" />
-                                    <Label fx:id="cardNumberWarningLabel" layoutX="227.0" layoutY="47.0" prefHeight="17.0" prefWidth="114.0" text="Felaktigt nummer!" textFill="#ff1515" visible="false" />
-                                    <Label fx:id="cardTypeWarningLabel" layoutX="227.0" layoutY="148.0" prefHeight="17.0" prefWidth="114.0" text="Måste anges" textFill="#ff1515" visible="false" />
-                                    <Label fx:id="holdersNameWarningLabel" layoutX="227.0" layoutY="99.0" prefHeight="17.0" prefWidth="114.0" text="Måste anges" textFill="#ff1515" visible="false" />
-                                    <Label fx:id="validityLabel" layoutX="226.0" layoutY="232.0" prefHeight="17.0" prefWidth="120.0" text="Måste anges" textFill="#ff1515" visible="false" />
-                                    <Label fx:id="verificationCodeWarningLabel" layoutX="227.0" layoutY="295.0" prefHeight="17.0" prefWidth="120.0" text="Måste anges" textFill="#ff1515" visible="false" />
-                                    <Label layoutX="191.0" layoutY="76.0" prefHeight="40.0" prefWidth="200.0" text="Betalning" wrapText="true">
-                                       <font>
-                                          <Font name="System Italic" size="24.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="161.0" layoutY="325.0" prefHeight="101.0" prefWidth="244.0" text="Tips! Vill du ändra några uppgifter trycker du här" textAlignment="CENTER" wrapText="true">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                    </Label>
-                                    <TextField fx:id="cardNumberField11" disable="true" layoutX="340.0" layoutY="123.0" prefHeight="27.0" prefWidth="50.0" promptText="0000" />
-                                    <TextField fx:id="cardNumberField2" disable="true" layoutX="240.0" layoutY="123.0" prefHeight="27.0" prefWidth="50.0" promptText="0000" />
-                                    <TextField fx:id="cardNumberField3" disable="true" layoutX="290.0" layoutY="123.0" prefHeight="27.0" prefWidth="50.0" promptText="0000" />
-                                 </children>
-                              </AnchorPane>
                               <AnchorPane id="window" fx:id="personalPane" prefHeight="200.0" prefWidth="200.0" styleClass="informationPanes">
                                  <children>
                                     <Line endX="240.0" layoutX="129.0" layoutY="169.0" startX="-100.0" stroke="#0000004b" />
@@ -218,13 +155,76 @@
                                           <Font size="18.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="userNameWarningLabel" layoutX="229.0" layoutY="29.0" text="Måste anges!" textFill="RED" visible="false" />
                                     <Label fx:id="passwordWarningLabel" layoutX="229.0" layoutY="75.0" text="Måste anges!" textFill="RED" visible="false" />
                                     <Label layoutX="50.0" layoutY="51.0" prefHeight="40.0" prefWidth="276.0" text="Personlig information" wrapText="true">
                                        <font>
                                           <Font name="System Italic" size="24.0" />
                                        </font>
                                     </Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane id="window" fx:id="paymentPane" prefHeight="507.0" prefWidth="371.0" styleClass="informationPanes">
+                                 <children>
+                                    <Button fx:id="paymentActionButton" layoutX="312.0" layoutY="305.0" mnemonicParsing="false" onAction="#onPaymentActionButtonClicked" prefHeight="40.0" prefWidth="80.0" text="Ändra" AnchorPane.bottomAnchor="162.0" AnchorPane.rightAnchor="14.0">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Button>
+                                    <ImageView fitHeight="50.0" fitWidth="68.0" layoutX="199.0" layoutY="411.0" pickOnBounds="true" preserveRatio="true" rotate="49.4">
+                                       <image>
+                                          <Image url="@../../resources/bentArrow.png" />
+                                       </image>
+                                    </ImageView>
+                                    <TextField fx:id="cardNumberField1" disable="true" layoutX="190.0" layoutY="123.0" prefHeight="27.0" prefWidth="50.0" promptText="0000" />
+                                    <Label layoutX="74.0" layoutY="125.0" text="Kortnummer">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="14.0" layoutY="161.0" text="Innehavarens namn">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="holdersNameField" disable="true" layoutX="190.0" layoutY="159.0" prefWidth="200.0" promptText="Anna Andersson" />
+                                    <Label layoutX="116.0" layoutY="198.0" text="Korttyp">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="securityCode" disable="true" layoutX="192.0" layoutY="269.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="76.0" promptText="000" />
+                                    <Label layoutX="65.0" layoutY="270.0" prefHeight="23.0" prefWidth="128.0" text="Säkerhetskod">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="cardType" disable="true" layoutX="190.0" layoutY="196.0" prefHeight="27.0" prefWidth="200.0" />
+                                    <Label layoutX="105.0" layoutY="234.0" text="Giltigt till">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="validMonth" disable="true" layoutX="191.0" layoutY="232.0" prefHeight="27.0" prefWidth="76.0" promptText="MM" />
+                                    <ComboBox fx:id="validYear" disable="true" layoutX="270.0" layoutY="232.0" prefHeight="25.0" prefWidth="76.0" promptText="ÅÅ" />
+                                    <Label fx:id="cardNumberWarningLabel" layoutX="227.0" layoutY="47.0" prefHeight="17.0" prefWidth="114.0" text="Felaktigt nummer!" textFill="#ff1515" visible="false" />
+                                    <Label fx:id="cardTypeWarningLabel" layoutX="227.0" layoutY="148.0" prefHeight="17.0" prefWidth="114.0" text="Måste anges" textFill="#ff1515" visible="false" />
+                                    <Label fx:id="holdersNameWarningLabel" layoutX="277.0" layoutY="178.0" prefHeight="17.0" prefWidth="114.0" text="Måste anges" textFill="#ff1515" visible="false" />
+                                    <Label fx:id="validityLabel" layoutX="274.0" layoutY="215.0" prefHeight="17.0" prefWidth="120.0" text="Måste anges" textFill="#ff1515" visible="false" />
+                                    <Label fx:id="verificationCodeWarningLabel" layoutX="268.0" layoutY="251.0" prefHeight="17.0" prefWidth="120.0" text="Måste anges" textFill="#ff1515" visible="false" />
+                                    <Label layoutX="191.0" layoutY="76.0" prefHeight="40.0" prefWidth="200.0" text="Betalning" wrapText="true">
+                                       <font>
+                                          <Font name="System Italic" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="161.0" layoutY="325.0" prefHeight="101.0" prefWidth="244.0" text="Tips! Vill du ändra några uppgifter trycker du här" textAlignment="CENTER" wrapText="true">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="cardNumberField11" disable="true" layoutX="340.0" layoutY="123.0" prefHeight="27.0" prefWidth="50.0" promptText="0000" />
+                                    <TextField fx:id="cardNumberField2" disable="true" layoutX="240.0" layoutY="123.0" prefHeight="27.0" prefWidth="50.0" promptText="0000" />
+                                    <TextField fx:id="cardNumberField3" disable="true" layoutX="290.0" layoutY="123.0" prefHeight="27.0" prefWidth="50.0" promptText="0000" />
+                                    <Label fx:id="userNameWarningLabel" layoutX="311.0" layoutY="148.0" text="Måste anges!" textFill="RED" visible="false" />
                                  </children>
                               </AnchorPane>
                            </children>
