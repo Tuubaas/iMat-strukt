@@ -206,7 +206,7 @@
                                     </Label>
                                     <ComboBox fx:id="validMonth" disable="true" layoutX="191.0" layoutY="232.0" prefHeight="27.0" prefWidth="76.0" promptText="MM" />
                                     <ComboBox fx:id="validYear" disable="true" layoutX="270.0" layoutY="232.0" prefHeight="25.0" prefWidth="76.0" promptText="ÅÅ" />
-                                    <Label fx:id="cardNumberWarningLabel" layoutX="227.0" layoutY="47.0" prefHeight="17.0" prefWidth="114.0" text="Felaktigt nummer!" textFill="#ff1515" visible="false" />
+                                    <Label fx:id="cardNumberWarningLabel" layoutX="296.0" layoutY="140.0" prefHeight="17.0" prefWidth="114.0" text="Felaktigt nummer!" textFill="#ff1515" visible="false" />
                                     <Label fx:id="cardTypeWarningLabel" layoutX="227.0" layoutY="148.0" prefHeight="17.0" prefWidth="114.0" text="Måste anges" textFill="#ff1515" visible="false" />
                                     <Label fx:id="holdersNameWarningLabel" layoutX="277.0" layoutY="178.0" prefHeight="17.0" prefWidth="114.0" text="Måste anges" textFill="#ff1515" visible="false" />
                                     <Label fx:id="validityLabel" layoutX="274.0" layoutY="215.0" prefHeight="17.0" prefWidth="120.0" text="Måste anges" textFill="#ff1515" visible="false" />
