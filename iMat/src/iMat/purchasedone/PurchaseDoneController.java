@@ -87,22 +87,16 @@ public class PurchaseDoneController implements Initializable {
         totalPrice.setText(String.format("%.2f", MainController.getBackendWrapper().getTotalPrice()) + " kr");
     }
 
-    public void printReceipt(){
-        try{
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("receipt.fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setTitle("Bekräftelse");
-            stage.setScene(new Scene(root1));
-            stage.show();
-        }
-        catch (Exception e){
-            throw new RuntimeException(e);
-        }
+    /*public void printReceipt() throws Exception{
+        Stage primaryStage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("receipt.fxml"));
+        primaryStage.setTitle("Bekräftelse");
+        primaryStage.setScene(new Scene(root, 1280, 720));
+        primaryStage.show();
+        primaryStage.setMinWidth(1280);
+        primaryStage.setMinHeight(720);
 
-
-
-        /*for (ShoppingItem item : MainController.getBackendWrapper().getShoppingCart().getItems()){
+        for (ShoppingItem item : MainController.getBackendWrapper().getShoppingCart().getItems()){
             if (item.getProduct().getUnitSuffix().equals("kg")){
                 receipt = receipt + "\n" + item.getProduct().getName() + "          " + item.getAmount() + " " + item.getProduct().getUnitSuffix() + "  á  " + String.format("%.2f",item.getProduct().getPrice()/10) + " " + item.getProduct().getUnit() + "          " + String.format("%.2f",item.getTotal()/10) + "\n";
             }
@@ -111,6 +105,6 @@ public class PurchaseDoneController implements Initializable {
             }
         }
         receiptTextArea.setText(receipt + "\n" + "\n" + "Totalt: " + String.format("%.2f",MainController.getBackendWrapper().getTotalPrice()));
-*/
-    }
+
+    }*/
 }

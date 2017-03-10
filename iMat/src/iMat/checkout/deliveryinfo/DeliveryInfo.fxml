@@ -18,81 +18,6 @@
 
 <StackPane fx:id="deliveryInfoStackPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.checkout.deliveryinfo.DeliveryInfoController">
    <children>
-      <AnchorPane fx:id="loggedInAnchor" prefHeight="499.0" prefWidth="1040.0" stylesheets="@deliveryinfo.css">
-         <children>
-            <Label alignment="CENTER_RIGHT" layoutX="300.0" layoutY="75.0" prefWidth="139.0" text="Förnamn:" AnchorPane.leftAnchor="300.0">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <TextField fx:id="deliveryInfoFirstName" layoutX="449.0" layoutY="73.0" prefHeight="27.0" prefWidth="167.0" AnchorPane.leftAnchor="449.0" AnchorPane.topAnchor="73.0" />
-            <Label alignment="CENTER_RIGHT" layoutX="300.0" layoutY="113.0" prefWidth="139.0" text="Efternamn:" AnchorPane.leftAnchor="300.0">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <TextField fx:id="deliveryInfoLastName" layoutX="450.0" layoutY="111.0" prefHeight="27.0" prefWidth="267.0" AnchorPane.leftAnchor="450.0" AnchorPane.topAnchor="111.0" />
-            <Label alignment="CENTER_RIGHT" layoutX="300.0" layoutY="149.0" prefWidth="139.0" text="Adress:" AnchorPane.leftAnchor="300.0">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <TextField fx:id="deliveryInfoPostCode" layoutX="451.0" layoutY="149.0" prefHeight="27.0" prefWidth="267.0" AnchorPane.leftAnchor="451.0" AnchorPane.topAnchor="149.0" />
-            <Label alignment="CENTER_RIGHT" layoutX="301.0" layoutY="189.0" prefWidth="139.0" text="Postkod:" AnchorPane.leftAnchor="301.0">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <TextField fx:id="deliveryInfoAdress" layoutX="450.0" layoutY="187.0" prefHeight="27.0" prefWidth="50.0" AnchorPane.leftAnchor="450.0" AnchorPane.topAnchor="187.0" />
-            <Label alignment="CENTER_RIGHT" layoutX="301.0" layoutY="229.0" prefWidth="139.0" text="Postort:" AnchorPane.leftAnchor="301.0">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <TextField fx:id="deliveryInfoMail" layoutX="450.0" layoutY="227.0" prefHeight="27.0" prefWidth="267.0" AnchorPane.leftAnchor="450.0" AnchorPane.topAnchor="227.0" />
-            <Label alignment="CENTER_RIGHT" layoutX="301.0" layoutY="265.0" prefWidth="139.0" text="E-post:" AnchorPane.leftAnchor="301.0">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <TextField fx:id="deliveryInfoCity" layoutX="451.0" layoutY="263.0" prefHeight="27.0" prefWidth="267.0" AnchorPane.leftAnchor="451.0" AnchorPane.topAnchor="263.0" />
-            <Label alignment="CENTER_RIGHT" layoutX="301.0" layoutY="304.0" text="Telefonnummer:" AnchorPane.leftAnchor="301.0">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <TextField fx:id="deliveryInfoPhone" layoutX="520.0" layoutY="302.0" prefHeight="27.0" prefWidth="139.0" AnchorPane.leftAnchor="520.0" AnchorPane.topAnchor="302.0" />
-            <Label alignment="CENTER_RIGHT" layoutX="301.0" layoutY="355.0" prefWidth="139.0" text="Tid för leverans:" AnchorPane.leftAnchor="301.0">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <ChoiceBox fx:id="deliveryInfoTimeChoice" layoutX="730.0" layoutY="349.0" prefWidth="150.0" />
-            <Label layoutX="354.0" layoutY="23.0" text="Fyll i din Leveransinformation" AnchorPane.topAnchor="23.0">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Button fx:id="deliveryInfoNextButton" layoutX="905.0" layoutY="347.0" mnemonicParsing="false" onAction="#onDeliveryInfoNextButtonClicked" prefHeight="40.0" prefWidth="120.0" stylesheets="@deliveryinfo.css" text="Nästa" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="0.0">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
-            <Button fx:id="deliveryInfoBackButton" layoutX="42.0" layoutY="327.0" mnemonicParsing="false" onAction="#onDeliveryInfoBackButtonClicked" prefHeight="40.0" prefWidth="120.0" stylesheets="@deliveryinfo.css" text="Tillbaka" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
-            <DatePicker fx:id="deliveryInfoDatePicker" layoutX="449.0" layoutY="349.0" />
-            <Label fx:id="loginWarningLabel" contentDisplay="CENTER" layoutX="370.0" layoutY="355.0" prefWidth="300.0">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <TextField layoutX="451.0" layoutY="302.0" prefHeight="27.0" prefWidth="60.0" />
-            <TextField layoutX="507.0" layoutY="187.0" prefHeight="27.0" prefWidth="27.0" />
-         </children>
-      </AnchorPane>
       <AnchorPane fx:id="notLoggedInAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="499.0" prefWidth="1040.0" stylesheets="@deliveryinfo.css">
          <children>
             <RadioButton fx:id="guestRadioButton" layoutX="204.0" layoutY="14.0" mnemonicParsing="false" onAction="#onGuestRadioButtonClicked" text="Fortsätt som gäst">
@@ -115,6 +40,50 @@
                            </font>
                         </Label>
                      </children></AnchorPane>
+                  <AnchorPane fx:id="logInDeliveryInfo" prefHeight="439.0" prefWidth="1040.0" stylesheets="@deliveryinfo.css">
+                     <children>
+                        <TextField fx:id="logInUsername" layoutX="332.0" layoutY="116.0" prefHeight="35.0" prefWidth="285.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <PasswordField fx:id="logInPassword" layoutX="332.0" layoutY="174.0" prefHeight="35.0" prefWidth="285.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </PasswordField>
+                        <Label alignment="CENTER_RIGHT" layoutX="182.0" layoutY="122.0" text="Användarnamn: ">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="229.0" layoutY="180.0" text="Lösenord: ">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="logInButton" layoutX="332.0" layoutY="253.0" mnemonicParsing="false" onAction="#onLoginButtonClicked" prefHeight="40.0" prefWidth="120.0" stylesheets="@deliveryinfo.css" text="Logga in">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="26.0" layoutY="390.0" mnemonicParsing="false" onAction="#notLoggedInAnchorToFront" prefHeight="40.0" prefWidth="120.0" stylesheets="@deliveryinfo.css" text="Tillbaka" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="332.0" layoutY="57.0" text="Logga in">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="logInWarning" alignment="CENTER" layoutX="320.0" layoutY="162.0" prefHeight="17.0" prefWidth="400.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
                   <AnchorPane fx:id="guestDeliveryInfo" prefHeight="380.0" prefWidth="1040.0" stylesheets="@deliveryinfo.css">
                      <children>
                         <TextField fx:id="guestFirstName" layoutX="206.0" layoutY="33.0" prefHeight="27.0" prefWidth="267.0" />
@@ -205,52 +174,82 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="logInDeliveryInfo" prefHeight="439.0" prefWidth="1040.0" stylesheets="@deliveryinfo.css">
-                     <children>
-                        <TextField fx:id="logInUsername" layoutX="332.0" layoutY="116.0" prefHeight="35.0" prefWidth="285.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </TextField>
-                        <PasswordField fx:id="logInPassword" layoutX="332.0" layoutY="174.0" prefHeight="35.0" prefWidth="285.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </PasswordField>
-                        <Label alignment="CENTER_RIGHT" layoutX="182.0" layoutY="122.0" text="Användarnamn: ">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER_RIGHT" layoutX="229.0" layoutY="180.0" text="Lösenord: ">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <Button fx:id="logInButton" layoutX="332.0" layoutY="253.0" mnemonicParsing="false" onAction="#onLoginButtonClicked" prefHeight="40.0" prefWidth="120.0" stylesheets="@deliveryinfo.css" text="Logga in">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Button>
-                        <Button layoutX="26.0" layoutY="390.0" mnemonicParsing="false" onAction="#notLoggedInAnchorToFront" prefHeight="40.0" prefWidth="120.0" stylesheets="@deliveryinfo.css" text="Tillbaka" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Button>
-                        <Label layoutX="332.0" layoutY="57.0" text="Logga in">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="logInWarning" alignment="CENTER" layoutX="320.0" layoutY="162.0" prefHeight="17.0" prefWidth="400.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
                </children>
             </StackPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="loggedInAnchor" prefHeight="499.0" prefWidth="1040.0" stylesheets="@deliveryinfo.css">
+         <children>
+            <Label alignment="CENTER_RIGHT" layoutX="300.0" layoutY="75.0" prefWidth="139.0" text="Förnamn:" AnchorPane.leftAnchor="300.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="deliveryInfoFirstName" layoutX="449.0" layoutY="73.0" prefHeight="27.0" prefWidth="167.0" AnchorPane.leftAnchor="449.0" AnchorPane.topAnchor="73.0" />
+            <Label alignment="CENTER_RIGHT" layoutX="300.0" layoutY="113.0" prefWidth="139.0" text="Efternamn:" AnchorPane.leftAnchor="300.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="deliveryInfoLastName" layoutX="450.0" layoutY="111.0" prefHeight="27.0" prefWidth="267.0" AnchorPane.leftAnchor="450.0" AnchorPane.topAnchor="111.0" />
+            <Label alignment="CENTER_RIGHT" layoutX="300.0" layoutY="149.0" prefWidth="139.0" text="Adress:" AnchorPane.leftAnchor="300.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="deliveryInfoAdress" layoutX="451.0" layoutY="149.0" prefHeight="27.0" prefWidth="267.0" AnchorPane.leftAnchor="451.0" AnchorPane.topAnchor="149.0" />
+            <Label alignment="CENTER_RIGHT" layoutX="301.0" layoutY="189.0" prefWidth="139.0" text="Postkod:" AnchorPane.leftAnchor="301.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="deliveryInfoPostCode" layoutX="450.0" layoutY="187.0" prefHeight="27.0" prefWidth="50.0" AnchorPane.leftAnchor="450.0" AnchorPane.topAnchor="187.0" />
+            <Label alignment="CENTER_RIGHT" layoutX="301.0" layoutY="229.0" prefWidth="139.0" text="Postort:" AnchorPane.leftAnchor="301.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="deliveryInfoCity" layoutX="450.0" layoutY="227.0" prefHeight="27.0" prefWidth="267.0" AnchorPane.leftAnchor="450.0" AnchorPane.topAnchor="227.0" />
+            <Label alignment="CENTER_RIGHT" layoutX="301.0" layoutY="265.0" prefWidth="139.0" text="E-post:" AnchorPane.leftAnchor="301.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="deliveryInfoMail" layoutX="451.0" layoutY="263.0" prefHeight="27.0" prefWidth="267.0" AnchorPane.leftAnchor="451.0" AnchorPane.topAnchor="263.0" />
+            <Label alignment="CENTER_RIGHT" layoutX="301.0" layoutY="304.0" text="Telefonnummer:" AnchorPane.leftAnchor="301.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="deliveryInfoPhone" layoutX="451.0" layoutY="302.0" prefHeight="27.0" prefWidth="270.0" AnchorPane.leftAnchor="451.0" AnchorPane.topAnchor="302.0" />
+            <Label alignment="CENTER_RIGHT" layoutX="301.0" layoutY="355.0" prefWidth="139.0" text="Tid för leverans:" AnchorPane.leftAnchor="301.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="deliveryInfoTimeChoice" layoutX="730.0" layoutY="349.0" prefWidth="150.0" />
+            <Label layoutX="354.0" layoutY="23.0" text="Fyll i din Leveransinformation" AnchorPane.topAnchor="23.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="deliveryInfoNextButton" layoutX="905.0" layoutY="347.0" mnemonicParsing="false" onAction="#onDeliveryInfoNextButtonClicked" prefHeight="40.0" prefWidth="120.0" stylesheets="@deliveryinfo.css" text="Nästa" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="deliveryInfoBackButton" layoutX="42.0" layoutY="327.0" mnemonicParsing="false" onAction="#onDeliveryInfoBackButtonClicked" prefHeight="40.0" prefWidth="120.0" stylesheets="@deliveryinfo.css" text="Tillbaka" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <DatePicker fx:id="deliveryInfoDatePicker" layoutX="449.0" layoutY="349.0" />
+            <Label fx:id="loginWarningLabel" contentDisplay="CENTER" layoutX="370.0" layoutY="355.0" prefWidth="300.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="deliveryInfoPostCodeEnd" layoutX="507.0" layoutY="187.0" prefHeight="27.0" prefWidth="37.0" />
          </children>
       </AnchorPane>
    </children>
