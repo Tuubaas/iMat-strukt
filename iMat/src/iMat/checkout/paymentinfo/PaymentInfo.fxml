@@ -36,7 +36,7 @@
          <Font size="18.0" />
       </font></TextField>
             <ChoiceBox fx:id="paymentInfoExpireMonth" layoutX="261.0" layoutY="193.0" prefHeight="27.0" prefWidth="49.0" visible="false" />
-      <Label layoutX="346.5" layoutY="40.0" text="Fyll i din betalningsinformation" AnchorPane.topAnchor="10.0">
+      <Label layoutX="346.5" layoutY="40.0" text="Fyll i din betalinformation" AnchorPane.topAnchor="10.0">
          <font>
             <Font size="24.0" />
             <Font size="18.0" />
@@ -73,7 +73,7 @@
          <Font size="18.0" />
       </font>
    </Label>
-            <TextField fx:id="paymentInfoCardCVC" layoutX="261.0" layoutY="307.0" prefHeight="35.0" prefWidth="84.0" visible="false">
+            <TextField fx:id="paymentInfoCardCVC" layoutX="261.0" layoutY="307.0" prefHeight="35.0" prefWidth="62.0" visible="false">
       <font>
          <Font size="18.0" />
       </font>
