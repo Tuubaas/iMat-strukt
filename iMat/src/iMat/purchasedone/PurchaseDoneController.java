@@ -36,7 +36,7 @@ public class PurchaseDoneController implements Initializable {
 
     private MainController mc;
 
-    private String receipt = "iMat - Ditt kvitto!" + "\n";
+    private String receipt = "Ditt kvitto!" + "\n";
 
 
     @Override

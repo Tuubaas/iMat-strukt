@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
@@ -35,12 +36,7 @@
             </Label>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <ImageView fx:id="purchaseDoneImage" fitHeight="141.0" fitWidth="337.0" layoutX="152.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="133.0" layoutY="134.0" prefHeight="42.0" prefWidth="303.0" text="Tack för ditt köp!">
-                     <font>
-                        <Font size="34.0" />
-                     </font>
-                  </Label>
+                  <ImageView fx:id="purchaseDoneImage" fitHeight="158.0" fitWidth="350.0" layoutX="60.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </AnchorPane>
             <Button fx:id="printConfirmationButton" maxHeight="53.0" minHeight="30.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="227.0" text="Skriv ut bekräftelse" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
@@ -54,22 +50,30 @@
                      <font>
                         <Font size="18.0" />
                      </font></TextArea>
-                  <Label fx:id="totalPrice" layoutX="320.0" layoutY="268.0" prefHeight="26.0" prefWidth="300.0" text="Label">
+                  <Label fx:id="totalPrice" layoutX="107.0" layoutY="268.0" prefHeight="26.0" prefWidth="300.0" text="Label">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="209.0" layoutY="268.0" prefHeight="26.0" prefWidth="82.0" text="Totalt: ">
+                  <Label alignment="BASELINE_LEFT" layoutX="38.0" layoutY="268.0" prefHeight="26.0" prefWidth="82.0" text="Totalt: ">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
                </children></AnchorPane>
-            <Button fx:id="goToStoreButton" mnemonicParsing="false" onAction="#onGoToStoreButtonClicked" prefHeight="56.0" prefWidth="178.0" text="Gå till affären" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP">
+            <Button fx:id="goToStoreButton" mnemonicParsing="false" onAction="#onGoToStoreButtonClicked" prefHeight="56.0" prefWidth="178.0" text="Gå till affären" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="TOP">
                <font>
                   <Font size="18.0" />
                </font>
+               <GridPane.margin>
+                  <Insets left="90.0" />
+               </GridPane.margin>
             </Button>
+            <Label alignment="BOTTOM_RIGHT" contentDisplay="BOTTOM" prefHeight="42.0" prefWidth="303.0" text="Tack för ditt köp!" GridPane.columnIndex="1" GridPane.valignment="BOTTOM">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
          </children>
       </GridPane>
    </children>
